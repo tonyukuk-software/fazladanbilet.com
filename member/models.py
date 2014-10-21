@@ -1,23 +1,13 @@
+__author__ = 'cemkiy'
+
 from django.db import models
 
 # Create your models here.
 
-class Publisher(models.Model):
+class Member(models.Model):
     username = models.CharField(max_length=50, unique=True)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    birthday = models.DateField(null=True, blank=True)
     password = models.CharField(max_length=50)
     email = models.CharField(max_length=50, unique=True)
-    city = models.CharField(max_length=20)
-    total_money = models.PositiveIntegerField(default=0, editable=False)
-    active = models.BooleanField(default=True, editable=False)
-    cdate = models.DateTimeField(auto_now_add=True)
-
-class Member(models.Model):
-    username = models.CharField(max_length=50, unique=True, editable=False)
-    password = models.CharField(max_length=50)
-    email = models.CharField(max_length=50, unique=True, editable=False)
     city = models.CharField(max_length=20)
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
