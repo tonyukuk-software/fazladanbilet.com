@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'jackal',
+    'member',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,7 +63,7 @@ DATABASES = {
           'NAME': 'jackaldatabase',
           'USER': 'postgres',
           'PASSWORD': 'root',
-          'HOST': '127.0.0.1',
+          'HOST': 'localhost',
     }
 }
 
