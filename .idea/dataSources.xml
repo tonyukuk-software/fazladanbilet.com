@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3794566978">
-    <data-source source="LOCAL" name="Django default" uuid="ba8042ca-5908-45b5-8e24-512eaf07cfb8">
+  <component name="DataSourceManagerImpl" format="xml" hash="864215531">
+    <data-source source="LOCAL" name="Django default" uuid="dc9e7a1d-fb7d-4b3d-91ed-260bd1d76eb5">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/jackaldatabase</jdbc-url>

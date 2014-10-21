@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 
 __author__ = 'cemkiy'
+__author__ = 'kaykisizcom'
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response
@@ -27,3 +28,19 @@ def new_member(request):
             except:
                 return HttpResponseRedirect('/404')
     return render_to_response('new_member.html', {'form':form}, context_instance=RequestContext(request))
+
+@login_required
+def new_sale_ticket(request):
+    member = Member.objects.filter(username=request.user.username)[0]
+    form = new_sale_ticket_form(initial={
+      'member':member
+    })
+    if request.method == 'POST':
+        form = new_sale_ticket_form(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return HttpResponseRedirect('/ticket_pool/')
+            except:
+                return HttpResponseRedirect('/404')
+    return render_to_response('new_sale_ticket.html', {'form':form}, context_instance=RequestContext(request))
