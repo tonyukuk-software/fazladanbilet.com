@@ -1,0 +1,38 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<title></title>
+</head>
+<body>
+{% if form.errors %}
+  <p>Error</p>
+{% endif %}
+<form method='POST'>
+{% csrf_token %}
+<table border=1>
+  {{form}}
+</table>
+  <input type='submit' value='Submit' name="submit"/>
+</form>
+{% if form_password.errors %}
+  <p>Error</p>
+{% endif %}
+<form method='POST'>
+{% csrf_token %}
+  <table border=1>
+  {{ form_password }}
+</table>
+  <input type='submit' value='change_password' name="change_password"/>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+    })
+</script>
+</body>
+</html>
