@@ -90,3 +90,9 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'member/templates'),
     os.path.join(BASE_DIR,  'jackalprojects/templates'),
 )
+
+#Admin Log
+ADMINS = (
+    ('cemkiy', 'se.cemkiy@gmail.com'),
+    ('barisariburnu', 'barisariburnu@gmail.com '),
+    ('kaykisizcom', 'm.kaykisiz@gmail.com '),)
