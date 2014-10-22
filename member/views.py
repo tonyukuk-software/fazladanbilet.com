@@ -61,45 +61,39 @@ def member_profile(request):
 
 @login_required
 def edit_member_profile(request):
-
     try:
         member = Member.objects.filter(username=request.user.username)[0]
     except Exception as e:
         print e
         return HttpResponseRedirect('/404')
 
-    form = edit_member_profile_form(initial={
-        'username':member.username,
-        'email':member.email,
-        'city':member.city,
-        'password':member.password
-    })
+    form = edit_member_profile_form(initial={'city': member.city})
+    form_password = edit_member_password_form #for change password
 
-    form_password = edit_member_password_form
-
-    if request.method == 'POST' and 'submit' in request.POST:
+    if request.method == 'POST' and 'submit' in request.POST: #normal form
         form = edit_member_profile_form(request.POST)
         if form.is_valid():
             try:
-                form.save()
-                return HttpResponseRedirect('/member_profile')
+                member.city = request.POST.get('city')
+                member.save()
+                return HttpResponseRedirect('/member/member_profile')
             except Exception as e:
                 print e
                 return HttpResponseRedirect('/404')
 
-    elif request.method == 'POST' and 'change_password' in request.POST:
-        form = edit_member_profile_form(request.POST)
-        if form.is_valid():
+    elif request.method == 'POST' and 'change_password' in request.POST: #password form
+        form_password = edit_member_password_form(request.POST)
+        if form_password.is_valid():
             if member.password == request.POST.get('old_password') and request.POST.get('new_password') == request.POST.get('confirm_password'):
                 try:
                     member.password = request.POST.get('new_password')
                     member.save()
-                    return HttpResponseRedirect('/member_profile')
+                    return HttpResponseRedirect('/member/member_profile')
                 except Exception as e:
                     print e
                     return HttpResponseRedirect('/404')
             else:
-                errors = form._errors.setdefault("old_password", ErrorList())
+                errors = form_password._errors.setdefault("old_password", ErrorList())
                 errors.append(u'Check your old and new password')
 
     return render_to_response('edit_member_profile.html', {'form':form, 'form_password':form_password}, context_instance=RequestContext(request))
