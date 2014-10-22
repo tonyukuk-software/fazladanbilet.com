@@ -94,5 +94,5 @@ TEMPLATE_DIRS = (
 #Admin Log
 ADMINS = (
     ('cemkiy', 'se.cemkiy@gmail.com'),
-    ('barisariburnu', 'barisariburnu@gmail.com '),
-    ('kaykisizcom', 'm.kaykisiz@gmail.com '),)
+    ('barisariburnu', 'barisariburnu@gmail.com'),
+    ('kaykisizcom', 'm.kaykisiz@gmail.com'),)
