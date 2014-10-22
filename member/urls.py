@@ -9,4 +9,5 @@ urlpatterns = patterns('',
                     url(r'^new_sale_ticket/$', 'member.views.new_sale_ticket'),
                     url(r'^member_profile/$', 'member.views.member_profile'),
                     url(r'^edit_member_profile/$', 'member.views.edit_member_profile'),
+                    url(r'^ticket_details/(.+)$', 'member.views.ticket_details'),
                        )
