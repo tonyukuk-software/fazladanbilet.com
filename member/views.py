@@ -31,7 +31,10 @@ def new_member(request):
 
 @login_required
 def new_sale_ticket(request):
-    member = Member.objects.filter(username=request.user.username)[0]
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+    except:
+        return HttpResponseRedirect('/accounts/logout/')
     form = new_sale_ticket_form(initial={
       'member':member
     })
