@@ -67,14 +67,13 @@ def edit_member_profile(request):
         print e
         return HttpResponseRedirect('/404')
 
-    form = edit_member_profile_form(initial={'city': member.city})
+    form = edit_member_profile_form()
     form_password = edit_member_password_form #for change password
 
     if request.method == 'POST' and 'submit' in request.POST: #normal form
         form = edit_member_profile_form(request.POST)
         if form.is_valid():
             try:
-                member.city = request.POST.get('city')
                 member.save()
                 return HttpResponseRedirect('/member/member_profile')
             except Exception as e:

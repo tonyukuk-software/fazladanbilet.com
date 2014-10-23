@@ -16,7 +16,7 @@ class new_sale_ticket_form(forms.ModelForm):
         widgets = {'member': forms.HiddenInput()}
 
 class edit_member_profile_form(forms.Form):
-    city = forms.CharField(max_length=50)
+    pass
 
 class edit_member_password_form(forms.Form):
     old_password = forms.CharField(max_length=50, widget=forms.PasswordInput())

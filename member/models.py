@@ -19,13 +19,16 @@ class Wallet(models.Model):
 class Category(models.Model):
     category_name = models.CharField(max_length=20)
 
+class City(models.Model):
+    city_name = models.CharField(max_length=10)
+
 class On_Sales(models.Model):
     member = models.ForeignKey(Member)
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     total_ticket = models.PositiveIntegerField(default=0)
-    based_city = models.CharField(max_length=20)
+    from_city = models.ForeignKey(City, default='0')
     image_url = models.URLField()
     amount_bitcoin = models.FloatField(default=0)
     cdate = models.DateTimeField(auto_now_add=True)
@@ -48,7 +51,6 @@ class After_Sale(models.Model): #Feedback from shiping members
     description = models.CharField(max_length=500)
     cdate = models.DateField(auto_now_add=True)
 
-class City(models.Model):
-    city_name = models.CharField(max_length=10)
+
 
 
