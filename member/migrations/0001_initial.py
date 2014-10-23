@@ -14,8 +14,8 @@ class Migration(SchemaMigration):
             ('username', self.gf('django.db.models.fields.CharField')(unique=True, max_length=50)),
             ('password', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('email', self.gf('django.db.models.fields.CharField')(unique=True, max_length=50)),
-            ('point', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
-            ('point_counter', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
+            ('points', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
+            ('points_counter', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
             ('active', self.gf('django.db.models.fields.BooleanField')(default=True)),
             ('cdate', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
@@ -133,8 +133,8 @@ class Migration(SchemaMigration):
             'email': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '50'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'point': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
-            'point_counter': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
+            'points': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
+            'points_counter': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '50'})
         },
         u'member.on_sales': {

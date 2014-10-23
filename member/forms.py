@@ -7,8 +7,8 @@ class new_member_form(forms.ModelForm):
     class Meta:
         model = Member
         widgets = {'password': forms.PasswordInput(),
-                   'point': forms.HiddenInput(),
-                   'point_counter': forms.HiddenInput()}
+                   'points': forms.HiddenInput(),
+                   'points_counter': forms.HiddenInput()}
 
 class new_sale_ticket_form(forms.ModelForm):
     class Meta:
