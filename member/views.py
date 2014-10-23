@@ -97,3 +97,12 @@ def edit_member_profile(request):
                 errors.append(u'Check your old and new password')
 
     return render_to_response('edit_member_profile.html', {'form':form, 'form_password':form_password}, context_instance=RequestContext(request))
+
+@login_required
+def ticket_details(request, ticket_id):
+    try:
+        ticket = On_Sales.objects.filter(id=ticket_id)[0]
+        return render_to_response('ticket_details.html', locals())
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
