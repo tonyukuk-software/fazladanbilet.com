@@ -14,7 +14,7 @@ class Member(models.Model):
     cdate = models.DateTimeField(auto_now_add=True)
 
 class Wallet(models.Model):
-    member = models.ForeignKey(Member)
+    member = models.OneToOneField(Member)
 
 class Category(models.Model):
     category_name = models.CharField(max_length=20)
@@ -24,7 +24,7 @@ class City(models.Model):
 
 class On_Sales(models.Model):
     member = models.ForeignKey(Member)
-    category = models.ForeignKey(Category)
+    category = models.OneToOneField(Category)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     total_ticket = models.PositiveIntegerField(default=0)
@@ -37,7 +37,7 @@ class On_Sales(models.Model):
 
 class Orders(models.Model):
     on_sales = models.ForeignKey(On_Sales)
-    ship_to_user = models.ForeignKey(Member)
+    ship_to_user = models.OneToOneField(Member)
     status = models.PositiveIntegerField(default=0) #options
     adress = models.CharField(max_length=256)
     cargo_company = models.PositiveIntegerField(default=0) #options
@@ -46,7 +46,7 @@ class Orders(models.Model):
     cdate = models.DateTimeField(auto_now_add=True)
 
 class After_Sale(models.Model): #Feedback from shiping members
-    orders = models.ForeignKey(Orders)
+    orders = models.OneToOneField(Orders)
     status = models.PositiveIntegerField(default=0)
     description = models.CharField(max_length=500)
     cdate = models.DateField(auto_now_add=True)
