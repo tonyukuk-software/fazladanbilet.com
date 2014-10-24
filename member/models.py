@@ -24,7 +24,7 @@ class City(models.Model):
 
 class On_Sales(models.Model):
     member = models.ForeignKey(Member)
-    category = models.OneToOneField(Category)
+    category = models.ForeignKey(Category)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     total_ticket = models.PositiveIntegerField(default=0)
