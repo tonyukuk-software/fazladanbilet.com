@@ -17,4 +17,5 @@ urlpatterns = patterns('',
         {'template_name': 'login.html'}),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout',
         {'next_page': '/'}),
+    url(r'^ticket_pool/$', 'jackalprojects.views.ticket_pool'),
 )
