@@ -19,8 +19,14 @@ class Wallet(models.Model):
 class Category(models.Model):
     category_name = models.CharField(max_length=20)
 
+    def __unicode__(self):
+        return self.category_name
+
 class City(models.Model):
     city_name = models.CharField(max_length=10)
+
+    def __unicode__(self):
+        return self.city_name
 
 class On_Sales(models.Model):
     member = models.ForeignKey(Member)
