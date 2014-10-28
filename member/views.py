@@ -41,14 +41,14 @@ def new_sale_ticket(request):
       'member':member
     })
     if request.method == 'POST':
-        form = new_sale_ticket_form(request.POST)
+        form = new_sale_ticket_form(request.POST, request.FILES)
         if form.is_valid():
             try:
                 form.save()
                 return HttpResponseRedirect('/ticket_pool/')
             except:
                 return HttpResponseRedirect('/404')
-    return render_to_response('new_sale_ticket.html', {'form':form}, context_instance=RequestContext(request))
+    return render_to_response('new_sale_ticket.html', {'form': form}, context_instance=RequestContext(request))
 
 @login_required
 def member_profile(request):

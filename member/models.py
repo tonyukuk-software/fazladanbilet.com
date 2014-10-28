@@ -11,7 +11,7 @@ class Member(models.Model):
     username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=50)
     email = models.CharField(max_length=50, unique=True)
-    profile_photo = models.ImageField(null=True, upload_to="profile_photos/")
+    profile_photo = models.ImageField(null=True, blank=True, upload_to="profile_photos/")
     points = models.PositiveIntegerField(default=0)
     points_counter = models.PositiveIntegerField(default=0) #how many peoples give vote
     active = models.BooleanField(default=True, editable=False)
@@ -42,7 +42,7 @@ class On_Sales(models.Model):
     description = models.CharField(max_length=500)
     total_ticket = models.PositiveIntegerField(default=0)
     from_city = models.ForeignKey(City, default='0')
-    image_url = models.URLField()
+    ticket_photo = models.ImageField(null=True, upload_to="ticket_photos/")
     amount_bitcoin = models.FloatField(default=0)
     cdate = models.DateTimeField(auto_now_add=True)
     edate = models.DateTimeField()
