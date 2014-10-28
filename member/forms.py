@@ -8,7 +8,8 @@ class new_member_form(forms.ModelForm):
         model = Member
         widgets = {'password': forms.PasswordInput(),
                    'points': forms.HiddenInput(),
-                   'points_counter': forms.HiddenInput()}
+                   'points_counter': forms.HiddenInput(),
+                   'profile_photo': forms.HiddenInput(), }
 
 class new_sale_ticket_form(forms.ModelForm):
     class Meta:
@@ -16,7 +17,7 @@ class new_sale_ticket_form(forms.ModelForm):
         widgets = {'member': forms.HiddenInput()}
 
 class edit_member_profile_form(forms.Form):
-    pass
+    profile_photo = forms.ImageField()
 
 class edit_member_password_form(forms.Form):
     old_password = forms.CharField(max_length=50, widget=forms.PasswordInput())

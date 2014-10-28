@@ -71,9 +71,10 @@ def edit_member_profile(request):
     form_password = edit_member_password_form #for change password
 
     if request.method == 'POST' and 'submit' in request.POST: #normal form
-        form = edit_member_profile_form(request.POST)
+        form = edit_member_profile_form(request.POST, request.FILES)
         if form.is_valid():
             try:
+                member.profile_photo = request.FILES["profile_photo"]
                 member.save()
                 return HttpResponseRedirect('/member/member_profile')
             except Exception as e:

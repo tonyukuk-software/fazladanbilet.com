@@ -1,3 +1,6 @@
+from cups import require
+from jackalprojects import settings
+
 __author__ = 'cemkiy'
 
 from django.db import models
@@ -8,10 +11,14 @@ class Member(models.Model):
     username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=50)
     email = models.CharField(max_length=50, unique=True)
+    profile_photo = models.ImageField(null=True, upload_to="profile_photos/")
     points = models.PositiveIntegerField(default=0)
-    points_counter = models.PositiveIntegerField(default=0)#how many peoples give vote
+    points_counter = models.PositiveIntegerField(default=0) #how many peoples give vote
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.username
 
 class Wallet(models.Model):
     member = models.OneToOneField(Member)
