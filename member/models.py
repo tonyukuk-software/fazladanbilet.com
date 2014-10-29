@@ -49,18 +49,45 @@ class On_Sales(models.Model):
     active = models.BooleanField(default=True, editable=False)
 
 class Orders(models.Model):
+
+    STATUS_CHOICES = (
+    (u'0', u'cancel'),
+    (u'1', u'awaiting'),
+    (u'2', u'waiting_for_cargo'),
+    (u'3', u'on_the_road'),
+    (u'4', u'success_shipping'),
+    (u'5', u'failure_shipping')
+    )
+
+    CARGO_CHOICES = (
+    (u'0', u'yurtici'),
+    (u'1', u'mng'),
+    (u'2', u'ups'),
+    (u'3', u'aras'),
+    (u'4', u'ptt'),
+    )
+
     on_sales = models.ForeignKey(On_Sales)
     ship_to_user = models.OneToOneField(Member)
-    status = models.PositiveIntegerField(default=0) #options
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='1') #options
     adress = models.CharField(max_length=256)
-    cargo_company = models.PositiveIntegerField(default=0) #options
+    cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0') #options
     cargo_no = models.CharField(max_length=256)
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
 
 class After_Sale(models.Model): #Feedback from shiping members
+
+    STATUS_CHOICES = (
+    (u'0', u'cargo_problem'),
+    (u'1', u'wrong_ticket'),
+    (u'2', u'fake_ticket'),
+    (u'3', u'bitcoin_problem'),
+    (u'4', u'other'),
+    )
+
     orders = models.OneToOneField(Orders)
-    status = models.PositiveIntegerField(default=0)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='0') #options
     description = models.CharField(max_length=500)
     cdate = models.DateField(auto_now_add=True)
 

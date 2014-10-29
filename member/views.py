@@ -29,7 +29,7 @@ def new_member(request):
             except Exception as e:
                 print e
                 return HttpResponseRedirect('/404')
-    return render_to_response('new_member.html', {'form':form}, context_instance=RequestContext(request))
+    return render_to_response('new_member.html', {'form': form}, context_instance=RequestContext(request))
 
 @login_required
 def new_sale_ticket(request):
@@ -96,7 +96,7 @@ def edit_member_profile(request):
                 errors = form_password._errors.setdefault("old_password", ErrorList())
                 errors.append(u'Check your old and new password')
 
-    return render_to_response('edit_member_profile.html', {'form':form, 'form_password':form_password}, context_instance=RequestContext(request))
+    return render_to_response('edit_member_profile.html', {'form': form, 'form_password': form_password}, context_instance=RequestContext(request))
 
 @login_required
 def ticket_details(request, ticket_id):
