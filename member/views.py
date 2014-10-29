@@ -32,23 +32,23 @@ def new_member(request):
     return render_to_response('new_member.html', {'form': form}, context_instance=RequestContext(request))
 
 @login_required
-def new_sale_ticket(request):
+def new_swap_ticket(request):
     try:
         member = Member.objects.filter(username=request.user.username)[0]
     except:
         return HttpResponseRedirect('/accounts/logout/')
-    form = new_sale_ticket_form(initial={
+    form = new_swap_ticket_form(initial={
       'member':member
     })
     if request.method == 'POST':
-        form = new_sale_ticket_form(request.POST, request.FILES)
+        form = new_swap_ticket_form(request.POST, request.FILES)
         if form.is_valid():
             try:
                 form.save()
                 return HttpResponseRedirect('/ticket_pool/')
             except:
                 return HttpResponseRedirect('/404')
-    return render_to_response('new_sale_ticket.html', {'form': form}, context_instance=RequestContext(request))
+    return render_to_response('new_swap_ticket.html', {'form': form}, context_instance=RequestContext(request))
 
 @login_required
 def member_profile(request):
@@ -103,6 +103,16 @@ def ticket_details(request, ticket_id):
     try:
         ticket = On_Sales.objects.filter(id=ticket_id)[0]
         return render_to_response('ticket_details.html', locals())
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
+
+@login_required
+def comes_shipping(request): #user own exchanges
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+        orders = Orders.objects.filter(ship_to_user=member).all()
+        return render_to_response('comes_shipping.html', locals())
     except Exception as e:
         print e
         return HttpResponseRedirect('/404')

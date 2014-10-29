@@ -69,8 +69,11 @@ class Orders(models.Model):
 
     on_sales = models.ForeignKey(On_Sales)
     ship_to_user = models.OneToOneField(Member)
+    total_ticket = models.PositiveIntegerField(default=1)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='1') #options
-    adress = models.CharField(max_length=256)
+    name = models.CharField(max_length=50, default='')
+    phone = models.CharField(max_length=11, default='')
+    adress = models.CharField(max_length=256, default='')
     cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0') #options
     cargo_no = models.CharField(max_length=256)
     active = models.BooleanField(default=True, editable=False)
@@ -78,7 +81,7 @@ class Orders(models.Model):
 
 class After_Sale(models.Model): #Feedback from shiping members
 
-    STATUS_CHOICES = (
+    REPORT_CHOICES = (
     (u'0', u'cargo_problem'),
     (u'1', u'wrong_ticket'),
     (u'2', u'fake_ticket'),
@@ -87,7 +90,7 @@ class After_Sale(models.Model): #Feedback from shiping members
     )
 
     orders = models.OneToOneField(Orders)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='0') #options
+    status = models.CharField(max_length=1, choices=REPORT_CHOICES, default='0') #options
     description = models.CharField(max_length=500)
     cdate = models.DateField(auto_now_add=True)
 

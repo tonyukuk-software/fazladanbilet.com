@@ -11,7 +11,7 @@ class new_member_form(forms.ModelForm):
                    'points_counter': forms.HiddenInput(),
                    'profile_photo': forms.HiddenInput(), }
 
-class new_sale_ticket_form(forms.ModelForm):
+class new_swap_ticket_form(forms.ModelForm):
     class Meta:
         model = On_Sales
         widgets = {'member': forms.HiddenInput()}

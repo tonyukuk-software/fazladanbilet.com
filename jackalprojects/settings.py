@@ -94,7 +94,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = '/home/cemkiy/PycharmProjects/jackalprojects/media'
+MEDIA_ROOT = BASE_DIR + '/media'
 
 
 
