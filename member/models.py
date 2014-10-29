@@ -48,6 +48,9 @@ class On_Sales(models.Model):
     edate = models.DateTimeField()
     active = models.BooleanField(default=True, editable=False)
 
+    def __unicode__(self):
+        return self.member.username + self.title
+
 class Orders(models.Model):
 
     STATUS_CHOICES = (

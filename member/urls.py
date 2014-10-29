@@ -11,4 +11,5 @@ urlpatterns = patterns('',
                     url(r'^edit_member_profile/$', 'member.views.edit_member_profile'),
                     url(r'^ticket_details/(.+)$', 'member.views.ticket_details'),
                     url(r'^comes_shipping/$', 'member.views.comes_shipping'), #user own exchanges
+                    url(r'^sends_shipping/$', 'member.views.sends_shipping'), #user 3rd person exchanges
                        )

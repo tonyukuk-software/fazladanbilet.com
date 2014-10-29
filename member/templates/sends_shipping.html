@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<title></title>
+</head>
+<body>
+<a href="/accounts/logout">log out</a></br>
+<a href="/member/edit_member_profile">edit profile</a></br>
+{% for i in orders %}
+<ul>
+  <img src="/media/{{ i.on_sales.ticket_photo }}">
+  <li>{{ i.on_sales.ship_to_user.username }}</li>
+  <li>{{ i.on_sales.title }}</li>
+  <li>{{ i.total_ticket }}</li>
+  <li>{{ i.get_cargo_company_display }}</li>
+  <li>{{ i.cargo_no }}</li>
+  <li>{{ i.status}}</li>
+ </ul>
+{% endfor %}
+</body>
+</html>

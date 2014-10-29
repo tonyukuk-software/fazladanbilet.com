@@ -116,3 +116,13 @@ def comes_shipping(request): #user own exchanges
     except Exception as e:
         print e
         return HttpResponseRedirect('/404')
+
+@login_required
+def sends_shipping(request): #user 3rd person exchanges
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+        orders = Orders.objects.filter(on_sales__member=member).all()
+        return render_to_response('sends_shipping.html', locals())
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
