@@ -99,8 +99,9 @@ MEDIA_ROOT = BASE_DIR + '/media'
 
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'member/templates'),
-    os.path.join(BASE_DIR,  'jackalprojects/templates'),
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'member/templates'),
+    os.path.join(BASE_DIR, 'jackalprojects/templates'),
 )
 
 #Admin Log
