@@ -10,8 +10,11 @@
 <a href="/accounts/logout">log out</a></br>
 <a href="/member/edit_member_profile">edit profile</a></br>
 <ul>
-  <img src="/media/{{ member.profile_photo }}">
-  <li>{{ member.profile_photo }}</li>
+    {% if member.profile_photo %}
+        <img src="/media/{{ member.profile_photo }}">
+    {% else %}
+        <img src="/media/profile_photos/default.png">
+    {% endif %}
   <li>{{ member.username }}</li>
   <li>{{ member.email }}</li>
   <li>{{ member.points }}</li>
