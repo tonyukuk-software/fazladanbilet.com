@@ -3,6 +3,8 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 __author__ = 'cemkiy'
+__author__ = 'barisariburnu'
+__author__ = 'kaykisizcom'
 
 from django.conf.urls import patterns, include, url
 

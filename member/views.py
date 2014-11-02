@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 
 __author__ = 'cemkiy'
 __author__ = 'kaykisizcom'
+__author__ = 'barisariburnu'
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response

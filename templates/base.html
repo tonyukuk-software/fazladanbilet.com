@@ -110,3 +110,93 @@
                 </div>
             </div>
         </div>
+
+        <div id="content-container" class="sidebarright clearfix" style="padding-top: 81px;">
+
+            {% block body_block %}{% endblock %}
+
+        </div>
+
+        <div id="site-wide-container">
+            <span class="arrow"></span>
+            <div class="site-wide-cta">
+                <span>A useful site-wide Call to Action Bar! </span>
+                <a class="action-link" href="https://github.com/cemkiy/jackalprojects/">View more features</a>
+            </div>
+        </div>
+
+        <div id="footer-container">
+
+            <div id="footer" class="clearfix">
+                <ul class="footer-widgets four-column clearfix">
+                    <li id="text-3" class="widget widget_text column">
+                        <h4 class="widgettitle">About FazladanBilet</h4>			<div class="textwidget">FazladanBilet is a multi-purpose business theme. Perfect for any business, FazladanBilet is highly customisable and has all the features you need to get your website up and running.</div>
+                    </li>
+                    <li id="recent-posts-3" class="widget widget_recent_entries column">
+                        <h4 class="widgettitle">Recent Sell Tickets</h4>		<ul>
+                            <li>
+                                <a href="http://www.github.com">CMYLMZ Fundamentals</a>
+                            </li>
+                            <li>
+                                <a href="http://www.github.com">Tarkan - Istanbul 2014</a>
+                            </li>
+                            <li>
+                                <a href="http://www.github.com">Romeo ve Juliet - Kayseri 2014</a>
+                            </li>
+                            <li>
+                                <a href="http://www.github.com">Hadise - Ankara 2014</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="recent-comments-3" class="widget widget_recent_comments column"><h4 class="widgettitle">Recent Comments</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="2013/01/09/building-bridges-in-new-york-city/#comment-4">barisariburnu</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="img/building-bridges-in-new-york-city/#comment-3">cemkiy</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="img/building-bridges-in-new-york-city/#comment-2">mkaykisiz</a></li></ul></li>
+                    <li id="archives-2" class="widget widget_archive column">
+                        <h4 class="widgettitle">Recent Added Tickets</h4>		<ul>
+                            <li><a href='2013/03/'>Hadise - Ankara 2014</a></li>
+                            <li><a href='2013/01/'>CMYLMZ Fundamentals</a></li>
+                            <li><a href='2012/12/'>Romeo ve Juliet - Kayseri 2014</a></li>
+                            <li><a href='2012/10/'>Tarkan - Istanbul 2014</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> <!--End footer -->
+
+        </div> <!--end Footer Container -->
+
+        <div id="footer-base-container">
+            <div class="footer-text">
+                <div id="footer-navigation-container">
+                    <ul id="footer-nav" class="clearfix">
+                        <li id="menu-item-902" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-902"><a href="/">HOME</a></li>
+                        <li id="menu-item-919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-919"><a href="http://www.github.com">WHAT IS IT?</a>
+                        <li id="menu-item-922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-922"><a href="http://www.github.com">HOW IT WORKS?</a></li>
+                        <li id="menu-item-921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-921"><a href="https://bitcoin.org/tr/" target="_blank">BITCOIN</a></li>
+                        <li id="menu-item-929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-929"><a href="ticket_pool">SHOP</a></li>
+                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="member/new_sale_ticket">NEW TICKET</a></li>
+                        <li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.github.com">CONTACT US</a></li>
+                    </ul>
+                </div>
+
+                <p>Copyright 2014 - This platform is not responsible fazladanbilet family of products that are brought to the exchange.</p>
+                <div class="obox-credit">
+                    <p><a href="https://github.com/cemkiy/jackalprojects/">Jackal Project</a></p>
+                </div>
+            </div>
+        </div> <!--end Footer Base Container -->
+
+    </div><!--end Wrapper -->
+
+    <div id="back-top">
+        <a href="#top"></a>
+    </div>
+
+    <!--Get Google Analytics -->
+
+
+    <script type='text/javascript' src="{% static 'js/frontend/add-to-cart.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery-blockui/jquery.blockUI.min.js' %}"></script>
+
+    <script type='text/javascript' src="{% static 'js/frontend/woocommerce.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery-cookie/jquery.cookie.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/frontend/cart-fragments.min.js' %}"></script>
+</body>
+</html>

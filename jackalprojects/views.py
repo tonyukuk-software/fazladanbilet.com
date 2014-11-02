@@ -3,7 +3,8 @@ from django.template import RequestContext
 from member.models import On_Sales
 
 __author__ = 'cemkiy'
-
+__author__ = 'barisariburnu'
+__author__ = 'kaykisizcom'
 
 # Create your views here.
 

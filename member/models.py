@@ -2,6 +2,8 @@ from cups import require
 from jackalprojects import settings
 
 __author__ = 'cemkiy'
+__author__ = 'barisariburnu'
+__author__ = 'kaykisizcom'
 
 from django.db import models
 

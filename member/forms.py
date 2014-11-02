@@ -1,4 +1,7 @@
 __author__ = 'cemkiy'
+__author__ = 'barisariburnu'
+__author__ = 'kaykisizcom'
+
 
 from django import forms
 from models import *
