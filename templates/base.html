@@ -23,12 +23,10 @@
     <link rel='stylesheet' id='googleFonts1-css' href="{% static 'css/fonts.css' %}" type='text/css' media='all' />
     <script type='text/javascript' src="{% static 'js/jquery/jquery.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/jquery/jquery-migrate.min.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/includes/upgrade.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/scripts/menus.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/scripts/fitvid.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/scripts/theme.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/scripts/portfolio.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/scripts/slider.js' %}"></script>
     <style type="text/css">
         .recentcomments a {
             display: inline !important;
@@ -36,7 +34,7 @@
             margin: 0 !important;
         }
     </style>
-
+    {% block head_block %}{% endblock %}
 </head>
 
 <body class="home blog">

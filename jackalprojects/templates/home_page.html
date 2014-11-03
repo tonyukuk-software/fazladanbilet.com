@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head_block %}
+        <script type='text/javascript' src="{% static 'js/scripts/slider.js' %}"></script>
+{% endblock %}
 
 {% block body_block %}
     This is Body Fiels
