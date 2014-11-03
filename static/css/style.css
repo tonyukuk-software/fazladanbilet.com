@@ -262,7 +262,7 @@ ins {text-decoration: none;}
 
 	/*--------------------------*/
 	/*- BUTTONS ----------------*/
-	button, input[type=submit]{display: inline-block; padding: 8px 15px; border: none; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); font-size: 11px; font-weight: 600; line-height: 1em; border-radius: 4px;}
+	button, input[type=submit]{display: inline-block; padding: 8px 15px; border: none; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); font-size: 11px; font-weight: 600; line-height: 1em; border-radius: 4px; background: #1ABC9C; color: #fff;}
 	.button, .added_to_cart{display: inline-block; padding: 8px 15px; border: none; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2); font-size: 11px; font-weight: 600; line-height: 1em; border-radius: 4px;}
 	button.button{padding: 0px 15px; height: 30px;}
 
