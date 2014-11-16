@@ -1,10 +1,13 @@
 from django.contrib.auth.decorators import login_required
+from django.core.context_processors import request
+from django.views.decorators.csrf import csrf_exempt
+from docutils.nodes import title
 
 __author__ = 'cemkiy'
 __author__ = 'kaykisizcom'
 __author__ = 'barisariburnu'
 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from django.contrib.auth.models import User
@@ -125,5 +128,30 @@ def sends_shipping(request): #user 3rd person exchanges
         orders = Orders.objects.filter(on_sales__member=member).all()
         return render_to_response('sends_shipping.html', locals())
     except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
+
+def my_bag(request): #bag is basket of my take ticket
+    try:
+        tickets_in_my_bag = request.session['tickets_in_my_bag']
+        tickets = On_Sales.objects.filter(id__in=tickets_in_my_bag)
+        return render_to_response('my_bag.html', locals())
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
+
+@csrf_exempt
+def in_the_bucket(request):
+     try:
+        if request.session.get('tickets_in_my_bag'):
+            tickets_in_my_bag = request.session['tickets_in_my_bag']
+            tickets_in_my_bag.append(int(request.POST.get('ticket_id')))
+            request.session['tickets_in_my_bag'] = tickets_in_my_bag
+        else:
+            ticket_id = int(request.POST.get('ticket_id'))
+            tickets_in_my_bag = [ticket_id]
+            request.session['tickets_in_my_bag'] = tickets_in_my_bag
+        return HttpResponse(False, content_type='application/json')
+     except Exception as e:
         print e
         return HttpResponseRedirect('/404')

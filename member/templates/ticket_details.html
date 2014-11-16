@@ -14,6 +14,27 @@
   <li>{{ ticket.amount_bitcoin }}</li>
   <li>{{ ticket.edate }}</li>
   <li>{{ ticket.total_ticket }}</li>
+  <li>
+      <a id="in_the_bucket_button" href="javascript:void(0)"
+         onclick="added_ticket_to_my_bag();"
+         style="margin-top: 15%;margin-left: 10%;">
+          <button>Çantaya Ekle</button>
+      </a></br>
+  </li>
 </ul>
+
+<script type="text/javascript">
+    function added_ticket_to_my_bag() {
+
+        $.ajax({
+            type: "POST",
+            url: "/member/in_the_bucket/",
+            data: "ticket_id=" + {{ ticket.id }} ,
+            success: null,
+            dataType: JSON
+        });
+
+    }
+</script>
 </body>
 </html>

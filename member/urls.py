@@ -14,4 +14,6 @@ urlpatterns = patterns('',
                     url(r'^ticket_details/(.+)$', 'member.views.ticket_details'),
                     url(r'^comes_shipping/$', 'member.views.comes_shipping'), #user own exchanges
                     url(r'^sends_shipping/$', 'member.views.sends_shipping'), #user 3rd person exchanges
-                       )
+                    url(r'^my_bag/$', 'member.views.my_bag'), #bag is basket of my take ticket
+                    url(r'^in_the_bucket/$', 'member.views.in_the_bucket'),
+                        )

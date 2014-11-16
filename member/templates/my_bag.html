@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+{% if tickets != null %}
+    {% for i in tickets %}
+        <div>
+        <a href="/member/ticket_details/{{ i.id }}">
+            <div>
+                <p>Kullanici:{{ i.member.username }}</p>
+
+                <p>Kategori: {{ i.category.category_name }}</p>
+
+                <p>{{ i.title }}</p>
+
+                <p>aciklama: {{ i.description }}</p>
+
+                <p>Toplam Bilet: {{ i.total_ticket }}</p>
+
+                <p>Gönderilecek Şehir: {{ i.from_city }}</p>
+
+                <p>Bitcoin Takas Miktarı: {{ i.amount_bitcoin }}</p>
+
+                <p>Oluşturulma: {{ i.cdate }}</p>
+
+                <p>Bitiş: {{ i.edate }}</p>
+            </div>
+        </a>
+        <input type="button" onclick="location.href='/member/in_the_bucket/' " value="Takasla">
+        </div>
+        <br/>
+    {% endfor %}
+{% else %}
+   <p> Çanta Boş</p>
+{% endif %}
+</body>
+</html>
