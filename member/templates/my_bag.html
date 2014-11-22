@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <title></title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block head_block %} {% endblock %}
+
+{% block body_block %}
 {% if tickets != null %}
     {% for i in tickets %}
         <div>
@@ -37,5 +34,5 @@
 {% else %}
    <p> Çanta Boş</p>
 {% endif %}
-</body>
-</html>
+
+{% endblock %}

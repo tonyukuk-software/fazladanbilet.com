@@ -102,7 +102,7 @@ def edit_member_profile(request):
 
     return render_to_response('edit_member_profile.html', {'form': form, 'form_password': form_password}, context_instance=RequestContext(request))
 
-@login_required
+
 def ticket_details(request, ticket_id):
     try:
         ticket = On_Sales.objects.filter(id=ticket_id)[0]
@@ -141,7 +141,7 @@ def my_bag(request): #bag is basket of my take ticket
         return HttpResponseRedirect('/404')
 
 @csrf_exempt
-def in_the_bucket(request):
+def in_the_bucket(request): # added new ticket for ticket in my bag
      try:
         if request.session.get('tickets_in_my_bag'):
             tickets_in_my_bag = request.session['tickets_in_my_bag']

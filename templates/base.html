@@ -61,7 +61,8 @@
                     </ul>
 
                     <div id="header-cart">
-                        <a class="header-cart-button" href="#">Shopping Bag (0)</a>
+                        <a class="header-cart-button" href="#">Shopping Bag ({{  request.session.tickets_in_my_bag|length }})</a>
+
                         <div class="header-cart">
 
                             <span class="empty">No products in the cart.</span>
