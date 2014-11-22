@@ -1,7 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import request
 from django.views.decorators.csrf import csrf_exempt
-from docutils.nodes import title
 
 __author__ = 'cemkiy'
 __author__ = 'kaykisizcom'
