@@ -1279,6 +1279,8 @@ li.comments-open:nth-child(2n){margin: 0px 0px 50px; padding: 0px; border: none;
 
 	.orderby, .shipping_calculator select, .country_select, .state_select{padding: 8px; border: 1px solid #E0E0E0; max-width: 300px; width: 100%; border-radius: 4px;}
 
+    #id_category, #id_from_city{padding: 8px; border: 1px solid #E0E0E0; max-width: 300px; width: 100%; border-radius: 4px;}
+
 		/*-------------------------*/
 		/*- PRODUCT VARIATIONS ----*/
 		.variation{overflow: hidden; font-size: 12px; color: #999;  }
