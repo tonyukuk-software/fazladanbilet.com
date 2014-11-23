@@ -14,8 +14,8 @@ class Member(models.Model):
     password = models.CharField(max_length=50)
     email = models.CharField(max_length=50, unique=True)
     profile_photo = models.ImageField(null=True, blank=True, upload_to="profile_photos/")
-    points = models.PositiveIntegerField(default=0)
-    points_counter = models.PositiveIntegerField(default=0) #how many peoples give vote
+    points = models.PositiveIntegerField(default=0, blank=True, null=True)
+    points_counter = models.PositiveIntegerField(default=0, blank=True, null=True) #how many peoples give vote
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
 
