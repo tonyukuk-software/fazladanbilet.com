@@ -72,7 +72,8 @@
                         <ul id="top-nav" class="clearfix">
                             {% if user.is_authenticated %}
                                 <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="member/member_profile">My Account</a></li>
-                                <li id="menu-item-1403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1403"><a href="checkout/">Checkout</a></li>
+                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="checkout/">Checkout</a></li>
+                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="/accounts/logout">Logout</a></li>
                             {% else %}
                                 <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="/accounts/login">Login</a></li>
                                 <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="/member/new_member">Sign Up</a></li>
@@ -85,7 +86,7 @@
             <div id="header" class="clearfix">
                 <div class="logo">
                     <h1>
-                        <a href="http://www.github.com">
+                        <a href="/">
                             <img src="{% static 'img/logo.png' %}" alt="Jackal Project" />
                         </a>
                     </h1>
@@ -103,7 +104,7 @@
                             </ul>
                         </li>
                         <li id="menu-item-929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-929"><a href="ticket_pool">SHOP</a></li>
-                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="member/new_sale_ticket">NEW TICKET</a></li>
+                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="member/new_swap_ticket">NEW TICKET</a></li>
                         <li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.github.com">Contact Us</a></li>
                     </ul>
                 </div>
@@ -170,7 +171,7 @@
                         <li id="menu-item-922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-922"><a href="http://www.github.com">HOW IT WORKS?</a></li>
                         <li id="menu-item-921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-921"><a href="https://bitcoin.org/tr/" target="_blank">BITCOIN</a></li>
                         <li id="menu-item-929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-929"><a href="ticket_pool">SHOP</a></li>
-                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="member/new_sale_ticket">NEW TICKET</a></li>
+                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="member/new_swap_ticket">NEW TICKET</a></li>
                         <li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.github.com">CONTACT US</a></li>
                     </ul>
                 </div>
