@@ -26,7 +26,6 @@ def new_member(request):
                 email = request.POST.get('email')
                 member_user_auth = User.objects.create_user(username, email, password)
                 member_user_auth.save()
-                form.password = password
                 form.save()
                 return HttpResponseRedirect('/accounts/login/')
             except Exception as e:
