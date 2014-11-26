@@ -1,8 +1,66 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block head_block %} {% endblock %}
 
-{% block body_block %}
+{% block shopping_card_block %}
+       <div class="b-option-total-cart">
+                  <div class="b-option-total-cart__goods">
+                      <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-shopping-cart"></i> Cart [ 2 ] item</a>
+                      <div class="b-option-cart__items">
+                          <div class="b-option-cart__items__title f-option-cart__items__title f-default-l">Recently added item(s)</div>
+                          <ul>
+                              <li>
+                                  <div class="b-option-cart__items__img">
+                                      <div class="view view-sixth">
+                                          <img data-retina="" src="{% static 'img/shop/cart_mini_pic.jpg' %}" alt="">
+                                          <div class="b-item-hover-action f-center mask">
+                                              <div class="b-item-hover-action__inner">
+                                                  <div class="b-item-hover-action__inner-btn_group">
+                                                      <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="b-option-cart__items__descr">
+                                      <strong class="b-option-cart__descr__title f-option-cart__descr__title"><a href="#">Product Example</a></strong>
+                                      <span class="b-option-cart__descr__cost f-option-cart__descr__cost">1 x $239</span>
+                                  </div>
+                                  <i class="fa fa-times b-icon--fa"></i>
+                              </li>
+                              <li>
+                                  <div class="b-option-cart__items__img">
+                                      <div class="view view-sixth">
+                                          <img data-retina="" src="{% static 'img/shop/cart_mini_pic.jpg' %}" alt="">
+                                          <div class="b-item-hover-action f-center mask">
+                                              <div class="b-item-hover-action__inner">
+                                                  <div class="b-item-hover-action__inner-btn_group">
+                                                      <a href="#" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  <div class="b-option-cart__items__descr">
+                                      <strong class="b-option-cart__descr__title f-default-b f-option-cart__descr__title"><a href="#">Product Example</a></strong>
+                                      <span class="b-option-cart__descr__cost f-option-cart__descr__cost">1 x $239</span>
+                                  </div>
+                                  <i class="fa fa-times b-icon--fa"></i>
+                              </li>
+                          </ul>
+                          <div class="b-option-cart__btn">
+                              <button class="button-xs button-gray-light">Cancel</button>
+                              <button class="button-xs">Check out  </button>
+                          </div>
+                      </div>
+                  </div>
+     </div>
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
 
             <div id="title-container">
                 <div class="title-block">
@@ -161,3 +219,5 @@
             </div>
 
 {% endblock %}
+
+{% block script_block %}{% endblock %}

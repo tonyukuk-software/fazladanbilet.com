@@ -1,0 +1,17 @@
+.arc {
+  stroke-weight: 0.1;
+  fill: #fff;
+}
+
+.arc2 {
+  fill: #3660b0;
+}
+
+.label {
+  text-anchor: middle;
+}
+
+.radial-svg {
+  display: block;
+  margin: 0 auto;
+}

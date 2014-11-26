@@ -1,202 +1,201 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html class="no-js" lang="en-US" xmlns:fb="http://ogp.me/ns/fb#">
-<head prefix="og: http://ogp.me/ns# object: http://ogp.me/ns/object#">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        Jackal Project | Fazladan Bilet
-    </title>
-    <!-- Setup OpenGraph support-->
-    <meta property="og:title" content="Jackal Project" />
-    <meta property="og:image" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="JackalProject" />
-    <link href="{% static 'img/obox-favicon.gif' %}" rel="icon" type="image/png" />
-
-    <link rel="alternate" type="application/rss+xml" title="Jackal Project &raquo; Feed" href="feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Jackal Project &raquo; Comments Feed" href="comments/feed/" />
-    <link rel='stylesheet' id='flatpack-style-css' href="{% static 'css/style.css' %}" type='text/css' media='all' />
-    <link rel='stylesheet' id='flatpack-responsive-css' href="{% static 'css/responsive.css' %}" type='text/css' media='all' />
-    <link rel='stylesheet' id='flatpack-jplayer-css' href="{% static 'css/ocmx/jplayer.css' %}" type='text/css' media='all' />
-    <link rel='stylesheet' id='googleFonts1-css' href="{% static 'css/fonts.css' %}" type='text/css' media='all' />
-    <script type='text/javascript' src="{% static 'js/jquery/jquery.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/jquery/jquery-migrate.min.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/scripts/menus.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/scripts/fitvid.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/scripts/theme.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/scripts/portfolio.js' %}"></script>
+<html lang="en">
+<head>
+    <META http-equiv="content-type" content="text/html;charset=iso-8859-9" />
+    <META http-equiv="content-type" content="text/html;charset=windows-1254" />
+    <META http-equiv="content-type" content="text/html;charset=x-mac-turkish" />
+    <title>Fazladan Bilet | Jackal Project</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="{% static 'fonts/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- bxslider -->
+    <link type="text/css" rel="stylesheet" href="{% static 'js/bxslider/jquery.bxslider.css' %}">
+    <!-- End bxslider -->
+    <!-- bxslider -->
+    <link type="text/css" rel="stylesheet" href="{% static 'js/radial-progress/style.css' %}">
+    <!-- End bxslider -->
+    <!-- Animate css -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- End Animate css -->
+    <!-- Bootstrap css -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min.css' %}">
+    <!-- End Bootstrap css -->
+    <!-- Jquery UI css -->
+    <link type="text/css" rel="stylesheet" href="{% static 'js/jqueryui/jquery-ui.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'js/jqueryui/jquery-ui.structure.css' %}">
+    <!-- End Jquery UI css -->
+    <!-- Fancybox -->
+    <link type="text/css" rel="stylesheet" href="{% static 'js/fancybox/jquery.fancybox.css' %}">
+    <!-- End Fancybox -->
+    <link type="text/css" rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext"
+        rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic"
+        rel="stylesheet" type="text/css">
+    <link type="text/css" data-themecolor="default" rel="stylesheet" href="{% static 'css/main-default.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'js/rs-plugin/css/settings.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'js/rs-plugin/css/settings-custom.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'js/rs-plugin/videojs/video-js.css' %}">
+    <link href="{% static 'css/video-js.css' %}" rel="stylesheet">
+    <!-- Animation hover css -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/hover-effect-base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/hover-effect-up.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/hover-effect-down.css' %}">
+    <!-- End Animation hover css -->
     <style type="text/css">
-        .recentcomments a {
-            display: inline !important;
-            padding: 0 !important;
-            margin: 0 !important;
+        .fancybox-margin
+        {
+            margin-right: 17px;
         }
     </style>
     {% block head_block %}{% endblock %}
 </head>
-
-<body class="home blog">
-
-    <div id="wrapper" class="fullwidth ">
-
-        <div id="header-container">
-
-            <div id="header-contact-container" class="clearfix">
-                <div id="header-contacts" class="clearfix">
-                    <div class="header-search">
-                        <form action="http://www.github.com" method="get" class="header-form">
-                            <input type="text" name="s" id="s" class="search-form" maxlength="50" value="" placeholder="Search" />
-                            <input type="submit" class="search_button" value="" />
-                            <span class="icon-search"></span>
-                        </form>
-                    </div>
-                    <ul class="header-contact">
-                        <li class="header-number">info@fazladanbilet.com</li>
-                    </ul>
-                    <ul class="header-social">
-                        <li class="header-facebook"><a href="http://www.facebook.com" target="_blank">Facebook</a></li>
-                        <li class="header-twitter"><a href="http://www.twitter.com" target="_blank">Twitter</a></li>
-                    </ul>
-
-                    <div id="header-cart">
-                        <a class="header-cart-button" href="#">Shopping Bag ({{  request.session.tickets_in_my_bag|length }})</a>
-
-                        <div class="header-cart">
-
-                            <span class="empty">No products in the cart.</span>
-                        </div>
-                    </div>
-                    <div id="top-navigation-container">
-                        <ul id="top-nav" class="clearfix">
-                            {% if user.is_authenticated %}
-                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="member/member_profile">My Account</a></li>
-                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="checkout/">Checkout</a></li>
-                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="/accounts/logout">Logout</a></li>
-                            {% else %}
-                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="/accounts/login">Login</a></li>
-                                <li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="/member/new_member">Sign Up</a></li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div id="header" class="clearfix">
-                <div class="logo">
-                    <h1>
-                        <a href="/">
-                            <img src="{% static 'img/logo.png' %}" alt="Jackal Project" />
-                        </a>
-                    </h1>
-                </div>
-                <a id="menu-drop-button" href="#">
-                </a>
-                <div id="navigation-container" class="clearfix">
-                    <ul id="nav" class="clearfix">
-                        <li id="menu-item-902" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-902"><a href="/">Home</a></li>
-                        <li id="menu-item-919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-919">
-                            <a href="http://www.github.com">WHAT IS IT?</a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-922"><a href="http://www.github.com">HOW IT WORKS?</a></li>
-                                <li id="menu-item-921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-921"><a href="https://bitcoin.org/tr/" target="_blank">BITCOIN</a></li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-929"><a href="/ticket_pool">SHOP</a></li>
-                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="/member/new_swap_ticket">NEW TICKET</a></li>
-                        <li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.github.com">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
+<body class="">
+    <header class="">
+      <div class="b-top-options-panel b-top-options-panel--color">
+          <div class="container">
+              <div class="b-option-contacts f-option-contacts">
+                      {% if user.is_authenticated %}
+                        <a href="/member/member_profile/"><i class="fa fa-user"></i> My Account</a>
+                        <a href="/checkout/"><i class="fa fa-tags"></i> Checkout</a>
+                        <a href="/accounts/logout/"><i class="fa fa-chevron-right"></i> Logout</a>
+                      {% else %}
+                        <a href="/accounts/login/"><i class="fa fa-lock"></i> Login</a>
+                        <a href="/member/new_member/"><i class="fa fa-user"></i> Sign Up</a>
+                      {% endif %}
+              </div>
+              <div class="b-option-total-cart">
+                  <div class="b-option-total-cart__goods">
+                      {% block shopping_card_block %}{% endblock %}
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="container b-header__box b-relative">
+          <a href="/" class="b-left b-logo"><img class="color-theme" data-retina="" src="{% static 'img/logo-header-default.png' %}" alt="Logo"></a>
+          <div class="b-header-r b-right">
+              <div class="b-header-ico-group f-header-ico-group b-right">
+                          <span class="b-search-box">
+                              <i class="fa fa-search"></i>
+                              <input type="text" placeholder="Enter your keywords">
+                          </span>
+              </div>
+              <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
+              <nav class="b-top-nav f-top-nav b-right j-top-nav">
+                  <ul class="b-top-nav__1level_wrap">
+    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b"><a href="/"><i class="fa fa-home b-menu-1level-ico"></i>Home </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
+        <a href="#"><i class="fa fa-folder-open b-menu-1level-ico"></i>What is it?<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
+        <div class="b-top-nav__dropdomn">
+            <ul class="b-top-nav__2level_wrap">
+                <li class="b-top-nav__2level_title f-top-nav__2level_title">What is it?</li>
+                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#"><i class="fa fa-angle-right"></i>How it works?</a></li>
+                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="https://bitcoin.org/tr/" target="_blank"><i class="fa fa-angle-right"></i>Bitcoin</a></li>
+            </ul>
         </div>
+    </li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="/ticket_pool/"><i class="fa fa-picture-o b-menu-1level-ico"></i>Shop </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="/member/new_swap_ticket/"><i class="fa fa-code b-menu-1level-ico"></i>New Ticket </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b b-top-nav-big"><a href="#"><i class="fa fa-cloud-download b-menu-1level-ico"></i>Contact Us </a></li>
+</ul>
 
-        <div id="content-container" class="sidebarright clearfix">
-
-            {% block body_block %}{% endblock %}
-
-        </div>
-
-        <div id="site-wide-container">
-            <span class="arrow"></span>
-            <div class="site-wide-cta">
-                <span>A useful site-wide Call to Action Bar! </span>
-                <a class="action-link" href="https://github.com/cemkiy/jackalprojects/">View more features</a>
-            </div>
-        </div>
-
-        <div id="footer-container">
-
-            <div id="footer" class="clearfix">
-                <ul class="footer-widgets four-column clearfix">
-                    <li id="text-3" class="widget widget_text column">
-                        <h4 class="widgettitle">About FazladanBilet</h4>			<div class="textwidget">FazladanBilet is a multi-purpose business theme. Perfect for any business, FazladanBilet is highly customisable and has all the features you need to get your website up and running.</div>
-                    </li>
-                    <li id="recent-posts-3" class="widget widget_recent_entries column">
-                        <h4 class="widgettitle">Recent Sell Tickets</h4>		<ul>
-                            <li>
-                                <a href="http://www.github.com">CMYLMZ Fundamentals</a>
-                            </li>
-                            <li>
-                                <a href="http://www.github.com">Tarkan - Istanbul 2014</a>
-                            </li>
-                            <li>
-                                <a href="http://www.github.com">Romeo ve Juliet - Kayseri 2014</a>
-                            </li>
-                            <li>
-                                <a href="http://www.github.com">Hadise - Ankara 2014</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="recent-comments-3" class="widget widget_recent_comments column"><h4 class="widgettitle">Recent Comments</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="2013/01/09/building-bridges-in-new-york-city/#comment-4">barisariburnu</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="img/building-bridges-in-new-york-city/#comment-3">cemkiy</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="img/building-bridges-in-new-york-city/#comment-2">mkaykisiz</a></li></ul></li>
-                    <li id="archives-2" class="widget widget_archive column">
-                        <h4 class="widgettitle">Recent Added Tickets</h4>		<ul>
-                            <li><a href='2013/03/'>Hadise - Ankara 2014</a></li>
-                            <li><a href='2013/01/'>CMYLMZ Fundamentals</a></li>
-                            <li><a href='2012/12/'>Romeo ve Juliet - Kayseri 2014</a></li>
-                            <li><a href='2012/10/'>Tarkan - Istanbul 2014</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> <!--End footer -->
-
-        </div> <!--end Footer Container -->
-
-        <div id="footer-base-container">
-            <div class="footer-text">
-                <div id="footer-navigation-container">
-                    <ul id="footer-nav" class="clearfix">
-                        <li id="menu-item-902" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-902"><a href="/">HOME</a></li>
-                        <li id="menu-item-919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-919"><a href="http://www.github.com">WHAT IS IT?</a>
-                        <li id="menu-item-922" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-922"><a href="http://www.github.com">HOW IT WORKS?</a></li>
-                        <li id="menu-item-921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-921"><a href="https://bitcoin.org/tr/" target="_blank">BITCOIN</a></li>
-                        <li id="menu-item-929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-929"><a href="ticket_pool">SHOP</a></li>
-                        <li id="menu-item-930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-930"><a href="member/new_swap_ticket">NEW TICKET</a></li>
-                        <li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.github.com">CONTACT US</a></li>
-                    </ul>
-                </div>
-
-                <p>Copyright 2014 - This platform is not responsible fazladanbilet family of products that are brought to the exchange.</p>
-                <div class="obox-credit">
-                    <p><a href="https://github.com/cemkiy/jackalprojects/">Jackal Project</a></p>
-                </div>
-            </div>
-        </div> <!--end Footer Base Container -->
-
-    </div><!--end Wrapper -->
-
-    <div id="back-top">
-        <a href="#top"></a>
+              </nav>
+          </div>
+      </div>
+  </header>
+    <div class="j-menu-container">
+        {% block menu_block %}{% endblock %}
     </div>
+    <div class="l-main-container">
+        {% block container_block %}{% endblock %}
+    </div>
+    <footer>
+  <div class="b-footer-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12 f-copyright b-copyright">Copyright � 2014 - All Rights Reserved</div>
+            <div class="col-sm-8 col-xs-12">
+                <div class="b-btn f-btn b-btn-default b-right b-footer__btn_up f-footer__btn_up j-footer__btn_up b-hidden" style="opacity: 0; position: fixed;">
+                    <i class="fa fa-chevron-up"></i>
+                </div>
+                <nav class="b-bottom-nav f-bottom-nav b-right hidden-xs">
+                    <ul>
+                        <li><a href="/">Homepage</a></li>
+                        <li><a href="#">What is it?</a></li>
+                        <li><a href="#">How it works?</a></li>
+                        <li><a href="https://bitcoin.org/tr/" target="_blank">Bitcoin</a></li>
+                        <li><a href="/ticket_pool/">Shop</a></li>
+                        <li><a href="member/new_swap_ticket/">New Ticket</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+  
+</footer>
+    <script src="{% static 'js/breakpoints.js' %}"></script>
+    <script src="{% static 'js/jquery/jquery-1.11.1.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'js/scrollspy.js' %}"></script>
+    <script src="{% static 'js/bootstrap-progressbar/bootstrap-progressbar.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- end bootstrap -->
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- bxslider -->
+    <script src="{% static 'js/bxslider/jquery.bxslider.min.js' %}"></script>
+    <!-- end bxslider -->
+    <!-- smooth-scroll -->
+    <script src="{% static 'js/smooth-scroll/SmoothScroll.js' %}"></script>
+    <!-- end smooth-scroll -->
+    <!-- carousel -->
+    <script src="{% static 'js/jquery.carouFredSel-6.2.1-packed.js' %}"></script>
+    <!-- end carousel -->
+    <script src="{% static 'js/rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
+    <script src="{% static 'js/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/rs-plugin/videojs/video.js' %}"></script>
+    <!-- jquery ui -->
+    <script src="{% static 'js/jqueryui/jquery-ui.js' %}"></script>
+    <!-- end jquery ui -->
+    <!-- Modules -->
+    <script src="{% static 'js/modules/sliders.js' %}"></script>
+    <script src="{% static 'js/modules/ui.js' %}"></script>
+    <script src="{% static 'js/modules/retina.js' %}"></script>
+    <script src="{% static 'js/modules/animate-numbers.js' %}"></script>
+    <script src="{% static 'js/modules/parallax-effect.js' %}"></script>
+    <script src="{% static 'js/modules/settings.js' %}"></script>
+    <script src="{% static 'js/modules/maps-google.js' %}"></script>
+    <script src="{% static 'js/modules/color-themes.js' %}"></script>
+    <!-- End Modules -->
+    <!-- Audio player -->
+    <script type="text/javascript" src="{% static 'js/audioplayer/js/jquery.jplayer.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/audioplayer/js/jplayer.playlist.min.js' %}"></script>
+    <script src="{% static 'js/audioplayer.js' %}"></script>
+    <!-- end Audio player -->
+    <!-- radial Progress -->
+    <script src="{% static 'js/radial-progress/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/d3.min.js' %}"></script>
+    <script src="{% static 'js/radial-progress/radialProgress.js' %}"></script>
+    <script src="{% static 'js/progressbars.js' %}"></script>
+    <!-- end Progress -->
+    <script src="{% static 'js/j.placeholder.js' %}"></script>
+    <!-- Fancybox -->
+    <script src="{% static 'js/fancybox/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/fancybox/jquery.mousewheel.pack.js' %}"></script>
+    <script src="{% static 'js/fancybox/jquery.fancybox.custom.js' %}"></script>
+    <!-- End Fancybox -->
+    <script src="{% static 'js/user.js' %}"></script>
+    <script src="{% static 'js/timeline.js' %}"></script>
+    <script src="{% static 'js/fontawesome-markers.js' %}"></script>
+    <script src="{% static 'js/cookie.js' %}"></script>
+    <!--Loader-->
+    <script src="{% static 'js/loader.js' %}"></script>
+    <!--End Loader-->
 
-    <!--Get Google Analytics -->
-
-
-    <script type='text/javascript' src="{% static 'js/frontend/add-to-cart.min.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/jquery-blockui/jquery.blockUI.min.js' %}"></script>
-
-    <script type='text/javascript' src="{% static 'js/frontend/woocommerce.min.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/jquery-cookie/jquery.cookie.min.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/frontend/cart-fragments.min.js' %}"></script>
+    {% block script_block %}{% endblock %}
 </body>
 </html>

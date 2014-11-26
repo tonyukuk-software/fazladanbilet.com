@@ -1,0 +1,195 @@
+.tp-leftarrow.default,
+.tp-rightarrow.default
+{
+    background: url(../assets/slider-lg-controls.png) no-Repeat 0 0;
+    height: 57px;
+    width: 33px;
+}
+
+.tp-leftarrow.default{
+    background-position: left top;
+}
+
+.tp-leftarrow.default:hover{
+    background-position: left bottom;
+}
+
+.tp-rightarrow.default{
+    background-position: right top;
+}
+
+.tp-rightarrow.default:hover{
+    background-position: right bottom;
+}
+
+.caption-left{
+    left: 0 !important;
+}
+
+.tp-bullets.simplebullets.round .bullet{
+    width: 13px;
+    height: 13px;
+    border-radius: 10px;
+    border: 3px solid white;
+    background: 0 none;
+}
+
+.tp-bullets.simplebullets.round .bullet.selected,
+.tp-bullets.simplebullets.round .bullet:hover
+{
+    background-color: #fff;
+}
+
+.b-slider--thumb .tp-bullets.simplebullets.round .bullet{
+    height: 55px;
+    width: 78px;
+    border-radius: 0;
+    margin: 0 4px;
+    border-width: 2px;
+    /*display: inline-block;
+    float: none;*/
+    position: relative;
+    z-index: 20;
+}
+
+.tp-bullets{
+    white-space: nowrap;
+}
+
+.b-slider--thumb .tp-bullets.simplebullets.round .bullet.selected,
+.b-slider--thumb .tp-bullets.simplebullets.round .bullet:hover{
+    border-color: #e9682e;
+}
+
+.b-slider--thumb.b-slider--navi-alt .tp-bullets.simplebullets.round .bullet{
+    height: 60px;
+    margin: 0 9px 0 9px;
+    display: inline-block;
+    float: none;
+}
+.b-slider--thumb.b-slider--navi-alt .tp-bullets.simplebullets.round .bullet:first-child{
+    margin-left: 0;
+}
+
+.b-slider--thumb.b-slider--navi-alt .tp-bullets.simplebullets.round .bullet.last{
+    margin-right: 0;
+}
+
+.b-slider--thumb.b-slider--navi-alt .tp-bullets{
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 2px;
+    text-align: center;
+    bottom: 0 !important;
+    left: 0 !important;
+    margin-left: 0!important;
+    display: flex;
+    width: 100%;
+    height: 65px;
+}
+
+@media screen and (max-width: 980px) {
+    .b-slider--thumb.b-slider--navi-alt .tp-bullets.simplebullets.round .bullet{
+        margin: 0 5px;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .b-slider--thumb .tp-bullets.simplebullets.round .bullet{
+        height: 20px;
+        width: 40px;
+        border-radius: 0;
+        margin: 0 4px;
+        border-width: 2px;
+    }
+    .b-slider--thumb .tp-bullets .tparrows.tp-leftarrow.round:before,
+    .b-slider--thumb .tp-bullets .tparrows.tp-rightarrow.round:before{
+        top: 85%;
+    }
+    .b-slider--thumb.b-slider--navi-alt .tp-bullets.simplebullets.round .bullet{
+        width: 100px;
+        margin: 0 2px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .b-slider--thumb.b-slider--navi-alt .tp-bullets{
+        display: none;
+    }
+    .b-slider--navi-alt{
+        margin-bottom: 0;
+    }
+}
+
+.b-slider--thumb .tp-bullets .tp-leftarrow.round,
+.b-slider--thumb .tp-bullets .tp-rightarrow.round{
+    background: 0 none;
+    height: auto;
+   /* float: none!important;
+    display: inline-block;*/
+}
+
+.b-slider--thumb .tp-bullets .tp-leftarrow.round:before,
+.b-slider--thumb .tp-bullets .tp-rightarrow.round:before{
+    font-family: FontAwesome;
+    width: 10px;
+    height: 10px;
+    color: #fff;
+    position: relative;
+    /*bottom: 21px;*/
+    top: 18px;
+    font-size: 16px;
+}
+
+.b-slider--thumb .tp-bullets .tp-leftarrow.round:before{
+    content: "\f053";
+    left: 3px;
+}
+
+.b-slider--thumb .tp-bullets .tp-rightarrow.round:before{
+    content: "\f054";
+    right: -4px;
+}
+
+.b-small-arr .tp-leftarrow.default,
+.b-small-arr .tp-rightarrow.default{
+    background: #fff;
+    border-radius: 20px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+
+.f-small-arr .tp-rightarrow.default,
+.f-small-arr .tp-leftarrow.default{
+    color: #e3e3e3;
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+.f-small-arr .tp-rightarrow.default:hover,
+.f-small-arr .tp-leftarrow.default:hover{
+    color: #e9682e;
+}
+
+.f-small-arr .tp-rightarrow.default:before{
+    content: "\f054";
+    vertical-align: middle;
+    position: relative;
+    right: -1px;
+    top: 4px;
+}
+
+.f-small-arr .tp-leftarrow.default:before{
+    content: "\f053";
+    vertical-align: middle;
+    position: relative;
+    left: -2px;
+    top: 4px;
+}
+
+.tp-dottedoverlay.white{
+    background-color: rgba(255, 255, 255, 0.3);
+}
