@@ -61,163 +61,122 @@
 {% block menu_block %}{% endblock %}
 
 {% block container_block %}
-
-            <div id="title-container">
-                <div class="title-block">
-                    <h2>Shop</h2>
-                </div>
-            </div>
-
-            <div id="crumbs-container">
-
-                <ul id="crumbs">
-
-                    <li><a href="http://www.github.com">Home</a></li>
-
-
-
-                    <li>/</li>
-                    <li><span class="current"><a href="/ticket_pool">Shop</a></span></li>
-
+    <div class="l-main-container">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>Ticket Pool</span></li>
                 </ul>
             </div>
+        </div>
 
-            <div id="content" class="clearfix">
-                <div id="left-column">
-                    <p class="woocommerce-result-count">
-                        Showing 1–6 of 10 results
-                    </p>
-                    <form class="woocommerce-ordering" method="get">
-                        <select name="orderby" class="orderby">
-                            <option value="menu_order" selected="selected">Default sorting</option>
-                            <option value="popularity">Sort by popularity</option>
-                            <option value="rating">Sort by average rating</option>
-                            <option value="date">Sort by newness</option>
-                            <option value="price">Sort by price: low to high</option>
-                            <option value="price-desc">Sort by price: high to low</option>
-                        </select>
-                    </form>
-                    <ul class="products">
-
-                        {% for i in tickets %}
-                            <li class="product type-product status-publish has-post-thumbnail first shipping-taxable purchasable product-type-simple product-cat-bikes instock">
-
-
-                                <a href="/member/ticket_details/{{ i.id }}">
-
-                                    <div class="img-wrap"><img width="320" height="320" src="/media/{{ i.ticket_photo }}" class="attachment-shop_catalog wp-post-image" alt="connor-wood-bike-xl"></div> <!--/.wrap-->
-                                    <h3>{{ i.title }}</h3>
-
-
-
-                                    <span class="price"><span class="amount">BTC {{ i.amount_bitcoin }}</span></span>
-
-                                </a>
-
-                                <a href="/member/ticket_details/{{ i.id }}" rel="nofollow" class="button add_to_cart_button product_type_simple">Details</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                    <ul class="pagination">
-
-                        <li class="next"><a href="shop/page/2/"></a></li>
-                        <li class="page-count">Page 1 of 2</li>
-                    </ul>
-                </div>
-                <div id="right-column">
-                    <ul class="widget-list sidebar">
-                        <li id="woocommerce_price_filter-2" class="widget woocommerce widget_price_filter">
-                            <div class="content">
-                                <h4 class="widgettitle">Filter by price</h4><form method="get" action="shop">
-                                    <div class="price_slider_wrapper">
-                                        <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"></a></div>
-                                        <div class="price_slider_amount">
-                                            <input type="text" id="min_price" name="min_price" value="" data-min="22" placeholder="Min price" style="display: none;">
-                                            <input type="text" id="max_price" name="max_price" value="" data-max="550" placeholder="Max price" style="display: none;">
-                                            <button type="submit" class="button">Filter</button>
-                                            <div class="price_label" style="">
-                                                Price: <span class="from">$22</span> — <span class="to">$550</span>
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 ">
+                        <div class="b-sort-panel">
+                            <div class="b-sort-panel__inner">
+                                <form action="#">
+                                    <div class="b-select b-left">
+                                        <select class="j-select" name="productAtPage" id="productAtPage" style="display: none;">
+                                            <option>1 products/page</option>
+                                            <option>6 products/page</option>
+                                            <option selected="selected">9 products/page</option>
+                                        </select>
+                                    </div>
+                                    <div class="b-select b-left">
+                                        <select class="j-select" name="productAtPage" id="productAtPage" style="display: none;">
+                                            <option>Order by price</option>
+                                            <option selected="selected">Order by name</option>
+                                        </select>
+                                    </div>
+                                    <div class="b-sort-panel__inner_icon-sort f-sort-panel__inner_icon-sort fa fa-sort-amount-desc"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="b-col-default-indent">
+                                {% for i in tickets %}
+                                    <div class="col-md-4 col-sm-4 col-xs-6 col-mini-12">
+                                    <div class="b-product-preview">
+                                        <div class="b-product-preview__img view view-sixth">
+                                            <img data-retina="" src="/media/{{ i.ticket_photo }}" alt="" width="268" height="268">
+                                            <div class="b-item-hover-action f-center mask">
+                                                <div class="b-item-hover-action__inner">
+                                                    <div class="b-item-hover-action__inner-btn_group">
+                                                        <a href="/member/ticket_details/{{ i.id }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="b-product-preview__content">
+                                            <div class="b-product-preview__content_col">
+                                                <span class="b-product-preview__content_price f-product-preview__content_price f-primary-b">{{ i.amount_bitcoin }} <i class="fa fa-btc"></i></span>
+                                            </div>
+                                            <div class="b-product-preview__content_col">
+                                                <a href="/member/ticket_details/{{ i.id }}" class="f-product-preview__content_title">{{ i.title }}</a>
+                                                <div class="f-product-preview__content_category f-primary-b">{{ i.category.category_name }} </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+                                {% endfor %}
                             </div>
-                        </li>
-                        <li id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
-                            <div class="content">
-                                <h4 class="widgettitle">Product Categories</h4><ul class="product-categories">
-                                    <li class="cat-item cat-item-26"><a href="product-category/bikes/">Bikes</a></li>
-                                    <li class="cat-item cat-item-25"><a href="product-category/clothing/">Clothing</a></li>
-                                    <li class="cat-item cat-item-27"><a href="product-category/electronics/">Electronics</a></li>
-                                </ul>
+                            <div class="container">
+                                <div class="b-pagination f-pagination">
+                                    <ul>
+                                        <li><a href="#">First</a></li>
+                                        <li><a class="prev" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="is-active-pagination"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a class="next" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                        <li><a href="#">Last</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </li>
-                        <li id="woocommerce_products-2" class="widget woocommerce widget_products">
-                            <div class="content">
-                                <h4 class="widgettitle">On Sale</h4><ul class="product_list_widget">
-                                    <li>
-                                        <a href="product/woolrich-blazer/" title="Woolrich Blazer">
-                                            <img width="150" height="150" src="files/2013/04/woolrich-hiking-blazer-xl1-150x150.jpg" class="attachment-shop_thumbnail wp-post-image" alt="woolrich-hiking-blazer-xl">		Woolrich Blazer
-                                        </a>
-                                        <span class="amount">$550.00</span>
-                                    </li>
-                                    <li>
-                                        <a href="product/thermodo/" title="Thermodo">
-                                            <img width="150" height="150" src="files/2013/04/thermodo1-150x150.png" class="attachment-shop_thumbnail wp-post-image" alt="thermodo">		Thermodo
-                                        </a>
-                                        <del><span class="amount">$25.00</span></del> <ins><span class="amount">$22.00</span></ins>
-                                    </li>
-                                    <li>
-                                        <a href="product/sos-charger/" title="SOS Charger">
-                                            <img width="150" height="150" src="files/2013/04/kickstarter2-150x150.png" class="attachment-shop_thumbnail wp-post-image" alt="kickstarter2">		SOS Charger
-                                        </a>
-                                        <span class="amount">$59.00</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li id="woocommerce_products-3" class="widget woocommerce widget_products">
-                            <div class="content">
-                                <h4 class="widgettitle">Featured Products</h4><ul class="product_list_widget">
-                                    <li>
-                                        <a href="product/woolrich-blazer/" title="Woolrich Blazer">
-                                            <img width="150" height="150" src="files/2013/04/woolrich-hiking-blazer-xl1-150x150.jpg" class="attachment-shop_thumbnail wp-post-image" alt="woolrich-hiking-blazer-xl">		Woolrich Blazer
-                                        </a>
-                                        <span class="amount">$550.00</span>
-                                    </li>
-                                    <li>
-                                        <a href="product/thermodo/" title="Thermodo">
-                                            <img width="150" height="150" src="files/2013/04/thermodo1-150x150.png" class="attachment-shop_thumbnail wp-post-image" alt="thermodo">		Thermodo
-                                        </a>
-                                        <del><span class="amount">$25.00</span></del> <ins><span class="amount">$22.00</span></ins>
-                                    </li>
-                                    <li>
-                                        <a href="product/sos-charger/" title="SOS Charger">
-                                            <img width="150" height="150" src="files/2013/04/kickstarter2-150x150.png" class="attachment-shop_thumbnail wp-post-image" alt="kickstarter2">		SOS Charger
-                                        </a>
-                                        <span class="amount">$59.00</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li id="woocommerce_product_search-2" class="widget woocommerce widget_product_search">
-                            <div class="content">
-                                <h4 class="widgettitle">Search Products</h4><form role="search" method="get" id="searchform" action="">
-                                    <div>
-                                        <label class="screen-reader-text" for="s">Search for:</label>
-                                        <input type="text" value="" name="s" id="s" placeholder="Search for products">
-                                        <input type="submit" id="searchsubmit" value="Search">
-                                        <input type="hidden" name="post_type" value="product">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <aside>
+                            <div class="row b-col-default-indent">
+                                <div class="col-md-12">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary">product price filter</h4>
+                                    <form action="">
+                                        <div class="b-slider-range j-slider-range f-slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                            <span class="b-slider-range_min">0</span>
+                                            <span class="b-slider-range_max">$999</span>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 20.02002002002%; width: 50.0500500500501%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 20.02002002002%;"><span class="min">$200</span></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 70.0700700700701%;"><span class="max">$700</span></span></div>
+                                        <a href="#" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b">Filter</a>
+                                    </form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="b-categories-filter">
+                                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Categories filter</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Films</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Theatre</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Concert</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </form>
+                                </div>
                             </div>
-                        </li>
-                    </ul>
+                        </aside>
+                    </div>
                 </div>
             </div>
-
+        </section>
+    </div>
 {% endblock %}
 
 {% block script_block %}{% endblock %}
