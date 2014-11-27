@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/*!
+Copyright (c) 2014 barisariburnu
+*/
+
+.btn-submit{display: block;width:100%;text-align:center;text-transform:uppercase;border-radius:2px;border:3px solid #e9682e;font-size:1em;line-height:1;color:#fff;text-shadow:0 -1px 1px #dc5d24;-webkit-transition:background 0.5s ease;-moz-transition:background 0.5s ease;-ms-transition:background 0.5s ease;-o-transition:background 0.5s ease;transition:background 0.5s ease;background:#e9682e;cursor:pointer;display:inline-block;padding:8px 15px 6px;font-weight:700;text-decoration:none;box-sizing:border-box;font-family:"Open Sans", sans-serif;font-size:13px;line-height:1.2;}
+        
+.btn-submit:hover,.btn-submit:focus{box-shadow:0 0 8px rgba(0, 0, 0, 0.6);}
+        
+.btn-submit:active{color:#fff;border:3px solid #bf5526;background:#bf5526;}
+        
+#id_username,#id_password,#id_email{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s;}
+        
+.errorlist{width:96%; font-size:0.92308em;line-height:2;margin:0 0 10px;display:block;-webkit-margin-before:1em;-webkit-margin-after:1em;-webkit-margin-start:0px;-webkit-margin-end:0px;font-family:"Open Sans", sans-serif;}
+        
+ul.errorlist{list-style-type:none;margin-left:-40px;}
+        
+ul.errorlist ul.errorlist{padding-left: 10px;margin-left:0;}

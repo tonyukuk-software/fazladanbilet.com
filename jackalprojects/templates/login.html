@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block head_block %} {% endblock %}
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+{% endblock %}
 
 {% block shopping_card_block %}
        <div class="b-option-total-cart">
@@ -79,7 +81,7 @@
                     <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
                     <hr class="b-hr">
                     {% if form.errors %}
-                        <p>{{ form.errors }}</p>
+                        {{ form.errors }}
                         <hr class="b-hr">
                     {% endif %}
                     <div class="b-form-row b-form-inline b-form-horizontal">
@@ -88,14 +90,14 @@
                                 {% csrf_token %}
 
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="username">Username *</label>
+                                    <label class="b-form-horizontal__label" for="username">Username:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.username }}
                                     </div>
                                 </div>
 
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="password">Password *</label>
+                                    <label class="b-form-horizontal__label" for="password">Password:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.password }}
                                     </div>
@@ -103,16 +105,15 @@
 
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
-                                    <label for="contact_form_copy" class="b-contact-form__window-form-row-label">
-                                        <input type="checkbox" id="contact_form_copy" class="b-form-checkbox">
-                                        <span>Remember me</span>
-                                    </label>
+                                    <ul class="b-list-markers f-list-markers">
+                                        <li><a href="/forgotten_password/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> I forgot my password</a></li>
+                                    </ul>
                                 </div>
 
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
                                     <div class="b-form-horizontal__input">
-                                        <input type='submit' value='Submit' class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100"/>
+                                        <input type='submit' value='Submit' class="btn-submit"/>
                                     </div>
                                 </div>
 
