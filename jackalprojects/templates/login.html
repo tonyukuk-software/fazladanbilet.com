@@ -62,151 +62,85 @@
 
 {% block container_block %}
 
-            <div id="title-container">
-                <div class="title-block">
-                    <h2>Login</h2>
-                </div>
-            </div>
+    <div class="l-main-container">
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                <li><i class="fa fa-angle-right"></i><span>Sign In</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container b-container-login-page">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="b-log-in-form">
+                    <div class="f-primary-l f-title-big c-secondary">Create an account</div>
+                    <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
+                    <hr class="b-hr">
+                    {% if form.errors %}
+                        <p>{{ form.errors }}</p>
+                        <hr class="b-hr">
+                    {% endif %}
+                    <div class="b-form-row b-form-inline b-form-horizontal">
+                        <div class="col-xs-12">
+                            <form method='POST'>
+                                {% csrf_token %}
 
-            <div id="crumbs-container">
-
-                <ul id="crumbs">
-
-                    <li><a href="http://www.github.com">Home</a></li>
-
-
-
-                    <li>/</li>
-                    <li><span class="current"><a href="/accounts/login/">Login</a></span></li>
-
-                </ul>
-            </div>
-
-            <div id="content" class="clearfix">
-                <div id="left-column">
-                    <ul class="post-list">
-                        <li id="post-88" class="post-88 page type-page status-publish hentry post">
-                            <div class="post-content clearfix">
-                                <div class="post-title-block">
-
-                                </div>
-
-                                <div class="copy">
-                                    <div class="woocommerce">
-                                        <h2>Login</h2>
-
-                                        {% if form.errors %}
-                                            <p>{{ form.errors }}</p>
-                                        {% endif %}
-
-                                        <form method='POST' class="login">
-                                            {% csrf_token %}
-
-                                             <p class="form-row form-row-wide">
-                                                <label for="username">Username or email address <span class="required">*</span></label>
-                                                {{ form.username }}
-                                             </p>
-
-                                             <p class="form-row form-row-wide">
-                                                <label for="password">Password <span class="required">*</span></label>
-                                                {{ form.password }}
-                                             </p>
-
-                                             <p class="form-row">
-                                                <input type='submit' value='Submit'/><br/><br/>
-                                                <label for="rememberme" class="inline">
-                                                    <input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember me
-                                                </label>
-
-                                                <p class="lost_password">
-                                                    <a href="http://www.github.com/my-account/lost-password/">Lost your password?</a>
-                                                </p>
-                                             </p>
-
-                                            {% if next %}
-                                                <input type="hidden" name="next" value="{{ next }}">
-                                            {% else %}
-                                                <input type="hidden" name="next" value="/ticket_pool">
-                                            {% endif %}
-                                        </form>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="username">Username *</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.username }}
                                     </div>
                                 </div>
 
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="right-column">
-                    <ul class="widget-list sidebar">
-                        <li id="search-2" class="widget widget_search">
-                            <form role="search" method="get" id="searchform" class="searchform" action="http://www.github.com/">
-                                <div>
-                                    <label class="screen-reader-text" for="s">Search for:</label>
-                                    <input type="text" value="" name="s" id="s">
-                                    <input type="submit" id="searchsubmit" value="Search">
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="password">Password *</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.password }}
+                                    </div>
                                 </div>
-                            </form>
-                        </li>
-                        <li id="recent-posts-2" class="widget widget_recent_entries">
-                            <h4 class="widgettitle">Recent Posts</h4>		<ul>
-                                <li>
-                                    <a href="http://www.github.com/2013/03/09/four-suburbs/">The Four Suburbs</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.github.com/2013/03/09/the-national-guardians/">The National Guardians</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.github.com/2013/03/09/internationale-training/">Internationale Training</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="recent-comments-2" class="widget widget_recent_comments"><h4 class="widgettitle">Blog Comments</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="http://www.github.com/2013/01/09/building-bridges-in-new-york-city/#comment-4">Featured Image</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="http://www.github.com/2013/01/09/building-bridges-in-new-york-city/#comment-3">Featured Image</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="http://www.github.com/2013/01/09/building-bridges-in-new-york-city/#comment-2">Featured Image</a></li></ul></li>
-                        <li id="categories-2" class="widget widget_categories">
-                            <h4 class="widgettitle">Categories</h4>		<ul>
-                                <li class="cat-item cat-item-2">
-                                    <a href="http://www.github.com/category/blog/">Blog</a>
-                                </li>
-                                <li class="cat-item cat-item-3">
-                                    <a href="http://www.github.com/category/travelling-2/">Travelling</a>
-                                </li>
-                                <li class="cat-item cat-item-1">
-                                    <a href="http://www.github.com/category/uncategorized/">Uncategorized</a>
-                                </li>
-                                <li class="cat-item cat-item-4">
-                                    <a href="http://www.github.com/category/videos/">Videos</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="obox_social_widget-3" class="widget widget_obox_social_widget">
-                            <h4 class="widgettitle"></h4>
 
-                            <ul class="social-icons clearfix">
-                                <li><a target="_blank" class="facebook" href="#" title="Facebook"></a></li>
-                                <li><a target="_blank" class="googleplus" href="#" title="Google+"></a></li>
-                                <li><a target="_blank" class="twitter" href="#" title="Twitter"></a></li>
-                                <li><a target="_blank" class="youtube" href="#" title="Youtube"></a></li>
-                            </ul>
-                        </li>
-                        <li id="obox_small_ad_widget-2" class="widget adverts-125 column clearfix">
-                            <h4 class="widgettitle">Adverts</h4>           <ul>
-                                <li class="advert">
-                                    <a href="http://www.github.com" class="sponsor-item" title="" rel="nofollow">
-                                        <img src="http://www.github.com/files/2013/05/be-different-ctr.png" alt="">
-                                    </a>
-                                </li>
-                                <li class="advert">
-                                    <a href="" class="sponsor-item" title="" rel="nofollow">
-                                        <img src="http://www.github.com/files/2013/05/premium-themes-ctr.png" alt="">
-                                    </a>
-                                </li>
-                                <li class="advert">
-                                </li>
-                            </ul>
-                        </li>
+                                <div class="b-form-row">
+                                    <div class="b-form-horizontal__label"></div>
+                                    <label for="contact_form_copy" class="b-contact-form__window-form-row-label">
+                                        <input type="checkbox" id="contact_form_copy" class="b-form-checkbox">
+                                        <span>Remember me</span>
+                                    </label>
+                                </div>
+
+                                <div class="b-form-row">
+                                    <div class="b-form-horizontal__label"></div>
+                                    <div class="b-form-horizontal__input">
+                                        <input type='submit' value='Submit' class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100"/>
+                                    </div>
+                                </div>
+
+                                {% if next %}
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                {% else %}
+                                    <input type="hidden" name="next" value="/ticket_pool">
+                                {% endif %}
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="f-primary-l f-title-big c-secondary">Welcome to Frexy Studio</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis eu mi et pellentesque. Curabitur vestibulum convallis orci, quis dapibus elit fringilla eget. Suspendisse posuere diam ut erat convallis, non dictum quam luctus. </p>
+                <div class="b-shortcode-example">
+                    <ul class="b-list-markers f-list-markers">
+                        <li><a href="/member/new_member/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> Create an account</a></li>
+                        <li><a href="/forgotten_password/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> Forgotten your password</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 
