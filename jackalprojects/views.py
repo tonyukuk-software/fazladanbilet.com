@@ -16,3 +16,6 @@ def home_page(request):
 def ticket_pool(request):
     tickets = On_Sales.objects.filter(active=True)
     return render_to_response('ticket_pool.html', locals())
+
+def contact_us(request):
+    return render_to_response('contact_us.html', locals(), context_instance=RequestContext(request))

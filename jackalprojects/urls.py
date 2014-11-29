@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout',
         {'next_page': '/'}),
     url(r'^ticket_pool/$', 'jackalprojects.views.ticket_pool'),
+    url(r'^contact_us/$', 'jackalprojects.views.contact_us'),
 ) + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if settings.DEBUG:
