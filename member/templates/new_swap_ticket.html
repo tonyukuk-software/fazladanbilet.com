@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block head_block %} {% endblock %}
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+{% endblock %}
 
 {% block shopping_card_block %}
        <div class="b-option-total-cart">
@@ -61,176 +63,110 @@
 {% block menu_block %}{% endblock %}
 
 {% block container_block %}
-
-            <div id="title-container">
-                <div class="title-block">
-                    <h2>New Ticket</h2>
-                </div>
-            </div>
-
-            <div id="crumbs-container">
-
-                <ul id="crumbs">
-
-                    <li><a href="http://www.github.com">Home</a></li>
-
-
-
-                    <li>/</li>
-                    <li><span class="current"><a href="/member/new_swap_ticket">New Ticket</a></span></li>
-
+     <div class="l-main-container">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>New Ticket</span></li>
                 </ul>
             </div>
+        </div>
+        <div class="container b-container-login-page">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="b-form-row f-primary-l f-title-big c-secondary">New Ticket</div>
+                    <div class="b-form-row">Consectetur adipiscing elituis sagittis eu mi et pellentesqueur</div>
+                    <hr class="b-hr">
+                    {% if form.errors %}
+                        {{ form.errors }}
+                        <hr class="b-hr">
+                    {% endif %}
+                    <div class="row b-form-inline b-form-horizontal">
+                        <div class="col-xs-12">
+                            <form method='POST'>
+                                {% csrf_token %}
 
-            <div id="content" class="clearfix">
-                <div id="left-column">
-                    <ul class="post-list">
-                        <li id="post-88" class="post-88 page type-page status-publish hentry post">
-                            <div class="post-content clearfix">
-                                <div class="post-title-block">
-
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="category">Category:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.category }}
+                                    </div>
                                 </div>
-
-                                <div class="copy">
-                                    <div class="woocommerce">
-                                        <h2>New Ticket</h2>
-
-                                        {% if form.errors %}
-                                            <p>{{ form.errors }}</p>
-                                        {% endif %}
-
-                                        <form method='POST' class="login">
-                                            {% csrf_token %}
-
-                                            <p class="form-row form-row-wide">
-                                                <label for="category">Category <span class="required">*</span></label>
-                                                {{ form.category }}
-                                             </p>
-
-                                             <p class="form-row form-row-wide">
-                                                <label for="title">Title <span class="required">*</span></label>
-                                                {{ form.title }}
-                                             </p>
-
-                                             <p class="form-row form-row-wide">
-                                                <label for="description">Description <span class="required">*</span></label>
-                                                {{ form.description }}
-                                             </p>
-
-                                             <p class="form-row form-row-wide">
-                                                <label for="total_ticket">Total Ticket <span class="required">*</span></label>
-                                                {{ form.total_ticket }}
-                                             </p>
-
-                                            <p class="form-row form-row-wide">
-                                                <label for="from_city">City <span class="required">*</span></label>
-                                                {{ form.from_city }}
-                                             </p>
-
-                                            <p class="form-row form-row-wide">
-                                                <label for="amount_bitcoin">Amount Bitcoin <span class="required">*</span></label>
-                                                {{ form.amount_bitcoin }}
-                                             </p>
-
-                                             <p class="form-row form-row-wide">
-                                                <label for="ticket_photo">Photo <span class="required">*</span></label>
-                                                {{ form.ticket_photo }}
-                                             </p>
-
-                                            <p class="form-row form-row-wide">
-                                                <label for="edate">End Date <span class="required">*</span></label>
-                                                {{ form.edate }}
-                                             </p>
-
-                                             <p class="form-row">
-                                                <input type='submit' value='Add Ticket'/>
-                                             </p>
-
-                                            {% if next %}
-                                                <input type="hidden" name="next" value="{{ next }}">
-                                            {% else %}
-                                                <input type="hidden" name="next" value="/ticket_pool">
-                                            {% endif %}
-                                        </form>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="title">Title:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.title }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="description">Description:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.description }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="total_ticket">Total Ticket:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.total_ticket }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="from_city">City:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.from_city }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="amount_bitcoin">Amount:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.amount_bitcoin }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="ticket_photo">Photo:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.ticket_photo }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="edate">End Date:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.edate }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <div class="b-form-horizontal__label"></div>
+                                    <div class="b-form-horizontal__input">
+                                        <input type='submit' value='Submit' class="btn-submit"/>
                                     </div>
                                 </div>
 
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="right-column">
-                    <ul class="widget-list sidebar">
-                        <li id="search-2" class="widget widget_search">
-                            <form role="search" method="get" id="searchform" class="searchform" action="http://www.github.com/">
-                                <div>
-                                    <label class="screen-reader-text" for="s">Search for:</label>
-                                    <input type="text" value="" name="s" id="s">
-                                    <input type="submit" id="searchsubmit" value="Search">
-                                </div>
+                                {% if next %}
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                {% else %}
+                                    <input type="hidden" name="next" value="/ticket_pool">
+                                {% endif %}
                             </form>
-                        </li>
-                        <li id="recent-posts-2" class="widget widget_recent_entries">
-                            <h4 class="widgettitle">Recent Posts</h4>		<ul>
-                                <li>
-                                    <a href="http://www.github.com/2013/03/09/four-suburbs/">The Four Suburbs</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.github.com/2013/03/09/the-national-guardians/">The National Guardians</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.github.com/2013/03/09/internationale-training/">Internationale Training</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="recent-comments-2" class="widget widget_recent_comments"><h4 class="widgettitle">Blog Comments</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="http://www.github.com/2013/01/09/building-bridges-in-new-york-city/#comment-4">Featured Image</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="http://www.github.com/2013/01/09/building-bridges-in-new-york-city/#comment-3">Featured Image</a></li><li class="recentcomments"><span class="comment-author-link">Marc</span> on <a href="http://www.github.com/2013/01/09/building-bridges-in-new-york-city/#comment-2">Featured Image</a></li></ul></li>
-                        <li id="categories-2" class="widget widget_categories">
-                            <h4 class="widgettitle">Categories</h4>		<ul>
-                                <li class="cat-item cat-item-2">
-                                    <a href="http://www.github.com/category/blog/">Blog</a>
-                                </li>
-                                <li class="cat-item cat-item-3">
-                                    <a href="http://www.github.com/category/travelling-2/">Travelling</a>
-                                </li>
-                                <li class="cat-item cat-item-1">
-                                    <a href="http://www.github.com/category/uncategorized/">Uncategorized</a>
-                                </li>
-                                <li class="cat-item cat-item-4">
-                                    <a href="http://www.github.com/category/videos/">Videos</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="obox_social_widget-3" class="widget widget_obox_social_widget">
-                            <h4 class="widgettitle"></h4>
-
-                            <ul class="social-icons clearfix">
-                                <li><a target="_blank" class="facebook" href="#" title="Facebook"></a></li>
-                                <li><a target="_blank" class="googleplus" href="#" title="Google+"></a></li>
-                                <li><a target="_blank" class="twitter" href="#" title="Twitter"></a></li>
-                                <li><a target="_blank" class="youtube" href="#" title="Youtube"></a></li>
-                            </ul>
-                        </li>
-                        <li id="obox_small_ad_widget-2" class="widget adverts-125 column clearfix">
-                            <h4 class="widgettitle">Adverts</h4>           <ul>
-                                <li class="advert">
-                                    <a href="http://www.github.com" class="sponsor-item" title="" rel="nofollow">
-                                        <img src="http://www.github.com/files/2013/05/be-different-ctr.png" alt="">
-                                    </a>
-                                </li>
-                                <li class="advert">
-                                    <a href="" class="sponsor-item" title="" rel="nofollow">
-                                        <img src="http://www.github.com/files/2013/05/premium-themes-ctr.png" alt="">
-                                    </a>
-                                </li>
-                                <li class="advert">
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="f-primary-l f-title-big c-secondary">Welcome to Frexy Studio</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis eu mi et pellentesque. Curabitur vestibulum convallis orci, quis dapibus elit fringilla eget. Suspendisse posuere diam ut erat convallis, non dictum quam luctus. </p>
+                    <div class="b-shortcode-example">
+                        <ul class="b-list-markers f-list-markers">
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Fusce viverra nisl eu nisl suscipit dictum.</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Morbi vehicula massa ut libero laoreet faucibus.</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Nullam a felis volutpat, gravida est eget, ultrices velit.</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Proin egestas nibh luctus dui cursus, sit amet vestibulum massa dignissim.</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Etiam facilisis sapien ut ornare euismod.</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
+        </div>
+    </div>
 {% endblock %}
 
 {% block script_block %}{% endblock %}
