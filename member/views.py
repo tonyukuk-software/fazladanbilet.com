@@ -16,6 +16,9 @@ from django.forms.util import ErrorList
 # Create your views here.
 
 def new_member(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/member/member_profile/')
+
     form = new_member_form
     if request.method == 'POST':
         form = new_member_form(request.POST)

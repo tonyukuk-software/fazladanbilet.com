@@ -57,7 +57,7 @@
       <div class="b-top-options-panel b-top-options-panel--color">
           <div class="container">
               <div class="b-option-contacts f-option-contacts">
-                      {% if user.is_authenticated %}
+                      {% if request.user.username %}
                         <a href="/member/member_profile/"><i class="fa fa-user"></i> My Account</a>
                         <a href="/checkout/"><i class="fa fa-tags"></i> Checkout</a>
                         <a href="/accounts/logout/"><i class="fa fa-chevron-right"></i> Logout</a>
