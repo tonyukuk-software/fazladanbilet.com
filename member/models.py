@@ -22,9 +22,6 @@ class Member(models.Model):
     def __unicode__(self):
         return self.username
 
-class Wallet(models.Model):
-    member = models.OneToOneField(Member)
-
 class Category(models.Model):
     category_name = models.CharField(max_length=20)
 
@@ -81,6 +78,7 @@ class Orders(models.Model):
     adress = models.CharField(max_length=256, default='')
     cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0') #options
     cargo_no = models.CharField(max_length=256)
+    btc_swap_url = models.CharField(max_length=27, default='')
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
 
