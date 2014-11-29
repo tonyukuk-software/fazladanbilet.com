@@ -29,9 +29,12 @@
                     {% endif %}
                     <div class="row b-form-inline b-form-horizontal">
                         <div class="col-xs-12">
-                            <form method='POST'>
+                            <form method='POST' enctype="multipart/form-data">
                                 {% csrf_token %}
 
+                                <div class="b-form-row">
+                                        {{ form.member }}
+                                </div>
                                 <div class="b-form-row">
                                     <label class="b-form-horizontal__label" for="category">Category:</label>
                                     <div class="b-form-horizontal__input">
