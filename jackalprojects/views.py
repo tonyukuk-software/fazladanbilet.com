@@ -19,3 +19,6 @@ def ticket_pool(request):
 
 def contact_us(request):
     return render_to_response('contact_us.html', locals(), context_instance=RequestContext(request))
+
+def forgotten_password(request):
+    return render_to_response('forgotten_password.html', locals(), context_instance=RequestContext(request))

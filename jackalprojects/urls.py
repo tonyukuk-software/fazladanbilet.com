@@ -25,6 +25,7 @@ urlpatterns = patterns('',
         {'next_page': '/'}),
     url(r'^ticket_pool/$', 'jackalprojects.views.ticket_pool'),
     url(r'^contact_us/$', 'jackalprojects.views.contact_us'),
+    url(r'^forgotten_password/$', 'jackalprojects.views.forgotten_password'),
 ) + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if settings.DEBUG:
