@@ -1,38 +1,103 @@
+{% extends "base.html" %}
 {% load i18n %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{% load staticfiles %}
 
-<title></title>
-</head>
-<body>
-{% if form.errors %}
-  <p>Error</p>
-{% endif %}
-<form method='POST' enctype="multipart/form-data">
-{% csrf_token %}
-<table border=1>
-  {{form}}
-</table>
-  <input type='submit' value='Submit' name="submit"/>
-</form>
-{% if form_password.errors %}
-  <p>Error</p>
-{% endif %}
-<form method='POST'>
-{% csrf_token %}
-  <table border=1>
-  {{ form_password }}
-</table>
-  <input type='submit' value='change_password' name="change_password"/>
-</form>
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+{% endblock %}
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        
-    })
-</script>
-</body>
-</html>
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><i class="fa fa-angle-right"></i><span>Profile</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="l-inner-page-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container b-container-login-page">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="b-log-in-form">
+                                    <div class="f-primary-l f-title-big c-secondary">Upload Photo</div>
+                                    <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
+                                    <hr class="b-hr">
+                                    <form method='POST' enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if form.errors %}
+                                            {{ form.errors }}
+                                            <hr class="b-hr">
+                                        {% endif %}
+                                        <div class="b-form-row b-form-inline b-form-horizontal">
+                                            <div class="col-xs-12">
+                                                <div class="b-form-row">
+                                                    <div class="b-form-horizontal__input">
+                                                        {{ form.profile_photo }}
+                                                    </div>
+                                                </div>
+                                                <div class="b-form-row">
+                                                    <div class="b-form-horizontal__label"></div>
+                                                    <div class="b-form-horizontal__input">
+                                                        <input type='submit' name="submit" value='Upload' class="btn-submit"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="b-log-in-form">
+                                    <div class="f-primary-l f-title-big c-secondary">Change Password</div>
+                                    <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
+                                    <hr class="b-hr">
+                                    <form method='POST' enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% if form_password.errors %}
+                                            {{ form_password.errors }}
+                                            <hr class="b-hr">
+                                        {% endif %}
+                                        <div class="b-blog-one-column__info_container c-default">
+                                            <div class="b-form-row">
+                                                <label class="b-form-horizontal__label" for="username">Old Password:</label>
+                                                <div class="b-form-horizontal__input">
+                                                    {{ form_password.old_password }}
+                                                </div>
+                                            </div>
+                                            <div class="b-form-row">
+                                                <label class="b-form-horizontal__label" for="email">New Password:</label>
+                                                <div class="b-form-horizontal__input">
+                                                    {{ form_password.new_password }}
+                                                </div>
+                                            </div>
+                                            <div class="b-form-row">
+                                                <label class="b-form-horizontal__label" for="password">Confirm Password:</label>
+                                                <div class="b-form-horizontal__input">
+                                                    {{ form_password.confirm_password }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="b-form-row">
+                                            <div class="b-form-horizontal__label"></div>
+                                            <div class="b-form-horizontal__input">
+                                                <input type='submit' value='Change Password' class="btn-submit"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_block %}{% endblock %}
