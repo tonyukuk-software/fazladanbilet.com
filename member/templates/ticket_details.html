@@ -1,31 +1,158 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<title></title>
-</head>
-<body>
-<a href="/accounts/logout">log out</a></br>
-<a href="/member/edit_member_profile">edit profile</a></br>
-<ul>
-   <img src="/media/{{ ticket.ticket_photo }}">
-  <li>{{ ticket.member.username }}</li>
-  <li>{{ ticket.amount_bitcoin }}</li>
-  <li>{{ ticket.edate }}</li>
-  <li>{{ ticket.total_ticket }}</li>
-  <li>
-      <a id="in_the_bucket_button" href="javascript:void(0)"
-         onclick="added_ticket_to_my_bag();"
-         style="margin-top: 15%;margin-left: 10%;">
-          <button>Çantaya Ekle</button>
-      </a></br>
-  </li>
-</ul>
+{% extends "base.html" %}
+{% load staticfiles %}
 
-<script type="text/javascript">
+{% block head_block %}
+    <style type="text/css">
+    .infospan{font-size:0.92308em;line-height:1.2;color:#e9682e;color:#e9682e;}
+    </style>
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="l-main-container">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>Ticket Detail</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 ">
+                        <div class="b-shortcode-example">
+                            <div class=" f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{{ ticket.title }}</div>
+                            <div class="b-product-card b-default-top-indent">
+                                <div class="b-product-card__visual b-slidercontainer b-slider b-slider--thumb b-slider--thumb-visible b-small-arr f-small-arr b-slider--navi-alt b-shadow-container" style="overflow: visible;">
+                                    <div class="j-contentwidthslider revslider-initialised tp-simpleresponsive hovered" data-height="1400" id="revslider-479" style="height: 243px;">
+                                        <ul style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: 600px;">
+                                            <li data-transition="slotfade-vertical" data-slotamount="7" style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;">
+                                                <img data-retina="" src="/media/{{ ticket.ticket_photo }}" alt="" width="100%" height="100%">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="b-product-card__info">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special">information</h4>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">Price</div>
+                                        <span class="f-product-card__info_price c-default f-primary-b"><i class="fa fa-btc"></i> {{ ticket.amount_bitcoin }}</span>
+                                    </div>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_count">
+                                            <div class="input-number-box">
+                                                <input type="number" class="input-number form-control form-control--secondary" type="text" placeholder="1" min="1">
+                                                <div class="input-number-more"></div>
+                                                <div class="input-number-less"></div>
+                                            </div>
+                                        </div>
+                                        <div class="b-product-card__info_add b-margin-right-standard">
+                                            <div class=" b-btn f-btn b-btn-sm-md f-btn-sm-md">
+                                                <a style="color:#fff;" href="javascript:void(0)" onclick="added_ticket_to_my_bag();">
+                                                <i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">Categories</div>
+                                        <span class="infospan">{{ ticket.category }}</span>
+                                    </div>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">End Date</div>
+                                        <span class="infospan">{{ ticket.edate }}</span>
+                                    </div>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">Total</div>
+                                        <span class="infospan">{{ ticket.total_ticket }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="b-shortcode-example">
+                            <div class="b-tabs f-tabs j-tabs b-tabs-reset ui-tabs ui-widget ui-widget-content ui-corner-all">
+                                <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                                    <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-21" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#tabs-21" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Description</a></li>
+                                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-22" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#tabs-22" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">User's Information</a></li>
+                                </ul>
+                                <div class="b-tabs__content">
+                                    <div id="tabs-21" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">
+                                        <h4 class="f-tabs-vertical__title f-primary-b">{{ ticket.title }}</h4>
+                                        <p>{{ ticket.description }}</p>
+                                    </div>
+                                    <div id="tabs-22" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                                        <div class="b-product-card__info_row">
+                                            <div class="b-product-card__info_title f-primary-b f-title-smallest">Username</div>
+                                            <span class="infospan">{{ ticket.member.username }}</span>
+                                        </div>
+                                        <div class="b-product-card__info_row">
+                                            <div class="b-product-card__info_title f-primary-b f-title-smallest">Points</div>
+                                            <span class="infospan">{{ ticket.member.points }}</span>
+                                        </div>
+                                        <div class="b-product-card__info_row">
+                                            <div class="b-product-card__info_title f-primary-b f-title-smallest">Counter</div>
+                                            <span class="infospan">{{ ticket.member.points_counter }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-3">
+                        <aside>
+                            <div class="row b-col-default-indent">
+                                <div class="col-md-12">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary">product price filter</h4>
+                                    <form action="">
+                                        <div class="b-slider-range j-slider-range f-slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                            <span class="b-slider-range_min">0</span>
+                                            <span class="b-slider-range_max">$999</span>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 20.02002002002%; width: 50.0500500500501%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 20.02002002002%;"><span class="min">$200</span></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 70.0700700700701%;"><span class="max">$700</span></span></div>
+                                        <a href="#" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b">Filter</a>
+                                    </form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="b-categories-filter">
+                                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">Categories filter</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Films</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Theatre</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i> Concert</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    <script type="text/javascript">
     function added_ticket_to_my_bag() {
-
         $.ajax({
             type: "POST",
             url: "/member/in_the_bucket/",
@@ -33,8 +160,6 @@
             success: null,
             dataType: JSON
         });
-
     }
 </script>
-</body>
-</html>
+{% endblock %}
