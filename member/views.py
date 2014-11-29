@@ -42,9 +42,7 @@ def new_swap_ticket(request):
         member = Member.objects.filter(username=request.user.username)[0]
     except:
         return HttpResponseRedirect('/accounts/logout/')
-    form = new_swap_ticket_form(initial={
-      'member':member
-    })
+    form = new_swap_ticket_form(initial={'member': member})
     if request.method == 'POST':
         form = new_swap_ticket_form(request.POST, request.FILES)
         if form.is_valid():
