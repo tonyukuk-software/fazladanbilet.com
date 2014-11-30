@@ -57,7 +57,7 @@
                                     <div class="f-primary-l f-title-big c-secondary">Change Password</div>
                                     <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
                                     <hr class="b-hr">
-                                    <form method='POST' enctype="multipart/form-data">
+                                    <form id="change_password" method='POST'>
                                         {% csrf_token %}
                                         {% if form_password.errors %}
                                             {{ form_password.errors }}
@@ -86,7 +86,7 @@
                                         <div class="b-form-row">
                                             <div class="b-form-horizontal__label"></div>
                                             <div class="b-form-horizontal__input">
-                                                <input type='submit' value='Change Password' class="btn-submit"/>
+                                                <input type='submit' value='Change Password' name='Change Password' class="btn-submit"/>
                                             </div>
                                         </div>
                                     </form>
@@ -100,4 +100,55 @@
     </div>
 {% endblock %}
 
-{% block script_block %}{% endblock %}
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            // When the browser is ready...
+            $(function () {
+
+                // Setup form validation on the #register-form element
+                $("#change_password").validate({
+
+                    // Specify the validation rules
+                    rules: {
+                        old_password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        new_password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        confirm_password: {
+                            required: true,
+                            minlength: 5
+                        }
+                    },
+
+                    // Specify the validation error messages
+                    messages: {
+                        old_password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long"
+                        },
+                        new_password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long"
+                        },
+                        confirm_password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long"
+                        }
+                    },
+
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                });
+
+            });
+        });
+    </script>
+{% endblock %}

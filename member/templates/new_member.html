@@ -29,7 +29,7 @@
                     {% endif %}
                     <div class="row b-form-inline b-form-horizontal">
                         <div class="col-xs-12">
-                            <form method='POST'>
+                            <form id="new_member" method='POST'>
                                 {% csrf_token %}
 
                                 <div class="b-form-row">
@@ -62,7 +62,7 @@
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
                                     <div class="b-form-horizontal__input">
-                                        <input type='submit' value='Submit' class="btn-submit"/>
+                                        <input type='submit' value='Submit' class="btn-submit" disabled="disabled"/>
                                     </div>
                                 </div>
 
@@ -93,4 +93,64 @@
     </div>
 {% endblock %}
 
-{% block script_block %}{% endblock %}
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            var terms_control = new Boolean(false);
+
+            // When the browser is ready...
+            $(function () {
+                // Setup form validation on the #register-form element
+                $("#new_member").validate({
+
+                    // Specify the validation rules
+                    rules: {
+                        username: "required",
+                        email: {
+                        required: true,
+                        email: true
+                        },
+                        password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        create_account_terms: {
+                            checked: true
+                        }
+                    },
+
+                    // Specify the validation error messages
+                    messages: {
+                        username: "Please enter your first name",
+                        password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long"
+                        },
+                        create_account_terms: {
+                            checked: "Please accept our policy"
+                        },
+                        email: "Please enter a valid email address"
+                    },
+
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                });
+
+            });
+            $("#create_account_terms").click(function(){
+                alert(terms_control);
+                if(terms_control == false) {
+                    $('.btn-submit').removeAttr("disabled");
+                    terms_control = true;
+                }
+                else{
+                    $('.btn-submit').attr("disabled", true);
+                    terms_control = false;
+                }
+            });
+        });
+    </script>
+{% endblock %}

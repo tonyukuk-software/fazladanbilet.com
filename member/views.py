@@ -84,7 +84,7 @@ def edit_member_profile(request):
                 print e
                 return HttpResponseRedirect('/404')
 
-    elif request.method == 'POST' and 'change_password' in request.POST: #password form
+    elif request.method == 'POST' and 'Change Password' in request.POST: #password form
         form_password = edit_member_password_form(request.POST)
         if form_password.is_valid():
             if member.password == request.POST.get('old_password') and request.POST.get('new_password') == request.POST.get('confirm_password'):

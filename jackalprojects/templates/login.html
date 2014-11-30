@@ -31,7 +31,7 @@
                     {% endif %}
                     <div class="b-form-row b-form-inline b-form-horizontal">
                         <div class="col-xs-12">
-                            <form method='POST'>
+                            <form id="login" method='POST'>
                                 {% csrf_token %}
 
                                 <div class="b-form-row">
@@ -90,4 +90,42 @@
 
 {% endblock %}
 
-{% block script_block %}{% endblock %}
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            // When the browser is ready...
+            $(function () {
+
+                // Setup form validation on the #register-form element
+                $("#login").validate({
+
+                    // Specify the validation rules
+                    rules: {
+                        username: "required",
+                        password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        agree: "required"
+                    },
+
+                    // Specify the validation error messages
+                    messages: {
+                        username: "Please enter your first name",
+                        password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long"
+                        }
+                    },
+
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                });
+
+            });
+        });
+    </script>
+{% endblock %}

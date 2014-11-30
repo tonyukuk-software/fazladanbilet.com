@@ -3,6 +3,7 @@
 
 {% block head_block %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
 {% endblock %}
 
 {% block menu_block %}{% endblock %}
@@ -29,7 +30,7 @@
                     {% endif %}
                     <div class="row b-form-inline b-form-horizontal">
                         <div class="col-xs-12">
-                            <form method='POST' enctype="multipart/form-data">
+                            <form id="new_ticket" method='POST' enctype="multipart/form-data">
                                 {% csrf_token %}
 
                                 <div class="b-form-row">
@@ -117,4 +118,14 @@
     </div>
 {% endblock %}
 
-{% block script_block %}{% endblock %}
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
+{% endblock %}
