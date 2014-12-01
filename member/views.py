@@ -68,6 +68,7 @@ def member_profile(request):
 def edit_member_profile(request):
     try:
         member = Member.objects.filter(username=request.user.username)[0]
+        member_pw = User.objects.filter(username=request.user.username)[0]
     except Exception as e:
         print e
         return HttpResponseRedirect('/404')
@@ -92,7 +93,9 @@ def edit_member_profile(request):
             if member.password == request.POST.get('old_password') and request.POST.get('new_password') == request.POST.get('confirm_password'):
                 try:
                     member.password = request.POST.get('new_password')
+                    member_pw.set_password(request.POST.get('new_password'))
                     member.save()
+                    member_pw.save()
                     return HttpResponseRedirect('/member/member_profile')
                 except Exception as e:
                     print e
