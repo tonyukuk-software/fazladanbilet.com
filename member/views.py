@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import request
 from django.views.decorators.csrf import csrf_exempt
+import time
+import datetime
 
 __author__ = 'cemkiy'
 __author__ = 'kaykisizcom'
@@ -133,6 +135,7 @@ def sends_shipping(request): #user 3rd person exchanges
 def my_bag(request): #bag is basket of my take ticket
     try:
         tickets_in_my_bag = request.session['tickets_in_my_bag']
+        print tickets_in_my_bag
         tickets = On_Sales.objects.filter(id__in=tickets_in_my_bag)
         return render_to_response('my_bag.html', locals())
     except Exception as e:

@@ -1,38 +1,56 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
-{% block head_block %} {% endblock %}
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
 
-{% block body_block %}
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
 {% if tickets != null %}
-    {% for i in tickets %}
-        <div>
-        <a href="/member/ticket_details/{{ i.id }}">
-            <div>
-                <p>Kullanici:{{ i.member.username }}</p>
+ {% for i in tickets %}
+ <div>
+ <a href="/member/ticket_details/{{ i.id }}">
+ <div>
+ <p>Kullanici:{{ i.member.username }}</p>
 
-                <p>Kategori: {{ i.category.category_name }}</p>
+ <p>Kategori: {{ i.category.category_name }}</p>
 
-                <p>{{ i.title }}</p>
+ <p>{{ i.title }}</p>
 
-                <p>aciklama: {{ i.description }}</p>
+ <p>aciklama: {{ i.description }}</p>
 
-                <p>Toplam Bilet: {{ i.total_ticket }}</p>
+ <p>Toplam Bilet: {{ i.total_ticket }}</p>
 
-                <p>Gönderilecek Şehir: {{ i.from_city }}</p>
+ <p>Gönderilecek Şehir: {{ i.from_city }}</p>
 
-                <p>Bitcoin Takas Miktarı: {{ i.amount_bitcoin }}</p>
+ <p>Bitcoin Takas Miktarı: {{ i.amount_bitcoin }}</p>
 
-                <p>Oluşturulma: {{ i.cdate }}</p>
+ <p>Oluşturulma: {{ i.cdate }}</p>
 
-                <p>Bitiş: {{ i.edate }}</p>
-            </div>
-        </a>
-        <input type="button" onclick="location.href='/member/in_the_bucket/' " value="Takasla">
-        </div>
-        <br/>
-    {% endfor %}
+ <p>Bitiş: {{ i.edate }}</p>
+ </div>
+ </a>
+ <input type="button" onclick="location.href='/member/in_the_bucket/' " value="Takasla">
+ </div>
+ <br/>
+ {% endfor %}
 {% else %}
-   <p> Çanta Boş</p>
+ <p> Çanta Boş</p>
 {% endif %}
 
+{% endblock %}
+
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
 {% endblock %}
