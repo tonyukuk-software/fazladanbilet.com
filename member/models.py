@@ -54,7 +54,7 @@ class Orders(models.Model):
 
     STATUS_CHOICES = (
     (u'0', u'cancel'),
-    (u'1', u'awaiting'),
+    (u'1', u'waiting_for_payment'),
     (u'2', u'waiting_for_cargo'),
     (u'3', u'on_the_road'),
     (u'4', u'success_shipping'),
@@ -73,12 +73,12 @@ class Orders(models.Model):
     ship_to_user = models.OneToOneField(Member)
     total_ticket = models.PositiveIntegerField(default=1)
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='1') #options
-    name = models.CharField(max_length=50, default='')
-    phone = models.CharField(max_length=11, default='')
-    adress = models.CharField(max_length=256, default='')
-    cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0') #options
-    cargo_no = models.CharField(max_length=256)
-    btc_swap_url = models.CharField(max_length=27, default='')
+    name = models.CharField(max_length=50, default='', null=True)
+    phone = models.CharField(max_length=11, default='', null=True)
+    adress = models.CharField(max_length=256, default='', null=True)
+    cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0', null=True) #options
+    cargo_no = models.CharField(max_length=256, default=0, null=True)
+    user_url_for_btc_send = models.CharField(max_length=27, default='', null=True)
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
 
