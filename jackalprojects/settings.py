@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for jackalprojects project.
 
@@ -48,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'jackalprojects.urls'
@@ -96,6 +98,14 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR + '/media'
 
+LOCALE_PATHS = (
+     os.path.join(BASE_DIR, 'locale'),
+)
+
+LANGUAGES = (
+    ('tr', 'Türkçe'),
+    ('en', 'English'),
+)
 
 
 TEMPLATE_DIRS = (

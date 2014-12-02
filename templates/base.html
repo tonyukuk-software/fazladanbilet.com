@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load i18n %}
+{% get_current_language as tr %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +52,17 @@
             margin-right: 17px;
         }
     </style>
+    <!-- Change Language-->
+    <form action="/i18n/setlang/" method="post">{% csrf_token %}
+      <input name="next" type="hidden" value="/" />
+      <select name="language" onchange="this.form.submit()">
+      <option>{% trans 'Language' %}</option>
+        {% for lang in LANGUAGES %}
+          <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+        {% endfor %}
+      </select>
+    </form>
+
     {% block head_block %}{% endblock %}
 </head>
 <body class="">
@@ -58,21 +71,21 @@
           <div class="container">
               <div class="b-option-contacts f-option-contacts">
                       {% if request.user.username %}
-                        <a href="/member/member_profile/"><i class="fa fa-user"></i> My Account</a>
-                        <a href="/checkout/"><i class="fa fa-tags"></i> Checkout</a>
-                        <a href="/accounts/logout/"><i class="fa fa-chevron-right"></i> Logout</a>
+                        <a href="/member/member_profile/"><i class="fa fa-user"></i> {% trans 'My Account'%}</a>
+                        <a href="/checkout/"><i class="fa fa-tags"></i>{% trans 'Checkout'%}</a>
+                        <a href="/accounts/logout/"><i class="fa fa-chevron-right"></i>{% trans 'Logout'%}</a>
                       {% else %}
-                        <a href="/accounts/login/"><i class="fa fa-lock"></i> Login</a>
-                        <a href="/member/new_member/"><i class="fa fa-user"></i> Sign Up</a>
+                        <a href="/accounts/login/"><i class="fa fa-lock"></i>{% trans 'Login'%}</a>
+                        <a href="/member/new_member/"><i class="fa fa-user"></i>{% trans 'Sign Up'%}</a>
                       {% endif %}
               </div>
               <div class="b-option-total-cart">
                   <div class="b-option-total-cart__goods">
                         <div class="b-option-total-cart">
                   <div class="b-option-total-cart__goods">
-                      <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-shopping-cart"></i> Cart [ 2 ] item</a>
+                      <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-shopping-cart"></i> {% trans 'Cart' %} [ 2 ]</a>
                       <div class="b-option-cart__items">
-                          <div class="b-option-cart__items__title f-option-cart__items__title f-default-l">Recently added item(s)</div>
+                          <div class="b-option-cart__items__title f-option-cart__items__title f-default-l">{% trans "Recently added item(s)" %}</div>
                           <ul>
                               <li>
                                   <div class="b-option-cart__items__img">
@@ -114,8 +127,8 @@
                               </li>
                           </ul>
                           <div class="b-option-cart__btn">
-                              <button class="button-xs button-gray-light">Cancel</button>
-                              <button class="button-xs">Check out  </button>
+                              <button class="button-xs button-gray-light">{% trans 'Cancel' %}</button>
+                              <button class="button-xs">{% trans 'Check out' %} </button>
                           </div>
                       </div>
                   </div>
@@ -130,26 +143,26 @@
               <div class="b-header-ico-group f-header-ico-group b-right">
                           <span class="b-search-box">
                               <i class="fa fa-search"></i>
-                              <input type="text" placeholder="Enter your keywords">
+                              <input type="text" placeholder={% trans "Enter your keywords" %}>
                           </span>
               </div>
               <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
               <nav class="b-top-nav f-top-nav b-right j-top-nav">
                   <ul class="b-top-nav__1level_wrap">
-    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b"><a href="/"><i class="fa fa-home b-menu-1level-ico"></i>Home </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level is-active-top-nav__1level f-primary-b"><a href="/"><i class="fa fa-home b-menu-1level-ico"></i>{% trans "Home" %} </a></li>
     <li class="b-top-nav__1level f-top-nav__1level f-primary-b">
         <a href="#"><i class="fa fa-folder-open b-menu-1level-ico"></i>What is it?<span class="b-ico-dropdown"><i class="fa fa-arrow-circle-down"></i></span></a>
         <div class="b-top-nav__dropdomn">
             <ul class="b-top-nav__2level_wrap">
-                <li class="b-top-nav__2level_title f-top-nav__2level_title">What is it?</li>
-                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#"><i class="fa fa-angle-right"></i>How it works?</a></li>
-                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="https://bitcoin.org/tr/" target="_blank"><i class="fa fa-angle-right"></i>Bitcoin</a></li>
+                <li class="b-top-nav__2level_title f-top-nav__2level_title">{% trans "What is it?" %}</li>
+                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="#"><i class="fa fa-angle-right"></i>{% trans "How it works?" %}</a></li>
+                <li class="b-top-nav__2level f-top-nav__2level f-primary"><a href="https://bitcoin.org/tr/" target="_blank"><i class="fa fa-angle-right"></i>{% trans "Bitcoin" %}</a></li>
             </ul>
         </div>
     </li>
-    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="/ticket_pool/"><i class="fa fa-picture-o b-menu-1level-ico"></i>Shop </a></li>
-    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="/member/new_swap_ticket/"><i class="fa fa-code b-menu-1level-ico"></i>New Ticket </a></li>
-    <li class="b-top-nav__1level f-top-nav__1level f-primary-b b-top-nav-big"><a href="/contact_us"><i class="fa fa-cloud-download b-menu-1level-ico"></i>Contact Us </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="/ticket_pool/"><i class="fa fa-picture-o b-menu-1level-ico"></i>{% trans "Shop" %} </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b"><a href="/member/new_swap_ticket/"><i class="fa fa-code b-menu-1level-ico"></i>{% trans "New Ticket" %} </a></li>
+    <li class="b-top-nav__1level f-top-nav__1level f-primary-b b-top-nav-big"><a href="/contact_us"><i class="fa fa-cloud-download b-menu-1level-ico"></i>{% trans "Contact Us" %} </a></li>
 </ul>
 
               </nav>
@@ -173,13 +186,13 @@
                 </div>
                 <nav class="b-bottom-nav f-bottom-nav b-right hidden-xs">
                     <ul>
-                        <li><a href="/">Homepage</a></li>
-                        <li><a href="#">What is it?</a></li>
-                        <li><a href="#">How it works?</a></li>
-                        <li><a href="https://bitcoin.org/tr/" target="_blank">Bitcoin</a></li>
-                        <li><a href="/ticket_pool/">Shop</a></li>
-                        <li><a href="member/new_swap_ticket/">New Ticket</a></li>
-                        <li><a href="/contact_us/">Contact Us</a></li>
+                        <li><a href="/">{% trans "Homepage" %}</a></li>
+                        <li><a href="#">{% trans "What is it?" %}</a></li>
+                        <li><a href="#">{% trans "How it works?" %}</a></li>
+                        <li><a href="https://bitcoin.org/tr/" target="_blank">{% trans "Shop" %}</a></li>
+                        <li><a href="/ticket_pool/">{% trans "Shop" %}</a></li>
+                        <li><a href="member/new_swap_ticket/">{% trans "New Ticket" %}</a></li>
+                        <li><a href="/contact_us/">{% trans "Contact Us" %}</a></li>
                     </ul>
                 </nav>
             </div>
