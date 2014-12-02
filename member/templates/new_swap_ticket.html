@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block head_block %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
@@ -13,16 +14,16 @@
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
                 <ul>
-                    <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>New Ticket</span></li>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans 'New Ticket' %}</span></li>
                 </ul>
             </div>
         </div>
         <div class="container b-container-login-page">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="b-form-row f-primary-l f-title-big c-secondary">New Ticket</div>
-                    <div class="b-form-row">Consectetur adipiscing elituis sagittis eu mi et pellentesqueur</div>
+                    <div class="b-form-row f-primary-l f-title-big c-secondary">{% trans 'New Ticket' %}</div>
+                    <div class="b-form-row">{% trans 'Please, you must filled the form with right values and press button' %}</div>
                     <hr class="b-hr">
                     {% if form.errors %}
                         {{ form.errors }}
@@ -37,49 +38,49 @@
                                         {{ form.member }}
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="category">Category:</label>
+                                    <label class="b-form-horizontal__label" for="category">{% trans "Category" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.category }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="title">Title:</label>
+                                    <label class="b-form-horizontal__label" for="title">{% trans "Title" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.title }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="description">Description:</label>
+                                    <label class="b-form-horizontal__label" for="description">{% trans "Description" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.description }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="total_ticket">Total Ticket:</label>
+                                    <label class="b-form-horizontal__label" for="total_ticket">{% trans "Total Ticket" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.total_ticket }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="from_city">City:</label>
+                                    <label class="b-form-horizontal__label" for="from_city">{% trans "City" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.from_city }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="amount_bitcoin">Amount:</label>
+                                    <label class="b-form-horizontal__label" for="amount_bitcoin">{% trans "Amount" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.amount_bitcoin }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="ticket_photo">Photo:</label>
+                                    <label class="b-form-horizontal__label" for="ticket_photo">{% trans "Photo" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.ticket_photo }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="edate">End Date:</label>
+                                    <label class="b-form-horizontal__label" for="edate">{% trans "End Date" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.edate }}
                                     </div>
@@ -87,7 +88,7 @@
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
                                     <div class="b-form-horizontal__input">
-                                        <input type='submit' value='Submit' class="btn-submit"/>
+                                        <input type='submit' value='{% trans "Submit" %}' class="btn-submit"/>
                                     </div>
                                 </div>
 
@@ -101,15 +102,15 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="f-primary-l f-title-big c-secondary">Welcome to Frexy Studio</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis eu mi et pellentesque. Curabitur vestibulum convallis orci, quis dapibus elit fringilla eget. Suspendisse posuere diam ut erat convallis, non dictum quam luctus. </p>
+                    <div class="f-primary-l f-title-big c-secondary">{% trans "Don't Forget" %}</div>
+                    <p>{% trans "If you want security and succesfully exchange process, please attention down reasons." %}</p>
                     <div class="b-shortcode-example">
                         <ul class="b-list-markers f-list-markers">
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Fusce viverra nisl eu nisl suscipit dictum.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Morbi vehicula massa ut libero laoreet faucibus.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Nullam a felis volutpat, gravida est eget, ultrices velit.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Proin egestas nibh luctus dui cursus, sit amet vestibulum massa dignissim.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Etiam facilisis sapien ut ornare euismod.</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "Your bitcoins not sends before success shipping!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "This system takes comission 20/1 on your ticket amount!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "Bitcoin miners takes comission 0.0002 btc!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "This platform works with trusts dealers!" %}</a></li>
                         </ul>
                     </div>
                 </div>

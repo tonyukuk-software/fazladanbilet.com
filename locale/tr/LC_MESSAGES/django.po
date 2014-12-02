@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-02 13:44+0200\n"
+"POT-Creation-Date: 2014-12-02 15:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,22 +19,257 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: templates/base.html:62
+#: member/templates/edit_member_profile.html:15
+#: member/templates/member_profile.html:13 member/templates/new_member.html:16
+#: member/templates/new_swap_ticket.html:17 templates/base.html:152
+msgid "Home"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:16
+msgid "Edit Profile"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:28
+msgid "Upload Photo"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:29
+#: member/templates/edit_member_profile.html:58
+#: member/templates/new_member.html:25
+#: member/templates/new_swap_ticket.html:26
+msgid "Please, you must filled the form with right values and press button"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:47
+msgid "Upload"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:57
+#: member/templates/edit_member_profile.html:89
+msgid "Change Password"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:68
+msgid "Old Password"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:74
+msgid "New Password"
+msgstr ""
+
+#: member/templates/edit_member_profile.html:80
+msgid "Confirm Password"
+msgstr ""
+
+#: member/templates/member_profile.html:14
+msgid "Profile"
+msgstr ""
+
+#: member/templates/member_profile.html:44
+msgid "EDIT PROFILE"
+msgstr ""
+
+#: member/templates/member_profile.html:49
+msgid "Points"
+msgstr ""
+
+#: member/templates/member_profile.html:51
+msgid "Points Counter"
+msgstr ""
+
+#: member/templates/new_member.html:17 templates/base.html:79
+msgid "Sign Up"
+msgstr "Üye Ol"
+
+#: member/templates/new_member.html:24
+msgid "Create an account"
+msgstr ""
+
+#: member/templates/new_member.html:37
+msgid "Username"
+msgstr ""
+
+#: member/templates/new_member.html:43
+msgid "E-mail"
+msgstr ""
+
+#: member/templates/new_member.html:49
+msgid "Password"
+msgstr ""
+
+#: member/templates/new_member.html:59
+msgid "I agree to"
+msgstr ""
+
+#: member/templates/new_member.html:59
+msgid "Terms of Use"
+msgstr ""
+
+#: member/templates/new_member.html:66
+#: member/templates/new_swap_ticket.html:91
+msgid "Submit"
+msgstr ""
+
+#: member/templates/new_member.html:80
+msgid "Welcome to fazladanbilet.com"
+msgstr ""
+
+#: member/templates/new_member.html:81
+msgid ""
+"This platform provides exchange with bitcoins to on your hands more tickets."
+msgstr ""
+
+#: member/templates/new_member.html:84
+msgid "Easy exchange with bitcoins"
+msgstr ""
+
+#: member/templates/new_member.html:85
+msgid "Low commissions"
+msgstr ""
+
+#: member/templates/new_member.html:86
+msgid "Minimum data requested"
+msgstr ""
+
+#: member/templates/new_member.html:87
+msgid "We don't keep your data and removes after success shipping"
+msgstr ""
+
+#: member/templates/new_member.html:88
+msgid "Secure shopping"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:18
+#: member/templates/new_swap_ticket.html:25 templates/base.html:164
+#: templates/base.html.py:194
+msgid "New Ticket"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:41
+msgid "Category"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:47
+msgid "Title"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:53
+msgid "Description"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:59
+msgid "Total Ticket"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:65
+msgid "City"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:71
+#, fuzzy
+msgid "Amount"
+msgstr "Profilim"
+
+#: member/templates/new_swap_ticket.html:77
+msgid "Photo"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:83
+msgid "End Date"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:105
+msgid "Don't Forget"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:106
+msgid ""
+"If you want security and succesfully exchange process, please attention down "
+"reasons."
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:109
+msgid "Your bitcoins not sends before success shipping!"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:110
+msgid ""
+"Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:111
+msgid "This system takes comission 20/1 on your ticket amount!"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:112
+msgid "Bitcoin miners takes comission 0.0002 btc!"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:113
+msgid "This platform works with trusts dealers!"
+msgstr ""
+
+#: templates/base.html:59
+msgid "Language"
+msgstr ""
+
+#: templates/base.html:74
 msgid "My Account"
 msgstr "Profilim"
 
-#: templates/base.html:63
+#: templates/base.html:75
 msgid "Checkout"
 msgstr "Sepetim"
 
-#: templates/base.html:64
+#: templates/base.html:76
 msgid "Logout"
 msgstr "Çıkış Yap"
 
-#: templates/base.html:66
+#: templates/base.html:78
 msgid "Login"
 msgstr "Giriş"
 
-#: templates/base.html:67
-msgid "Sign Up"
-msgstr "Üye Ol"
+#: templates/base.html:86
+msgid "Cart"
+msgstr ""
+
+#: templates/base.html:88
+msgid "Recently added item(s)"
+msgstr ""
+
+#: templates/base.html:130
+msgid "Cancel"
+msgstr ""
+
+#: templates/base.html:131
+#, fuzzy
+msgid "Check out"
+msgstr "Sepetim"
+
+#: templates/base.html:146
+msgid "Enter your keywords"
+msgstr ""
+
+#: templates/base.html:157 templates/base.html.py:190
+msgid "What is it?"
+msgstr ""
+
+#: templates/base.html:158 templates/base.html.py:191
+msgid "How it works?"
+msgstr ""
+
+#: templates/base.html:159
+msgid "Bitcoin"
+msgstr ""
+
+#: templates/base.html:163 templates/base.html.py:192 templates/base.html:193
+msgid "Shop"
+msgstr ""
+
+#: templates/base.html:165 templates/base.html.py:195
+msgid "Contact Us"
+msgstr ""
+
+#: templates/base.html:189
+msgid "Homepage"
+msgstr ""

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block head_block %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
@@ -12,16 +13,16 @@
         <div class="b-breadcrumbs f-breadcrumbs">
             <div class="container">
                 <ul>
-                    <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
-                    <li><i class="fa fa-angle-right"></i><span>Sign Up</span></li>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans 'Sign Up' %}</span></li>
                 </ul>
             </div>
         </div>
         <div class="container b-container-login-page">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="b-form-row f-primary-l f-title-big c-secondary">Create an account</div>
-                    <div class="b-form-row">Consectetur adipiscing elituis sagittis eu mi et pellentesqueur</div>
+                    <div class="b-form-row f-primary-l f-title-big c-secondary">{% trans "Create an account" %}</div>
+                    <div class="b-form-row">{% trans 'Please, you must filled the form with right values and press button' %}</div>
                     <hr class="b-hr">
                     {% if form.errors %}
                         {{ form.errors }}
@@ -33,19 +34,19 @@
                                 {% csrf_token %}
 
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="username">Username:</label>
+                                    <label class="b-form-horizontal__label" for="username">{% trans "Username" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.username }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="email">E-mail:</label>
+                                    <label class="b-form-horizontal__label" for="email">{% trans "E-mail" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.email }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="password">Password:</label>
+                                    <label class="b-form-horizontal__label" for="password">{% trans "Password" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.password }}
                                     </div>
@@ -55,14 +56,14 @@
                                     <div class="b-form-horizontal__input">
                                         <label for="create_account_terms">
                                             <input type="checkbox" class="b-form-checkbox b-form-checkbox" id="create_account_terms">
-                                            <span>I agree to <a href="#" class="c-secondary f-more">Terms of Use</a></span>
+                                            <span>{% trans "I agree to" %} <a href="#" class="c-secondary f-more">{% trans "Terms of Use" %}</a></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
                                     <div class="b-form-horizontal__input">
-                                        <input type='submit' value='Submit' class="btn-submit" disabled="disabled"/>
+                                        <input type='submit' value='{% trans "Submit" %}' class="btn-submit" disabled="disabled"/>
                                     </div>
                                 </div>
 
@@ -76,15 +77,15 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="f-primary-l f-title-big c-secondary">Welcome to Frexy Studio</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis eu mi et pellentesque. Curabitur vestibulum convallis orci, quis dapibus elit fringilla eget. Suspendisse posuere diam ut erat convallis, non dictum quam luctus. </p>
+                    <div class="f-primary-l f-title-big c-secondary">{% trans "Welcome to fazladanbilet.com" %}</div>
+                    <p>{% trans "This platform provides exchange with bitcoins to on your hands more tickets." %}</p>
                     <div class="b-shortcode-example">
                         <ul class="b-list-markers f-list-markers">
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Fusce viverra nisl eu nisl suscipit dictum.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Morbi vehicula massa ut libero laoreet faucibus.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Nullam a felis volutpat, gravida est eget, ultrices velit.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Proin egestas nibh luctus dui cursus, sit amet vestibulum massa dignissim.</a></li>
-                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">Etiam facilisis sapien ut ornare euismod.</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans 'Easy exchange with bitcoins' %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans 'Low commissions' %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans 'Minimum data requested' %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "We don't keep your data and removes after success shipping"  %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans 'Secure shopping' %}</a></li>
                         </ul>
                     </div>
                 </div>

@@ -12,8 +12,8 @@
     <div class="b-breadcrumbs f-breadcrumbs">
         <div class="container">
             <ul>
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li><i class="fa fa-angle-right"></i><span>Edit Profile</span></li>
+                <li><a href="#"><i class="fa fa-home"></i>{% trans 'Home' %}</a></li>
+                <li><i class="fa fa-angle-right"></i><span>{% trans 'Edit Profile' %}</span></li>
             </ul>
         </div>
     </div>
@@ -25,8 +25,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="b-log-in-form">
-                                    <div class="f-primary-l f-title-big c-secondary">Upload Photo</div>
-                                    <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
+                                    <div class="f-primary-l f-title-big c-secondary">{% trans 'Upload Photo' %}</div>
+                                    <p>{% trans 'Please, you must filled the form with right values and press button' %}</p>
                                     <hr class="b-hr">
                                     <form method='POST' enctype="multipart/form-data">
                                         {% csrf_token %}
@@ -44,7 +44,7 @@
                                                 <div class="b-form-row">
                                                     <div class="b-form-horizontal__label"></div>
                                                     <div class="b-form-horizontal__input">
-                                                        <input type='submit' name="submit" value='Upload' class="btn-submit"/>
+                                                        <input type='submit' name="submit" value="{% trans 'Upload' %}" class="btn-submit"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -54,8 +54,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="b-log-in-form">
-                                    <div class="f-primary-l f-title-big c-secondary">Change Password</div>
-                                    <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
+                                    <div class="f-primary-l f-title-big c-secondary">{% trans 'Change Password' %}</div>
+                                    <p>{% trans 'Please, you must filled the form with right values and press button' %}</p>
                                     <hr class="b-hr">
                                     <form id="change_password" method='POST'>
                                         {% csrf_token %}
@@ -65,19 +65,19 @@
                                         {% endif %}
                                         <div class="b-blog-one-column__info_container c-default">
                                             <div class="b-form-row">
-                                                <label class="b-form-horizontal__label" for="username">Old Password:</label>
+                                                <label class="b-form-horizontal__label" for="username">{% trans 'Old Password' %}:</label>
                                                 <div class="b-form-horizontal__input">
                                                     {{ form_password.old_password }}
                                                 </div>
                                             </div>
                                             <div class="b-form-row">
-                                                <label class="b-form-horizontal__label" for="email">New Password:</label>
+                                                <label class="b-form-horizontal__label" for="email">{% trans 'New Password' %}:</label>
                                                 <div class="b-form-horizontal__input">
                                                     {{ form_password.new_password }}
                                                 </div>
                                             </div>
                                             <div class="b-form-row">
-                                                <label class="b-form-horizontal__label" for="password">Confirm Password:</label>
+                                                <label class="b-form-horizontal__label" for="password">{% trans 'Confirm Password' %}:</label>
                                                 <div class="b-form-horizontal__input">
                                                     {{ form_password.confirm_password }}
                                                 </div>
@@ -86,7 +86,7 @@
                                         <div class="b-form-row">
                                             <div class="b-form-horizontal__label"></div>
                                             <div class="b-form-horizontal__input">
-                                                <input type='submit' value='Change Password' name='Change Password' class="btn-submit"/>
+                                                <input type='submit' value="{% trans 'Change Password' %}" name='Change Password' class="btn-submit"/>
                                             </div>
                                         </div>
                                     </form>

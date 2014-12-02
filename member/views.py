@@ -104,7 +104,7 @@ def edit_member_profile(request):
                 errors = form_password._errors.setdefault("old_password", ErrorList())
                 errors.append(u'Check your old and new password')
 
-    return render_to_response('edit_member_profile.html', {'form': form, 'form_password': form_password}, context_instance=RequestContext(request))
+    return render_to_response('edit_member_profile.html', {'form': form, 'form_password': form_password, 'request': request}, context_instance=RequestContext(request))
 
 
 def ticket_details(request, ticket_id):
