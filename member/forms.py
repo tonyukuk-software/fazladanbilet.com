@@ -17,7 +17,9 @@ class new_member_form(forms.ModelForm):
 class new_swap_ticket_form(forms.ModelForm):
     class Meta:
         model = On_Sales
-        widgets = {'member': forms.HiddenInput()}
+        widgets = {'member': forms.HiddenInput(),
+                   'total_ticket': forms.TextInput(),
+                   'amount_bitcoin': forms.TextInput()}
 
 class edit_member_profile_form(forms.Form):
     profile_photo = forms.ImageField()
