@@ -5,6 +5,10 @@
     <title></title>
 </head>
 <body>
+<p>Total amount: {{ amount }}</p>
+<p>Ticket name: {{ order.on_sales.title }}</p>
+<p>Total ticket: {{ order.total_ticket }}</p>
+
 <a class="coinbase-button" data-code={{ button_data }}>Pay With Bitcoin</a>
 <script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
 </body>
