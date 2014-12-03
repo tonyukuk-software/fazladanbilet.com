@@ -23,59 +23,59 @@ msgstr ""
 #: member/templates/member_profile.html:13 member/templates/new_member.html:16
 #: member/templates/new_swap_ticket.html:17 templates/base.html:152
 msgid "Home"
-msgstr ""
+msgstr "Anasayfa"
 
 #: member/templates/edit_member_profile.html:16
 msgid "Edit Profile"
-msgstr ""
+msgstr "Profil Düzenle"
 
 #: member/templates/edit_member_profile.html:28
 msgid "Upload Photo"
-msgstr ""
+msgstr "Fotoğraf Yükle"
 
 #: member/templates/edit_member_profile.html:29
 #: member/templates/edit_member_profile.html:58
 #: member/templates/new_member.html:25
 #: member/templates/new_swap_ticket.html:26
 msgid "Please, you must filled the form with right values and press button"
-msgstr ""
+msgstr "Lütfen bilgileri doldurun ve butona basın"
 
 #: member/templates/edit_member_profile.html:47
 msgid "Upload"
-msgstr ""
+msgstr "Yükle"
 
 #: member/templates/edit_member_profile.html:57
 #: member/templates/edit_member_profile.html:89
 msgid "Change Password"
-msgstr ""
+msgstr "Parola Değiştir"
 
 #: member/templates/edit_member_profile.html:68
 msgid "Old Password"
-msgstr ""
+msgstr "Eski Parola"
 
 #: member/templates/edit_member_profile.html:74
 msgid "New Password"
-msgstr ""
+msgstr "Yeni Parola"
 
 #: member/templates/edit_member_profile.html:80
 msgid "Confirm Password"
-msgstr ""
+msgstr "Parolayı Onayla"
 
 #: member/templates/member_profile.html:14
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: member/templates/member_profile.html:44
 msgid "EDIT PROFILE"
-msgstr ""
+msgstr "PROFİL DÜZENLE"
 
 #: member/templates/member_profile.html:49
 msgid "Points"
-msgstr ""
+msgstr "Puanlar"
 
 #: member/templates/member_profile.html:51
 msgid "Points Counter"
-msgstr ""
+msgstr "Puan Sayacı"
 
 #: member/templates/new_member.html:17 templates/base.html:79
 msgid "Sign Up"
@@ -83,135 +83,135 @@ msgstr "Üye Ol"
 
 #: member/templates/new_member.html:24
 msgid "Create an account"
-msgstr ""
+msgstr "Yeni Hesap Yarat"
 
 #: member/templates/new_member.html:37
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı Adı"
 
 #: member/templates/new_member.html:43
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #: member/templates/new_member.html:49
 msgid "Password"
-msgstr ""
+msgstr "Parola"
 
 #: member/templates/new_member.html:59
 msgid "I agree to"
-msgstr ""
+msgstr "Kabul ediyorum"
 
 #: member/templates/new_member.html:59
 msgid "Terms of Use"
-msgstr ""
+msgstr "Kullanım Sözleşmesi"
 
 #: member/templates/new_member.html:66
 #: member/templates/new_swap_ticket.html:91
 msgid "Submit"
-msgstr ""
+msgstr "Gönder"
 
 #: member/templates/new_member.html:80
 msgid "Welcome to fazladanbilet.com"
-msgstr ""
+msgstr "fazladanbilet.com'a Hoşgeldiniz"
 
 #: member/templates/new_member.html:81
 msgid ""
 "This platform provides exchange with bitcoins to on your hands more tickets."
-msgstr ""
+msgstr "Bu platform elinizdeki biletleri bitcoin karşılığı takas etmenizi sağlar."
 
 #: member/templates/new_member.html:84
 msgid "Easy exchange with bitcoins"
-msgstr ""
+msgstr "Bitcoinler ile kolay takas"
 
 #: member/templates/new_member.html:85
 msgid "Low commissions"
-msgstr ""
+msgstr "Düşük komisyonlar"
 
 #: member/templates/new_member.html:86
 msgid "Minimum data requested"
-msgstr ""
+msgstr "Minimum veri isteği"
 
 #: member/templates/new_member.html:87
 msgid "We don't keep your data and removes after success shipping"
-msgstr ""
+msgstr "Bilgilerini tutmayız ve başarılı takas sonrası sileriz"
 
 #: member/templates/new_member.html:88
 msgid "Secure shopping"
-msgstr ""
+msgstr "Güvenli Alışveriş"
 
 #: member/templates/new_swap_ticket.html:18
 #: member/templates/new_swap_ticket.html:25 templates/base.html:164
 #: templates/base.html.py:194
 msgid "New Ticket"
-msgstr ""
+msgstr "Yeni Bilet"
 
 #: member/templates/new_swap_ticket.html:41
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: member/templates/new_swap_ticket.html:47
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
 #: member/templates/new_swap_ticket.html:53
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #: member/templates/new_swap_ticket.html:59
 msgid "Total Ticket"
-msgstr ""
+msgstr "Toplam Bilet"
 
 #: member/templates/new_swap_ticket.html:65
 msgid "City"
-msgstr ""
+msgstr "Şehir"
 
 #: member/templates/new_swap_ticket.html:71
 #, fuzzy
 msgid "Amount"
-msgstr "Profilim"
+msgstr "Miktar"
 
 #: member/templates/new_swap_ticket.html:77
 msgid "Photo"
-msgstr ""
+msgstr "Fotoğraf"
 
 #: member/templates/new_swap_ticket.html:83
 msgid "End Date"
-msgstr ""
+msgstr "Son Kullanım Tarihi"
 
 #: member/templates/new_swap_ticket.html:105
 msgid "Don't Forget"
-msgstr ""
+msgstr "Asla Unutma"
 
 #: member/templates/new_swap_ticket.html:106
 msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
-msgstr ""
+msgstr "Eğer güvenli ve başarılı bir takas işlemi istiyorsanız, lütfen aşağıdakilere dikkat edin"
 
 #: member/templates/new_swap_ticket.html:109
 msgid "Your bitcoins not sends before success shipping!"
-msgstr ""
+msgstr "Bitcoinlerin başarılı takas işlemi olmadan önce yollanmaz!"
 
 #: member/templates/new_swap_ticket.html:110
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
-msgstr ""
+msgstr "Geç kalmış kargo, yanlış veya sahte bilet ve daha fazla sahtekarlık durumunda takas işlemi iptal edilir!"
 
 #: member/templates/new_swap_ticket.html:111
 msgid "This system takes comission 20/1 on your ticket amount!"
-msgstr ""
+msgstr "Bu sistem bilet btc miktarının 20/1 oranında komisyon alır! "
 
 #: member/templates/new_swap_ticket.html:112
 msgid "Bitcoin miners takes comission 0.0002 btc!"
-msgstr ""
+msgstr "Bitcoin madencileri 0.0002 btc komisyon alır!"
 
 #: member/templates/new_swap_ticket.html:113
 msgid "This platform works with trusts dealers!"
-msgstr ""
+msgstr "Bu platform kullanıcıların güveniyle çalışır!"
 
 #: templates/base.html:59
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
 #: templates/base.html:74
 msgid "My Account"
@@ -231,15 +231,15 @@ msgstr "Giriş"
 
 #: templates/base.html:86
 msgid "Cart"
-msgstr ""
+msgstr "Sepetim"
 
 #: templates/base.html:88
 msgid "Recently added item(s)"
-msgstr ""
+msgstr "Son eklenen biletler"
 
 #: templates/base.html:130
 msgid "Cancel"
-msgstr ""
+msgstr "Çıkış"
 
 #: templates/base.html:131
 #, fuzzy
@@ -248,28 +248,28 @@ msgstr "Sepetim"
 
 #: templates/base.html:146
 msgid "Enter your keywords"
-msgstr ""
+msgstr "Aranacak kelimeleri girin"
 
 #: templates/base.html:157 templates/base.html.py:190
 msgid "What is it?"
-msgstr ""
+msgstr "Bu nedir?"
 
 #: templates/base.html:158 templates/base.html.py:191
 msgid "How it works?"
-msgstr ""
+msgstr "Nasıl Çalışır?"
 
 #: templates/base.html:159
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 #: templates/base.html:163 templates/base.html.py:192 templates/base.html:193
 msgid "Shop"
-msgstr ""
+msgstr "Gişe"
 
 #: templates/base.html:165 templates/base.html.py:195
 msgid "Contact Us"
-msgstr ""
+msgstr "Bize Ulaşın"
 
 #: templates/base.html:189
 msgid "Homepage"
-msgstr ""
+msgstr "Anasayfa"
