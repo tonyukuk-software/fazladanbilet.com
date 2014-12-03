@@ -1,4 +1,3 @@
-from cups import require
 from jackalprojects import settings
 
 __author__ = 'cemkiy'
