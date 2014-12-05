@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from member.models import On_Sales
-
+from member.models import On_Sales, Member
+from django.http import HttpResponseRedirect, HttpResponse
 
 __author__ = 'cemkiy'
 __author__ = 'barisariburnu'
@@ -23,3 +23,11 @@ def contact_us(request):
 
 def forgotten_password(request):
     return render_to_response('forgotten_password.html', locals(), context_instance=RequestContext(request))
+
+def public_profile(request, user_id):
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
+    return render_to_response('public_profile.html', locals())

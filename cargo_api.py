@@ -37,3 +37,6 @@ class cargo_api:
             return True
         else:
             return False
+
+# c_api = cargo_api()
+# print c_api.ups('U34B501G5500216')

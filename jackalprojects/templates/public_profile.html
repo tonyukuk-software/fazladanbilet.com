@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block head_block %} {% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                <li><i class="fa fa-angle-right"></i><span>{% trans 'Profile' %}</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="l-inner-page-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="b-some-examples__item_img view view-sixth">
+                            {% if member.profile_photo %}
+                                <img data-retina="" src="/media/{{ member.profile_photo }}" alt="{{ member.username }} Profile Photo" width="370">
+                            {% else %}
+                                <img data-retina="" src="/media/profile_photos/default.png" alt="{{ member.username }} Profile Photo" width="370">
+                            {% endif %}
+                            <div class="b-item-hover-action f-center mask">
+                                <div class="b-item-hover-action__inner">
+                                    <div class="b-item-hover-action__inner-btn_group">
+                                        <a href="/member/edit_member_profile" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <div class="b-form-row f-primary-l f-title-big c-secondary f-h4-special b-blog__title clearfix">
+                            <a href="/member/member_profile/">{{ member.username }}</a>
+                        </div>
+                        <div class="b-form-row f-h4-special clearfix">
+
+                            <div class="b-blog-one-column__info_container c-default">
+                                E-mail: {{ member.email }}
+                                <span class="b-blog-one-column__info_delimiter"></span>
+                                {% trans 'Points' %}: {{ member.points }}
+                                <span class="b-blog-one-column__info_delimiter"></span>
+                                {% trans 'Points Counter' %}: {{ member.points_counter }}
+                            </div>
+                        </div>
+                        <div class="b-form-row b-blog-one-column__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac lacinia dolor. Nullam semper euismod rhoncus. Curabitur pulvinar, mauris luctus semper rutrum, lacus est volutpat urna, sed fringilla augue nunc nec dolor. Integer sit amet massa non quam semper sodales</div>
+                        <div class="b-form-row b-null-bottom-indent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_block %}{% endblock %}
