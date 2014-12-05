@@ -63,9 +63,9 @@ WSGI_APPLICATION = 'jackalprojects.wsgi.application'
 DATABASES = {
    'default': {
           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'jackalproject',
-          'USER': 'adminjsuamws',
-          'PASSWORD': 'eY_Nu2mrcSsX',
+          'NAME': 'jackaldatabase',
+          'USER': 'adminic2zdsn',
+          'PASSWORD': 'wwg-xMWqlYQp',
           'HOST': 'localhost',
     }
 }
