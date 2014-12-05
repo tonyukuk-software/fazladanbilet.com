@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-02 15:08+0200\n"
+"POT-Creation-Date: 2014-12-04 09:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: member/templates/edit_member_profile.html:15
 #: member/templates/member_profile.html:13 member/templates/new_member.html:16
-#: member/templates/new_swap_ticket.html:17 templates/base.html:152
+#: member/templates/new_swap_ticket.html:17 templates/base.html:148
 msgid "Home"
 msgstr "Anasayfa"
 
@@ -117,7 +117,8 @@ msgstr "fazladanbilet.com'a Hoşgeldiniz"
 #: member/templates/new_member.html:81
 msgid ""
 "This platform provides exchange with bitcoins to on your hands more tickets."
-msgstr "Bu platform elinizdeki biletleri bitcoin karşılığı takas etmenizi sağlar."
+msgstr ""
+"Bu platform elinizdeki biletleri bitcoin karşılığı takas etmenizi sağlar."
 
 #: member/templates/new_member.html:84
 msgid "Easy exchange with bitcoins"
@@ -140,8 +141,8 @@ msgid "Secure shopping"
 msgstr "Güvenli Alışveriş"
 
 #: member/templates/new_swap_ticket.html:18
-#: member/templates/new_swap_ticket.html:25 templates/base.html:164
-#: templates/base.html.py:194
+#: member/templates/new_swap_ticket.html:25 templates/base.html:160
+#: templates/base.html.py:190
 msgid "New Ticket"
 msgstr "Yeni Bilet"
 
@@ -186,7 +187,9 @@ msgstr "Asla Unutma"
 msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
-msgstr "Eğer güvenli ve başarılı bir takas işlemi istiyorsanız, lütfen aşağıdakilere dikkat edin"
+msgstr ""
+"Eğer güvenli ve başarılı bir takas işlemi istiyorsanız, lütfen aşağıdakilere "
+"dikkat edin"
 
 #: member/templates/new_swap_ticket.html:109
 msgid "Your bitcoins not sends before success shipping!"
@@ -195,7 +198,9 @@ msgstr "Bitcoinlerin başarılı takas işlemi olmadan önce yollanmaz!"
 #: member/templates/new_swap_ticket.html:110
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
-msgstr "Geç kalmış kargo, yanlış veya sahte bilet ve daha fazla sahtekarlık durumunda takas işlemi iptal edilir!"
+msgstr ""
+"Geç kalmış kargo, yanlış veya sahte bilet ve daha fazla sahtekarlık "
+"durumunda takas işlemi iptal edilir!"
 
 #: member/templates/new_swap_ticket.html:111
 msgid "This system takes comission 20/1 on your ticket amount!"
@@ -229,47 +234,47 @@ msgstr "Çıkış Yap"
 msgid "Login"
 msgstr "Giriş"
 
-#: templates/base.html:86
+#: templates/base.html:84
 msgid "Cart"
 msgstr "Sepetim"
 
-#: templates/base.html:88
+#: templates/base.html:86
 msgid "Recently added item(s)"
 msgstr "Son eklenen biletler"
 
-#: templates/base.html:130
+#: templates/base.html:128
 msgid "Cancel"
 msgstr "Çıkış"
 
-#: templates/base.html:131
+#: templates/base.html:129
 #, fuzzy
 msgid "Check out"
 msgstr "Sepetim"
 
-#: templates/base.html:146
+#: templates/base.html:142
 msgid "Enter your keywords"
 msgstr "Aranacak kelimeleri girin"
 
-#: templates/base.html:157 templates/base.html.py:190
+#: templates/base.html:153 templates/base.html.py:186
 msgid "What is it?"
 msgstr "Bu nedir?"
 
-#: templates/base.html:158 templates/base.html.py:191
+#: templates/base.html:154 templates/base.html.py:187
 msgid "How it works?"
 msgstr "Nasıl Çalışır?"
 
-#: templates/base.html:159
+#: templates/base.html:155
 msgid "Bitcoin"
 msgstr "Bitcoin"
 
-#: templates/base.html:163 templates/base.html.py:192 templates/base.html:193
+#: templates/base.html:159 templates/base.html.py:188 templates/base.html:189
 msgid "Shop"
 msgstr "Gişe"
 
-#: templates/base.html:165 templates/base.html.py:195
+#: templates/base.html:161 templates/base.html.py:191
 msgid "Contact Us"
 msgstr "Bize Ulaşın"
 
-#: templates/base.html:189
+#: templates/base.html:185
 msgid "Homepage"
 msgstr "Anasayfa"
