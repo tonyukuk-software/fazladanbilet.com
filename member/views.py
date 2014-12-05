@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import request
 from django.views.decorators.csrf import csrf_exempt
@@ -38,6 +39,7 @@ def new_member(request):
                 return HttpResponseRedirect('/404')
     return render_to_response('new_member.html', {'form': form}, context_instance=RequestContext(request))
 
+
 @login_required
 def new_swap_ticket(request):
     try:
@@ -55,6 +57,7 @@ def new_swap_ticket(request):
                 return HttpResponseRedirect('/404')
     return render_to_response('new_swap_ticket.html', locals(), context_instance=RequestContext(request))
 
+
 @login_required
 def member_profile(request):
     try:
@@ -63,6 +66,7 @@ def member_profile(request):
     except Exception as e:
         print e
         return HttpResponseRedirect('/404')
+
 
 @login_required
 def edit_member_profile(request):
@@ -74,9 +78,9 @@ def edit_member_profile(request):
         return HttpResponseRedirect('/404')
 
     form = edit_member_profile_form()
-    form_password = edit_member_password_form #for change password
+    form_password = edit_member_password_form  # for change password
 
-    if request.method == 'POST' and 'submit' in request.POST: #normal form
+    if request.method == 'POST' and 'submit' in request.POST:  # normal form
         form = edit_member_profile_form(request.POST, request.FILES)
         if form.is_valid():
             try:
@@ -87,10 +91,11 @@ def edit_member_profile(request):
                 print e
                 return HttpResponseRedirect('/404')
 
-    elif request.method == 'POST' and 'Change Password' in request.POST: #password form
+    elif request.method == 'POST' and 'Change Password' in request.POST:  # password form
         form_password = edit_member_password_form(request.POST)
         if form_password.is_valid():
-            if member.password == request.POST.get('old_password') and request.POST.get('new_password') == request.POST.get('confirm_password'):
+            if member.password == request.POST.get('old_password') and request.POST.get(
+                    'new_password') == request.POST.get('confirm_password'):
                 try:
                     member.password = request.POST.get('new_password')
                     member_pw.set_password(request.POST.get('new_password'))
@@ -104,7 +109,9 @@ def edit_member_profile(request):
                 errors = form_password._errors.setdefault("old_password", ErrorList())
                 errors.append(u'Check your old and new password')
 
-    return render_to_response('edit_member_profile.html', {'form': form, 'form_password': form_password, 'request': request}, context_instance=RequestContext(request))
+    return render_to_response('edit_member_profile.html',
+                              {'form': form, 'form_password': form_password, 'request': request},
+                              context_instance=RequestContext(request))
 
 
 def ticket_details(request, ticket_id):
@@ -115,8 +122,9 @@ def ticket_details(request, ticket_id):
         print e
         return HttpResponseRedirect('/404')
 
+
 @login_required
-def comes_shipping(request): #user own exchanges
+def comes_shipping(request):  # user own exchanges
     try:
         member = Member.objects.filter(username=request.user.username)[0]
         orders = Orders.objects.filter(ship_to_user=member).all()
@@ -125,8 +133,9 @@ def comes_shipping(request): #user own exchanges
         print e
         return HttpResponseRedirect('/404')
 
+
 @login_required
-def sends_shipping(request): #user 3rd person exchanges
+def sends_shipping(request):  # user 3rd person exchanges
     try:
         member = Member.objects.filter(username=request.user.username)[0]
         orders = Orders.objects.filter(on_sales__member=member).all()
@@ -135,28 +144,76 @@ def sends_shipping(request): #user 3rd person exchanges
         print e
         return HttpResponseRedirect('/404')
 
-def my_bag(request): #bag is basket of my take ticket
+
+def my_bag(request):  # bag is basket of my take ticket
     try:
         tickets_in_my_bag = request.session['tickets_in_my_bag']
+        ids = []
         print tickets_in_my_bag
-        tickets = On_Sales.objects.filter(id__in=tickets_in_my_bag)
+        for i in range(0, len(tickets_in_my_bag)):
+            ticket_detail = tickets_in_my_bag[i].split("+")
+            print ticket_detail[0]
+            print ticket_detail[2]
+
+            ids.append(ticket_detail[0])
+        tickets = On_Sales.objects.filter(id__in=ids)
         return render_to_response('my_bag.html', locals())
     except Exception as e:
         print e
         return HttpResponseRedirect('/404')
 
+
 @csrf_exempt
-def in_the_bucket(request): # added new ticket for ticket in my bag
-     try:
+def in_the_bucket(request):  # added new ticket for ticket in my bag
+    try:
+        adding_time = str(datetime.datetime.now())
+        ticket_id = str(request.POST.get('ticket_id'))
+        total_number = str(request.POST.get('total_number'))
+        ticket = On_Sales.objects.filter(id=ticket_id)[0]
+        ticket_name = ticket.title
+        img_url = ticket.ticket_photo
+        price = ticket.amount_bitcoin
         if request.session.get('tickets_in_my_bag'):
+            print "1"
             tickets_in_my_bag = request.session['tickets_in_my_bag']
-            tickets_in_my_bag.append(int(request.POST.get('ticket_id')))
+            tickets_in_my_bag.append(ticket_id + "+" + total_number
+                                     + "+" + adding_time + "+" + unicode(ticket_name)
+                                     + "+" + unicode(img_url) + "+" + str(price))
             request.session['tickets_in_my_bag'] = tickets_in_my_bag
         else:
-            ticket_id = int(request.POST.get('ticket_id'))
-            tickets_in_my_bag = [ticket_id]
+            print "2"
+            tickets_in_my_bag = [ticket_id + "+" + total_number
+                                 + "+" + adding_time + "+" + unicode(ticket_name)
+                                 + "+" + unicode(img_url) + "+" + str(price)]
             request.session['tickets_in_my_bag'] = tickets_in_my_bag
+        print tickets_in_my_bag
         return HttpResponse(False, content_type='application/json')
-     except Exception as e:
+    except Exception as e:
         print e
         return HttpResponseRedirect('/404')
+
+@login_required
+def new_order(request, ticket_id):
+    try:
+        ship_to_user = Member.objects.filter(username=request.user.username)[0]
+
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
+
+    form = new_order_form(initial=dict(ship_to_user=ship_to_user))
+    if request.method == 'POST' and 'new_order_submit' in request.POST:  # password form
+        form = new_order_form(request.POST)
+        if form.is_valid():
+
+            try:
+
+                    form.save()
+                    return HttpResponseRedirect('/member/member_profile')
+            except Exception as e:
+                print e
+                return HttpResponseRedirect('/404')
+
+
+    return render_to_response('new_order.html', locals(), context_instance=RequestContext(request))
+

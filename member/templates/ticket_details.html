@@ -48,7 +48,7 @@
                                     <div class="b-product-card__info_row">
                                         <div class="b-product-card__info_count">
                                             <div class="input-number-box">
-                                                <input type="number" class="input-number form-control form-control--secondary" type="text" placeholder="1" min="1">
+                                                <input id="total_number" type="number" class="input-number form-control form-control--secondary" type="text" placeholder="1" min="1">
                                                 <div class="input-number-more"></div>
                                                 <div class="input-number-less"></div>
                                             </div>
@@ -154,10 +154,11 @@
 {% block script_block %}
     <script type="text/javascript">
     function added_ticket_to_my_bag() {
+        var total_number = $('#total_number').val();
         $.ajax({
             type: "POST",
             url: "/member/in_the_bucket/",
-            data: "ticket_id=" + {{ ticket.id }} ,
+            data: { ticket_id: + {{ ticket.id }}, total_number: + total_number },
             success: null,
             dataType: JSON
         });

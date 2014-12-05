@@ -28,3 +28,13 @@ class edit_member_password_form(forms.Form):
     old_password = forms.CharField(max_length=50, widget=forms.PasswordInput())
     new_password = forms.CharField(max_length=50, widget=forms.PasswordInput())
     confirm_password = forms.CharField(max_length=50, widget=forms.PasswordInput())
+
+class new_order_form(forms.Form):
+    name = forms.CharField(max_length=50, widget=forms.TextInput)
+    phone = forms.CharField(max_length=11, widget=forms.TextInput)
+    adress = forms.CharField(max_length=256, widget=forms.TextInput)
+
+
+
+
+
