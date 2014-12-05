@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block head_block %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
@@ -13,8 +14,8 @@
     <div class="b-breadcrumbs f-breadcrumbs">
         <div class="container">
             <ul>
-                <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
-                <li><i class="fa fa-angle-right"></i><span>Sign In</span></li>
+                <li><a href="/"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                <li><i class="fa fa-angle-right"></i><span>{% trans "Sign In" %}</span></li>
             </ul>
         </div>
     </div>
@@ -22,8 +23,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="b-log-in-form">
-                    <div class="f-primary-l f-title-big c-secondary">Sign in</div>
-                    <p>Consectetur adipiscing elituis sagittis eu mi et pellentesqueurabitur vestibulum</p>
+                    <div class="f-primary-l f-title-big c-secondary">{% trans "Sign in" %}</div>
+                    <p>{% trans 'Please, you must filled the form with right values and press button' %}</p>
                     <hr class="b-hr">
                     {% if form.errors %}
                         {{ form.errors }}
@@ -35,14 +36,14 @@
                                 {% csrf_token %}
 
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="username">Username:</label>
+                                    <label class="b-form-horizontal__label" for="username">{% trans "Username" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.username }}
                                     </div>
                                 </div>
 
                                 <div class="b-form-row">
-                                    <label class="b-form-horizontal__label" for="password">Password:</label>
+                                    <label class="b-form-horizontal__label" for="password">{% trans "Password" %}:</label>
                                     <div class="b-form-horizontal__input">
                                         {{ form.password }}
                                     </div>
@@ -51,14 +52,14 @@
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
                                     <ul class="b-list-markers f-list-markers">
-                                        <li><a href="/forgotten_password/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> I forgot my password</a></li>
+                                        <li><a href="/forgotten_password/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i>{% trans "I forgot my password" %}</a></li>
                                     </ul>
                                 </div>
 
                                 <div class="b-form-row">
                                     <div class="b-form-horizontal__label"></div>
                                     <div class="b-form-horizontal__input">
-                                        <input type='submit' value='Submit' class="btn-submit"/>
+                                        <input type='submit' value='{% trans "Submit" %}' class="btn-submit"/>
                                     </div>
                                 </div>
 
@@ -75,12 +76,12 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="f-primary-l f-title-big c-secondary">Welcome to Frexy Studio</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis eu mi et pellentesque. Curabitur vestibulum convallis orci, quis dapibus elit fringilla eget. Suspendisse posuere diam ut erat convallis, non dictum quam luctus. </p>
+                <div class="f-primary-l f-title-big c-secondary">{% trans "Welcome to fazladanbilet.com" %}</div>
+                <p>{% trans "If you are want sale your tickets;login or sign up and join us." %}</p>
                 <div class="b-shortcode-example">
                     <ul class="b-list-markers f-list-markers">
-                        <li><a href="/member/new_member/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> Create an account</a></li>
-                        <li><a href="/forgotten_password/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> Forgotten your password</a></li>
+                        <li><a href="/member/new_member/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i>{% trans "Create an account" %}</a></li>
+                        <li><a href="/forgotten_password/"><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i>{% trans "Forgotten your password" %}</a></li>
                     </ul>
                 </div>
             </div>
