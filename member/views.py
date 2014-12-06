@@ -32,11 +32,26 @@ def new_member(request):
                 member_user_auth = User.objects.create_user(username, email, password)
                 member_user_auth.save()
                 form.save()
+                passive_member = User.objects.get(username=username)
+                passive_member.is_active = False
+                passive_member.save()
+                #TODO confirm_mail:send mail to user about activation link __author__ = 'barisariburnu'
                 return HttpResponseRedirect('/accounts/login/')
             except Exception as e:
                 print e
                 return HttpResponseRedirect('/404')
     return render_to_response('new_member.html', {'form': form}, context_instance=RequestContext(request))
+
+def confirm_user(request):
+    try:
+        active_member = User.objects.get(id=request.GET.get('user'))
+        active_member.active = True
+        active_member.save()
+        return HttpResponseRedirect('/confirm_user/')
+        #TODO confirm_user:create confirm_user page __author__ = 'barisariburnu'
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
 
 @login_required
 def new_swap_ticket(request):

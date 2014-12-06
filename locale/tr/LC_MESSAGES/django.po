@@ -431,7 +431,7 @@ msgstr "Aranacak kelimeleri girin"
 
 #: templates/base.html:153 templates/base.html.py:186
 msgid "What is it?"
-msgstr "Sitenin Amacı Nedir?"
+msgstr "FazladanBilet Nedir?"
 
 #: templates/base.html:154 templates/base.html.py:187
 msgid "How it works?"

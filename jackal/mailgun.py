@@ -32,4 +32,4 @@ class Mailgun():
             data = { 'address' : mMail })
 
 yeni = Mailgun()
-yeni.send_complex_message("barisariburnu@gmail.com","Konu","Icerik","<html>HTML version of the body</html>")
+yeni.send_message("barisariburnu@gmail.com","Konu","Icerik","<html>HTML version of the body</html>")
