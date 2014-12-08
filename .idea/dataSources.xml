@@ -5,8 +5,8 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/jackaldatabase</jdbc-url>
-      <user-name>adminic2zdsn</user-name>
-      <user-password>dfdddfdddfcddf87dfd2dfe7dffddfdbdfc6dff3dffbdfda</user-password>
+      <user-name>postgres</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
   </component>
