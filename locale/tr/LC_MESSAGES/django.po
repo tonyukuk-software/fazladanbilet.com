@@ -292,7 +292,6 @@ msgid "City"
 msgstr "Şehir"
 
 #: member/templates/new_swap_ticket.html:71
-#, fuzzy
 msgid "Amount"
 msgstr "BTC Miktarı"
 
