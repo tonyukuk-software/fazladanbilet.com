@@ -72,7 +72,7 @@
               <div class="b-option-contacts f-option-contacts">
                       {% if request.user.username %}
                         <a href="/member/member_profile/"><i class="fa fa-user"></i> {% trans 'My Account'%}</a>
-                        <a href="/checkout/"><i class="fa fa-tags"></i>{% trans 'Checkout'%}</a>
+                        <a href="/member/my_bag/"><i class="fa fa-tags"></i>{% trans 'Checkout'%}</a>
                         <a href="/accounts/logout/"><i class="fa fa-chevron-right"></i>{% trans 'Logout'%}</a>
                       {% else %}
                         <a href="/accounts/login/"><i class="fa fa-lock"></i>{% trans 'Login'%}</a>
@@ -81,7 +81,7 @@
               </div>
               <div class="b-option-total-cart">
                   <div class="b-option-total-cart__goods">
-                      <a href="#" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-shopping-cart"></i> {% trans 'Cart' %} [ 2 ]</a>
+                      <a href="/member/my_bag/" class="f-option-total-cart__numbers b-option-total-cart__numbers"><i class="fa fa-shopping-cart"></i> {% trans 'Cart' %} [ 2 ]</a>
                       <div class="b-option-cart__items">
                           <div class="b-option-cart__items__title f-option-cart__items__title f-default-l">{% trans "Recently added item(s)" %}</div>
                           <ul>
