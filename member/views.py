@@ -195,8 +195,12 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
 
 @login_required
 def new_order(request, ticket_id):
-    on_sales = On_Sales.objects.filter(id=ticket_id)[0]
-    ship_to_user = Member.objects.filter(username=request.user.username)[0]
+    try:
+        on_sales = On_Sales.objects.filter(id=ticket_id)[0]
+        ship_to_user = Member.objects.filter(username=request.user.username)[0]
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
     total_ticket = 1  # Default Value
     tickets_in_my_bag = request.session['tickets_in_my_bag']  # for get total ticket in session
     for i in range(0, len(tickets_in_my_bag)):
@@ -207,13 +211,16 @@ def new_order(request, ticket_id):
     if request.method == 'POST':
         form = new_order_form(request.POST)
         if form.is_valid():
-            name = str(request.POST.get('name'))
-            phone = str(request.POST.get('phone'))
-            address = str(request.POST.get('address'))
-            order = Orders(on_sales=on_sales, ship_to_user=ship_to_user, total_ticket=total_ticket, status='1',
-                           name=name, phone=phone, address=address)
-            order.save()
-            return HttpResponseRedirect('/bitcoin/payment_page/' + str(order.id))
-
+            try:
+                name = str(request.POST.get('name'))
+                phone = str(request.POST.get('phone'))
+                address = str(request.POST.get('address'))
+                order = Orders(on_sales=on_sales, ship_to_user=ship_to_user, total_ticket=total_ticket, status='1',
+                               name=name, phone=phone, address=address)
+                order.save()
+                return HttpResponseRedirect('/bitcoin/payment_page/' + str(order.id))
+            except Exception as e:
+                print e
+                return HttpResponseRedirect('/404')
     return render_to_response('new_order.html', locals(), context_instance=RequestContext(request))
 
