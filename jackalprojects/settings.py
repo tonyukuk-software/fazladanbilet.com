@@ -64,8 +64,8 @@ DATABASES = {
    'default': {
           'ENGINE': 'django.db.backends.postgresql_psycopg2',
           'NAME': 'jackaldatabase',
-          'USER': 'postgres',
-          'PASSWORD': 'root',
+          'USER': 'adminic2zdsn',
+          'PASSWORD': 'wwg-xMWqlYQp',
           'HOST': 'localhost',
     }
 }
