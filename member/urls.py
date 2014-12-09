@@ -17,4 +17,5 @@ urlpatterns = patterns('',
                     url(r'^my_bag/$', 'member.views.my_bag'), #bag is basket of my take ticket
                     url(r'^in_the_bucket/$', 'member.views.in_the_bucket'),
                     url(r'^new_order/(.+)$', 'member.views.new_order'), #added cargo information by ship to
+                    url(r'^send_cargo_no_and_user_url_for_btc_send/(.+)$', 'member.views.send_cargo_no_and_user_url_for_btc_send'), #send cargo no and btc adress
                         )

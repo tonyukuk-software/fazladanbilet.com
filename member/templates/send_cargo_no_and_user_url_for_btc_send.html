@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+{% if form.errors %}
+  <p>Error</p>
+{% endif %}
+<form method='POST'>
+{% csrf_token %}
+<table border=1>
+ {{form}}
+</table>
+  <input type='submit' value='{% trans "Submit" %}'/>
+</form>
+{% endblock %}

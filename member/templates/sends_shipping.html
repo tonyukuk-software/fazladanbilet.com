@@ -1,24 +1,28 @@
+{% extends "base.html" %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<title></title>
-</head>
-<body>
-<a href="/accounts/logout">log out</a></br>
-<a href="/member/edit_member_profile">edit profile</a></br>
+{% load i18n %}
+
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
 {% for i in orders %}
+    {% if i.get_status_display != 'cancel' and i.get_status_display != 'waiting_for_payment' %}
 <ul>
   <img src="/media/{{ i.on_sales.ticket_photo }}">
-  <li>{{ i.on_sales.ship_to_user.username }}</li>
+  <li>{{ i.on_sales.member.username }}</li>
   <li>{{ i.on_sales.title }}</li>
   <li>{{ i.total_ticket }}</li>
   <li>{{ i.get_cargo_company_display }}</li>
   <li>{{ i.cargo_no }}</li>
-  <li>{{ i.status}}</li>
- </ul>
+  <li>{{ i.get_status_display }}</li>
+  <li><a href="/member/send_cargo_no_and_user_url_for_btc_send/{{ i.id }}">{% trans "Send cargo no and your btc adress" %}</a></li>
+  <li><a href="/member/after_sale_complaint/{{ i.id }}">{% trans "I had a problem" %}</a></li>
+</ul>
+    {% endif %}
 {% endfor %}
-</body>
-</html>
+{% endblock %}

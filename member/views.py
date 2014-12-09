@@ -144,6 +144,32 @@ def sends_shipping(request):  # user 3rd person exchanges
         return HttpResponseRedirect('/404')
 
 
+@login_required
+def send_cargo_no_and_user_url_for_btc_send(request, order_id):
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+        order = Orders.objects.filter(id=order_id, on_sales__member=member)[0]
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/404')
+
+    form = send_cargo_no_and_user_url_for_btc_send_form
+    if request.method == 'POST':
+        form = send_cargo_no_and_user_url_for_btc_send_form(request.POST)
+        if form.is_valid():
+            try:
+                cargo_no = request.POST.get('cargo_no')
+                user_url_for_btc_send = request.POST.get('user_url_for_btc_send')
+                order.cargo_no = cargo_no
+                order.user_url_for_btc_send = user_url_for_btc_send
+                order.status = '3'
+                order.save()
+                return HttpResponseRedirect('/member/sends_shipping/')
+            except:
+                return HttpResponseRedirect('/404')
+
+    return render_to_response('send_cargo_no_and_user_url_for_btc_send.html', locals(), context_instance=RequestContext(request))
+
 def my_bag(request):  # bag is basket of my take ticket
     try:
         tickets_in_my_bag = request.session['tickets_in_my_bag']

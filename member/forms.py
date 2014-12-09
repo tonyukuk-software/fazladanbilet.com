@@ -34,6 +34,11 @@ class new_order_form(forms.Form):
     phone = forms.CharField(max_length=11, widget=forms.TextInput)
     adress = forms.CharField(max_length=256, widget=forms.TextInput)
 
+class send_cargo_no_and_user_url_for_btc_send_form(forms.Form):
+    cargo_no = forms.CharField(max_length=50, required=True)
+    user_url_for_btc_send = forms.CharField(max_length=27, required=True)
+
+
 
 
 
