@@ -238,9 +238,9 @@ def new_order(request, ticket_id):
         form = new_order_form(request.POST)
         if form.is_valid():
             try:
-                name = str(request.POST.get('name'))
-                phone = str(request.POST.get('phone'))
-                address = str(request.POST.get('address'))
+                name = request.POST.get('name')
+                phone = request.POST.get('phone')
+                address = request.POST.get('address')
                 order = Orders(on_sales=on_sales, ship_to_user=ship_to_user, total_ticket=total_ticket, status='1',
                                name=name, phone=phone, address=address)
                 order.save()

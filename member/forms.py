@@ -32,7 +32,7 @@ class edit_member_password_form(forms.Form):
 class new_order_form(forms.Form):
     name = forms.CharField(max_length=50, widget=forms.TextInput)
     phone = forms.CharField(max_length=11, widget=forms.TextInput)
-    adress = forms.CharField(max_length=256, widget=forms.TextInput)
+    address = forms.CharField(max_length=256, widget=forms.TextInput)
 
 class send_cargo_no_and_user_url_for_btc_send_form(forms.Form):
     cargo_no = forms.CharField(max_length=50, required=True)
