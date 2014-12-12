@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^public_profile/(.+)$', 'jackalprojects.views.public_profile'),
     url(r'^contact_us/$', 'jackalprojects.views.contact_us'),
     url(r'^forgotten_password/$', 'jackalprojects.views.forgotten_password'),
+    url(r'^sorry/$', 'jackalprojects.views.page_sorry'),
 ) + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if settings.DEBUG:

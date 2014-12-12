@@ -29,5 +29,8 @@ def public_profile(request, user_id):
         member = Member.objects.filter(username=request.user.username)[0]
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
     return render_to_response('public_profile.html', locals())
+
+def page_sorry(request):
+    return render_to_response('sorry.html', locals())

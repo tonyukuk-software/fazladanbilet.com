@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -9,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-05 13:12+0000\n"
+"POT-Creation-Date: 2014-12-12 14:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,440 +16,486 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: jackalprojects/templates/forgotten_password.html:14
 #: jackalprojects/templates/home_page.html:14
 #: jackalprojects/templates/login.html:17
+#: jackalprojects/templates/public_profile.html:13
 #: jackalprojects/templates/ticket_pool.html:14
 #: member/templates/edit_member_profile.html:15
 #: member/templates/member_profile.html:13 member/templates/new_member.html:16
-#: member/templates/new_swap_ticket.html:17
+#: member/templates/new_order.html:17 member/templates/new_swap_ticket.html:17
 #: member/templates/ticket_details.html:18 templates/base.html:148
 msgid "Home"
-msgstr "Anasayfa"
+msgstr ""
 
 #: jackalprojects/templates/forgotten_password.html:15
-#, fuzzy
 msgid "Forgotten Password"
-msgstr "Parola Değiştir"
+msgstr ""
 
 #: jackalprojects/templates/forgotten_password.html:23
-#, fuzzy
 msgid "Forgot Password"
-msgstr "Parolayı Onayla"
+msgstr ""
 
 #: jackalprojects/templates/forgotten_password.html:24
 msgid "Enter your email and we'll send you new password."
-msgstr "E-mail adresini gir ve biz sana yeni parolanı yollayalım."
+msgstr ""
 
 #: jackalprojects/templates/forgotten_password.html:34
 msgid "Send Me Now"
-msgstr "Şimdi Gönder"
+msgstr ""
 
 #: jackalprojects/templates/forgotten_password.html:39
 msgid "Return to Login"
-msgstr "Girişe Git"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:28
 #: jackalprojects/templates/ticket_pool.html:29
 msgid "1 products/page"
-msgstr "1 ürünler/sayfa"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:29
 #: jackalprojects/templates/ticket_pool.html:30
 msgid "6 products/page"
-msgstr "6 ürünler/sayfa"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:30
 #: jackalprojects/templates/ticket_pool.html:31
 msgid "9 products/page"
-msgstr "9 ürünler/sayfa"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:35
 #: jackalprojects/templates/ticket_pool.html:36
 msgid "Order by price"
-msgstr "BTC miktarına göre"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:36
 #: jackalprojects/templates/ticket_pool.html:37
 msgid "Order by name"
-msgstr "İsme göre"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:74
 #: jackalprojects/templates/ticket_pool.html:75
 msgid "First"
-msgstr "İlk"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:80
 #: jackalprojects/templates/ticket_pool.html:81
 msgid "Last"
-msgstr "Son"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:90
 #: jackalprojects/templates/ticket_pool.html:91
 #: member/templates/ticket_details.html:117
 msgid "product price filter"
-msgstr "ÜRÜN BTC MİKTARI FİLTRESİ"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:96
 #: jackalprojects/templates/ticket_pool.html:97
 #: member/templates/ticket_details.html:123
 msgid "Filter"
-msgstr "Filtre"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:101
 #: jackalprojects/templates/ticket_pool.html:102
 msgid " Categories filter"
-msgstr "Kategori filtresi"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:104
 #: jackalprojects/templates/ticket_pool.html:105
 msgid " Films"
-msgstr "Filmler"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:108
 #: jackalprojects/templates/ticket_pool.html:109
 msgid " Theatre"
-msgstr "Tiyatrolar"
+msgstr ""
 
 #: jackalprojects/templates/home_page.html:112
 #: jackalprojects/templates/ticket_pool.html:113
 msgid " Concert"
-msgstr "Konser"
+msgstr ""
 
 #: jackalprojects/templates/login.html:18
-#, fuzzy
 msgid "Sign In"
-msgstr "Üye Ol"
+msgstr ""
 
 #: jackalprojects/templates/login.html:26
-#, fuzzy
 msgid "Sign in"
-msgstr "Üye Ol"
+msgstr ""
 
 #: jackalprojects/templates/login.html:27
 #: member/templates/edit_member_profile.html:29
 #: member/templates/edit_member_profile.html:58
-#: member/templates/new_member.html:25
+#: member/templates/new_member.html:25 member/templates/new_order.html:26
 #: member/templates/new_swap_ticket.html:26
 msgid "Please, you must filled the form with right values and press button"
-msgstr "Lütfen bilgileri doldurun ve butona basın"
+msgstr ""
 
 #: jackalprojects/templates/login.html:39 member/templates/new_member.html:37
 #: member/templates/ticket_details.html:97
 msgid "Username"
-msgstr "Kullanıcı Adı"
+msgstr ""
 
 #: jackalprojects/templates/login.html:46 member/templates/new_member.html:49
 msgid "Password"
-msgstr "Parola"
+msgstr ""
 
 #: jackalprojects/templates/login.html:55
-#, fuzzy
 msgid "I forgot my password"
-msgstr "Parolayı Onayla"
+msgstr ""
 
 #: jackalprojects/templates/login.html:62 member/templates/new_member.html:66
-#: member/templates/new_swap_ticket.html:91
+#: member/templates/new_order.html:61 member/templates/new_swap_ticket.html:91
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:21
 msgid "Submit"
-msgstr "Gönder"
+msgstr ""
 
 #: jackalprojects/templates/login.html:79 member/templates/new_member.html:80
 msgid "Welcome to fazladanbilet.com"
-msgstr "fazladanbilet.com'a Hoşgeldiniz"
+msgstr ""
 
 #: jackalprojects/templates/login.html:80
 msgid "If you are want sale your tickets;login or sign up and join us."
-msgstr "Eğer biletlerini satmak istiyorsan; giriş yap yada üye olup bize katıl."
+msgstr ""
 
 #: jackalprojects/templates/login.html:83 member/templates/new_member.html:24
 msgid "Create an account"
-msgstr "Yeni Hesap Yarat"
+msgstr ""
 
 #: jackalprojects/templates/login.html:84
 msgid "Forgotten your password"
-msgstr "Parolamı unuttum"
+msgstr ""
+
+#: jackalprojects/templates/public_profile.html:14
+#: member/templates/member_profile.html:14
+msgid "Profile"
+msgstr ""
+
+#: jackalprojects/templates/public_profile.html:47
+#: member/templates/member_profile.html:49
+#: member/templates/ticket_details.html:101
+msgid "Points"
+msgstr ""
+
+#: jackalprojects/templates/public_profile.html:49
+#: member/templates/member_profile.html:51
+msgid "Points Counter"
+msgstr ""
 
 #: jackalprojects/templates/ticket_pool.html:15
 msgid "Ticket Pool"
-msgstr "Gişe"
+msgstr ""
+
+#: member/templates/comes_shipping.html:23
+#: member/templates/sends_shipping.html:24
+msgid "I had a problem"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:16
 msgid "Edit Profile"
-msgstr "Profil Düzenle"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:28
 msgid "Upload Photo"
-msgstr "Fotoğraf Yükle"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:47
 msgid "Upload"
-msgstr "Yükle"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:57
 #: member/templates/edit_member_profile.html:89
 msgid "Change Password"
-msgstr "Parola Değiştir"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:68
 msgid "Old Password"
-msgstr "Eski Parola"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:74
 msgid "New Password"
-msgstr "Yeni Parola"
+msgstr ""
 
 #: member/templates/edit_member_profile.html:80
 msgid "Confirm Password"
-msgstr "Parolayı Onayla"
-
-#: member/templates/member_profile.html:14
-msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 #: member/templates/member_profile.html:44
 msgid "EDIT PROFILE"
-msgstr "PROFİL DÜZENLE"
-
-#: member/templates/member_profile.html:49
-#: member/templates/ticket_details.html:101
-msgid "Points"
-msgstr "Puanlar"
-
-#: member/templates/member_profile.html:51
-msgid "Points Counter"
-msgstr "Puan Sayacı"
+msgstr ""
 
 #: member/templates/new_member.html:17 templates/base.html:79
 msgid "Sign Up"
-msgstr "Üye Ol"
+msgstr ""
 
 #: member/templates/new_member.html:43
 msgid "E-mail"
-msgstr "E-mail"
+msgstr ""
 
 #: member/templates/new_member.html:59
 msgid "I agree to"
-msgstr "Kabul ediyorum"
+msgstr ""
 
 #: member/templates/new_member.html:59
 msgid "Terms of Use"
-msgstr "Kullanım Sözleşmesi"
+msgstr ""
 
 #: member/templates/new_member.html:81
 msgid ""
 "This platform provides exchange with bitcoins to on your hands more tickets."
 msgstr ""
-"Bu platform elinizdeki biletleri bitcoin karşılığı takas etmenizi sağlar."
 
 #: member/templates/new_member.html:84
 msgid "Easy exchange with bitcoins"
-msgstr "Bitcoinler ile kolay takas"
+msgstr ""
 
 #: member/templates/new_member.html:85
 msgid "Low commissions"
-msgstr "Düşük komisyonlar"
+msgstr ""
 
 #: member/templates/new_member.html:86
 msgid "Minimum data requested"
-msgstr "Minimum veri isteği"
+msgstr ""
 
 #: member/templates/new_member.html:87
 msgid "We don't keep your data and removes after success shipping"
-msgstr "Bilgilerini tutmayız ve başarılı takas sonrası sileriz"
+msgstr ""
 
 #: member/templates/new_member.html:88
 msgid "Secure shopping"
-msgstr "Güvenli Alışveriş"
+msgstr ""
 
-#: member/templates/new_swap_ticket.html:18
-#: member/templates/new_swap_ticket.html:25 templates/base.html:160
-#: templates/base.html.py:190
-msgid "New Ticket"
-msgstr "Yeni Bilet"
+#: member/templates/new_order.html:18 member/templates/new_order.html.py:25
+msgid "New Order"
+msgstr ""
 
-#: member/templates/new_swap_ticket.html:41
-msgid "Category"
-msgstr "Kategori"
+#: member/templates/new_order.html:41
+msgid "Name and Surname"
+msgstr ""
 
-#: member/templates/new_swap_ticket.html:47
-msgid "Title"
-msgstr "Başlık"
+#: member/templates/new_order.html:47
+msgid "Phone"
+msgstr ""
 
-#: member/templates/new_swap_ticket.html:53
-#: member/templates/ticket_details.html:87
-msgid "Description"
-msgstr "Açıklama"
+#: member/templates/new_order.html:53
+msgid "Address"
+msgstr ""
 
-#: member/templates/new_swap_ticket.html:59
-msgid "Total Ticket"
-msgstr "Toplam Bilet"
-
-#: member/templates/new_swap_ticket.html:65
-msgid "City"
-msgstr "Şehir"
-
-#: member/templates/new_swap_ticket.html:71
-msgid "Amount"
-msgstr "BTC Miktarı"
-
-#: member/templates/new_swap_ticket.html:77
-msgid "Photo"
-msgstr "Fotoğraf"
-
-#: member/templates/new_swap_ticket.html:83
-#: member/templates/ticket_details.html:71
-msgid "End Date"
-msgstr "Son Kullanım Tarihi"
-
+#: member/templates/new_order.html:75
 #: member/templates/new_swap_ticket.html:105
 msgid "Don't Forget"
-msgstr "Asla Unutma"
+msgstr ""
 
+#: member/templates/new_order.html:76
 #: member/templates/new_swap_ticket.html:106
 msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
 msgstr ""
-"Eğer güvenli ve başarılı bir takas işlemi istiyorsanız, lütfen aşağıdakilere "
-"dikkat edin"
 
+#: member/templates/new_order.html:79
 #: member/templates/new_swap_ticket.html:109
 msgid "Your bitcoins not sends before success shipping!"
-msgstr "Bitcoinlerin başarılı takas işlemi olmadan önce yollanmaz!"
+msgstr ""
 
+#: member/templates/new_order.html:80
 #: member/templates/new_swap_ticket.html:110
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
 msgstr ""
-"Geç kalmış kargo, yanlış veya sahte bilet ve daha fazla sahtekarlık "
-"durumunda takas işlemi iptal edilir!"
 
+#: member/templates/new_order.html:81
 #: member/templates/new_swap_ticket.html:111
 msgid "This system takes comission 20/1 on your ticket amount!"
-msgstr "Bu sistem bilet btc miktarının 20/1 oranında komisyon alır! "
+msgstr ""
 
+#: member/templates/new_order.html:82
 #: member/templates/new_swap_ticket.html:112
 msgid "Bitcoin miners takes comission 0.0002 btc!"
-msgstr "Bitcoin madencileri 0.0002 btc komisyon alır!"
+msgstr ""
 
+#: member/templates/new_order.html:83
 #: member/templates/new_swap_ticket.html:113
 msgid "This platform works with trusts dealers!"
-msgstr "Bu platform kullanıcıların güveniyle çalışır!"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:18
+#: member/templates/new_swap_ticket.html:25 templates/base.html:160
+#: templates/base.html.py:190
+msgid "New Ticket"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:41
+msgid "Category"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:47
+msgid "Title"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:53
+#: member/templates/ticket_details.html:87
+msgid "Description"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:59
+msgid "Total Ticket"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:65
+msgid "City"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:71
+msgid "Amount"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:77
+msgid "Photo"
+msgstr ""
+
+#: member/templates/new_swap_ticket.html:83
+#: member/templates/ticket_details.html:71
+msgid "End Date"
+msgstr ""
+
+#: member/templates/sends_shipping.html:23
+msgid "Send cargo no and your btc adress"
+msgstr ""
 
 #: member/templates/ticket_details.html:19
 msgid "Ticket Detail"
-msgstr "Bilet Detayı"
+msgstr ""
 
 #: member/templates/ticket_details.html:41
 msgid "information"
-msgstr "Bilgi Al"
+msgstr ""
 
 #: member/templates/ticket_details.html:44
 msgid "Price"
-msgstr "BTC miktarı"
+msgstr ""
 
 #: member/templates/ticket_details.html:59
 msgid "Add to cart"
-msgstr "Sepeti ekle"
+msgstr ""
 
 #: member/templates/ticket_details.html:66
 msgid "Categories"
-msgstr "Kategoriler"
+msgstr ""
 
 #: member/templates/ticket_details.html:76
 msgid "Total"
-msgstr "Toplam Bilet"
+msgstr ""
 
 #: member/templates/ticket_details.html:88
 msgid "User's Information"
-msgstr "Kullanıcı Bilgisi"
+msgstr ""
 
 #: member/templates/ticket_details.html:105
 msgid "Counter"
-msgstr "Puan Sayacı"
+msgstr ""
 
 #: member/templates/ticket_details.html:128
 msgid "Categories filter"
-msgstr "KATEGORİ FİLTRESİ"
+msgstr ""
 
 #: member/templates/ticket_details.html:131
 msgid "Films"
-msgstr "Filmler"
+msgstr ""
 
 #: member/templates/ticket_details.html:135
 msgid "Theatre"
-msgstr "Tiyatrolar"
+msgstr ""
 
 #: member/templates/ticket_details.html:139
 msgid "Concert"
-msgstr "Konserler"
+msgstr ""
 
 #: templates/base.html:59
 msgid "Language"
-msgstr "Dil"
+msgstr ""
 
 #: templates/base.html:74
 msgid "My Account"
-msgstr "Profilim"
+msgstr ""
 
 #: templates/base.html:75
 msgid "Checkout"
-msgstr "Sepetim"
+msgstr ""
 
 #: templates/base.html:76
 msgid "Logout"
-msgstr "Çıkış Yap"
+msgstr ""
 
 #: templates/base.html:78
 msgid "Login"
-msgstr "Giriş"
+msgstr ""
 
 #: templates/base.html:84
 msgid "Cart"
-msgstr "Sepetim"
+msgstr ""
 
 #: templates/base.html:86
 msgid "Recently added item(s)"
-msgstr "Son eklenen biletler"
+msgstr ""
 
 #: templates/base.html:128
 msgid "Cancel"
-msgstr "Çıkış"
+msgstr ""
 
 #: templates/base.html:129
-#, fuzzy
 msgid "Check out"
-msgstr "Sepetim"
+msgstr ""
 
 #: templates/base.html:142
 msgid "Enter your keywords"
-msgstr "Aranacak kelimeleri girin"
+msgstr ""
 
-#: templates/base.html:153 templates/base.html.py:186
+#: templates/base.html:150 templates/base.html.py:153 templates/base.html:186
 msgid "What is it?"
-msgstr "FazladanBilet Nedir?"
+msgstr ""
 
 #: templates/base.html:154 templates/base.html.py:187
 msgid "How it works?"
-msgstr "Nasıl Çalışır?"
+msgstr ""
 
 #: templates/base.html:155
 msgid "Bitcoin"
-msgstr "Bitcoin"
+msgstr ""
 
 #: templates/base.html:159 templates/base.html.py:188 templates/base.html:189
 msgid "Shop"
-msgstr "Gişe"
+msgstr ""
 
 #: templates/base.html:161 templates/base.html.py:191
 msgid "Contact Us"
-msgstr "Bize Ulaşın"
+msgstr ""
 
 #: templates/base.html:185
 msgid "Homepage"
-msgstr "Anasayfa"
+msgstr ""
 
-msgid " Sorry"
-msgstr "Üzgünüz"
+#: templates/sorry.html:14
+msgid "Sorry"
+msgstr ""
+
+#: templates/sorry.html:18
+msgid "We lived an unexpected problem !"
+msgstr ""
+
+#: templates/sorry.html:19
+msgid "You can return"
+msgstr ""
+
+#: templates/sorry.html:20
+msgid "homepage"
+msgstr ""
+
+#: templates/sorry.html:20
+msgid "or"
+msgstr ""
+
+#: templates/sorry.html:21
+msgid "contact us"
+msgstr ""

@@ -35,7 +35,7 @@ def new_member(request):
                 return HttpResponseRedirect('/accounts/login/')
             except Exception as e:
                 print e
-                return HttpResponseRedirect('/404')
+                return HttpResponseRedirect('/sorry')
     return render_to_response('new_member.html', {'form': form}, context_instance=RequestContext(request))
 
 
@@ -53,7 +53,7 @@ def new_swap_ticket(request):
                 form.save()
                 return HttpResponseRedirect('/ticket_pool/')
             except:
-                return HttpResponseRedirect('/404')
+                return HttpResponseRedirect('/sorry')
     return render_to_response('new_swap_ticket.html', locals(), context_instance=RequestContext(request))
 
 
@@ -64,7 +64,7 @@ def member_profile(request):
         return render_to_response('member_profile.html', locals())
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
 
 @login_required
@@ -74,7 +74,7 @@ def edit_member_profile(request):
         member_pw = User.objects.filter(username=request.user.username)[0]
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
     form = edit_member_profile_form()
     form_password = edit_member_password_form  # for change password
@@ -88,7 +88,7 @@ def edit_member_profile(request):
                 return HttpResponseRedirect('/member/member_profile')
             except Exception as e:
                 print e
-                return HttpResponseRedirect('/404')
+                return HttpResponseRedirect('/sorry')
 
     elif request.method == 'POST' and 'Change Password' in request.POST:  # password form
         form_password = edit_member_password_form(request.POST)
@@ -103,7 +103,7 @@ def edit_member_profile(request):
                     return HttpResponseRedirect('/member/member_profile')
                 except Exception as e:
                     print e
-                    return HttpResponseRedirect('/404')
+                    return HttpResponseRedirect('/sorry')
             else:
                 errors = form_password._errors.setdefault("old_password", ErrorList())
                 errors.append(u'Check your old and new password')
@@ -119,7 +119,7 @@ def ticket_details(request, ticket_id):
         return render_to_response('ticket_details.html', locals())
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
 
 @login_required
@@ -130,7 +130,7 @@ def comes_shipping(request):  # user own exchanges
         return render_to_response('comes_shipping.html', locals())
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
 
 @login_required
@@ -141,7 +141,7 @@ def sends_shipping(request):  # user 3rd person exchanges
         return render_to_response('sends_shipping.html', locals())
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
 
 @login_required
@@ -151,7 +151,7 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
         order = Orders.objects.filter(id=order_id, on_sales__member=member)[0]
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
     form = send_cargo_no_and_user_url_for_btc_send_form
     if request.method == 'POST':
@@ -166,7 +166,7 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
                 order.save()
                 return HttpResponseRedirect('/member/sends_shipping/')
             except:
-                return HttpResponseRedirect('/404')
+                return HttpResponseRedirect('/sorry')
 
     return render_to_response('send_cargo_no_and_user_url_for_btc_send.html', locals(), context_instance=RequestContext(request))
 
@@ -182,7 +182,7 @@ def my_bag(request):  # bag is basket of my take ticket
         return render_to_response('my_bag.html', locals())
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
 
 @csrf_exempt
@@ -216,7 +216,7 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
         return HttpResponse(False, content_type='application/json')
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
 
 
 @login_required
@@ -226,7 +226,7 @@ def new_order(request, ticket_id):
         ship_to_user = Member.objects.filter(username=request.user.username)[0]
     except Exception as e:
         print e
-        return HttpResponseRedirect('/404')
+        return HttpResponseRedirect('/sorry')
     total_ticket = 1  # Default Value
     tickets_in_my_bag = request.session['tickets_in_my_bag']  # for get total ticket in session
     for i in range(0, len(tickets_in_my_bag)):
@@ -247,6 +247,6 @@ def new_order(request, ticket_id):
                 return HttpResponseRedirect('/bitcoin/payment_page/' + str(order.id))
             except Exception as e:
                 print e
-                return HttpResponseRedirect('/404')
+                return HttpResponseRedirect('/sorry')
     return render_to_response('new_order.html', locals(), context_instance=RequestContext(request))
 
