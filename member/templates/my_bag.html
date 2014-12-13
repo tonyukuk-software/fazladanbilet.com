@@ -9,28 +9,14 @@
 {% block menu_block %}{% endblock %}
 
 {% block container_block %}
-{% if tickets != null %}
- {% for i in tickets %}
+{% if orders != null %}
+ {% for i in orders %}
  <div>
  <a href="/member/ticket_details/{{ i.id }}">
  <div>
- <p>Kullanici:{{ i.member.username }}</p>
+ <p>Kullanici:{{ i.ship_to_user.username }}</p>
 
- <p>Kategori: {{ i.category.category_name }}</p>
 
- <p>{{ i.title }}</p>
-
- <p>aciklama: {{ i.description }}</p>
-
- <p>Toplam Bilet: {{ i.total_ticket }}</p>
-
- <p>Gönderilecek Şehir: {{ i.from_city }}</p>
-
- <p>Bitcoin Takas Miktarı: {{ i.amount_bitcoin }}</p>
-
- <p>Oluşturulma: {{ i.cdate }}</p>
-
- <p>Bitiş: {{ i.edate }}</p>
  </div>
  </a>
  <input type="button" onclick="location.href='/member/new_order/{{ i.id }}' " value="Takasla">

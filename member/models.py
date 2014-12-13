@@ -54,7 +54,7 @@ class Orders(models.Model):
     STATUS_CHOICES = (
     (u'0', u'cancel'),
     (u'1', u'waiting_for_payment'),
-    (u'2', u'waiting_for_cargo'),
+    (u'2', u'waitasddsdsdddr_cargo'),
     (u'3', u'on_the_road'),
     (u'4', u'success_shipping'),
     (u'5', u'failure_shipping')

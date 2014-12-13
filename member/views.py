@@ -218,7 +218,6 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
         print e
         return HttpResponseRedirect('/sorry')
 
-
 @login_required
 def new_order(request, ticket_id):
     try:
@@ -227,12 +226,7 @@ def new_order(request, ticket_id):
     except Exception as e:
         print e
         return HttpResponseRedirect('/sorry')
-    total_ticket = 1  # Default Value
-    tickets_in_my_bag = request.session['tickets_in_my_bag']  # for get total ticket in session
-    for i in range(0, len(tickets_in_my_bag)):
-        ticket_detail = tickets_in_my_bag[i].split("+")
-        if ticket_detail[0] == ticket_id:
-            total_ticket = ticket_detail[1]
+    total_ticket = 1
     form = new_order_form()
     if request.method == 'POST':
         form = new_order_form(request.POST)
@@ -250,3 +244,20 @@ def new_order(request, ticket_id):
                 return HttpResponseRedirect('/sorry')
     return render_to_response('new_order.html', locals(), context_instance=RequestContext(request))
 
+@login_required
+def after_sale_complaint(request, order_id):
+    try:
+        order = Orders.objects.filter(id=order_id)[0]
+    except:
+        return HttpResponseRedirect('/sorry')
+    form = after_sale_complaint_form(initial={'orders': order})
+    if request.method == 'POST':
+        form = after_sale_complaint_form(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                #TODO mailgun: #  __author__ = 'barisariburnu'
+                return HttpResponseRedirect('/')
+            except:
+                return HttpResponseRedirect('/sorry')
+    return render_to_response('after_sale_complaint.html', locals(), context_instance=RequestContext(request))
