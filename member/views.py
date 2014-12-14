@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.core.context_processors import request
+from django.core.context_processors import request, csrf
 from django.views.decorators.csrf import csrf_exempt
 import time
 import datetime
@@ -14,7 +14,9 @@ from django.template import RequestContext
 from django.contrib.auth.models import User
 from member.forms import *
 from django.forms.util import ErrorList
-
+import bag_operations
+from member.bag_operations import bag_skeleton
+from django.template.defaultfilters import slugify
 # Create your views here.
 
 def new_member(request):
@@ -116,7 +118,7 @@ def edit_member_profile(request):
 def ticket_details(request, ticket_id):
     try:
         ticket = On_Sales.objects.filter(id=ticket_id)[0]
-        return render_to_response('ticket_details.html', locals())
+        return render_to_response('ticket_details.html', locals(), context_instance=RequestContext(request))
     except Exception as e:
         print e
         return HttpResponseRedirect('/sorry')
@@ -171,52 +173,62 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
     return render_to_response('send_cargo_no_and_user_url_for_btc_send.html', locals(), context_instance=RequestContext(request))
 
 def my_bag(request):  # bag is basket of my take ticket
-    try:
-        tickets_in_my_bag = request.session['tickets_in_my_bag']
-        ids = []
-        print tickets_in_my_bag
-        for i in range(0, len(tickets_in_my_bag)):
-            ticket_detail = tickets_in_my_bag[i].split("+")
-            ids.append(ticket_detail[0])
-        tickets = On_Sales.objects.filter(id__in=ids)
-        return render_to_response('my_bag.html', locals())
-    except Exception as e:
-        print e
-        return HttpResponseRedirect('/sorry')
+
+    #clean bag
+    # response = HttpResponse()
+    # tickets_in_my_bag = request.COOKIES['tickets_in_my_bag']
+    # tickets_in_my_bag = []
+    # response.set_cookie('tickets_in_my_bag', tickets_in_my_bag)
+    # return response
+
+    tickets = []
+    if 'tickets_in_my_bag' in request.COOKIES:
+        try:
+            tickets_in_my_bag = request.COOKIES['tickets_in_my_bag']
+            print tickets_in_my_bag
+            ticket = ''
+            for letter in tickets_in_my_bag:
+                if letter is '?':
+                    raw_ticket = bag_skeleton()
+                    print ticket
+                    raw_ticket.solved_bag_item(ticket)
+                    print raw_ticket.title
+                    tickets.append(raw_ticket)
+                    ticket = ''
+                else:
+                    ticket = ticket + letter
+        except Exception as e:
+            print e
+            return HttpResponseRedirect('/sorry')
+        except Exception as e:
+            print e
+            return HttpResponseRedirect('/sorry')
+    return render_to_response('my_bag.html', locals(), context_instance=RequestContext(request))
+
+
 
 
 @csrf_exempt
 def in_the_bucket(request):  # added new ticket for ticket in my bag
+    response = HttpResponse()
+    new_item = bag_skeleton()
+    ticket_id = str(request.POST.get('ticket_id'))
+    total_number = str(request.POST.get('total_number'))
+    ticket = On_Sales.objects.filter(id=ticket_id)[0]
+
     try:
-        adding_time = str(datetime.datetime.now())
-        ticket_id = str(request.POST.get('ticket_id'))
-        total_number = str(request.POST.get('total_number'))
-        ticket = On_Sales.objects.filter(id=ticket_id)[0]
-        ticket_name = ticket.title
-        img_url = ticket.ticket_photo
-        price = ticket.amount_bitcoin
-        have_ticket = False
-        if request.session.get('tickets_in_my_bag'):
-            tickets_in_my_bag = request.session['tickets_in_my_bag']
-            for i in range(0, len(tickets_in_my_bag)):
-                ticket_detail = tickets_in_my_bag[i].split("+")
-                if ticket_detail[0] == ticket_id:
-                    have_ticket = True
-            if not have_ticket:
-                tickets_in_my_bag.append(ticket_id + "+" + total_number
-                                         + "+" + adding_time + "+" + unicode(ticket_name)
-                                         + "+" + unicode(img_url) + "+" + str(price))
-            request.session['tickets_in_my_bag'] = tickets_in_my_bag
-        else:
-            tickets_in_my_bag = [ticket_id + "+" + total_number
-                                 + "+" + adding_time + "+" + unicode(ticket_name)
-                                 + "+" + unicode(img_url) + "+" + str(price)]
-            request.session['tickets_in_my_bag'] = tickets_in_my_bag
-        print tickets_in_my_bag
-        return HttpResponse(False, content_type='application/json')
+        value = new_item.create_bag_item(ticket_id, total_number, ticket.amount_bitcoin, ticket.title, ticket.ticket_photo)
     except Exception as e:
         print e
-        return HttpResponseRedirect('/sorry')
+
+    if 'tickets_in_my_bag' in request.COOKIES:
+        tickets_in_my_bag = request.COOKIES['tickets_in_my_bag']
+    else:
+        tickets_in_my_bag = ''
+
+    tickets_in_my_bag = tickets_in_my_bag + new_item.cokkie_text
+    response.set_cookie('tickets_in_my_bag', tickets_in_my_bag)
+    return response
 
 @login_required
 def new_order(request, ticket_id):
