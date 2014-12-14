@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import request, csrf
 from django.views.decorators.csrf import csrf_exempt
+from gi.overrides.keysyms import seconds
 import time
 import datetime
 
@@ -227,7 +228,8 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
         tickets_in_my_bag = ''
 
     tickets_in_my_bag = tickets_in_my_bag + new_item.cokkie_text
-    response.set_cookie('tickets_in_my_bag', tickets_in_my_bag)
+    expires = datetime.datetime.strftime(datetime.datetime.utcnow() + datetime.timedelta(minutes=30), "%a, %d-%b-%Y %H:%M:%S GMT")
+    response.set_cookie('tickets_in_my_bag', tickets_in_my_bag, expires=expires)
     return response
 
 @login_required
