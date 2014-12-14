@@ -454,3 +454,21 @@ msgstr "Anasayfa"
 
 msgid " Sorry"
 msgstr "Üzgünüz"
+#: member/templates/my_bag.html:34
+msgid "Item"
+msgstr "Bilet"
+#: member/templates/my_bag.html:37
+msgid "Quantity"
+msgstr "Adet"
+#: member/templates/my_bag.html:30
+msgid "shopping cart"
+msgstr "ALIŞVERİŞ SEPETİ"
+#: member/templates/my_bag.html:19
+msgid "Member"
+msgstr "Profil"
+#: member/templates/my_bag.html:66
+msgid "Çantanız henüz boş görünüyor."
+msgstr "Your bag is not full yet."
+#: member/templates/my_bag.html:64
+msgid "Swap"
+msgstr "Takas"

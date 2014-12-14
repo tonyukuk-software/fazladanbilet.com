@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block head_block %}
@@ -9,30 +10,111 @@
 {% block menu_block %}{% endblock %}
 
 {% block container_block %}
-{% if tickets %}
- {% for ticket in tickets %}
- <div>
- <a href="/member/ticket_details/{{ ticket.ticket_id }}">
- <div>
- <p>{{ ticket.title }}</p>
+    <div class="l-main-container">
 
- <p>Toplam Bilet: {{ ticket.total_number }}</p>
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="/member/member_profile/">{% trans "Member" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans "Cart" %}</span></li>
+                </ul>
+            </div>
+        </div>
 
-
- <p>Bitcoin Takas Miktarı: {{ ticket.amount_bitcoin }}</p>
-
- <p>Oluşturulma: {{ ticket.date }}</p>
-
- </div>
- </a>
- <input type="button" onclick="location.href='/member/new_order/{{ i.id }}' " value="Takasla">
- </div>
- <br/>
- {% endfor %}
-{% else %}
- <p> Çanta Boş</p>
-{% endif %}
-
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 ">
+                        <div class="b-shortcode-example">
+                            <div class="f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{% blocktrans %}shopping cart{% endblocktrans %}</div>
+                            <div class="b-product-cart b-default-top-indent b-table-reset j-price-count-box">
+                                <table>
+                                    <tbody>
+                                    {% if tickets %}
+                                        <tr>
+                                            <th><span class="f-primary-b">{% trans "Item" %}</span></th>
+                                            <th width="130"><span class="f-primary-b">{% trans "Price" %}</span></th>
+                                            <th width="100"><span class="f-primary-b">{% trans "Quantity" %}</span></th>
+                                            <th width="70"><span class="f-center"><a class="btn-close-o" href=""><i class="fa fa-times"></i></a></span></th>
+                                        </tr>
+                                         {% for ticket in tickets %}
+                                            <tr>
+                                                <td>
+                                                    <div class="b-href-with-img">
+                                                        <a class="c-primary" href="/member/ticket_details/{{ ticket.ticket_id }}">
+                                                            <img data-retina="" src="/media/{{ ticket.ticket_photo }}" alt="" width="56">
+                                                            <p>
+                                                                 <a href="/member/ticket_details/{{ ticket.ticket_id }}">
+                                                                    <span class="f-title-small ">{{ ticket.title }} </span>
+                                                                    <span class="f-title-smallest ">{{ ticket.date }}</span>
+                                                                 </a>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td><span class="f-primary-b c-default f-title-medium"><i class="fa fa-btc"></i> <span class="j-product-price">{{ ticket.amount_bitcoin }}</span></span></td>
+                                                <td class="f-center"><span class="f-primary-b c-default f-title-medium"><span class="j-product-total ">{{ ticket.total_number }}</span></span></td>
+                                                <td><span class="f-center"><a class="btn-close-o" href=""><i class="fa fa-times"></i></a></span></td>
+                                            </tr>
+                                        {% endfor %}
+                                            <tr>
+                                                <td colspan="5">
+                                                    <div class="b-tag-container b-right">
+                                                        <a href="/member/new_order/{{ ticket.ticket_id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "Swap" %}</a>
+                                                    </div>
+                                                </td>
+                                             </tr>
+                                        {% else %}
+                                            <tr>
+                                                <td>{% blocktrans %}Çantanız henüz boş görünüyor.{% endblocktrans %}</td>
+                                            <tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <aside>
+                            <div class="row b-col-default-indent">
+                                <div class="col-md-12">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans "product price filter" %}</h4>
+                                    <form action="">
+                                        <div class="b-slider-range j-slider-range f-slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                            <span class="b-slider-range_min">0</span>
+                                            <span class="b-slider-range_max">$999</span>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 20.02002002002%; width: 50.0500500500501%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 20.02002002002%;"><span class="min">$200</span></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 70.0700700700701%;"><span class="max">$700</span></span></div>
+                                        <a href="#" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b">{% trans "Filter" %}</a>
+                                    </form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="b-categories-filter">
+                                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans " Categories filter" %}</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Films" %}</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Theatre" %}</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Concert" %}</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock %}
 
 {% block script_block %}
