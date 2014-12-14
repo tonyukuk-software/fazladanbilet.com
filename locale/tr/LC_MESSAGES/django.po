@@ -413,7 +413,7 @@ msgstr "Sepetim"
 
 #: templates/base.html:86
 msgid "Recently added item(s)"
-msgstr "Son eklenen biletler"
+msgstr "Son eklenen bilet(ler)"
 
 #: templates/base.html:128
 msgid "Cancel"
@@ -430,7 +430,7 @@ msgstr "Aranacak kelimeleri girin"
 
 #: templates/base.html:153 templates/base.html.py:186
 msgid "What is it?"
-msgstr "FazladanBilet Nedir?"
+msgstr "Fazladanbilet Nedir?"
 
 #: templates/base.html:154 templates/base.html.py:187
 msgid "How it works?"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-12 14:20+0200\n"
+"POT-Creation-Date: 2014-12-14 16:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,13 @@ msgstr ""
 #: jackalprojects/templates/home_page.html:14
 #: jackalprojects/templates/login.html:17
 #: jackalprojects/templates/public_profile.html:13
+#: jackalprojects/templates/terms.html:15
 #: jackalprojects/templates/ticket_pool.html:14
+#: member/templates/after_sale_complaint.html:17
 #: member/templates/edit_member_profile.html:15
 #: member/templates/member_profile.html:13 member/templates/new_member.html:16
 #: member/templates/new_order.html:17 member/templates/new_swap_ticket.html:17
-#: member/templates/ticket_details.html:18 templates/base.html:148
+#: member/templates/ticket_details.html:18 templates/base.html:146
 msgid "Home"
 msgstr ""
 
@@ -125,6 +127,7 @@ msgid "Sign in"
 msgstr ""
 
 #: jackalprojects/templates/login.html:27
+#: member/templates/after_sale_complaint.html:26
 #: member/templates/edit_member_profile.html:29
 #: member/templates/edit_member_profile.html:58
 #: member/templates/new_member.html:25 member/templates/new_order.html:26
@@ -145,8 +148,10 @@ msgstr ""
 msgid "I forgot my password"
 msgstr ""
 
-#: jackalprojects/templates/login.html:62 member/templates/new_member.html:66
-#: member/templates/new_order.html:61 member/templates/new_swap_ticket.html:91
+#: jackalprojects/templates/login.html:62
+#: member/templates/after_sale_complaint.html:55
+#: member/templates/new_member.html:66 member/templates/new_order.html:61
+#: member/templates/new_swap_ticket.html:91
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:21
 msgid "Submit"
 msgstr ""
@@ -183,8 +188,34 @@ msgstr ""
 msgid "Points Counter"
 msgstr ""
 
+#: jackalprojects/templates/terms.html:16 templates/base.html:154
+msgid "Terms of Used"
+msgstr ""
+
+#: jackalprojects/templates/terms.html:24
+msgid "Kullanım Şartları"
+msgstr ""
+
 #: jackalprojects/templates/ticket_pool.html:15
 msgid "Ticket Pool"
+msgstr ""
+
+#: member/templates/after_sale_complaint.html:18
+#: member/templates/after_sale_complaint.html:25
+#: member/templates/new_swap_ticket.html:18
+#: member/templates/new_swap_ticket.html:25 templates/base.html:159
+#: templates/base.html.py:188
+msgid "New Ticket"
+msgstr ""
+
+#: member/templates/after_sale_complaint.html:41
+msgid "Status"
+msgstr ""
+
+#: member/templates/after_sale_complaint.html:47
+#: member/templates/new_swap_ticket.html:53
+#: member/templates/ticket_details.html:87
+msgid "Description"
 msgstr ""
 
 #: member/templates/comes_shipping.html:23
@@ -320,23 +351,12 @@ msgstr ""
 msgid "This platform works with trusts dealers!"
 msgstr ""
 
-#: member/templates/new_swap_ticket.html:18
-#: member/templates/new_swap_ticket.html:25 templates/base.html:160
-#: templates/base.html.py:190
-msgid "New Ticket"
-msgstr ""
-
 #: member/templates/new_swap_ticket.html:41
 msgid "Category"
 msgstr ""
 
 #: member/templates/new_swap_ticket.html:47
 msgid "Title"
-msgstr ""
-
-#: member/templates/new_swap_ticket.html:53
-#: member/templates/ticket_details.html:87
-msgid "Description"
 msgstr ""
 
 #: member/templates/new_swap_ticket.html:59
@@ -440,39 +460,39 @@ msgstr ""
 msgid "Recently added item(s)"
 msgstr ""
 
-#: templates/base.html:128
+#: templates/base.html:126
 msgid "Cancel"
 msgstr ""
 
-#: templates/base.html:129
+#: templates/base.html:127
 msgid "Check out"
 msgstr ""
 
-#: templates/base.html:142
+#: templates/base.html:140
 msgid "Enter your keywords"
 msgstr ""
 
-#: templates/base.html:150 templates/base.html.py:153 templates/base.html:186
+#: templates/base.html:148 templates/base.html.py:151 templates/base.html:184
 msgid "What is it?"
 msgstr ""
 
-#: templates/base.html:154 templates/base.html.py:187
+#: templates/base.html:152 templates/base.html.py:185
 msgid "How it works?"
 msgstr ""
 
-#: templates/base.html:155
+#: templates/base.html:153
 msgid "Bitcoin"
 msgstr ""
 
-#: templates/base.html:159 templates/base.html.py:188 templates/base.html:189
+#: templates/base.html:158 templates/base.html.py:186 templates/base.html:187
 msgid "Shop"
 msgstr ""
 
-#: templates/base.html:161 templates/base.html.py:191
+#: templates/base.html:160 templates/base.html.py:189
 msgid "Contact Us"
 msgstr ""
 
-#: templates/base.html:185
+#: templates/base.html:183
 msgid "Homepage"
 msgstr ""
 
