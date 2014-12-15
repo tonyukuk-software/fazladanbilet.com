@@ -35,7 +35,7 @@
                                         <tr>
                                             <th><span class="f-primary-b">{% trans "Item" %}</span></th>
                                             <th width="130"><span class="f-primary-b">{% trans "Price" %}</span></th>
-                                            <th width="100"><span class="f-primary-b">{% trans "Quantity" %}</span></th>
+                                            <th width="100"><span class="f-primary-b">{% trans "Number" %}</span></th>
                                             <th width="70"><span class="f-center"><a class="btn-close-o" href=""><i class="fa fa-times"></i></a></span></th>
                                         </tr>
                                          {% for ticket in tickets %}
@@ -43,7 +43,7 @@
                                                 <td>
                                                     <div class="b-href-with-img">
                                                         <a class="c-primary" href="/member/ticket_details/{{ ticket.ticket_id }}">
-                                                            <img data-retina="" src="/media/{{ ticket.ticket_photo }}" alt="" width="56">
+                                                            <img data-retina="" src="/media/ticket_photos/{{ ticket.ticket_photo }}" alt="" width="56">
                                                             <p>
                                                                  <a href="/member/ticket_details/{{ ticket.ticket_id }}">
                                                                     <span class="f-title-small ">{{ ticket.title }} </span>
@@ -54,20 +54,14 @@
                                                     </div>
                                                 </td>
                                                 <td><span class="f-primary-b c-default f-title-medium"><i class="fa fa-btc"></i> <span class="j-product-price">{{ ticket.amount_bitcoin }}</span></span></td>
-                                                <td class="f-center"><span class="f-primary-b c-default f-title-medium"><span class="j-product-total ">{{ ticket.total_number }}</span></span></td>
-                                                <td><span class="f-center"><a class="btn-close-o" href=""><i class="fa fa-times"></i></a></span></td>
+                                                <td><span class="f-primary-b c-default f-title-medium"><span class="j-product-price">{{ ticket.total_number }}</span></span></td>
+                                                <td><span class="f-center"><a href="/member/new_order/{{ ticket.ticket_id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "Exchange" %}</a></span></td>
                                             </tr>
                                         {% endfor %}
-                                            <tr>
-                                                <td colspan="5">
-                                                    <div class="b-tag-container b-right">
-                                                        <a href="/member/new_order/{{ ticket.ticket_id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "Swap" %}</a>
-                                                    </div>
-                                                </td>
-                                             </tr>
+
                                         {% else %}
                                             <tr>
-                                                <td>{% blocktrans %}Çantanız henüz boş görünüyor.{% endblocktrans %}</td>
+                                                <td>{% blocktrans %}Yet your bag is seems empty!{% endblocktrans %}</td>
                                             <tr>
                                         {% endif %}
                                     </tbody>

@@ -183,6 +183,7 @@ def my_bag(request):  # bag is basket of my take ticket
     # return response
 
     tickets = []
+    tt=3
     if 'tickets_in_my_bag' in request.COOKIES:
         try:
             tickets_in_my_bag = request.COOKIES['tickets_in_my_bag']
@@ -193,7 +194,7 @@ def my_bag(request):  # bag is basket of my take ticket
                     raw_ticket = bag_skeleton()
                     print ticket
                     raw_ticket.solved_bag_item(ticket)
-                    print raw_ticket.title
+                    print raw_ticket.total_number
                     tickets.append(raw_ticket)
                     ticket = ''
                 else:
@@ -213,12 +214,12 @@ def my_bag(request):  # bag is basket of my take ticket
 def in_the_bucket(request):  # added new ticket for ticket in my bag
     response = HttpResponse()
     new_item = bag_skeleton()
-    ticket_id = str(request.POST.get('ticket_id'))
-    total_number = str(request.POST.get('total_number'))
+    ticket_id = request.POST.get('ticket_id')
+    total_number = request.POST.get('total_number')
     ticket = On_Sales.objects.filter(id=ticket_id)[0]
 
     try:
-        value = new_item.create_bag_item(ticket_id, total_number, ticket.amount_bitcoin, ticket.title, ticket.ticket_photo)
+        value = new_item.create_bag_item(ticket_id, 3, ticket.amount_bitcoin, ticket.title, ticket.ticket_photo)
     except Exception as e:
         print e
 

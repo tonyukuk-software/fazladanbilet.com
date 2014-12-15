@@ -7,8 +7,8 @@ class bag_skeleton:
     def __init__(self):
         self.cokkie_text = ''
         self.ticket_id = ''
-        self.total_number = '1'
-        self.amount_bitcoin = '0.0'
+        self.total_number = 1
+        self.amount_bitcoin = 0.0
         self.title = ''
         self.ticket_photo = ''
         self.date = datetime.datetime.now()
@@ -33,16 +33,19 @@ class bag_skeleton:
 
         try:
             self.ticket_id = data_item_list[0]
-            self.total_number = data_item_list[1]
-            self.amount_bitcoin = data_item_list[2]
+            self.total_number = int(data_item_list[1])
+            print self.total_number
+            self.amount_bitcoin = float(data_item_list[2])*self.total_number
             self.title = data_item_list[3]
-            self.ticket_photo = data_item_list[4]
-            self.date = data_item_list[5]
+            self.ticket_photo = data_item_list[5]
+            self.date = data_item_list[6]
         except Exception as e:
             print e
 
 
 
-# example = bag_skeleton()
-# example.solved_bag_item('4/0/0.003/deneme/ticket_photos/Smoking-Pipe-l_bgYm60j.jpg/2014-12-14 13:03:49.318983/')
+example = bag_skeleton()
+example.solved_bag_item('4/1/0.003/deneme/ticket_photos/Smoking-Pipe-l_bgYm60j.jpg/2014-12-14 13:03:49.318983/')
+print example.total_number
+
 
