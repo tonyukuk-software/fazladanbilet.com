@@ -1,5 +1,4 @@
 import datetime
-from unicodedata import decimal
 
 __author__ = 'cemkiy'
 
@@ -15,7 +14,6 @@ class bag_skeleton:
 
     def create_bag_item(self, ticket_id, total_number, amount_bitcoin, title, ticket_photo):
         self.cokkie_text = str(ticket_id)+'/'+str(total_number)+'/'+str(amount_bitcoin)+'/'+str(title)+'/'+str(ticket_photo)+'/'+str(self.date)+'/?'
-        return self.cokkie_text
 
     def solved_bag_item(self, cookie_text):
         self.cokkie_text = cookie_text
@@ -44,8 +42,8 @@ class bag_skeleton:
 
 
 
-example = bag_skeleton()
-example.solved_bag_item('4/1/0.003/deneme/ticket_photos/Smoking-Pipe-l_bgYm60j.jpg/2014-12-14 13:03:49.318983/')
-print example.total_number
+# example = bag_skeleton()
+# example.solved_bag_item('4/1/0.003/deneme/ticket_photos/Smoking-Pipe-l_bgYm60j.jpg/2014-12-14 13:03:49.318983/')
+# print example.total_number
 
 
