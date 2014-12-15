@@ -219,9 +219,10 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
     ticket = On_Sales.objects.filter(id=ticket_id)[0]
 
     try:
-        new_item.create_bag_item(ticket_id, 3, ticket.amount_bitcoin, ticket.title.encode('utf-8'), ticket.ticket_photo)
+        new_item.create_bag_item(ticket_id, int(total_number), ticket.amount_bitcoin, ticket.title.encode('utf-8'), ticket.ticket_photo)
     except Exception as e:
         print e
+        return HttpResponseRedirect('/sorry')
 
     if 'tickets_in_my_bag' in request.COOKIES:
         tickets_in_my_bag = request.COOKIES['tickets_in_my_bag']
