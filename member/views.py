@@ -119,6 +119,8 @@ def edit_member_profile(request):
 def ticket_details(request, ticket_id):
     try:
         ticket = On_Sales.objects.filter(id=ticket_id)[0]
+        if not ticket.active:
+            HttpResponseRedirect('/')
         return render_to_response('ticket_details.html', locals(), context_instance=RequestContext(request))
     except Exception as e:
         print e
@@ -129,7 +131,7 @@ def ticket_details(request, ticket_id):
 def comes_shipping(request):  # user own exchanges
     try:
         member = Member.objects.filter(username=request.user.username)[0]
-        orders = Orders.objects.filter(ship_to_user=member).all()
+        orders = Orders.objects.filter(ship_to_user=member, active=True).all()
         return render_to_response('comes_shipping.html', locals())
     except Exception as e:
         print e
@@ -140,7 +142,7 @@ def comes_shipping(request):  # user own exchanges
 def sends_shipping(request):  # user 3rd person exchanges
     try:
         member = Member.objects.filter(username=request.user.username)[0]
-        orders = Orders.objects.filter(on_sales__member=member).all()
+        orders = Orders.objects.filter(on_sales__member=member, active=True).all()
         return render_to_response('sends_shipping.html', locals())
     except Exception as e:
         print e
@@ -264,6 +266,7 @@ def new_order(request, ticket_id):
 def after_sale_complaint(request, order_id):
     try:
         order = Orders.objects.filter(id=order_id)[0]
+        on_sale = On_Sales.objects.filter(id=order.on_sales.id)[0]
     except:
         return HttpResponseRedirect('/sorry')
     form = after_sale_complaint_form(initial={'orders': order})
@@ -271,6 +274,10 @@ def after_sale_complaint(request, order_id):
         form = after_sale_complaint_form(request.POST)
         if form.is_valid():
             try:
+                on_sale.active = False
+                on_sale.save()
+                order.active = False
+                order.save()
                 form.save()
                 #TODO mailgun: #  __author__ = 'barisariburnu'
                 return HttpResponseRedirect('/')

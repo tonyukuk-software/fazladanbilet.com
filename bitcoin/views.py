@@ -54,6 +54,8 @@ def succes_url(request, order_id):
 
             try:
                 on_sale.total_ticket = on_sale.total_ticket - order.total_ticket #decrease total ticket
+                if on_sale.total_ticket == 0:
+                    on_sale.active = False
                 on_sale.save()
             except Exception as e:
                 print e

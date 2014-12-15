@@ -27,6 +27,8 @@ def forgotten_password(request):
 def public_profile(request, user_id):
     try:
         member = Member.objects.filter(username=request.user.username)[0]
+        if not member.active:
+            return HttpResponseRedirect('/')
     except Exception as e:
         print e
         return HttpResponseRedirect('/sorry')
