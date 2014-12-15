@@ -284,3 +284,16 @@ def after_sale_complaint(request, order_id):
             except:
                 return HttpResponseRedirect('/sorry')
     return render_to_response('after_sale_complaint.html', locals(), context_instance=RequestContext(request))
+
+@login_required
+def user_voting(request, point):
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+    except:
+        return HttpResponseRedirect('/sorry')
+    try:
+        member.points = ((member.points * member.points_counter) + point)/(member.points_counter+1)
+        member.points_counter += 1
+        member.save()
+    except:
+        return HttpResponseRedirect('/sorry')
