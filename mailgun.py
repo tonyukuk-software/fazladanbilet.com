@@ -1,4 +1,6 @@
 __author__ = 'cemkiy'
+__author__ = 'kaykisizcom'
+__author__ = 'barisariburnu'
 
 import requests
 
@@ -30,7 +32,7 @@ class mailgun:
         output = 'Status: {0}'.format(request.status_code) + 'Body:   {0}'.format(request.text)
         print output
 
-    # template = get_template("member_profile.html")
+    # template = get_template("mail_activation.html")
     # context = Context({'full_name': 'cem'})
     # content = template.render(context)
     # ma = mailgun()
