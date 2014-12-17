@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from gi.overrides.keysyms import seconds
 import time
 import datetime
+from django.template.loader import get_template
 
 __author__ = 'cemkiy'
 __author__ = 'kaykisizcom'
@@ -11,12 +12,13 @@ __author__ = 'barisariburnu'
 
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, render_to_response
-from django.template import RequestContext
+from django.template import RequestContext, Context
 from django.contrib.auth.models import User
 from member.forms import *
 from django.forms.util import ErrorList
 import bag_operations
 from member.bag_operations import bag_skeleton
+from mailgun import *
 from django.template.defaultfilters import slugify
 # Create your views here.
 
@@ -35,6 +37,12 @@ def new_member(request):
                 member_user_auth = User.objects.create_user(username, email, password)
                 member_user_auth.save()
                 form.save()
+
+                template = get_template("mail_activation.html")
+                context = Context({'username': 'cem'})
+                content = template.render(context)
+                mailgun_operator = mailgun()
+                mailgun_operator.send_mail_with_html(member_user_auth.email, content)
                 return HttpResponseRedirect('/accounts/login/')
             except Exception as e:
                 print e

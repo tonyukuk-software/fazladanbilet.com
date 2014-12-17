@@ -10,13 +10,13 @@ class mailgun:
         self.sandbox = 'sandboxe1e55da3f7a7423ba6d16a58c3ffbee8.mailgun.org'
         self.recipient = 'info@fazladanbilet.com'
 
-    def send_mail(self, email_to):
+    def send_mail(self, email_to, text):
         request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(self.sandbox)
         request = requests.post(request_url, auth=('api', self.key), data={
             'from': self.recipient,
             'to': email_to,
             'subject': 'Hello',
-            'text': 'Hello from Mailgun'
+            'text': text
         })
         output = 'Status: {0}'.format(request.status_code) + 'Body:   {0}'.format(request.text)
         print output
@@ -32,8 +32,8 @@ class mailgun:
         output = 'Status: {0}'.format(request.status_code) + 'Body:   {0}'.format(request.text)
         print output
 
-    # template = get_template("mail_activation.html")
-    # context = Context({'full_name': 'cem'})
-    # content = template.render(context)
-    # ma = mailgun()
-    # ma.send_mail_with_html('se.cemkiy@gmail.com', content)
+# template = get_template("mail_activation.html")
+# context = Context({'username': 'cem'})
+# content = template.render(context)
+# mailgun_operator = mailgun()
+# mailgun_operator.send_mail_with_html(member_user_auth.email, content)
