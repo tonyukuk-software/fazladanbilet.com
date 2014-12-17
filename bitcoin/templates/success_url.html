@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block head_block %} {% endblock %}
+
+{% block menu_block %}
+{% endblock %}
+
+{% block container_block %}
+<div class="b-page-error">
+        <div class="container">
+            <div class="b-title-error f-title-error">
+                <span class="f-primary-eb">{% trans 'Success Payment' %}</span>
+                <strong class="f-primary-l"></strong>
+            </div>
+            <div class="b-error-description f-error-description">
+                <strong class="f-primary">{% trans 'Thanks for your choice !' %}</strong>
+                <span class="f-primary">{% trans 'You can return' %}
+                    <a href="/member/comes_shipping">{% trans 'comes shipping page' %}</a>  {% trans 'or' %}
+                    <a href="/contact_us">{% trans 'contact us' %}</a></span>
+            </div>
+            <div class="b-error-search">
+                <div class="b-form-row b-input-search">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script_block %}{% endblock %}
