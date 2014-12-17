@@ -59,6 +59,7 @@ def forgotten_password(request):
                 if member:
                     template = get_template("mail_forgotten_password.html")
                     context = Context({'password': member.password})
+                    #TODO Don't send same password. Send create new password #  __author__ = 'cemkiy'
                     content = template.render(context)
                     mailgun_operator = mailgun()
                     mailgun_operator.send_mail_with_html(member.email, content)

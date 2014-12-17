@@ -2,18 +2,23 @@
 {% load i18n %}
 {% load staticfiles %}
 
+{% block top_title_block %}Activation{% endblock %}
+
 {% block title_block %}
     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 36px;Margin-bottom: 18px;font-family: sans-serif;line-height: 42px">
-        Activation Mail
+        Hey {{ username }},
     </h1>
 {% endblock %}
 
 {% block content_block %}
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px">
-        Add new pieces of content like text, images and buttons to your email by dragging the tiles on the left where you want them to go.
+        Thanks for signing up to fazladanbilet - we’re excited to have you on board! Here are your login details for future reference.
     </p>
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
-        Add different layouts to your email by clicking on the green <strong style="font-weight: bold">Add layout</strong> button below.
+        <strong style="font-weight: bold">Email: </strong> {{ email }}
+    </p>
+    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
+        <strong style="font-weight: bold">Activation: </strong> <a href="http://www.fazladanbilet.com/{{ activation_code }}">{{ activation_code }}</a>
     </p>
 
 {% endblock %}
@@ -36,7 +41,7 @@
                                             <tr>
                                                 <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 16px">
                                                     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 20px;Margin-bottom: 12px;font-family: sans-serif;line-height: 26px">{% trans "Agreement" %}</h1>
-                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Quisque at cursus nisi, non rutrum massa. Aenean consectetur velit faucibus mauris posuere aliquet.</p>
+                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Perform the swap process with Bitcoin.</p>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -52,7 +57,7 @@
                                             <tr>
                                                 <td class="padded" style="padding: 0;vertical-align: top;padding-left: 24px;padding-right: 24px">
                                                     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 20px;Margin-bottom: 12px;font-family: sans-serif;line-height: 26px">{% trans "Prepare" %}</h1>
-                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Praesent varius eleifend rhoncus. Mauris porta met us lacus, sit amet ullam corper nulla scele.</p>
+                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Your ticket as soon as you get prepared.</p>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -68,7 +73,7 @@
                                                 <tr>
                                                     <td class="padded" style="padding: 0;vertical-align: top;padding-left: 16px;padding-right: 32px">
                                                         <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 20px;Margin-bottom: 12px;font-family: sans-serif;line-height: 26px">{% trans "Shipping" %}</h1>
-                                                        <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Praesent feugiat mauris ante, ut elei fend ante dictum vitae. Vesti bulum pellen tesque ante nec.</p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Your tickets are shipped as soon as possible.</p>
                                                     </td>
                                                 </tr>
                                             </tbody>
