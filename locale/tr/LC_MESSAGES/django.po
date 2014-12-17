@@ -511,3 +511,12 @@ msgstr ""
 #: jackalprojects/templates/contact_us.html:84
 msgid "If you will be good kid, you can find us!"
 msgstr ""
+#: templates/mail_activation.html:29
+msgid "Agreement"
+msgstr ""
+#: templates/mail_activation.html:45
+msgid "Prepare"
+msgstr ""
+#: templates/mail_activation.html:61
+msgid "Shipping"
+msgstr ""
