@@ -1,11 +1,16 @@
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-from member.models import On_Sales, Member
-from django.http import HttpResponseRedirect, HttpResponse
+from django.template.loader import get_template
 
 __author__ = 'cemkiy'
 __author__ = 'barisariburnu'
 __author__ = 'kaykisizcom'
+
+from django.shortcuts import render_to_response
+from django.template import RequestContext, Context
+from member.models import On_Sales, Member
+from django.http import HttpResponseRedirect, HttpResponse
+from forms import *
+from mailgun import *
+
 
 # Create your views here.
 
@@ -22,6 +27,27 @@ def contact_us(request):
     return render_to_response('contact_us.html', locals(), context_instance=RequestContext(request))
 
 def forgotten_password(request):
+    text_for_result = ''
+    form = forgotten_password_form()
+    if request.method == 'POST':
+        form = forgotten_password_form(request.POST)
+        if form.is_valid():
+            try:
+                email = request.POST.get('email')
+                member = Member.objects.filter(email=email)[0]
+                if member:
+                    template = get_template("mail_forgotten_password.html")
+                    context = Context({'password': member.password})
+                    content = template.render(context)
+                    mailgun_operator = mailgun()
+                    mailgun_operator.send_mail_with_html(member.email, content)
+                    text_for_result = 'We are send your password to your email. '
+                else:
+                    text_for_result ='Wrong mail adress.'
+                return HttpResponseRedirect('/accounts/login')
+            except Exception as e:
+                print e
+                return HttpResponseRedirect('/sorry')
     return render_to_response('forgotten_password.html', locals(), context_instance=RequestContext(request))
 
 def public_profile(request, user_id):
