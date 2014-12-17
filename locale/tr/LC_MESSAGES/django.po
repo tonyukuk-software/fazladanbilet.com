@@ -475,3 +475,39 @@ msgstr "Takas"
 #: bitcoin/templates/payment_page.html:73
 msgid "Pay With Bitcoin"
 msgstr ""
+#: jackalprojects/templates/contact_us.html:12
+msgid "Contact us"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:24
+msgid "If you lived a problem in platform or any shipping problem, you can contact us. We will investigate your problem. Our purpose is provide the best shopping experience for you."
+msgstr ""
+#: jackalprojects/templates/contact_us.html:32
+msgid "SEND MAIL"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:39
+msgid "Your name"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:45
+msgid "You email"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:51
+msgid "Your title"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:59
+msgid "Your message"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:63
+msgid "send message"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:71
+msgid "contact info"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:72
+msgid "Our contact information..."
+msgstr ""
+#: jackalprojects/templates/contact_us.html:93
+msgid "homepage"
+msgstr ""
+#: jackalprojects/templates/contact_us.html:84
+msgid "If you will be good kid, you can find us!"
+msgstr ""

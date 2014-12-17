@@ -24,6 +24,27 @@ def ticket_pool(request):
     return render_to_response('ticket_pool.html', locals())
 
 def contact_us(request):
+    form = contact_us_form()
+    if request.method == 'POST':
+        form = contact_us_form(request.POST)
+        if form.is_valid():
+            try:
+                name = request.POST.get('name')
+                email = request.POST.get('email')
+                title = request.POST.get('title')
+                message = request.POST.get('message')
+                template = get_template("mail_contact_us.html")
+                context = Context({'name': name,
+                                   'email': email,
+                                   'title': title,
+                                   'message': message})
+                content = template.render(context)
+                mailgun_operator = mailgun()
+                mailgun_operator.send_mail_with_html('info@fazladanbilet.com', content)
+                return HttpResponseRedirect('/')
+            except Exception as e:
+                print e
+                return HttpResponseRedirect('/sorry')
     return render_to_response('contact_us.html', locals(), context_instance=RequestContext(request))
 
 def forgotten_password(request):

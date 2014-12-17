@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block head_block %} {% endblock %}
@@ -9,8 +10,8 @@
     <div class="b-breadcrumbs f-breadcrumbs">
         <div class="container">
             <ul>
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li><i class="fa fa-angle-right"></i><span> Contact us </span></li>
+                <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                <li><i class="fa fa-angle-right"></i><span> {% blocktrans %}Contact us{% endblocktrans %} </span></li>
             </ul>
         </div>
     </div>
@@ -19,8 +20,8 @@
         <section class="container b-welcome-box">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
-                    <h1 class="is-global-title f-center">We’d love to hear from you!</h1>
-                    <p class="f-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a scelerisque turpis, ut porta turpis. Integer imperdiet aliquet velit, vel tincidunt lectus dictum sed. Curabitur dignissim ut massa vel tincidunt. Nullam imperdiet pharetra ipsum in lobortis. Etiam convallis, felis quis dapibus dictum, libero mauris luctus nunc, non fringilla purus ligula non justo. Nullam </p>
+                    <h1 class="is-global-title f-center">{% blocktrans %}CONTACT US{% endblocktrans %}</h1>
+                    <p class="f-center">{% blocktrans %}If you lived a problem in platform or any shipping problem, you can contact us. We will investigate your problem. Our purpose is provide the best shopping experience for you.{% endblocktrans %}</p>
                 </div>
             </div>
         </section>
@@ -28,32 +29,26 @@
             <div class="row">
                 <div class="col-sm-6 b-contact-form-box">
                     <h3 class="f-primary-b b-title-description f-title-description">
-                        drop a line
-                        <div class="b-title-description__comment f-title-description__comment f-primary-l">Quisque at tortor a libero posuere laoreet vitae sed arcu nunc at augue tincidunt </div>
+                        {% blocktrans %}SEND MAIL{% endblocktrans %}
+                        <div class="b-title-description__comment f-title-description__comment f-primary-l"></div>
                     </h3>
                     <div class="row">
                         <form action="" method="post">
                             <div class="col-md-6">
                                 <div class="b-form-row">
-                                    <label class="b-form-vertical__label" for="name">Your name</label>
+                                    <label class="b-form-vertical__label" for="name">{% blocktrans %}Your name{% endblocktrans %}</label>
                                     <div class="b-form-vertical__input">
                                         <input type="text" id="name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-vertical__label" for="email">You email</label>
+                                    <label class="b-form-vertical__label" for="email">{% blocktrans %}You email{% endblocktrans %}</label>
                                     <div class="b-form-vertical__input">
                                         <input type="text" id="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-vertical__label" for="website">Your website</label>
-                                    <div class="b-form-vertical__input">
-                                        <input type="text" id="website" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="b-form-row">
-                                    <label class="b-form-vertical__label" for="title">Your title</label>
+                                    <label class="b-form-vertical__label" for="title">{% blocktrans %}Your title{% endblocktrans %}</label>
                                     <div class="b-form-vertical__input">
                                         <input type="text" id="title" class="form-control">
                                     </div>
@@ -61,11 +56,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="b-form-row b-form--contact-size">
-                                    <label class="b-form-vertical__label">Your message</label>
+                                    <label class="b-form-vertical__label">{% blocktrans %}Your message{% endblocktrans %}</label>
                                     <textarea class="form-control" rows="5"></textarea>
                                 </div>
                                 <div class="b-form-row">
-                                    <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">send message</a>
+                                    <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">{% blocktrans %}send message{% endblocktrans %}</a>
                                 </div>
                             </div>
                         </form>
@@ -73,8 +68,8 @@
                 </div>
                 <div class="col-sm-6 b-contact-form-box">
                     <h3 class="f-primary-b b-title-description f-title-description">
-                        contact info
-                        <div class="b-title-description__comment f-title-description__comment f-primary-l">Quisque at tortor a libero posuere laoreet vitae sed arcu nunc at augue tincidunt </div>
+                        {% blocktrans %}contact info{% endblocktrans %}
+                        <div class="b-title-description__comment f-title-description__comment f-primary-l">{% blocktrans %}Our contact information...{% endblocktrans %}</div>
                     </h3>
                     <div class="row b-google-map__info-window-address">
                         <ul class="list-unstyled">
@@ -86,7 +81,7 @@
             <div class="b-google-map__info-window-address-title f-google-map__info-window-address-title">
                 FAZLADAN BİLET
             </div>
-            <div class="desc">Anadolu Hisarı Mh. 34810 İstanbul Türkiye</div>
+            <div class="desc">{% blocktrans %}If you will be good kid, you can find us!{% endblocktrans %}</div>
         </div>
     </li>
     <li class="col-xs-12">
@@ -95,20 +90,9 @@
         </div>
         <div>
             <div class="b-google-map__info-window-address-title f-google-map__info-window-address-title">
-                portfolio homepage
+                {% trans "homepage" %}
             </div>
-            <div class="desc">http://fazladanbilet.com</div>
-        </div>
-    </li>
-    <li class="col-xs-12">
-        <div class="b-google-map__info-window-address-icon f-center pull-left">
-            <i class="fa fa-skype"></i>
-        </div>
-        <div>
-            <div class="b-google-map__info-window-address-title f-google-map__info-window-address-title">
-                Skype
-            </div>
-            <div class="desc">ask.fazladanbilet</div>
+            <div class="desc"><a href="http://fazladanbilet.com">http://fazladanbilet.com</a></div>
         </div>
     </li>
     <li class="col-xs-12">
@@ -119,11 +103,10 @@
             <div class="b-google-map__info-window-address-title f-google-map__info-window-address-title">
                 email
             </div>
-            <div class="desc">mail@example.com</div>
+            <div class="desc">info@fazladanbilet.com</div>
         </div>
     </li>
 </ul>
-
                     </div>
                 </div>
             </div>
