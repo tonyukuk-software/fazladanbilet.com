@@ -472,3 +472,6 @@ msgstr "Your bag is not full yet."
 #: member/templates/my_bag.html:64
 msgid "Swap"
 msgstr "Takas"
+#: bitcoin/templates/payment_page.html:73
+msgid "Pay With Bitcoin"
+msgstr ""

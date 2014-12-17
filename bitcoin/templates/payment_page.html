@@ -1,15 +1,178 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<p>Total amount: {{ amount }}</p>
-<p>Ticket name: {{ order.on_sales.title }}</p>
-<p>Total ticket: {{ order.total_ticket }}</p>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
 
-<a class="coinbase-button" data-code={{ button_data }}>Pay With Bitcoin</a>
-<script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
-</body>
-</html>
+{% block head_block %}
+    <style type="text/css">
+        .infospan {
+            font-size: 0.92308em;
+            line-height: 1.2;
+            color: #e9682e;
+            color: #e9682e;
+        }
+    </style>
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="l-main-container">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="/"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans "Payment Page" %}</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 ">
+                        <div class="b-shortcode-example">
+                            <div class=" f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{{ order.on_sales.title }}</div>
+                            <div class="b-product-card b-default-top-indent">
+                                <div class="b-product-card__visual b-slidercontainer b-slider b-slider--thumb b-slider--thumb-visible b-small-arr f-small-arr b-slider--navi-alt b-shadow-container"
+                                     style="overflow: visible;">
+                                    <div class="j-contentwidthslider revslider-initialised tp-simpleresponsive hovered"
+                                         data-height="1400" id="revslider-479" style="height: 243px;">
+                                        <ul style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: 600px;">
+                                            <li data-transition="slotfade-vertical" data-slotamount="7"
+                                                style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;">
+                                                <img data-retina="" src="/media/{{ order.on_sales.ticket_photo }}" alt=""
+                                                     width="100%" height="100%">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="b-product-card__info">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special">{% trans "information" %}</h4>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "Price" %}</div>
+                                        <span class="f-product-card__info_price c-default f-primary-b"><i
+                                                class="fa fa-btc"></i> {{ amount }}</span>
+                                    </div>
+
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "Total Ticket" %}</div>
+                                        <span class="infospan">{{ order.total_ticket }}</span>
+                                    </div>
+
+                                <div class="b-product-card__info_row">
+                                    <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "Categories" %}</div>
+                                    <span class="infospan">{{ order.on_sales.category }}</span>
+                                </div>
+
+                                <div class="b-product-card__info_row">
+                                    <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "End Date" %}</div>
+                                    <span class="infospan">{{ order.on_sales.edate }}</span>
+                                </div>
+                                    <div class="b-product-card__info_add b-margin-right-standard">
+                                            <a class="coinbase-button" data-code={{ button_data }}>{% blocktrans %}Pay With Bitcoin{% endblocktrans %}</a>
+                                            <script src="https://www.coinbase.com/assets/button.js"
+                                                    type="text/javascript"></script>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="b-shortcode-example">
+                        <div class="b-tabs f-tabs j-tabs b-tabs-reset ui-tabs ui-widget ui-widget-content ui-corner-all">
+                            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                                role="tablist">
+                                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab"
+                                    tabindex="0" aria-controls="tabs-21" aria-labelledby="ui-id-1" aria-selected="true"
+                                    aria-expanded="true"><a href="#tabs-21" class="ui-tabs-anchor" role="presentation"
+                                                            tabindex="-1" id="ui-id-1">{% trans "Description" %}</a>
+                                </li>
+                                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
+                                    aria-controls="tabs-22" aria-labelledby="ui-id-2" aria-selected="false"
+                                    aria-expanded="false"><a href="#tabs-22" class="ui-tabs-anchor" role="presentation"
+                                                             tabindex="-1"
+                                                             id="ui-id-2">{% trans "User's Information" %}</a></li>
+                            </ul>
+                            <div class="b-tabs__content">
+                                <div id="tabs-21" aria-labelledby="ui-id-1"
+                                     class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel"
+                                     aria-hidden="false" style="display: block;">
+                                    <h4 class="f-tabs-vertical__title f-primary-b">{{ order.on_sales.title }}</h4>
+
+                                    <p>{{ order.on_sales.description }}</p>
+                                </div>
+                                <div id="tabs-22" aria-labelledby="ui-id-2"
+                                     class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel"
+                                     aria-hidden="true" style="display: none;">
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "Username" %}</div>
+                                        <a href="/public_profile/+{{ order.on_sales.member.id }}"><span
+                                                class="infospan">{{ order.on_sales.member.username }}</span></a>
+                                    </div>
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "Points" %}</div>
+                                        <span class="infospan">{{ order.on_sales.member.points }}</span>
+                                    </div>
+                                    <div class="b-product-card__info_row">
+                                        <div class="b-product-card__info_title f-primary-b f-title-smallest">{% trans "Counter" %}</div>
+                                        <span class="infospan">{{ order.on_sales.member.points_counter }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <aside>
+                        <div class="row b-col-default-indent">
+                            <div class="col-md-12">
+                                <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans "product price filter" %}</h4>
+
+                                <form action="">
+                                    <div class="b-slider-range j-slider-range f-slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                        <span class="b-slider-range_min">0</span>
+                                        <span class="b-slider-range_max">$999</span>
+
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all"
+                                             style="left: 20.02002002002%; width: 50.0500500500501%;"></div>
+                                        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
+                                              style="left: 20.02002002002%;"><span class="min">$200</span></span><span
+                                            class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
+                                            style="left: 70.0700700700701%;"><span class="max">$700</span></span></div>
+                                    <a href="#"
+                                       class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b">{% trans "Filter" %}</a>
+                                </form>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="b-categories-filter">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans "Categories filter" %}</h4>
+                                    <ul>
+                                        <li>
+                                            <a class="f-categories-filter_name" href="#"><i
+                                                    class="fa fa-plus"></i>{% trans "Films" %}</a>
+                                            <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                        </li>
+                                        <li>
+                                            <a class="f-categories-filter_name" href="#"><i
+                                                    class="fa fa-plus"></i>{% trans "Theatre" %}</a>
+                                            <span class="b-categories-filter_count f-categories-filter_count">23</span>
+                                        </li>
+                                        <li>
+                                            <a class="f-categories-filter_name" href="#"><i
+                                                    class="fa fa-plus"></i>{% trans "Concert" %}</a>
+                                            <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}{% endblock %}
