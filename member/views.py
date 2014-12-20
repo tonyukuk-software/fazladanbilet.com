@@ -177,6 +177,7 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
                 order.user_url_for_btc_send = user_url_for_btc_send
                 order.status = '3'
                 order.save()
+                #TODO mailgun: #  __author__ = 'barisariburnu'
                 return HttpResponseRedirect('/member/sends_shipping/')
             except:
                 return HttpResponseRedirect('/sorry')
