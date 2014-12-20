@@ -586,3 +586,6 @@ msgstr ""
 #: templates/mail_come_shipping.html:22
 msgid "Total Ticket:"
 msgstr ""
+#: templates/mail_come_shipping.html:5
+msgid "Shipping Information"
+msgstr ""

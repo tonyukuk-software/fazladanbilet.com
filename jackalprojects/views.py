@@ -24,7 +24,6 @@ def ticket_pool(request):
     return render_to_response('ticket_pool.html', locals())
 
 def contact_us(request):
-    form = contact_us_form()
     if request.method == 'POST':
         form = contact_us_form(request.POST)
         if form.is_valid():

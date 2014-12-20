@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load staticfiles %}
 
-{% block top_title_block %}Forgotten Password{% endblock %}
+{% block top_title_block %}{% blocktrans %}Shipping Information{% endblocktrans %}{% endblock %}
 
 {% block title_block %}
     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 36px;Margin-bottom: 18px;font-family: sans-serif;line-height: 42px">
@@ -15,7 +15,7 @@
         {% blocktrans %}Thank you for doing the exchange with fazladanbilet. You can exchange information viewed below.{% endblocktrans %}
     </p>
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
-        {% trans "Ticket:" %} <strong style="font-weight: bold">{{ total_name }}</strong>
+        {% trans "Ticket:" %} <strong style="font-weight: bold">{{ ticket_name }}</strong>
         <br/>
         Bitcoin: <strong style="font-weight: bold">{{ total }}</strong>
         <br/>

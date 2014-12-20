@@ -309,9 +309,10 @@ def after_sale_complaint(request, order_id):
     return render_to_response('after_sale_complaint.html', locals(), context_instance=RequestContext(request))
 
 @login_required
-def user_voting(request, point):
+def user_voting(request,order, point):
     try:
-        member = Member.objects.filter(username=request.user.username)[0]
+        member_order = Orders.objects.filter(id=order)[0]
+        member = Member.objects.filter(id=member_order.on_sales.member.id)[0]
     except:
         return HttpResponseRedirect('/sorry')
     try:
