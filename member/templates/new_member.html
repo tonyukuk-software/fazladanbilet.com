@@ -56,7 +56,7 @@
                                     <div class="b-form-horizontal__input">
                                         <label for="create_account_terms">
                                             <input type="checkbox" class="b-form-checkbox b-form-checkbox" id="create_account_terms">
-                                            <span>{% trans "I agree to" %} <a href="#" class="c-secondary f-more">{% trans "Terms of Use" %}</a></span>
+                                            <span>{% trans "I agree to" %} <a href="/terms" class="c-secondary f-more">{% trans "Terms of Use" %}</a></span>
                                         </label>
                                     </div>
                                 </div>
@@ -142,7 +142,6 @@
 
             });
             $("#create_account_terms").click(function(){
-                alert(terms_control);
                 if(terms_control == false) {
                     $('.btn-submit').removeAttr("disabled");
                     terms_control = true;

@@ -229,7 +229,7 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
     ticket = On_Sales.objects.filter(id=ticket_id)[0]
 
     try:
-        new_item.create_bag_item(ticket_id, int(total_number), ticket.amount_bitcoin, ticket.title.encode('utf-8'), ticket.ticket_photo)
+        new_item.create_bag_item(ticket_id, abs(int(total_number)), ticket.amount_bitcoin, ticket.title.encode('utf-8'), ticket.ticket_photo)
     except Exception as e:
         print e
         return HttpResponseRedirect('/sorry')
@@ -245,14 +245,29 @@ def in_the_bucket(request):  # added new ticket for ticket in my bag
     return response
 
 @login_required
-def new_order(request, ticket_id):
+def new_order(request, ticket_id_and_number):
+    #I am a muslim but jesus christ! I love this code part ;) -CK
+    ticket_data = '' #total number
+    ticket_id = ''
+    for letter in ticket_id_and_number:
+        if letter == '-':
+            ticket_id = ticket_data
+            ticket_data = ''
+        else:
+            ticket_data = ticket_data + letter
     try:
         on_sales = On_Sales.objects.filter(id=ticket_id)[0]
         ship_to_user = Member.objects.filter(username=request.user.username)[0]
     except Exception as e:
         print e
         return HttpResponseRedirect('/sorry')
-    total_ticket = 1
+
+    try:
+        total_ticket = abs(int(ticket_data))
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/sorry')
+
     form = new_order_form()
     if request.method == 'POST':
         form = new_order_form(request.POST)
