@@ -2,23 +2,23 @@
 {% load i18n %}
 {% load staticfiles %}
 
-{% block top_title_block %}Activation{% endblock %}
+{% block top_title_block %}{% trans "Activation" %}{% endblock %}
 
 {% block title_block %}
     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 36px;Margin-bottom: 18px;font-family: sans-serif;line-height: 42px">
-        Hey {{ username }},
+        {% trans "Hey" %} {{ username }},
     </h1>
 {% endblock %}
 
 {% block content_block %}
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px">
-        Thanks for signing up to fazladanbilet - we’re excited to have you on board! Here are your login details for future reference.
+        {% blocktrans %}Thanks for signing up to fazladanbilet - we’re excited to have you on board! Here are your login details for future reference.{% endblocktrans %}
     </p>
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
         <strong style="font-weight: bold">Email: </strong> {{ email }}
     </p>
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
-        <strong style="font-weight: bold">Activation: </strong> <a href="http://www.fazladanbilet.com/{{ activation_code }}">{{ activation_code }}</a>
+        <strong style="font-weight: bold">{% trans "Activation:" %} </strong> <a href="http://www.fazladanbilet.com/{{ activation_code }}">{{ activation_code }}</a>
     </p>
 
 {% endblock %}
@@ -41,7 +41,7 @@
                                             <tr>
                                                 <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 16px">
                                                     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 20px;Margin-bottom: 12px;font-family: sans-serif;line-height: 26px">{% trans "Agreement" %}</h1>
-                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Perform the swap process with Bitcoin.</p>
+                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">{% blocktrans %}Perform the swap process with Bitcoin.{% endblocktrans %}</p>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -57,7 +57,7 @@
                                             <tr>
                                                 <td class="padded" style="padding: 0;vertical-align: top;padding-left: 24px;padding-right: 24px">
                                                     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 20px;Margin-bottom: 12px;font-family: sans-serif;line-height: 26px">{% trans "Prepare" %}</h1>
-                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Your ticket as soon as you get prepared.</p>
+                                                    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">{% blocktrans %}Your ticket as soon as you get prepared.{% endblocktrans %}</p>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -73,7 +73,7 @@
                                                 <tr>
                                                     <td class="padded" style="padding: 0;vertical-align: top;padding-left: 16px;padding-right: 32px">
                                                         <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 20px;Margin-bottom: 12px;font-family: sans-serif;line-height: 26px">{% trans "Shipping" %}</h1>
-                                                        <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">Your tickets are shipped as soon as possible.</p>
+                                                        <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 12px;line-height: 21px;Margin-bottom: 21px">{% blocktrans %}Your tickets are shipped as soon as possible.{% endblocktrans %}</p>
                                                     </td>
                                                 </tr>
                                             </tbody>

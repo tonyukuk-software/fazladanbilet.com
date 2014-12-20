@@ -15,6 +15,8 @@ def main():
     orders = Orders.objects.filter(status='4', active=True).all()
     for order in orders:
         amount = Decimal(order.on_sales.amount_bitcoin) * int(order.total_ticket)
+        comission = Decimal(amount/20)
+        amount = amount - comission # without comission
         print amount
         try:
             coinbase_operator.send_bitcoin(order.user_url_for_btc_send, amount)
