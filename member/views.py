@@ -19,6 +19,7 @@ from django.forms.util import ErrorList
 import bag_operations
 from member.bag_operations import bag_skeleton
 from mailgun import *
+import uuid
 from django.template.defaultfilters import slugify
 # Create your views here.
 
@@ -30,23 +31,31 @@ def new_member(request):
     if request.method == 'POST':
         form = new_member_form(request.POST)
         if form.is_valid():
-            try:
-                username = request.POST.get('username')
-                password = request.POST.get('password')
-                email = request.POST.get('email')
-                member_user_auth = User.objects.create_user(username, email, password)
-                member_user_auth.save()
-                form.save()
 
-                template = get_template("mail_activation.html")
-                context = Context({'username': 'cem'})
-                content = template.render(context)
-                mailgun_operator = mailgun()
-                mailgun_operator.send_mail_with_html(member_user_auth.email, content)
-                return HttpResponseRedirect('/accounts/login/')
-            except Exception as e:
-                print e
-                return HttpResponseRedirect('/sorry')
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            email = request.POST.get('email')
+            member_user_auth = User.objects.create_user(username, email, password)
+            member_user_auth.is_staff = False
+            member_user_auth.is_active= False
+            member_user_auth.save()
+            form.save()
+
+            member = User.objects.filter(username=username)[0]
+            code = str(uuid.uuid4())
+            activation = Activation.objects.create(isuser=True, activivation_code=code, user_or_order_id=member.id)
+            activation.save()
+
+            template = get_template("mail_activation.html")
+            context = Context({'username': username,
+                              'email': email,
+                              'activation_code': code})
+            content = template.render(context)
+            print content
+            mailgun_operator = mailgun()
+            mailgun_operator.send_mail_with_html(member_user_auth.email, content)
+            return HttpResponseRedirect('/accounts/login/')
+
     return render_to_response('new_member.html', {'form': form}, context_instance=RequestContext(request))
 
 
@@ -309,10 +318,26 @@ def after_sale_complaint(request, order_id):
                 return HttpResponseRedirect('/sorry')
     return render_to_response('after_sale_complaint.html', locals(), context_instance=RequestContext(request))
 
-@login_required
-def user_voting(request,order, point):
+def user_activation(request, identity):
     try:
-        member_order = Orders.objects.filter(id=order)[0]
+        active = Activation.objects.filter(activivation_code=identity)[0]
+        print active
+        user = User.objects.filter(id=active.user_or_order_id)[0]
+    except:
+        return HttpResponseRedirect('/sorry')
+    try:
+        if user:
+            user.is_active = True
+            user.is_staff = True
+            user.save()
+            active.delete()
+            return HttpResponseRedirect('/accounts/login/')
+    except:
+        return HttpResponseRedirect('/sorry')
+
+def vote_activation(request, identity, point):
+    try:
+        member_order = Orders.objects.filter(id=identity)[0]
         member = Member.objects.filter(id=member_order.on_sales.member.id)[0]
     except:
         return HttpResponseRedirect('/sorry')
