@@ -1,7 +1,4 @@
 __author__ = 'cemkiy'
-__author__ = 'kaykisizcom'
-__author__ = 'barisariburnu'
-
 # -*- coding: utf-8 -*-
 import urllib2
 from BeautifulSoup import BeautifulSoup
