@@ -289,10 +289,6 @@ def new_order(request, ticket_id_and_number):
                                name=name, phone=phone, address=address)
                 order.save()
 
-                code = str(uuid.uuid4())
-                activation = Activation.objects.create(isuser=False, activivation_code=code, user_or_order_id=order.id)
-                activation.save()
-
                 return HttpResponseRedirect('/bitcoin/payment_page/' + str(order.id))
             except Exception as e:
                 print e
@@ -338,6 +334,7 @@ def user_activation(request, identity):
     except:
         return HttpResponseRedirect('/sorry')
 
+@login_required
 def vote_activation(request, identity, point):
     try:
         active = Activation.objects.filter(activivation_code=identity)[0]
