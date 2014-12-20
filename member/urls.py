@@ -19,4 +19,5 @@ urlpatterns = patterns('',
                     url(r'^new_order/(.+)$', 'member.views.new_order'), #added cargo information by ship to
                     url(r'^send_cargo_no_and_user_url_for_btc_send/(.+)$', 'member.views.send_cargo_no_and_user_url_for_btc_send'), #send cargo no and btc adress
                     url(r'^after_sale_complaint/(.+)$', 'member.views.after_sale_complaint'), #added after sale complaint
+                    url(r'^user_voting/(.+)$', 'member.views.user_voting'),
                         )
