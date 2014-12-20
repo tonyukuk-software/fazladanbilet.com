@@ -346,8 +346,8 @@ def vote_activation(request, identity, point):
             if not member.points:
                 member.points = 0
             if not member.points_counter:
-                member.points_counter =0
-            member.points = ((member.points * member.points_counter) + point)/(member.points_counter+1)
+                member.points_counter = 0
+            member.points = ((member.points * member.points_counter) + int(point))/(member.points_counter+1)
             member.points_counter += 1
             member.save()
             active.delete()
