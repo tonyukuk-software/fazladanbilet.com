@@ -31,6 +31,7 @@ urlpatterns = patterns('',
     url(r'^forgotten_password/$', 'jackalprojects.views.forgotten_password'),
     url(r'^sorry/$', 'jackalprojects.views.page_sorry'),
     url(r'^terms/$', 'jackalprojects.views.terms'),
+    url(r'^how_it_works/$', 'jackalprojects.views.how_it_works'),
 ) + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if settings.DEBUG:

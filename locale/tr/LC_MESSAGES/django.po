@@ -589,3 +589,6 @@ msgstr ""
 #: templates/mail_come_shipping.html:5
 msgid "Shipping Information"
 msgstr ""
+#: jackalprojects/templates/how_it_works.html:27
+msgid "What is it fazladanbilet.com ?"
+msgstr ""

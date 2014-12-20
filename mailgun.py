@@ -14,7 +14,7 @@ class mailgun:
         request = requests.post(request_url, auth=('api', self.key), data={
             'from': self.recipient,
             'to': email_to,
-            'subject': 'Hello',
+            'subject': 'fazladanbilet.com',
             'text': text
         })
         output = 'Status: {0}'.format(request.status_code) + 'Body:   {0}'.format(request.text)
@@ -25,7 +25,7 @@ class mailgun:
         request = requests.post(request_url, auth=('api', self.key), data={
             'from': self.recipient,
             'to': email_to,
-            'subject': 'Hello',
+            'subject': 'fazladanbilet.com',
             'html': html
         })
         output = 'Status: {0}'.format(request.status_code) + 'Body:   {0}'.format(request.text)
