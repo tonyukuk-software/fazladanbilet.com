@@ -15,7 +15,7 @@ class Member(models.Model):
     profile_photo = models.ImageField(null=True, blank=True, upload_to="profile_photos/")
     points = models.FloatField(default=0.0, blank=True, null=True)
     points_counter = models.PositiveIntegerField(default=0, blank=True, null=True) #how many peoples give vote
-    active = models.BooleanField(default=True, editable=False)
+    active = models.BooleanField(default=True)
     cdate = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
@@ -44,7 +44,7 @@ class On_Sales(models.Model):
     amount_bitcoin = models.FloatField(default=0)
     cdate = models.DateTimeField(auto_now_add=True)
     edate = models.DateTimeField()
-    active = models.BooleanField(default=True, editable=False)
+    active = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.member.username + self.title
@@ -76,7 +76,7 @@ class Orders(models.Model):
     cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0', null=True) #options
     cargo_no = models.CharField(max_length=256, default=0, null=True)
     user_url_for_btc_send = models.CharField(max_length=27, default='', null=True)
-    active = models.BooleanField(default=True, editable=False)
+    active = models.BooleanField(default=True)
     cdate = models.DateTimeField(auto_now_add=True)
 
 class After_Sale(models.Model): #Feedback from shiping members
@@ -94,6 +94,9 @@ class After_Sale(models.Model): #Feedback from shiping members
     description = models.CharField(max_length=500)
     cdate = models.DateField(auto_now_add=True)
 
-
+class Activation(models.Model):
+    isuser = models.BooleanField(default=True)
+    activivation_code = models.CharField(max_length=36, null=True)
+    user_or_order_id = models.CharField(max_length=6, default='1', null=True)
 
 
