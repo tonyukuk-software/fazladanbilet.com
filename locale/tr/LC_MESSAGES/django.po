@@ -577,3 +577,12 @@ msgstr ""
 #: templates/mail_send_shipping.html:26
 msgid "Cargo Tracing:"
 msgstr ""
+#: templates/mail_come_shipping.html:24
+msgid "Shipping Address:"
+msgstr ""
+#: templates/mail_come_shipping.html:26
+msgid "Shipping Name:"
+msgstr ""
+#: templates/mail_come_shipping.html:22
+msgid "Total Ticket:"
+msgstr ""
