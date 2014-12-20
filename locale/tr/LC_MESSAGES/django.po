@@ -520,3 +520,60 @@ msgstr ""
 #: templates/mail_activation.html:61
 msgid "Shipping"
 msgstr ""
+#: templates/mail_forgotten_pasword.html:9
+msgid "Hey"
+msgstr ""
+#: templates/mail_forgotten_pasword.html:15
+msgid "You may have forgotten the password. We sent you a new password. You can log in with this new password."
+msgstr ""
+#: templates/mail_forgotten_pasword.html:18
+msgid "New Password:"
+msgstr ""
+#: templates/mail_forgotten_pasword.html:21
+msgid "You can log in using your new password to"
+msgstr ""
+#: templates/mail_activation.html:5
+msgid "Activation"
+msgstr ""
+#: templates/mail_activation.html:15
+msgid "Thanks for signing up to fazladanbilet - we’re excited to have you on board! Here are your login details for future reference."
+msgstr ""
+#: templates/mail_activation.html:21
+msgid "Activation:"
+msgstr ""
+#: templates/mail_activation.html:44
+msgid "Perform the swap process with Bitcoin."
+msgstr ""
+#: templates/mail_activation.html:60
+msgid "Your ticket as soon as you get prepared."
+msgstr ""
+#: templates/mail_activation.html:76
+msgid "Your tickets are shipped as soon as possible."
+msgstr ""
+#: templates/mail_vote.html:15
+msgid "Welcome to our satisfaction survey. We want you swap the voting process."
+msgstr ""
+#: templates/mail_vote.html:5
+msgid "Vote"
+msgstr ""
+#: templates/mail_vote.html:90
+msgid "Thanks,"
+msgstr ""
+#: templates/mail_vote.html:91
+msgid "Human Resources,"
+msgstr ""
+#: templates/mail_send_shipping.html:15
+msgid "Thank you for doing the swap with fazladanbilet. You can swap information viewed below."
+msgstr ""
+#: templates/mail_send_shipping.html:18
+msgid "Exchanger:"
+msgstr ""
+#: templates/mail_send_shipping.html:20
+msgid "Ticket:"
+msgstr ""
+#: templates/mail_send_shipping.html:24
+msgid "Cargo:"
+msgstr ""
+#: templates/mail_send_shipping.html:26
+msgid "Cargo Tracing:"
+msgstr ""

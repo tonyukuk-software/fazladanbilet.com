@@ -1,0 +1,30 @@
+{% extends "mail_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block top_title_block %}Forgotten Password{% endblock %}
+
+{% block title_block %}
+    <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 36px;Margin-bottom: 18px;font-family: sans-serif;line-height: 42px">
+        Hey {{ username }},
+    </h1>
+{% endblock %}
+
+{% block content_block %}
+    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px">
+        {% blocktrans %}Thank you for doing the swap with fazladanbilet. You can swap information viewed below.{% endblocktrans %}
+    </p>
+    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
+        {% trans "Exchanger:" %} <strong style="font-weight: bold"><a href="http://www.fazladanbilet.com/member/{{ id }}">{{ name }}</a></strong>
+        <br/>
+        {% trans "Ticket:" %} <strong style="font-weight: bold">{{ total_ticket }}</strong>
+        <br/>
+        Bitcoin: <strong style="font-weight: bold">{{ total }}</strong>
+        <br/>
+        {% trans "Cargo:" %} <strong style="font-weight: bold">{{ cargo_name }}</strong>
+        <br/>
+        {% blocktrans %}Cargo Tracing:{% endblocktrans %} <strong style="font-weight: bold"><a href="{{ cargo_tracing_link }}">{{ cargo_tracing }}</a></strong>
+    </p>
+{% endblock %}
+
+{% block add_block %} {% endblock %}

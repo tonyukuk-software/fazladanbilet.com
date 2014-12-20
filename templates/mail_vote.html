@@ -2,17 +2,17 @@
 {% load i18n %}
 {% load staticfiles %}
 
-{% block top_title_block %}Vote {% endblock %}
+{% block top_title_block %}{% trans "Vote" %} {% endblock %}
 
 {% block title_block %}
     <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 36px;Margin-bottom: 18px;font-family: sans-serif;line-height: 42px">
-        Hey {{ username }},
+        {% trans "Hey" %} {{ username }},
     </h1>
 {% endblock %}
 
 {% block content_block %}
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px">
-        Welcome to our satisfaction survey. We want you swap the voting process.
+        {% blocktrans %}Welcome to our satisfaction survey. We want you swap the voting process.{% endblocktrans %}
     </p>
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 5px">
         Bilet: <strong style="font-weight: bold">{{ ticket_name }}</strong><br/>
@@ -87,8 +87,8 @@
         </tbody>
     </table>
     <p style="Margin-top:0;font-weight:normal;color:#677483;font-family:sans-serif;font-size:14px;line-height:25px;Margin-bottom:20px">
-	Thanks,<br>
-	<em style="color:#a9b7c8;font-style:italic">Human Resources, Fazladan Bilet</em></p>
+        {% trans "Thanks," %}<br>
+	<em style="color:#a9b7c8;font-style:italic">{% blocktrans %}Human Resources,{% endblocktrans %} Fazladan Bilet</em></p>
 {% endblock %}
 
 {% block add_block %} {% endblock %}
