@@ -51,7 +51,6 @@ def new_member(request):
                               'email': email,
                               'activation_code': code})
             content = template.render(context)
-            print content
             mailgun_operator = mailgun()
             mailgun_operator.send_mail_with_html(member_user_auth.email, content)
             return HttpResponseRedirect('/accounts/login/')
@@ -289,6 +288,11 @@ def new_order(request, ticket_id_and_number):
                 order = Orders(on_sales=on_sales, ship_to_user=ship_to_user, total_ticket=total_ticket, status='1',
                                name=name, phone=phone, address=address)
                 order.save()
+
+                code = str(uuid.uuid4())
+                activation = Activation.objects.create(isuser=False, activivation_code=code, user_or_order_id=order.id)
+                activation.save()
+
                 return HttpResponseRedirect('/bitcoin/payment_page/' + str(order.id))
             except Exception as e:
                 print e
@@ -321,7 +325,6 @@ def after_sale_complaint(request, order_id):
 def user_activation(request, identity):
     try:
         active = Activation.objects.filter(activivation_code=identity)[0]
-        print active
         user = User.objects.filter(id=active.user_or_order_id)[0]
     except:
         return HttpResponseRedirect('/sorry')
@@ -337,13 +340,20 @@ def user_activation(request, identity):
 
 def vote_activation(request, identity, point):
     try:
-        member_order = Orders.objects.filter(id=identity)[0]
-        member = Member.objects.filter(id=member_order.on_sales.member.id)[0]
+        active = Activation.objects.filter(activivation_code=identity)[0]
+        member = Member.objects.filter(id=active.user_or_order_id)[0]
     except:
         return HttpResponseRedirect('/sorry')
     try:
-        member.points = ((member.points * member.points_counter) + point)/(member.points_counter+1)
-        member.points_counter += 1
-        member.save()
+        if member:
+            if not member.points:
+                member.points = 0
+            if not member.points_counter:
+                member.points_counter =0
+            member.points = ((member.points * member.points_counter) + point)/(member.points_counter+1)
+            member.points_counter += 1
+            member.save()
+            active.delete()
+            return HttpResponseRedirect('/')
     except:
         return HttpResponseRedirect('/sorry')
