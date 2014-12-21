@@ -4,6 +4,12 @@
 
 {% block head_block %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <script>
+        $('element_to_pop_up').bPopup({
+           contentContainer:'.content',
+           loadUrl: '{% static 'terms.txt' %}'
+        });
+    </script>
 {% endblock %}
 
 {% block menu_block %}{% endblock %}
