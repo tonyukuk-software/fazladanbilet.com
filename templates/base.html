@@ -82,8 +82,8 @@
           <div class="b-header-r b-right">
               <div class="b-header-ico-group f-header-ico-group b-right">
                           <span class="b-search-box">
-                              <a href="/search"><i class="fa fa-search"></i></a>
-                              <input type="text" placeholder={% trans "Enter your keywords" %}>
+                              <a id="search_link"><i class="fa fa-search"></i></a>
+                              <input id="search" type="text" placeholder={% trans "Enter your keywords" %}>
                           </span>
               </div>
               <div class="b-top-nav-show-slide f-top-nav-show-slide b-right j-top-nav-show-slide"><i class="fa fa-align-justify"></i></div>
@@ -211,7 +211,16 @@
     <!--Loader-->
     <script src="{% static 'js/loader.js' %}"></script>
     <!--End Loader-->
+    <script type="application/javascript">
+                $(document).ready(function () {
+                    $('#search_link').click(function () {
+                            var text = $('#search').val();
+                            window.location.href = "/search/" + text;
+                    });
+                });
+    </script>
+    {% block script_block %}
 
-    {% block script_block %}{% endblock %}
+    {% endblock %}
 </body>
 </html>

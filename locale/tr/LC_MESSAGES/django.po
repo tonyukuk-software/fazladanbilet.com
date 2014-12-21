@@ -592,3 +592,6 @@ msgstr ""
 #: jackalprojects/templates/how_it_works.html:27
 msgid "What is it fazladanbilet.com ?"
 msgstr ""
+#: jackalprojects/templates/search.html:25
+msgid "Read more"
+msgstr ""
