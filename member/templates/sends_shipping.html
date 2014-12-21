@@ -47,7 +47,7 @@
                                                                 <img data-retina="" src="/media/{{ order.on_sales.ticket_photo }}" alt="" width="56">
                                                                 <p>
                                                                      <a href="/member/ticket_details/{{ order.on_sales.id }}">
-                                                                        <span class="f-title-small ">{{ order.on_sales.title }} </span>
+                                                                        <span class="f-title-small ">{{ order.on_sales.title|title }} </span>
                                                                         <span class="f-title-smallest ">{{ order.get_status_display }}</span>
                                                                      </a>
                                                                 </p>
