@@ -48,9 +48,9 @@
                             <div class="b-blog-one-column__info_container c-default">
                                 E-mail: {{ member.email }}
                                 <span class="b-blog-one-column__info_delimiter"></span>
-                                {% trans 'Points' %}: {{ member.points }}
+                                {% trans 'Points' %}: {{ member.points|default:0 }}
                                 <span class="b-blog-one-column__info_delimiter"></span>
-                                {% trans 'Points Counter' %}: {{ member.points_counter }}
+                                {% trans 'Points Counter' %}: {{ member.points_counter|default:0 }}
                             </div>
                         </div>
                         <div class="b-form-row b-blog-one-column__text">Fazladanbilet.com kullanıcıların kimlik
