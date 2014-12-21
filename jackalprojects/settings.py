@@ -100,6 +100,7 @@ MEDIA_ROOT = BASE_DIR + '/media'
 
 LOCALE_PATHS = (
      os.path.join(BASE_DIR, 'conf'),
+     os.path.join(BASE_DIR, 'locale'),
 )
 
 LANGUAGES = (

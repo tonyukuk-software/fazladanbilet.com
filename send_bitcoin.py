@@ -1,16 +1,16 @@
 from django.template.loader import get_template
+from bitcoin.coinbase_api import coinbase_api
 from mailgun import mailgun
-
+from django.template import Context
 __author__ = 'cemkiy'
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Unicode - Django
 
-from decimal import Decimal, Context
+from decimal import Decimal
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jackalprojects.settings")
 from member.models import Orders
-from bitcoin import coinbase_api
 
 
 def main():
