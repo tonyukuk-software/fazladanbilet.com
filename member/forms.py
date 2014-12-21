@@ -35,6 +35,13 @@ class new_order_form(forms.Form):
     address = forms.CharField(max_length=256, widget=forms.TextInput)
 
 class send_cargo_no_and_user_url_for_btc_send_form(forms.Form):
+    CARGO_CHOICES = (
+    (u'0', u'yurtici'),
+    (u'1', u'ups'),
+    (u'2', u'aras'),
+    )
+
+    cargo_company = forms.ChoiceField(choices=CARGO_CHOICES)
     cargo_no = forms.CharField(max_length=50, required=True)
     user_url_for_btc_send = forms.CharField(max_length=27, required=True)
 

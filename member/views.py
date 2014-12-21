@@ -178,37 +178,38 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
     if request.method == 'POST':
         form = send_cargo_no_and_user_url_for_btc_send_form(request.POST)
         if form.is_valid():
-            try:
-                cargo_no = request.POST.get('cargo_no')
-                user_url_for_btc_send = request.POST.get('user_url_for_btc_send')
-                order.cargo_no = cargo_no
-                order.user_url_for_btc_send = user_url_for_btc_send
-                order.status = '3'
-                order.save()
 
-                trace = order.cargo_company
-                tracing_link = ""
+            cargo_company = request.POST.get('cargo_company')
+            cargo_no = request.POST.get('cargo_no')
+            user_url_for_btc_send = request.POST.get('user_url_for_btc_send')
+            order.cargo_company = cargo_company
+            order.cargo_no = cargo_no
+            order.user_url_for_btc_send = user_url_for_btc_send
+            order.status = '3'
+            order.save()
 
-                if trace == '0':
-                    tracing_link = 'http://selfservis.yurticikargo.com/reports/SSWDocumentDetail.aspx?DocId=' + str(order.cargo_no)
-                elif trace == '1':
-                    tracing_link = 'http://www.ups.com.tr/WaybillSorgu.aspx?waybill=' + str(order.cargo_no)
-                elif trace == '2':
-                    tracing_link = 'http://kargotakip.araskargo.com.tr/?code=' + str(order.cargo_no)
+            trace = order.cargo_company
+            tracing_link = ""
 
-                template = get_template("mail_send_cargo_no_and_user_url_for_btc_send.html")
-                context = Context({'username': order.ship_to_user.username,
-                                   'ticket_name': order.on_sales.title,
-                                   'cargo_brand': str.upper(order.get_cargo_company_display + ' KARGO'),
-                                   'tracing_link': tracing_link,
-                                   'order_id': order.id})
-                content = template.render(context)
-                mailgun_operator = mailgun()
-                mailgun_operator.send_mail_with_html(order.ship_to_user.email, content)
+            if trace == '0':
+                tracing_link = 'http://selfservis.yurticikargo.com/reports/SSWDocumentDetail.aspx?DocId=' + str(order.cargo_no)
+            elif trace == '1':
+                tracing_link = 'http://www.ups.com.tr/WaybillSorgu.aspx?waybill=' + str(order.cargo_no)
+            elif trace == '2':
+                tracing_link = 'http://kargotakip.araskargo.com.tr/?code=' + str(order.cargo_no)
 
-                return HttpResponseRedirect('/member/sends_shipping/')
-            except:
-                return HttpResponseRedirect('/sorry')
+            template = get_template("mail_send_cargo_no_and_user_url_for_btc_send.html")
+            context = Context({'username': order.ship_to_user.username,
+                               'ticket_name': order.on_sales.title,
+                               'cargo_brand': str(order.get_cargo_company_display) + 'KARGO',
+                               'tracing_link': tracing_link,
+                               'order_id': order.id})
+            content = template.render(context)
+            mailgun_operator = mailgun()
+            mailgun_operator.send_mail_with_html(order.ship_to_user.email, content)
+
+            return HttpResponseRedirect('/member/sends_shipping/')
+
 
     return render_to_response('send_cargo_no_and_user_url_for_btc_send.html', locals(), context_instance=RequestContext(request))
 

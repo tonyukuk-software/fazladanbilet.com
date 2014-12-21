@@ -651,7 +651,7 @@ msgstr "Fotoğraf"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
 msgid "Cargo Num"
-msgstr "Cargo Nuamrası"
+msgstr "Cargo Numarası"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:44
 msgid "User Url for BTC Send"

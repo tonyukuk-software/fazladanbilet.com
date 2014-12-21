@@ -34,6 +34,13 @@
                             <form id="new_order" method='POST' enctype="multipart/form-data">
                                 {% csrf_token %}
 
+                            <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="cargo_no">{% trans "Cargo Company" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.cargo_company }}
+                                    </div>
+                                </div>
+
                                 <div class="b-form-row">
                                     <label class="b-form-horizontal__label" for="cargo_no">{% trans "Cargo Num" %}:</label>
                                     <div class="b-form-horizontal__input">
