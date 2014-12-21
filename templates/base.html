@@ -217,6 +217,12 @@
                             var text = $('#search').val();
                             window.location.href = "/search/" + text;
                     });
+                    $('#search').keypress(function(e) {
+                        if(e.which == 13) {
+                            var text = $('#search').val();
+                            window.location.href = "/search/" + text;
+                        }
+                    });
                 });
     </script>
     {% block script_block %}

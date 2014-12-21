@@ -37,6 +37,7 @@
                                             <th width="150"><span class="f-primary-b">{% trans "Send" %}</span></th>
                                             <th width="150"><span class="f-primary-b">{% trans "Problem?" %}</span></th>
                                         </tr>
+                                        {% if orders %}
                                          {% for order in orders %}
                                             {% if order.get_status_display != 'cancel' and order.get_status_display != 'waiting_for_payment' %}
                                                 <tr>
@@ -77,12 +78,13 @@
                                                     {% endif %}
                                                     <td><span class="f-center"><a href="/member/after_sale_complaint/{{ order.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "I have a Problem" %}</a></span></td>
                                                 </tr>
-                                            {% else %}
-                                                <tr>
-                                                    <td colspan="4">{% blocktrans %}Sends shipping is seems empty yet!{% endblocktrans %}</td>
-                                                <tr>
                                             {% endif %}
                                         {% endfor %}
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="4">{% blocktrans %}Sends shipping is seems empty yet!{% endblocktrans %}</td>
+                                         <tr>
+                                         {% endif %}
                                     </tbody>
                                 </table>
                             </div>

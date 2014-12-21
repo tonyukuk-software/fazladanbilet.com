@@ -222,7 +222,6 @@ def my_bag(request):  # bag is basket of my take ticket
     # return response
 
     tickets = []
-    tt=3
     if 'tickets_in_my_bag' in request.COOKIES:
         try:
             tickets_in_my_bag = request.COOKIES['tickets_in_my_bag']
