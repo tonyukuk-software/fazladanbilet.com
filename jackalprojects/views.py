@@ -17,13 +17,13 @@ from mailgun import *
 
 def home_page(request):
     tickets = On_Sales.objects.filter(active=True)
-    categories = Category.objects.all()
+    categories = Category.objects.filter().all()
     return render_to_response('home_page.html', locals(), context_instance=RequestContext(request))
 
 
 def ticket_pool(request):
     tickets = On_Sales.objects.filter(active=True)
-    categories = Category.objects.all()
+    categories = Category.objects.filter().all()
     return render_to_response('ticket_pool.html', locals())
 
 
@@ -98,11 +98,11 @@ def how_it_works(request):
     return render_to_response('how_it_works.html', locals(), context_instance=RequestContext(request))
 
 def search(request, search_keyword):
-    tickets = On_Sales.objects.filter(title__icontains=search_keyword).all()
+    tickets = On_Sales.objects.filter(title__icontains=search_keyword, active=True).all()
     return render_to_response('search.html', locals(), context_instance=RequestContext(request))
 
 def category_filter(request, category_keyword):
     categories = Category.objects.all()
     category_filter = Category.objects.filter(category_name=category_keyword)[0]
-    tickets = On_Sales.objects.filter(category=category_filter).all()
+    tickets = On_Sales.objects.filter(category=category_filter, active=True).all()
     return render_to_response('category_filter.html', locals(), context_instance=RequestContext(request))

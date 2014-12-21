@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-21 12:05+0000\n"
+"POT-Creation-Date: 2014-12-21 12:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,6 +61,7 @@ msgstr ""
 #: member/templates/member_profile.html:13 member/templates/my_bag.html:18
 #: member/templates/new_member.html:16 member/templates/new_order.html:17
 #: member/templates/new_swap_ticket.html:17
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:17
 #: member/templates/sends_shipping.html:18
 #: member/templates/ticket_details.html:18 templates/base.html:92
 msgid "Home"
@@ -131,12 +132,12 @@ msgstr ""
 msgid "Counter"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:130 member/templates/my_bag.html:77
+#: bitcoin/templates/payment_page.html:130
 #: member/templates/ticket_details.html:115
 msgid "product price filter"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:144 member/templates/my_bag.html:83
+#: bitcoin/templates/payment_page.html:144
 #: member/templates/ticket_details.html:121
 msgid "Filter"
 msgstr ""
@@ -259,7 +260,7 @@ msgstr ""
 
 #: jackalprojects/templates/home_page.html:77
 #: jackalprojects/templates/ticket_pool.html:78
-#: member/templates/category_filter.html:78 member/templates/my_bag.html:88
+#: member/templates/category_filter.html:78
 msgid " Categories filter"
 msgstr ""
 
@@ -289,6 +290,7 @@ msgstr ""
 #: member/templates/edit_member_profile.html:58
 #: member/templates/new_member.html:25 member/templates/new_order.html:26
 #: member/templates/new_swap_ticket.html:26
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:26
 msgid "Please, you must filled the form with right values and press button"
 msgstr ""
 
@@ -304,7 +306,7 @@ msgstr ""
 #: member/templates/after_sale_complaint.html:55
 #: member/templates/new_member.html:66 member/templates/new_order.html:61
 #: member/templates/new_swap_ticket.html:91
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:21
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:52
 msgid "Submit"
 msgstr ""
 
@@ -354,8 +356,44 @@ msgstr ""
 msgid "cancel"
 msgstr ""
 
+#: member/models.py:56
+msgid "waiting_for_payment"
+msgstr ""
+
+#: member/models.py:57
+msgid "waiting_for_cargo"
+msgstr ""
+
 #: member/models.py:58
 msgid "on_the_road"
+msgstr ""
+
+#: member/models.py:59
+msgid "success_shipping"
+msgstr ""
+
+#: member/models.py:60
+msgid "failure_shipping"
+msgstr ""
+
+#: member/models.py:85
+msgid "cargo_problem"
+msgstr ""
+
+#: member/models.py:86
+msgid "wrong_ticket"
+msgstr ""
+
+#: member/models.py:87
+msgid "fake_ticket"
+msgstr ""
+
+#: member/models.py:88
+msgid "bitcoin_problem"
+msgstr ""
+
+#: member/models.py:89
+msgid "other"
 msgstr ""
 
 #: member/templates/after_sale_complaint.html:18
@@ -380,8 +418,7 @@ msgid "Member"
 msgstr ""
 
 #: member/templates/comes_shipping.html:20
-#: member/templates/sends_shipping.html:20
-msgid "Send Shipping"
+msgid "Comes Shipping"
 msgstr ""
 
 #: member/templates/comes_shipping.html:30 member/templates/my_bag.html:30
@@ -477,18 +514,6 @@ msgstr ""
 msgid "Your bag is seems empty yet!"
 msgstr ""
 
-#: member/templates/my_bag.html:91
-msgid " Films"
-msgstr ""
-
-#: member/templates/my_bag.html:95
-msgid " Theatre"
-msgstr ""
-
-#: member/templates/my_bag.html:99
-msgid " Concert"
-msgstr ""
-
 #: member/templates/new_member.html:17 templates/base.html:69
 msgid "Sign Up"
 msgstr ""
@@ -531,6 +556,8 @@ msgid "Secure shopping"
 msgstr ""
 
 #: member/templates/new_order.html:18 member/templates/new_order.html.py:25
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:18
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:25
 msgid "New Order"
 msgstr ""
 
@@ -548,11 +575,13 @@ msgstr ""
 
 #: member/templates/new_order.html:75
 #: member/templates/new_swap_ticket.html:105
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:66
 msgid "Don't Forget"
 msgstr ""
 
 #: member/templates/new_order.html:76
 #: member/templates/new_swap_ticket.html:106
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:67
 msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
@@ -560,27 +589,32 @@ msgstr ""
 
 #: member/templates/new_order.html:79
 #: member/templates/new_swap_ticket.html:109
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:70
 msgid "Your bitcoins not sends before success shipping!"
 msgstr ""
 
 #: member/templates/new_order.html:80
 #: member/templates/new_swap_ticket.html:110
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:71
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
 msgstr ""
 
 #: member/templates/new_order.html:81
 #: member/templates/new_swap_ticket.html:111
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:72
 msgid "This system takes comission 20/1 on your ticket amount!"
 msgstr ""
 
 #: member/templates/new_order.html:82
 #: member/templates/new_swap_ticket.html:112
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:73
 msgid "Bitcoin miners takes comission 0.0002 btc!"
 msgstr ""
 
 #: member/templates/new_order.html:83
 #: member/templates/new_swap_ticket.html:113
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:74
 msgid "This platform works with trusts dealers!"
 msgstr ""
 
@@ -602,6 +636,18 @@ msgstr ""
 
 #: member/templates/new_swap_ticket.html:77
 msgid "Photo"
+msgstr ""
+
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
+msgid "Cargo Num"
+msgstr ""
+
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:44
+msgid "User Url for BTC Send"
+msgstr ""
+
+#: member/templates/sends_shipping.html:20
+msgid "Sends Shipping"
 msgstr ""
 
 #: member/templates/sends_shipping.html:62
