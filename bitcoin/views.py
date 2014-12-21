@@ -66,7 +66,7 @@ def succes_url(request, order_id):
                 print e
                 return False
             amount = Decimal(order.on_sales.amount_bitcoin) * int(order.total_ticket)
-            template = get_template("mail_come_shipping.html")
+            template = get_template("mail_comes_shipping.html")
             context = Context({'username': order.ship_to_user.username,
                                'ticket_name': order.on_sales.title,
                                'total': str(amount),
@@ -74,7 +74,7 @@ def succes_url(request, order_id):
             content = template.render(context)
             mailgun_operator = mailgun()
             mailgun_operator.send_mail_with_html(order.ship_to_user.email, content)
-            template = get_template("mail_send_shipping.html")
+            template = get_template("mail_sends_shipping.html")
             context = Context({'username': order.on_sales.member.username,
                                'id': order.ship_to_user.id,
                                'shipping_address': order.address,

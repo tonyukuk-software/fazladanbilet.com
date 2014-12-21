@@ -31,7 +31,7 @@ class mailgun:
         output = 'Status: {0}'.format(request.status_code) + 'Body:   {0}'.format(request.text)
         print output
 
-# template = get_template("mail_activation.html")
+# template = get_template("mail_user_activation.html")
 # context = Context({'username': 'cem'})
 # content = template.render(context)
 # mailgun_operator = mailgun()

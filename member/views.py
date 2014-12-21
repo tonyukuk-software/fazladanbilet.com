@@ -46,7 +46,7 @@ def new_member(request):
             activation = Activation.objects.create(isuser=True, activivation_code=code, user_or_order_id=member.id)
             activation.save()
 
-            template = get_template("mail_activation.html")
+            template = get_template("mail_user_activation.html")
             context = Context({'username': username,
                               'email': email,
                               'activation_code': code})
@@ -185,7 +185,27 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
                 order.user_url_for_btc_send = user_url_for_btc_send
                 order.status = '3'
                 order.save()
-                #TODO mailgun: #  __author__ = 'barisariburnu'
+
+                trace = order.cargo_company
+                tracing_link = ""
+
+                if trace == 0:
+                    tracing_link = 'http://selfservis.yurticikargo.com/reports/SSWDocumentDetail.aspx?DocId=' + str(order.cargo_no)
+                elif trace == 1:
+                    tracing_link = 'http://www.ups.com.tr/WaybillSorgu.aspx?waybill=' + str(order.cargo_no)
+                elif trace == 2:
+                    tracing_link = 'http://kargotakip.araskargo.com.tr/?code=' + str(order.cargo_no)
+
+                template = get_template("mail_send_cargo_no_and_user_url_for_btc_send.html")
+                context = Context({'username': order.ship_to_user.username,
+                                   'ticket_name': order.on_sales.title,
+                                   'cargo_brand': str.upper(order.get_cargo_company_display + ' KARGO'),
+                                   'tracing_link': tracing_link,
+                                   'order_id': order.id})
+                content = template.render(context)
+                mailgun_operator = mailgun()
+                mailgun_operator.send_mail_with_html(order.ship_to_user.email, content)
+
                 return HttpResponseRedirect('/member/sends_shipping/')
             except:
                 return HttpResponseRedirect('/sorry')
@@ -313,7 +333,7 @@ def after_sale_complaint(request, order_id):
                 order.save()
                 form.save()
 
-                template = get_template("mail_complaint.html")
+                template = get_template("mail_after_sale_complaint.html")
                 context = Context({'username': order.ship_to_user.username,
                                    'ticket_name': order.on_sales.title,
                                    'order_id': order.id})

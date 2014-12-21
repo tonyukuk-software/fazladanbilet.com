@@ -595,3 +595,9 @@ msgstr ""
 #: jackalprojects/templates/search.html:25
 msgid "Read more"
 msgstr ""
+#: templates/mail_after_sale_complaint.html:20
+msgid "Cargo Brand:"
+msgstr ""
+#: templates/mail_after_sale_complaint.html:21
+msgid "Tracing:"
+msgstr ""

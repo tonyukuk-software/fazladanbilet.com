@@ -46,13 +46,13 @@ def send_mail(order):
     activation = Activation.objects.create(isuser=False, activivation_code=code, user_or_order_id=order.id)
     activation.save()
 
-    template = get_template("mail_vote.html")
+    template = get_template("mail_vote_activation.html")
     context = Context({'username': order.ship_to_user.username,
                        'ticket_name': order.on_sales.title,
                        'order_id': order.id})
     content = template.render(context)
     mailgun_operator = mailgun()
-    mailgun_operator.send_mail_with_html('barisariburnu@gmail.com', content)
+    mailgun_operator.send_mail_with_html(order.ship_to_user.email, content)
 
 if __name__ == "__main__":
     main()
