@@ -17,11 +17,13 @@ from mailgun import *
 
 def home_page(request):
     tickets = On_Sales.objects.filter(active=True)
+    categories = Category.objects.all()
     return render_to_response('home_page.html', locals(), context_instance=RequestContext(request))
 
 
 def ticket_pool(request):
     tickets = On_Sales.objects.filter(active=True)
+    categories = Category.objects.all()
     return render_to_response('ticket_pool.html', locals())
 
 

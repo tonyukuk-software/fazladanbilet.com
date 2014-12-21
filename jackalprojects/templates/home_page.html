@@ -71,23 +71,16 @@
                     <div class="col-md-3">
                         <aside>
                             <div class="row b-col-default-indent">
-                        
+
                                 <div class="col-md-12">
                                     <div class="b-categories-filter">
                                         <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans " Categories filter" %}</h4>
                                         <ul>
+                                             {% for category in categories %}
                                             <li>
-                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Films" %}</a>
-                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{{ category }}</a>
                                             </li>
-                                            <li>
-                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Theatre" %}</a>
-                                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
-                                            </li>
-                                            <li>
-                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Concert" %}</a>
-                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
