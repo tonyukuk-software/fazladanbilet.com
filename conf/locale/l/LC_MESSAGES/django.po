@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-14 16:31+0000\n"
+"POT-Creation-Date: 2014-12-21 12:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,215 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: bitcoin/templates/cancel_url.html:14
+msgid "Payment Failure"
+msgstr ""
+
+#: bitcoin/templates/cancel_url.html:18
+msgid "Please Try Again !"
+msgstr ""
+
+#: bitcoin/templates/cancel_url.html:19 bitcoin/templates/success_url.html:19
+#: templates/sorry.html:19
+msgid "You can return"
+msgstr ""
+
+#: bitcoin/templates/cancel_url.html:20
+#: jackalprojects/templates/contact_us.html:93 templates/sorry.html:20
+msgid "homepage"
+msgstr ""
+
+#: bitcoin/templates/cancel_url.html:20 bitcoin/templates/success_url.html:20
+#: templates/sorry.html:20
+msgid "or"
+msgstr ""
+
+#: bitcoin/templates/cancel_url.html:21 bitcoin/templates/success_url.html:21
+#: templates/sorry.html:21
+msgid "contact us"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:23
+#: jackalprojects/templates/contact_us.html:13
 #: jackalprojects/templates/forgotten_password.html:14
 #: jackalprojects/templates/home_page.html:14
+#: jackalprojects/templates/how_it_works.html:15
 #: jackalprojects/templates/login.html:17
 #: jackalprojects/templates/public_profile.html:13
 #: jackalprojects/templates/terms.html:15
 #: jackalprojects/templates/ticket_pool.html:14
 #: member/templates/after_sale_complaint.html:17
+#: member/templates/category_filter.html:14
+#: member/templates/comes_shipping.html:18
 #: member/templates/edit_member_profile.html:15
-#: member/templates/member_profile.html:13 member/templates/new_member.html:16
-#: member/templates/new_order.html:17 member/templates/new_swap_ticket.html:17
-#: member/templates/ticket_details.html:18 templates/base.html:146
+#: member/templates/member_profile.html:13 member/templates/my_bag.html:18
+#: member/templates/new_member.html:16 member/templates/new_order.html:17
+#: member/templates/new_swap_ticket.html:17
+#: member/templates/sends_shipping.html:18
+#: member/templates/ticket_details.html:18 templates/base.html:92
 msgid "Home"
 msgstr ""
 
+#: bitcoin/templates/payment_page.html:24
+msgid "Payment Page"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:50
+#: member/templates/ticket_details.html:41
+msgid "information"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:53 member/templates/my_bag.html:37
+#: member/templates/ticket_details.html:44
+msgid "Price"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:59
+#: member/templates/new_swap_ticket.html:59
+msgid "Total Ticket"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:64
+#: jackalprojects/templates/search.html:18
+#: member/templates/ticket_details.html:64
+msgid "Categories"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:69
+#: member/templates/new_swap_ticket.html:83
+#: member/templates/ticket_details.html:69
+msgid "End Date"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:73
+msgid "Pay With Bitcoin"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:89
+#: member/templates/after_sale_complaint.html:47
+#: member/templates/new_swap_ticket.html:53
+#: member/templates/ticket_details.html:85
+msgid "Description"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:95
+#: member/templates/ticket_details.html:86
+msgid "User's Information"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:109
+#: jackalprojects/templates/login.html:39 member/templates/new_member.html:37
+#: member/templates/ticket_details.html:95
+msgid "Username"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:114
+#: jackalprojects/templates/public_profile.html:51
+#: member/templates/member_profile.html:51
+#: member/templates/ticket_details.html:99
+msgid "Points"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:118
+#: member/templates/ticket_details.html:103
+msgid "Counter"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:130 member/templates/my_bag.html:77
+#: member/templates/ticket_details.html:115
+msgid "product price filter"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:144 member/templates/my_bag.html:83
+#: member/templates/ticket_details.html:121
+msgid "Filter"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:149
+#: member/templates/ticket_details.html:126
+msgid "Categories filter"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:153
+#: member/templates/ticket_details.html:129
+msgid "Films"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:158
+#: member/templates/ticket_details.html:133
+msgid "Theatre"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:163
+#: member/templates/ticket_details.html:137
+msgid "Concert"
+msgstr ""
+
+#: bitcoin/templates/success_url.html:14
+msgid "Success Payment"
+msgstr ""
+
+#: bitcoin/templates/success_url.html:18
+msgid "Thanks for your choice !"
+msgstr ""
+
+#: bitcoin/templates/success_url.html:20
+msgid "comes shipping page"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:14
+msgid "Contact us"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:23
+msgid "CONTACT US"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:24
+msgid ""
+"If you lived a problem in platform or any shipping problem, you can contact "
+"us. We will investigate your problem. Our purpose is provide the best "
+"shopping experience for you."
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:32
+msgid "SEND MAIL"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:39
+msgid "Your name"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:45
+msgid "You email"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:51
+msgid "Your title"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:59
+msgid "Your message"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:63
+msgid "send message"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:71
+msgid "contact info"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:72
+msgid "Our contact information..."
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:84
+msgid "If you will be good kid, you can find us!"
+msgstr ""
+
 #: jackalprojects/templates/forgotten_password.html:15
+#: templates/mail_forgotten_password.html:5
 msgid "Forgotten Password"
 msgstr ""
 
@@ -43,79 +237,42 @@ msgstr ""
 msgid "Enter your email and we'll send you new password."
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:34
+#: jackalprojects/templates/forgotten_password.html:43
 msgid "Send Me Now"
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:39
+#: jackalprojects/templates/forgotten_password.html:48
 msgid "Return to Login"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:28
-#: jackalprojects/templates/ticket_pool.html:29
-msgid "1 products/page"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:29
-#: jackalprojects/templates/ticket_pool.html:30
-msgid "6 products/page"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:30
-#: jackalprojects/templates/ticket_pool.html:31
-msgid "9 products/page"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:35
-#: jackalprojects/templates/ticket_pool.html:36
-msgid "Order by price"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:36
-#: jackalprojects/templates/ticket_pool.html:37
-msgid "Order by name"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:74
-#: jackalprojects/templates/ticket_pool.html:75
+#: jackalprojects/templates/home_page.html:59
+#: jackalprojects/templates/ticket_pool.html:60
+#: member/templates/category_filter.html:60
 msgid "First"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:80
-#: jackalprojects/templates/ticket_pool.html:81
+#: jackalprojects/templates/home_page.html:65
+#: jackalprojects/templates/ticket_pool.html:66
+#: member/templates/category_filter.html:66
 msgid "Last"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:90
-#: jackalprojects/templates/ticket_pool.html:91
-#: member/templates/ticket_details.html:117
-msgid "product price filter"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:96
-#: jackalprojects/templates/ticket_pool.html:97
-#: member/templates/ticket_details.html:123
-msgid "Filter"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:101
-#: jackalprojects/templates/ticket_pool.html:102
+#: jackalprojects/templates/home_page.html:77
+#: jackalprojects/templates/ticket_pool.html:78
+#: member/templates/category_filter.html:78 member/templates/my_bag.html:88
 msgid " Categories filter"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:104
-#: jackalprojects/templates/ticket_pool.html:105
-msgid " Films"
+#: jackalprojects/templates/how_it_works.html:16
+msgid "How it works"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:108
-#: jackalprojects/templates/ticket_pool.html:109
-msgid " Theatre"
+#: jackalprojects/templates/how_it_works.html:24
+msgid "How it works ?"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:112
-#: jackalprojects/templates/ticket_pool.html:113
-msgid " Concert"
+#: jackalprojects/templates/how_it_works.html:27
+msgid "What is it fazladanbilet.com ?"
 msgstr ""
 
 #: jackalprojects/templates/login.html:18
@@ -133,11 +290,6 @@ msgstr ""
 #: member/templates/new_member.html:25 member/templates/new_order.html:26
 #: member/templates/new_swap_ticket.html:26
 msgid "Please, you must filled the form with right values and press button"
-msgstr ""
-
-#: jackalprojects/templates/login.html:39 member/templates/new_member.html:37
-#: member/templates/ticket_details.html:97
-msgid "Username"
 msgstr ""
 
 #: jackalprojects/templates/login.html:46 member/templates/new_member.html:49
@@ -177,18 +329,16 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: jackalprojects/templates/public_profile.html:47
-#: member/templates/member_profile.html:49
-#: member/templates/ticket_details.html:101
-msgid "Points"
-msgstr ""
-
-#: jackalprojects/templates/public_profile.html:49
-#: member/templates/member_profile.html:51
+#: jackalprojects/templates/public_profile.html:53
+#: member/templates/member_profile.html:53
 msgid "Points Counter"
 msgstr ""
 
-#: jackalprojects/templates/terms.html:16 templates/base.html:154
+#: jackalprojects/templates/search.html:25
+msgid "Read more"
+msgstr ""
+
+#: jackalprojects/templates/terms.html:16 templates/base.html:100
 msgid "Terms of Used"
 msgstr ""
 
@@ -200,11 +350,19 @@ msgstr ""
 msgid "Ticket Pool"
 msgstr ""
 
+#: member/models.py:55
+msgid "cancel"
+msgstr ""
+
+#: member/models.py:58
+msgid "on_the_road"
+msgstr ""
+
 #: member/templates/after_sale_complaint.html:18
 #: member/templates/after_sale_complaint.html:25
 #: member/templates/new_swap_ticket.html:18
-#: member/templates/new_swap_ticket.html:25 templates/base.html:159
-#: templates/base.html.py:188
+#: member/templates/new_swap_ticket.html:25 templates/base.html:105
+#: templates/base.html.py:134
 msgid "New Ticket"
 msgstr ""
 
@@ -212,15 +370,54 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: member/templates/after_sale_complaint.html:47
-#: member/templates/new_swap_ticket.html:53
-#: member/templates/ticket_details.html:87
-msgid "Description"
+#: member/templates/category_filter.html:15
+msgid "Category Filter"
 msgstr ""
 
-#: member/templates/comes_shipping.html:23
-#: member/templates/sends_shipping.html:24
-msgid "I had a problem"
+#: member/templates/comes_shipping.html:19 member/templates/my_bag.html:19
+#: member/templates/sends_shipping.html:19
+msgid "Member"
+msgstr ""
+
+#: member/templates/comes_shipping.html:20
+#: member/templates/sends_shipping.html:20
+msgid "Send Shipping"
+msgstr ""
+
+#: member/templates/comes_shipping.html:30 member/templates/my_bag.html:30
+#: member/templates/sends_shipping.html:30
+msgid "shopping cart"
+msgstr ""
+
+#: member/templates/comes_shipping.html:35 member/templates/my_bag.html:36
+#: member/templates/sends_shipping.html:35
+msgid "Item"
+msgstr ""
+
+#: member/templates/comes_shipping.html:36
+#: member/templates/sends_shipping.html:36
+#: member/templates/ticket_details.html:74
+msgid "Total"
+msgstr ""
+
+#: member/templates/comes_shipping.html:37
+#: member/templates/sends_shipping.html:37
+msgid "Send"
+msgstr ""
+
+#: member/templates/comes_shipping.html:38
+#: member/templates/sends_shipping.html:38
+msgid "Problem?"
+msgstr ""
+
+#: member/templates/comes_shipping.html:79
+#: member/templates/sends_shipping.html:79
+msgid "I have a Problem"
+msgstr ""
+
+#: member/templates/comes_shipping.html:85
+#: member/templates/sends_shipping.html:85
+msgid "Sends shipping is seems empty yet!"
 msgstr ""
 
 #: member/templates/edit_member_profile.html:16
@@ -253,10 +450,46 @@ msgid "Confirm Password"
 msgstr ""
 
 #: member/templates/member_profile.html:44
+msgid "COMES SHIPPING"
+msgstr ""
+
+#: member/templates/member_profile.html:45
+msgid "SENDS SHIPPING"
+msgstr ""
+
+#: member/templates/member_profile.html:46
 msgid "EDIT PROFILE"
 msgstr ""
 
-#: member/templates/new_member.html:17 templates/base.html:79
+#: member/templates/my_bag.html:20 templates/base.html:74
+msgid "Cart"
+msgstr ""
+
+#: member/templates/my_bag.html:38
+msgid "Number"
+msgstr ""
+
+#: member/templates/my_bag.html:58
+msgid "Exchange"
+msgstr ""
+
+#: member/templates/my_bag.html:64
+msgid "Your bag is seems empty yet!"
+msgstr ""
+
+#: member/templates/my_bag.html:91
+msgid " Films"
+msgstr ""
+
+#: member/templates/my_bag.html:95
+msgid " Theatre"
+msgstr ""
+
+#: member/templates/my_bag.html:99
+msgid " Concert"
+msgstr ""
+
+#: member/templates/new_member.html:17 templates/base.html:69
 msgid "Sign Up"
 msgstr ""
 
@@ -359,10 +592,6 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: member/templates/new_swap_ticket.html:59
-msgid "Total Ticket"
-msgstr ""
-
 #: member/templates/new_swap_ticket.html:65
 msgid "City"
 msgstr ""
@@ -375,125 +604,245 @@ msgstr ""
 msgid "Photo"
 msgstr ""
 
-#: member/templates/new_swap_ticket.html:83
-#: member/templates/ticket_details.html:71
-msgid "End Date"
-msgstr ""
-
-#: member/templates/sends_shipping.html:23
-msgid "Send cargo no and your btc adress"
+#: member/templates/sends_shipping.html:62
+msgid "Send Cargo No"
 msgstr ""
 
 #: member/templates/ticket_details.html:19
 msgid "Ticket Detail"
 msgstr ""
 
-#: member/templates/ticket_details.html:41
-msgid "information"
-msgstr ""
-
-#: member/templates/ticket_details.html:44
-msgid "Price"
-msgstr ""
-
-#: member/templates/ticket_details.html:59
+#: member/templates/ticket_details.html:57
 msgid "Add to cart"
 msgstr ""
 
-#: member/templates/ticket_details.html:66
-msgid "Categories"
-msgstr ""
-
-#: member/templates/ticket_details.html:76
-msgid "Total"
-msgstr ""
-
-#: member/templates/ticket_details.html:88
-msgid "User's Information"
-msgstr ""
-
-#: member/templates/ticket_details.html:105
-msgid "Counter"
-msgstr ""
-
-#: member/templates/ticket_details.html:128
-msgid "Categories filter"
-msgstr ""
-
-#: member/templates/ticket_details.html:131
-msgid "Films"
-msgstr ""
-
-#: member/templates/ticket_details.html:135
-msgid "Theatre"
-msgstr ""
-
-#: member/templates/ticket_details.html:139
-msgid "Concert"
-msgstr ""
-
-#: templates/base.html:59
-msgid "Language"
-msgstr ""
-
-#: templates/base.html:74
+#: templates/base.html:64
 msgid "My Account"
 msgstr ""
 
-#: templates/base.html:75
+#: templates/base.html:65
 msgid "Checkout"
 msgstr ""
 
-#: templates/base.html:76
+#: templates/base.html:66
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:78
+#: templates/base.html:68
 msgid "Login"
 msgstr ""
 
-#: templates/base.html:84
-msgid "Cart"
-msgstr ""
-
 #: templates/base.html:86
-msgid "Recently added item(s)"
-msgstr ""
-
-#: templates/base.html:126
-msgid "Cancel"
-msgstr ""
-
-#: templates/base.html:127
-msgid "Check out"
-msgstr ""
-
-#: templates/base.html:140
 msgid "Enter your keywords"
 msgstr ""
 
-#: templates/base.html:148 templates/base.html.py:151 templates/base.html:184
+#: templates/base.html:94 templates/base.html.py:97 templates/base.html:130
 msgid "What is it?"
 msgstr ""
 
-#: templates/base.html:152 templates/base.html.py:185
+#: templates/base.html:98 templates/base.html.py:131
 msgid "How it works?"
 msgstr ""
 
-#: templates/base.html:153
+#: templates/base.html:99
 msgid "Bitcoin"
 msgstr ""
 
-#: templates/base.html:158 templates/base.html.py:186 templates/base.html:187
+#: templates/base.html:104 templates/base.html.py:132 templates/base.html:133
 msgid "Shop"
 msgstr ""
 
-#: templates/base.html:160 templates/base.html.py:189
+#: templates/base.html:106 templates/base.html.py:135
 msgid "Contact Us"
 msgstr ""
 
-#: templates/base.html:183
+#: templates/base.html:129
 msgid "Homepage"
+msgstr ""
+
+#: templates/base.html:141
+msgid "Language"
+msgstr ""
+
+#: templates/mail_after_sale_complaint.html:5
+msgid "Complaint"
+msgstr ""
+
+#: templates/mail_after_sale_complaint.html:15
+msgid "Your complaint has been received by us. Thanks for informing."
+msgstr ""
+
+#: templates/mail_after_sale_complaint.html:18
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:18
+msgid "Order Num:"
+msgstr ""
+
+#: templates/mail_after_sale_complaint.html:19
+#: templates/mail_comes_shipping.html:18
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:19
+#: templates/mail_sends_shipping.html:20
+msgid "Ticket:"
+msgstr ""
+
+#: templates/mail_after_sale_complaint.html:22
+#: templates/mail_comes_shipping.html:25
+#: templates/mail_vote_activation.html:90
+msgid "Thanks,"
+msgstr ""
+
+#: templates/mail_after_sale_complaint.html:23
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:25
+#: templates/mail_vote_activation.html:91
+msgid "Human Resources,"
+msgstr ""
+
+#: templates/mail_comes_shipping.html:5 templates/mail_sends_shipping.html:5
+msgid "Shipping Information"
+msgstr ""
+
+#: templates/mail_comes_shipping.html:9 templates/mail_contact_us.html:9
+#: templates/mail_forgotten_password.html:9
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:9
+#: templates/mail_sends_shipping.html:9 templates/mail_user_activation.html:9
+#: templates/mail_vote_activation.html:9
+msgid "Hey"
+msgstr ""
+
+#: templates/mail_comes_shipping.html:15 templates/mail_sends_shipping.html:15
+msgid ""
+"Thank you for doing the exchange with fazladanbilet. You can exchange "
+"information viewed below."
+msgstr ""
+
+#: templates/mail_comes_shipping.html:22
+msgid "Total Ticket:"
+msgstr ""
+
+#: templates/mail_comes_shipping.html:26
+msgid "Your bitcoins has reached to us."
+msgstr ""
+
+#: templates/mail_contact_us.html:5
+msgid "User's Messages"
+msgstr ""
+
+#: templates/mail_contact_us.html:15
+msgid "You have a message from fazladanbilet's users."
+msgstr ""
+
+#: templates/mail_contact_us.html:18
+msgid "Name:"
+msgstr ""
+
+#: templates/mail_contact_us.html:20
+msgid "Email:"
+msgstr ""
+
+#: templates/mail_contact_us.html:22
+msgid "Title:"
+msgstr ""
+
+#: templates/mail_contact_us.html:24
+msgid "Message:"
+msgstr ""
+
+#: templates/mail_forgotten_password.html:15
+msgid ""
+"You may have forgotten the password. We sent you a new password. You can log "
+"in with this new password."
+msgstr ""
+
+#: templates/mail_forgotten_password.html:18
+msgid "New Password:"
+msgstr ""
+
+#: templates/mail_forgotten_password.html:21
+msgid "You can log in using your new password to"
+msgstr ""
+
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:5
+msgid "Cargo Tracing"
+msgstr ""
+
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:15
+msgid ""
+"Your tickets have been delivered to the cargo. Cargo information can be "
+"found below."
+msgstr ""
+
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:20
+msgid "Cargo Brand:"
+msgstr ""
+
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:21
+msgid "Tracing:"
+msgstr ""
+
+#: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:24
+msgid "Thanks for choosing us,"
+msgstr ""
+
+#: templates/mail_sends_shipping.html:18
+msgid "Exchanger:"
+msgstr ""
+
+#: templates/mail_sends_shipping.html:24
+msgid "Shipping Address:"
+msgstr ""
+
+#: templates/mail_sends_shipping.html:26
+msgid "Shipping Username:"
+msgstr ""
+
+#: templates/mail_sends_shipping.html:28
+msgid "Shipping Phone:"
+msgstr ""
+
+#: templates/mail_user_activation.html:5
+msgid "Activation"
+msgstr ""
+
+#: templates/mail_user_activation.html:15
+msgid ""
+"Thanks for signing up to fazladanbilet - we’re excited to have you on board! "
+"Here are your login details for future reference."
+msgstr ""
+
+#: templates/mail_user_activation.html:19
+msgid "Activation:"
+msgstr ""
+
+#: templates/mail_user_activation.html:41
+msgid "Agreement"
+msgstr ""
+
+#: templates/mail_user_activation.html:42
+msgid "Perform the exchange process with Bitcoin."
+msgstr ""
+
+#: templates/mail_user_activation.html:57
+msgid "Prepare"
+msgstr ""
+
+#: templates/mail_user_activation.html:58
+msgid "Your ticket as soon as you get prepared."
+msgstr ""
+
+#: templates/mail_user_activation.html:73
+msgid "Shipping"
+msgstr ""
+
+#: templates/mail_user_activation.html:74
+msgid "Your tickets are shipped as soon as possible."
+msgstr ""
+
+#: templates/mail_vote_activation.html:5
+msgid "Vote"
+msgstr ""
+
+#: templates/mail_vote_activation.html:15
+msgid ""
+"Welcome to our satisfaction survey. We want you exchange the voting process."
 msgstr ""
 
 #: templates/sorry.html:14
@@ -502,20 +851,4 @@ msgstr ""
 
 #: templates/sorry.html:18
 msgid "We lived an unexpected problem !"
-msgstr ""
-
-#: templates/sorry.html:19
-msgid "You can return"
-msgstr ""
-
-#: templates/sorry.html:20
-msgid "homepage"
-msgstr ""
-
-#: templates/sorry.html:20
-msgid "or"
-msgstr ""
-
-#: templates/sorry.html:21
-msgid "contact us"
 msgstr ""

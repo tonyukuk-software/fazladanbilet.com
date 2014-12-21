@@ -5,7 +5,7 @@ __author__ = 'barisariburnu'
 __author__ = 'kaykisizcom'
 
 from django.db import models
-
+from django.utils.translation import ugettext as _
 # Create your models here.
 
 class Member(models.Model):
@@ -52,12 +52,12 @@ class On_Sales(models.Model):
 class Orders(models.Model):
 
     STATUS_CHOICES = (
-    (u'0', u'cancel'),
-    (u'1', u'waiting_for_payment'),
-    (u'2', u'waiting_for_cargo'),
-    (u'3', u'on_the_road'),
-    (u'4', u'success_shipping'),
-    (u'5', u'failure_shipping')
+    (u'0', _(u'cancel')),
+    (u'1', _(u'waiting_for_payment')),
+    (u'2', _(u'waiting_for_cargo')),
+    (u'3', _(u'on_the_road')),
+    (u'4', _(u'success_shipping')),
+    (u'5', _(u'failure_shipping'))
     )
 
     CARGO_CHOICES = (
@@ -82,11 +82,11 @@ class Orders(models.Model):
 class After_Sale(models.Model): #Feedback from shiping members
 
     REPORT_CHOICES = (
-    (u'0', u'cargo_problem'),
-    (u'1', u'wrong_ticket'),
-    (u'2', u'fake_ticket'),
-    (u'3', u'bitcoin_problem'),
-    (u'4', u'other'),
+    (u'0', _(u'cargo_problem')),
+    (u'1', _(u'wrong_ticket')),
+    (u'2', _(u'fake_ticket')),
+    (u'3', _(u'bitcoin_problem')),
+    (u'4', _(u'other')),
     )
 
     orders = models.OneToOneField(Orders)
