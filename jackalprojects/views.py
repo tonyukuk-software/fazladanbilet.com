@@ -91,10 +91,8 @@ def public_profile(request, user_id):
 def page_sorry(request):
     return render_to_response('sorry.html', locals())
 
-
 def terms(request):
     return render_to_response('terms.html', locals(), context_instance=RequestContext(request))
-
 
 def how_it_works(request):
     return render_to_response('how_it_works.html', locals(), context_instance=RequestContext(request))
