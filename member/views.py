@@ -189,11 +189,11 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
                 trace = order.cargo_company
                 tracing_link = ""
 
-                if trace == 0:
+                if trace == '0':
                     tracing_link = 'http://selfservis.yurticikargo.com/reports/SSWDocumentDetail.aspx?DocId=' + str(order.cargo_no)
-                elif trace == 1:
+                elif trace == '1':
                     tracing_link = 'http://www.ups.com.tr/WaybillSorgu.aspx?waybill=' + str(order.cargo_no)
-                elif trace == 2:
+                elif trace == '2':
                     tracing_link = 'http://kargotakip.araskargo.com.tr/?code=' + str(order.cargo_no)
 
                 template = get_template("mail_send_cargo_no_and_user_url_for_btc_send.html")
