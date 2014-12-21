@@ -135,6 +135,7 @@ def edit_member_profile(request):
 def ticket_details(request, ticket_id):
     try:
         ticket = On_Sales.objects.filter(id=ticket_id)[0]
+        categories = Category.objects.filter().all()
         if not ticket.active:
             HttpResponseRedirect('/')
         return render_to_response('ticket_details.html', locals(), context_instance=RequestContext(request))
@@ -201,7 +202,7 @@ def send_cargo_no_and_user_url_for_btc_send(request, order_id):
             template = get_template("mail_send_cargo_no_and_user_url_for_btc_send.html")
             context = Context({'username': order.ship_to_user.username,
                                'ticket_name': order.on_sales.title,
-                               'cargo_brand': str(order.get_cargo_company_display) + 'KARGO',
+                               'cargo_brand': order.get_cargo_company_display,
                                'tracing_link': tracing_link,
                                'order_id': order.id})
             content = template.render(context)
