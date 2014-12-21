@@ -312,7 +312,15 @@ def after_sale_complaint(request, order_id):
                 order.active = False
                 order.save()
                 form.save()
-                #TODO mailgun: #  __author__ = 'barisariburnu'
+
+                template = get_template("mail_complaint.html")
+                context = Context({'username': order.ship_to_user.username,
+                                   'ticket_name': order.on_sales.title,
+                                   'order_id': order.id})
+                content = template.render(context)
+                mailgun_operator = mailgun()
+                mailgun_operator.send_mail_with_html(order.ship_to_user.email, content)
+
                 return HttpResponseRedirect('/')
             except:
                 return HttpResponseRedirect('/sorry')
