@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load staticfiles %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block head_block %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
@@ -10,19 +10,114 @@
 {% block menu_block %}{% endblock %}
 
 {% block container_block %}
-{% for i in orders %}
-    {% if i.get_status_display != 'cancel' and i.get_status_display != 'waiting_for_payment' %}
-<ul>
-  <img src="/media/{{ i.on_sales.ticket_photo }}">
-  <li>{{ i.on_sales.member.username }}</li>
-  <li>{{ i.on_sales.title }}</li>
-  <li>{{ i.total_ticket }}</li>
-  <li>{{ i.get_cargo_company_display }}</li>
-  <li>{{ i.cargo_no }}</li>
-  <li>{{ i.get_status_display }}</li>
-  <li><a href="/member/send_cargo_no_and_user_url_for_btc_send/{{ i.id }}">{% trans "Send cargo no and your btc adress" %}</a></li>
-  <li><a href="/member/after_sale_complaint/{{ i.id }}">{% trans "I had a problem" %}</a></li>
-</ul>
-    {% endif %}
-{% endfor %}
+    <div class="l-main-container">
+
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="/member/member_profile/">{% trans "Member" %}</a></li>
+                        <li><i class="fa fa-angle-right"></i><span>{% trans "Send Shipping" %}</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 ">
+                        <div class="b-shortcode-example">
+                            <div class="f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{% blocktrans %}shopping cart{% endblocktrans %}</div>
+                            <div class="b-product-cart b-default-top-indent b-table-reset j-price-count-box">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="f-primary-b">{% trans "Item" %}</span></th>
+                                            <th width="100"><span class="f-primary-b">{% trans "Total" %}</span></th>
+                                            <th width="100"><span class="f-primary-b">{% trans "Send" %}</span></th>
+                                            <th width="100"><span class="f-primary-b">{% trans "Problem?" %}</span></th>
+                                        </tr>
+                                         {% for order in orders %}
+                                            {% if order.get_status_display != 'cancel' and order.get_status_display != 'waiting_for_payment' %}
+                                                <tr>
+                                                <td>
+                                                    <div class="b-href-with-img">
+                                                        <a class="c-primary" href="/member/ticket_details/{{ order.on_sales.id }}">
+                                                            <img data-retina="" src="/media/ticket_photos/{{ order.on_sales.ticket_photo }}" alt="" width="56">
+                                                            <p>
+                                                                 <a href="/member/ticket_details/{{ order.on_sales.id }}">
+                                                                    <span class="f-title-small ">{{ order.on_sales.title }} </span>
+                                                                    <span class="f-title-smallest ">{{ order.get_status_display }}</span>
+                                                                 </a>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td><span class="f-primary-b c-default f-title-medium"><i class="fa fa-btc"></i> <span class="j-product-price">{{ order.total_ticket }}</span></span></td>
+                                                <td><<span class="f-center"><a href="/member/send_cargo_no_and_user_url_for_btc_send/{{ order.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "Send Cargo No" %}</a></span></td>
+                                                <td><span class="f-center"><a href="/member/after_sale_complaint/{{ order.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "I have a Problem" %}</a></span></td>
+                                            </tr>
+                                            {% else %}
+                                            <tr>
+                                                <td colspan="4">{% blocktrans %}Sends shipping is seems empty yet!{% endblocktrans %}</td>
+                                            <tr>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <aside>
+                            <div class="row b-col-default-indent">
+                                <div class="col-md-12">
+                                    <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans "product price filter" %}</h4>
+                                    <form action="">
+                                        <div class="b-slider-range j-slider-range f-slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                            <span class="b-slider-range_min">0</span>
+                                            <span class="b-slider-range_max">$999</span>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 20.02002002002%; width: 50.0500500500501%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 20.02002002002%;"><span class="min">$200</span></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 70.0700700700701%;"><span class="max">$700</span></span></div>
+                                        <a href="#" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b">{% trans "Filter" %}</a>
+                                    </form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="b-categories-filter">
+                                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans " Categories filter" %}</h4>
+                                        <ul>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Films" %}</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Theatre" %}</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">23</span>
+                                            </li>
+                                            <li>
+                                                <a class="f-categories-filter_name" href="#"><i class="fa fa-plus"></i>{% trans " Concert" %}</a>
+                                                <span class="b-categories-filter_count f-categories-filter_count">12</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
 {% endblock %}
