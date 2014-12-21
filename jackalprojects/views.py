@@ -79,7 +79,7 @@ def forgotten_password(request):
 
 def public_profile(request, user_id):
     try:
-        member = Member.objects.filter(username=request.user.username)[0]
+        member = Member.objects.filter(id=user_id)[0]
         if not member.active:
             return HttpResponseRedirect('/')
     except Exception as e:
