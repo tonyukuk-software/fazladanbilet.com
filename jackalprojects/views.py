@@ -96,3 +96,7 @@ def terms(request):
 
 def how_it_works(request):
     return render_to_response('how_it_works.html', locals(), context_instance=RequestContext(request))
+
+def search(request, search_keyword):
+    tickets = On_Sales.objects.filter(title__search=search_keyword).all()
+    return render_to_response('search.html', locals(), context_instance=RequestContext(request))
