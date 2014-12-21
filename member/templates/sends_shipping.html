@@ -57,7 +57,7 @@
                                                     <td>
                                                         <span class="f-primary-b c-default f-title-medium"><i class="fa fa-btc"></i> <span class="j-product-price">{{ order.total_ticket }}</span></span>
                                                     </td>
-                                                    {% if order.cargo_no == 0 %}
+                                                    {% if order.cargo_no == '3' %}
                                                         <td>
                                                             <span class="f-center"><a href="/member/send_cargo_no_and_user_url_for_btc_send/{{ order.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "Send Cargo No" %}</a></span>
                                                         </td>

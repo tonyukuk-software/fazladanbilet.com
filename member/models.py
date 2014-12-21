@@ -64,6 +64,7 @@ class Orders(models.Model):
     (u'0', u'yurtici'),
     (u'1', u'ups'),
     (u'2', u'aras'),
+    (u'3', u'null'),
     )
 
     on_sales = models.ForeignKey(On_Sales)
@@ -73,7 +74,7 @@ class Orders(models.Model):
     name = models.CharField(max_length=50, default='', null=True)
     phone = models.CharField(max_length=11, default='', null=True)
     address = models.CharField(max_length=256, default='', null=True)
-    cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='0', null=True) #options
+    cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='3', null=True) #options
     cargo_no = models.CharField(max_length=256, default=0, null=True)
     user_url_for_btc_send = models.CharField(max_length=27, default='', null=True)
     active = models.BooleanField(default=True, editable=False)
