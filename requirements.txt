@@ -1,0 +1,10 @@
+Django==1.6.1
+Pillow==2.3.0
+South==0.8.2
+Unidecode==0.04.16
+coinbase==0.3.0
+oauth2client==1.4.1
+oauthlib==0.6.1
+psycopg2==2.5.4
+requests==2.2.1
+BeautifulSoup==3.2.1

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="/"><i class="fa fa-home"></i>{% trans 'Home' %}</a></li>
+                <li><i class="fa fa-angle-right"></i>{% trans 'Terms of Used' %}</li>
+            </ul>
+        </div>
+    </div>
+    <section class="b-infoblock--small">
+        <div class="container">
+            <div class="row b-col-default-indent">
+                <div class="col-md-12">
+                    <p class="f-primary-b f-uppercase f-title-small c-primary">{% trans 'Kullanım Şartları' %}</p>
+
+                    <div class="j-accordion b-accordion f-accordion b-accordion--secondary b-accordion--with-icon-indent f-accordion--secondary ui-accordion ui-widget ui-helper-reset" role="tablist">
+                        <h3 class="b-accordion__title f-accordion__title f-primary-b ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question-circle"></i> Üyelik Sözleşmesi </h3>
+                        <div class="b-accordion__content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="true" style="display: none;">
+                            <p>1- Fazladanbilet'de bilet karşılığı bitcoin takası yapılmaktadır.</p>
+                            <p>2- Takas yapılan biletler şikayet gelmediği takdirde herhangi bir denetimden geçmemektedir.</p>
+                            <p>3- Takasa çıkartılan biletlerden site sorumlu tutulamaz.</p>
+                            <p>4- Bu platform bitcoin felsefesinde olduğu gibi karşılıklı güvene dayanır.</p>
+                            <p>5- Fazladanbilet güvenli bir takas işlemi için alabileceği tüm önlemleri almıştır.</p>
+                            <p>6- Güvenli bir takas işlemi için tüm adımları dikkatli bir şekilde okuduğunuzu ve uygulayacağınızı kabul etmiş sayılırsınız. Aksi takdirde yaşanan sorunlarda size çok yardımcı olamayız.</p>
+                            <p>7- Fazladanbilet'e üye olduğunuzda bu sözleşmeyi kabul etmiş sayılırsınız.</p>
+                        </div>
+
+                        <h3 class="b-accordion__title f-accordion__title f-primary-b ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-2" aria-controls="ui-id-3" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question-circle"></i> Takas Sözleşmesi </h3>
+                        <div class="b-accordion__content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-3" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none;">
+                            <p>1- Herhangi bir takas olayında bitcoinler alıcıdan sisteme aktarılır. Başarılı bir alışverişten sonra takasa çıkartan kişiye gönderilecektir.</p>
+                            <p>2- Herhangi bir kural dışı olayda takas işlemi iptal edilir ve bitcoin'in kendi düşük komisyonları kesildikten sonra bitcoinler sahibine teslim edilir. Bu tarz durumlarda sistem kar etmez.Takasa çıkartan kişi banlanır.</p>
+                            <p>3- Takasa çıkartan kişi belirttiği süre içerisinde bileti kargoya vermekle yükümlüdür. Geç verilen kargo durumunda takas işlemi iptal olur.</p>
+                            <p>4- Takasa çıkartan kişi sahte,yanlış bilet yollarsa veya bilet hakkında yanlış bilgiler vermişse takas işlemi iptal edilir.</p>
+                            <p>5- Biletleri, bitcoin karşılığı takas yapmadan önce durumları gözden geçiriniz. Özellikle süre sınırlaması sebebiyle teslimatı zamanında veya doğru biçimde gerçekleşmeyecek olan biletleri takas işlemine almayınız. Bu hem takasa çıkartan kişi için, hem de sizin için sorun oluşturacaktır.</p>
+                            <p>6- Fazladanbilet size her konuda yardımcı olmaya çalışacaktır. Ancak bizi herhangi bir yanlış durumda uyarmazsanız size yardımcı olamayız ve bu gibi durumlarda sorumluluk size aittir.</p>
+                            <p>7- Fazladanbilet kullanıcıların karşılıklı güvenine dayanır.</p>
+                        </div>
+
+                        <h3 class="b-accordion__title f-accordion__title f-primary-b ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question-circle"></i> Takasa Çıkarma Sözleşmesi </h3>
+                        <div class="b-accordion__content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none;">
+                            <p>1- Takasa çıkardığınız biletten kanuni anlamda sistem sorumlu tutulamaz.</p>
+                            <p>2- Herhangi bir takas olayında bitcoinler alıcıdan sisteme aktarılır. Başarılı bir alışverişten sonra size gönderilir.</p>
+                            <p>3- Herhangi bir kural dışı olayda takas işlemi iptal edilir ve bitcoin'in kendi düşük komisyonları kesildikten sonra bitcoinler sahibine teslim edilir. Bu tarz durumlarda Fazladanbilet kar etmez. Takasa çıkartan kişi banlanır.</p>
+                            <p>4- Takasa çıkartan kişi belirttiği süre içerisinde bileti kargoya vermekle yükümlüdür. Geç verilen kargo durumunda takas işlemi iptal olur.</p>
+                            <p>5- Takasa çıkartan kişi sahte, yanlış bilet yollarsa veya bilet hakkında yanlış bilgiler vermişse takas işlemi iptal edilir.</p>
+                            <p>6- Biletleri yollamadan önce durumları gözden geçiriniz. Özellikle süre sınırlaması sebebiyle teslimatı zamanında veya doğru biçimde gerçekleşmeyecek olan biletleri takas işlemine almayınız. Bu hem takasa çıkartan kişi için, hem de sizin için sorun oluşturacaktır.</p>
+                            <p>7- Fazladanbilet size her konuda yardımcı olmaya çalışacaktır. Ancak bizi herhangi bir yanlış durumda uyarmazsanız size yardımcı olamayız ve bu gibi durumlarda sorumluluk size aittir.</p>
+                            <p>8- Fazladanbilet kullanıcıların karşılıklı güvenine dayanır.</p>
+                        </div>
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script_block %} {% endblock %}

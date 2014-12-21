@@ -1,38 +1,89 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
 
-{% block head_block %} {% endblock %}
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
 
-{% block body_block %}
-{% if tickets != null %}
-    {% for i in tickets %}
-        <div>
-        <a href="/member/ticket_details/{{ i.id }}">
-            <div>
-                <p>Kullanici:{{ i.member.username }}</p>
+{% block menu_block %}{% endblock %}
 
-                <p>Kategori: {{ i.category.category_name }}</p>
+{% block container_block %}
+    <div class="l-main-container">
 
-                <p>{{ i.title }}</p>
-
-                <p>aciklama: {{ i.description }}</p>
-
-                <p>Toplam Bilet: {{ i.total_ticket }}</p>
-
-                <p>Gönderilecek Şehir: {{ i.from_city }}</p>
-
-                <p>Bitcoin Takas Miktarı: {{ i.amount_bitcoin }}</p>
-
-                <p>Oluşturulma: {{ i.cdate }}</p>
-
-                <p>Bitiş: {{ i.edate }}</p>
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="/member/member_profile/">{% trans "Member" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans "Cart" %}</span></li>
+                </ul>
             </div>
-        </a>
-        <input type="button" onclick="location.href='/member/in_the_bucket/' " value="Takasla">
         </div>
-        <br/>
-    {% endfor %}
-{% else %}
-   <p> Çanta Boş</p>
-{% endif %}
 
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="b-shortcode-example">
+                            <div class="f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{% blocktrans %}shopping cart{% endblocktrans %}</div>
+                            <div class="b-product-cart b-default-top-indent b-table-reset j-price-count-box">
+                                <table>
+                                    <tbody>
+                                    {% if tickets %}
+                                        <tr>
+                                            <th><span class="f-primary-b">{% trans "Item" %}</span></th>
+                                            <th width="130"><span class="f-primary-b">{% trans "Price" %}</span></th>
+                                            <th width="100"><span class="f-primary-b">{% trans "Number" %}</span></th>
+                                            <th width="70"><span class="f-center"><a class="btn-close-o" href=""><i class="fa fa-times"></i></a></span></th>
+                                        </tr>
+                                         {% for ticket in tickets %}
+                                            <tr>
+                                                <td>
+                                                    <div class="b-href-with-img">
+                                                        <a class="c-primary" href="/member/ticket_details/{{ ticket.ticket_id }}">
+                                                            <img data-retina="" src="/media/ticket_photos/{{ ticket.ticket_photo }}" alt="" width="56">
+                                                            <p>
+                                                                 <a href="/member/ticket_details/{{ ticket.ticket_id }}">
+                                                                    <span class="f-title-small ">{{ ticket.title|title }} </span>
+                                                                    <span class="f-title-smallest ">{{ ticket.date }}</span>
+                                                                 </a>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td><span class="f-primary-b c-default f-title-medium"><i class="fa fa-btc"></i> <span class="j-product-price">{{ ticket.amount_bitcoin }}</span></span></td>
+                                                <td><span class="f-primary-b c-default f-title-medium"><span class="j-product-price">{{ ticket.total_number }}</span></span></td>
+                                                <td><span class="f-center"><a href="/member/new_order/{{ ticket.ticket_id }}-{{ ticket.total_number }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "Exchange" %}</a></span></td>
+                                            </tr>
+                                        {% endfor %}
+
+                                        {% else %}
+                                            <tr>
+                                                <td>{% blocktrans %}Your bag is seems empty yet!{% endblocktrans %}</td>
+                                            <tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
 {% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_block %} {% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="l-main-container">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="/"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans 'Category Filter'%}</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 ">
+                        <div class="b-sort-panel">
+                            <div class="b-sort-panel__inner">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="b-col-default-indent">
+                                {% for i in tickets %}
+                                    <div class="col-md-4 col-sm-4 col-xs-6 col-mini-12">
+                                    <div class="b-product-preview">
+                                        <div class="b-product-preview__img view view-sixth">
+                                            <img data-retina="" src="/media/{{ i.ticket_photo }}" alt="" width="268" height="268">
+                                            <div class="b-item-hover-action f-center mask">
+                                                <div class="b-item-hover-action__inner">
+                                                    <div class="b-item-hover-action__inner-btn_group">
+                                                        <a href="/member/ticket_details/{{ i.id }}" class="b-btn f-btn b-btn-light f-btn-light info"><i class="fa fa-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="b-product-preview__content">
+                                            <div class="b-product-preview__content_col">
+                                                <span class="b-product-preview__content_price f-product-preview__content_price f-primary-b">{{ i.amount_bitcoin }} <i class="fa fa-btc"></i></span>
+                                            </div>
+                                            <div class="b-product-preview__content_col">
+                                                <a href="/member/ticket_details/{{ i.id }}" class="f-product-preview__content_title">{{ i.title|title|truncatechars:21 }}</a>
+                                                <div class="f-product-preview__content_category f-primary-b">{{ i.category.category_name }} </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="container">
+                                <div class="b-pagination f-pagination">
+                                    <ul>
+                                        <li><a href="#">{% trans "First" %}</a></li>
+                                        <li><a class="prev" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li class="is-active-pagination"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a class="next" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                        <li><a href="#">{% trans "Last" %}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <aside>
+                            <div class="row b-col-default-indent">
+
+                                <div class="col-md-12">
+                                    <div class="b-categories-filter">
+                                        <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans " Categories filter" %}</h4>
+                                        <ul>
+                                            {% for category in categories %}
+                                            <li>
+                                                <a class="f-categories-filter_name" href="/category_filter/{{ category }}"><i class="fa fa-plus"></i>{{ category }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}{% endblock %}

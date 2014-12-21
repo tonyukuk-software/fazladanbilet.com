@@ -1,0 +1,94 @@
+{% extends "mail_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block top_title_block %}{% trans "Vote" %} {% endblock %}
+
+{% block title_block %}
+    <h1 style="Margin-top: 0;color: #565656;font-weight: 700;font-size: 36px;Margin-bottom: 18px;font-family: sans-serif;line-height: 42px">
+        {% trans "Hey" %} {{ username }},
+    </h1>
+{% endblock %}
+
+{% block content_block %}
+    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 25px">
+        {% blocktrans %}Welcome to our satisfaction survey. We want you exchange the voting process.{% endblocktrans %}
+    </p>
+    <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 5px">
+        Bilet: <strong style="font-weight: bold">{{ ticket_name|title }}</strong><br/>
+    </p>
+    <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+        <tbody>
+            <tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <a href="http://www.fazladanbilet.com/member/vote_activation/{{ order_id }}/1">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                    </a>
+                </td>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+            </tr>
+        <tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <a href="http://www.fazladanbilet.com/member/vote_activation/{{ order_id }}/2">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                    </a>
+                </td>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+            </tr>
+        <tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <a href="http://www.fazladanbilet.com/member/vote_activation/{{ order_id }}/3">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                    </a>
+                </td>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+            </tr>
+        <tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <a href="http://www.fazladanbilet.com/member/vote_activation/{{ order_id }}/4">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/2650828119bc/white-star.png" alt="vote">
+                    </a>
+                </td>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+            </tr>
+        <tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <a href="http://www.fazladanbilet.com/member/vote_activation/{{ order_id }}/5">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                        <img src="https://cloud.mail.ru/public/eef357196686/yellow-star.png" alt="vote">
+                    </a>
+                </td>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #e9e9e9;width: 1px">&#8203;</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="Margin-top:0;font-weight:normal;color:#677483;font-family:sans-serif;font-size:14px;line-height:25px;Margin-bottom:20px">
+        {% trans "Thanks," %}<br>
+	<em style="color:#a9b7c8;font-style:italic">{% blocktrans %}Human Resources,{% endblocktrans %} Fazladan Bilet</em></p>
+{% endblock %}
+
+{% block add_block %} {% endblock %}

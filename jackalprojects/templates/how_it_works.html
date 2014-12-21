@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="b-breadcrumbs f-breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="/"><i class="fa fa-home"></i>{% trans 'Home' %}</a></li>
+                <li><i class="fa fa-angle-right"></i>{% trans 'How it works' %}</li>
+            </ul>
+        </div>
+    </div>
+    <section class="b-infoblock--small">
+        <div class="container">
+            <div class="row b-col-default-indent">
+                <div class="col-md-12">
+                    <p class="f-primary-b f-uppercase f-title-small c-primary">{% trans "How it works ?" %}</p>
+
+                    <div class="j-accordion b-accordion f-accordion b-accordion--secondary b-accordion--with-icon-indent f-accordion--secondary ui-accordion ui-widget ui-helper-reset" role="tablist">
+                        <h3 class="b-accordion__title f-accordion__title f-primary-b ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question-circle"></i>{% blocktrans %}What is it fazladanbilet.com ?{% endblocktrans %}</h3>
+                        <div  id="what" class="b-accordion__content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="true" style="display: none;">
+                            <p>1- Fazladanbilet'de bilet karşılığı bitcoin takası yapılmaktadır.</p>
+                            <p>2- Formata uygun olan başka eşyalarda satılabilir.</p>
+                            <p>3- Bitcoinlerinizi başarılı bir işlem olamdan teslim etmeyiz ve bu sayede güvenliğinizi sağlarız.</p>
+                            <p>4- Bu platform bitcoin felsefesinde olduğu gibi karşılıklı güvene dayanır.</p>
+                            <p>5- Kullancılarımızın gizliliğine saygılıyız ve sadece ihtiyacımız olacak kadar veri isteriz.</p>
+                            <p>6- Sadece kargo öndermek için sizden isim, soyisim, adres ve telefon alırız. Tüm bunlar başarılı bir alışveriş sonrası silinir. Hiç bir işlem yapmamış gözükürsünüz.</p>
+                            <p>7- Fazladanbilet.com Türkiye de bugüne kadar açılmış, kullanıcısının kimliğine saygılı tek alışveriş sitesidir.</p>
+                            <p>8- Ödemeleriniz sadece bitcoin ile yapılır. Bu Türkiye de bir ilktir.</p>
+                        </div>
+
+                        <h3 id="set_exchange" class="b-accordion__title f-accordion__title f-primary-b ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-2" aria-controls="ui-id-3" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question-circle"></i> Nasıl Takasa Çıkartırım? </h3>
+                        <div class="b-accordion__content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-3" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none;">
+                            <p>1- Yeni Bilet'e tıklayarak gerekli bilgileri doldurunuz.</p>
+                            <p>2- Daha sonra gişede biletiniz takasa çıkartılacaktır.</p>
+                            <p>3- Eğer biri sizin biletiniz için bitcoin takas ederse bu bitcoinler sistemimizde kalacak ve size alınan toplam bilet sayısıyla birlikte bir uyarı maili gönderilecektir.</p>
+                            <p>4- Kullanıcının gerekli bilgileri size yollanacaktır. Tek yapmanız gereken zamanı da hesaba katarak  biletleri kargoya vermeniz.</p>
+                            <p>5- Yurtiçi, UPS veya Aras kargo firmalarından biriyle adrese biletleri yollayınız. Ardından kargo takip numarasını ve işlem bittikten sonra size bitcoin yollamamız için gereken bitcoin adresinizi sisteme giriniz.(bkz:<a href="https://www.btcturk.com/yardim/nasil-bitcoin-yatirabilirim">bitcoin yatırma</a>)</p>
+                            <p>6- Tüm bu işlemleri profil sayfasından ulaşabileceğiniz Takasa Giden sayfasından yönetebilirsiniz.</p>
+                            <p>7- Biletler adrese ulaştığında(Sistemimiz bunu anlar) kullanıcıdan bir şikayet gelmezse bitcoinleriniz hesabınıza yatırılır.</p>
+                            <p>8- Lütfen kullanıcı sözleşmesini okumayı unutmayınız.(bkz:<a href="/terms">Sözleşmeler</a>)</p>
+                        </div>
+
+                        <h3 id="get_exchange" class="b-accordion__title f-accordion__title f-primary-b ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><i class="fa fa-question-circle"></i> Nasıl Takas Ederim? </h3>
+                        <div class="b-accordion__content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none;">
+                            <p>1- Gişede istediğiniz bir biletin üstüne tıklayarak detaylarını öğrenin.Ardından isterseniz sepetinize ekleyerek takas işleminin ilk adımını gerçekleştirin.</p>
+                            <p>2- Daha sonra sağ üstte bulunan sepetim logosundan sepetime gidin ve bileti takas edin.</p>
+                            <p>3- Karşınıza çıkacak sayfada sizden kargo için bilgiler isteyecektir. Bu bilgiler sistemde kalıcı değildir. Başarılı bir takas sonrası silinir.</p>
+                            <p>4- Ardından size son bir kez detaylar gösterilecek ödeme sayfası açılacaktır. Bitcoinlerle öde diyerek size verilen adrese bitcoinleri yollayınız.(bkz:<a href="https://www.btcturk.com/yardim/nasil-bitcoin-cekebilirim">bitcoin çekme</a>)</p>
+                            <p>5- İşleminiz kullanıcya iletilecektir ve bundan sonra kargo işlemi başlayacaktır.</p>
+                            <p>6- Tüm bu işlemleri profil sayfasından ulaşabileceğiniz Takasa Gelen sayfasından yönetebilirsiniz.</p>
+                            <p>7- Biletler adrese ulaştığında(Sistemimiz bunu anlar) kullanıcıdan bir şikayet gelmezse bitcoinleriniz takasçıya aktarılır.</p>
+                            <p>8- Lütfen kullanıcı sözleşmesini okumayı unutmayınız.(bkz:<a href="/terms">Sözleşmeler</a>)</p>
+                        </div>
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script_block %} {% endblock %}

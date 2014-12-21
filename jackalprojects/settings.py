@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for jackalprojects project.
 
@@ -48,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'jackalprojects.urls'
@@ -71,7 +73,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr'
 
 TIME_ZONE = 'UTC'
 
@@ -96,11 +98,21 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR + '/media'
 
+LOCALE_PATHS = (
+     os.path.join(BASE_DIR, 'conf'),
+     os.path.join(BASE_DIR, 'locale'),
+)
+
+LANGUAGES = (
+    ('tr', 'Türkçe'),
+    ('en', 'English'),
+)
 
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
     os.path.join(BASE_DIR, 'member/templates'),
+    os.path.join(BASE_DIR, 'bitcoin/templates'),
     os.path.join(BASE_DIR, 'jackalprojects/templates'),
 )
 

@@ -1,26 +1,110 @@
+{% extends "base.html" %}
+{% load i18n %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<title></title>
-</head>
-<body>
-<a href="/accounts/logout">log out</a></br>
-<a href="/member/edit_member_profile">edit profile</a></br>
-{% for i in orders %}
-<ul>
-  <img src="/media/{{ i.on_sales.ticket_photo }}">
-  <li>{{ i.on_sales.member.username }}</li>
-  <li>{{ i.on_sales.title }}</li>
-  <li>{{ i.total_ticket }}</li>
-  <li>{{ i.get_cargo_company_display }}</li>
-  <li>{{ i.cargo_no }}</li>
-  <li>{{ i.status}}</li>
-  <li>REPORT</li>
 
-</ul>
-{% endfor %}
-</body>
-</html>
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="l-main-container">
+
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="/member/member_profile/">{% trans "Member" %}</a></li>
+                        <li><i class="fa fa-angle-right"></i><span>{% trans "Comes Shipping" %}</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="b-shortcode-example">
+                            <div class="f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{% blocktrans %}shopping cart{% endblocktrans %}</div>
+                            <div class="b-product-cart b-default-top-indent b-table-reset j-price-count-box">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="f-primary-b">{% trans "Item" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Total" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Send" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Problem?" %}</span></th>
+                                        </tr>
+                                        {% if orders %}
+                                         {% for order in orders %}
+                                            {% if order.get_status_display != 'cancel' and order.get_status_display != 'waiting_for_payment' %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="b-href-with-img">
+                                                            <a class="c-primary" href="/member/ticket_details/{{ order.on_sales.id }}">
+                                                                <img data-retina="" src="/media/{{ order.on_sales.ticket_photo }}" alt="" width="56">
+                                                                <p>
+                                                                     <a href="/member/ticket_details/{{ order.on_sales.id }}">
+                                                                        <span class="f-title-small ">{{ order.on_sales.title|title }} </span>
+                                                                        <span class="f-title-smallest ">{{ order.get_status_display|title }}</span>
+                                                                     </a>
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="f-primary-b c-default f-title-medium"><i class="fa fa-btc"></i> <span class="j-product-price">{{ order.total_ticket }}</span></span>
+                                                    </td>
+                                                    {% if order.cargo_no == 0 %}
+                                                        <td>
+                                                            <span class="f-center"><span class="j-product-price">Waiting..</span></span>
+                                                        </td>
+                                                    {% else %}
+                                                        {% if order.cargo_company == '0' %}
+                                                            <td>
+                                                                <span class="f-center"><a href="http://selfservis.yurticikargo.com/reports/SSWDocumentDetail.aspx?DocId={{ order.cargo_no }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{{ order.get_cargo_company_display|upper }} KARGO</a></span>
+                                                            </td>
+                                                        {% elif order.cargo_company == '1' %}
+                                                            <td>
+                                                                <span class="f-center"><a href="http://www.ups.com.tr/WaybillSorgu.aspx?waybill={{ order.cargo_no }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{{ order.get_cargo_company_display|upper }} KARGO</a></span>
+                                                            </td>
+                                                        {% else %}
+                                                            <td>
+                                                                <span class="f-center"><a href="http://kargotakip.araskargo.com.tr/?code={{ order.cargo_no }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{{ order.get_cargo_company_display|upper }} KARGO</a></span>
+                                                            </td>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    <td><span class="f-center"><a href="/member/after_sale_complaint/{{ order.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "I have a Problem" %}</a></span></td>
+                                                </tr>
+                                             {% endif %}
+                                        {% endfor %}
+                                        {% else %}
+                                        <tr>
+                                            <td colspan="4">{% blocktrans %}Sends shipping is seems empty yet!{% endblocktrans %}</td>
+                                         <tr>
+                                         {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
+{% endblock %}
