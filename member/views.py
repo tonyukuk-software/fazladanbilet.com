@@ -147,7 +147,7 @@ def ticket_details(request, ticket_id):
 def comes_shipping(request):  # user own exchanges
     try:
         member = Member.objects.filter(username=request.user.username)[0]
-        orders = Orders.objects.filter(ship_to_user=member, active=True).all()
+        orders = Orders.objects.filter(ship_to_user=member, status__in=[2, 3, 4, 5], active=True).all()
         return render_to_response('comes_shipping.html', locals())
     except Exception as e:
         print e
@@ -158,7 +158,7 @@ def comes_shipping(request):  # user own exchanges
 def sends_shipping(request):  # user 3rd person exchanges
     try:
         member = Member.objects.filter(username=request.user.username)[0]
-        orders = Orders.objects.filter(on_sales__member=member, active=True).all()
+        orders = Orders.objects.filter(on_sales__member=member, status__in=[2, 3, 4, 5], active=True).all()
         return render_to_response('sends_shipping.html', locals())
     except Exception as e:
         print e

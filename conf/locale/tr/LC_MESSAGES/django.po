@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-21 12:40+0000\n"
+"POT-Creation-Date: 2014-12-21 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -469,121 +469,122 @@ msgstr "Profili Düzenle"
 
 #: member/templates/edit_member_profile.html:28
 msgid "Upload Photo"
-msgstr ""
+msgstr "Fotoğraf Yükle"
 
 #: member/templates/edit_member_profile.html:47
 msgid "Upload"
-msgstr ""
+msgstr "Yükle"
 
 #: member/templates/edit_member_profile.html:57
 #: member/templates/edit_member_profile.html:89
 msgid "Change Password"
-msgstr ""
+msgstr "Parolayı Değiştir"
 
 #: member/templates/edit_member_profile.html:68
 msgid "Old Password"
-msgstr ""
+msgstr "Önceki Parola"
 
 #: member/templates/edit_member_profile.html:74
 msgid "New Password"
-msgstr ""
+msgstr "Yeni Parola"
 
 #: member/templates/edit_member_profile.html:80
 msgid "Confirm Password"
-msgstr ""
+msgstr "Yeni Parola Tekrar "
 
 #: member/templates/member_profile.html:44
 msgid "COMES SHIPPING"
-msgstr ""
+msgstr "TAKASA GELENLER"
 
 #: member/templates/member_profile.html:45
 msgid "SENDS SHIPPING"
-msgstr ""
+msgstr "TAKASA GİDENLER"
 
 #: member/templates/member_profile.html:46
 msgid "EDIT PROFILE"
-msgstr ""
+msgstr "PROFİLİ DÜZENLE"
 
 #: member/templates/my_bag.html:20 templates/base.html:74
 msgid "Cart"
-msgstr ""
+msgstr "Sepet"
 
 #: member/templates/my_bag.html:38
 msgid "Number"
-msgstr ""
+msgstr "Sayı"
 
 #: member/templates/my_bag.html:58
 msgid "Exchange"
-msgstr ""
+msgstr "Takas"
 
 #: member/templates/my_bag.html:64
 msgid "Your bag is seems empty yet!"
-msgstr ""
+msgstr "Sepetin henüz boş görünüyor!"
 
 #: member/templates/new_member.html:17 templates/base.html:69
 msgid "Sign Up"
-msgstr ""
+msgstr "Üye Ol"
 
 #: member/templates/new_member.html:43
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #: member/templates/new_member.html:59
 msgid "I agree to"
-msgstr ""
+msgstr "Kabul ediyorum"
 
 #: member/templates/new_member.html:59
 msgid "Terms of Use"
-msgstr ""
+msgstr "Kullanım Sözleşmesi"
 
 #: member/templates/new_member.html:81
 msgid ""
 "This platform provides exchange with bitcoins to on your hands more tickets."
 msgstr ""
+"Bu platform elinizdeki biletleri bitcoin karşılığı takas etmenizi sağlar."
 
 #: member/templates/new_member.html:84
 msgid "Easy exchange with bitcoins"
-msgstr ""
+msgstr "Bitcoinlerle kolay takas"
 
 #: member/templates/new_member.html:85
 msgid "Low commissions"
-msgstr ""
+msgstr "Düşük komisyonlar"
 
 #: member/templates/new_member.html:86
 msgid "Minimum data requested"
-msgstr ""
+msgstr "minimum veri isteği"
 
 #: member/templates/new_member.html:87
 msgid "We don't keep your data and removes after success shipping"
-msgstr ""
+msgstr "Bilgilerini tutmayız ve başarılı takas sonrası sileriz"
 
 #: member/templates/new_member.html:88
 msgid "Secure shopping"
-msgstr ""
+msgstr "Güvenli alışveriş"
 
 #: member/templates/new_order.html:18 member/templates/new_order.html.py:25
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:18
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:25
 msgid "New Order"
-msgstr ""
+msgstr "Yeni Takas"
 
 #: member/templates/new_order.html:41
 msgid "Name and Surname"
-msgstr ""
+msgstr "Ad ve Soyad"
 
 #: member/templates/new_order.html:47
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: member/templates/new_order.html:53
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: member/templates/new_order.html:75
 #: member/templates/new_swap_ticket.html:105
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:66
 msgid "Don't Forget"
-msgstr ""
+msgstr "Unutma"
 
 #: member/templates/new_order.html:76
 #: member/templates/new_swap_ticket.html:106
@@ -592,12 +593,14 @@ msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
 msgstr ""
+"Eğer güvenli ve başarılı bir takas işlemi istiyorsanız, lütfen aşağıdakilere "
+"dikkat edin"
 
 #: member/templates/new_order.html:79
 #: member/templates/new_swap_ticket.html:109
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:70
 msgid "Your bitcoins not sends before success shipping!"
-msgstr ""
+msgstr "Bitcoinlerin başarılı takas işlemi olmadan önce yollanmaz!"
 
 #: member/templates/new_order.html:80
 #: member/templates/new_swap_ticket.html:110
@@ -605,52 +608,54 @@ msgstr ""
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
 msgstr ""
+"Geç kalmış kargo, yanlış veya sahte bilet ve daha fazla sahtekarlık "
+"durumunda takas işlemi iptal edilir!"
 
 #: member/templates/new_order.html:81
 #: member/templates/new_swap_ticket.html:111
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:72
 msgid "This system takes comission 20/1 on your ticket amount!"
-msgstr ""
+msgstr "Bu sistem bilet btc miktarının 20/1 oranında komisyon alır!"
 
 #: member/templates/new_order.html:82
 #: member/templates/new_swap_ticket.html:112
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:73
 msgid "Bitcoin miners takes comission 0.0002 btc!"
-msgstr ""
+msgstr "Bitcoin madencileri 0.0002 btc komisyon alır!"
 
 #: member/templates/new_order.html:83
 #: member/templates/new_swap_ticket.html:113
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:74
 msgid "This platform works with trusts dealers!"
-msgstr ""
+msgstr "Bu platform kullanıcıların güveniyle çalışır!"
 
 #: member/templates/new_swap_ticket.html:41
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: member/templates/new_swap_ticket.html:47
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
 #: member/templates/new_swap_ticket.html:65
 msgid "City"
-msgstr ""
+msgstr "Şehir"
 
 #: member/templates/new_swap_ticket.html:71
 msgid "Amount"
-msgstr ""
+msgstr "Miktar"
 
 #: member/templates/new_swap_ticket.html:77
 msgid "Photo"
-msgstr ""
+msgstr "Fotoğraf"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
 msgid "Cargo Num"
-msgstr ""
+msgstr "Cargo Nuamrası"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:44
 msgid "User Url for BTC Send"
-msgstr ""
+msgstr "Bitcoin yollamak için kullanıcı adresi"
 
 #: member/templates/sends_shipping.html:20
 #, fuzzy
@@ -659,249 +664,279 @@ msgstr "Takasa yolla"
 
 #: member/templates/sends_shipping.html:62
 msgid "Send Cargo No"
-msgstr ""
+msgstr "Kargo Takip No Yolla"
 
 #: member/templates/ticket_details.html:19
 msgid "Ticket Detail"
-msgstr ""
+msgstr "Bilet Detayları"
 
 #: member/templates/ticket_details.html:57
 msgid "Add to cart"
-msgstr ""
+msgstr "Sepete Ekle"
 
 #: templates/base.html:64
 msgid "My Account"
-msgstr ""
+msgstr "Profilim"
 
 #: templates/base.html:65
 msgid "Checkout"
-msgstr ""
+msgstr "Sepet"
 
 #: templates/base.html:66
 msgid "Logout"
-msgstr ""
+msgstr "Çıkış"
 
 #: templates/base.html:68
 msgid "Login"
-msgstr ""
+msgstr "Giriş"
 
 #: templates/base.html:86
 msgid "Enter your keywords"
-msgstr ""
+msgstr "Aranacak kelimeyi girin"
 
 #: templates/base.html:94 templates/base.html.py:97 templates/base.html:130
 msgid "What is it?"
-msgstr ""
+msgstr "Bu nedir?"
 
 #: templates/base.html:98 templates/base.html.py:131
 msgid "How it works?"
-msgstr ""
+msgstr "Nasıl Çalışır"
 
 #: templates/base.html:99
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 #: templates/base.html:104 templates/base.html.py:132 templates/base.html:133
 msgid "Shop"
-msgstr ""
+msgstr "Gişe"
 
 #: templates/base.html:106 templates/base.html.py:135
 msgid "Contact Us"
-msgstr ""
+msgstr "Bize Ulaşın"
 
 #: templates/base.html:129
 msgid "Homepage"
-msgstr ""
+msgstr "Anasayfa"
 
 #: templates/base.html:141
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
 #: templates/mail_after_sale_complaint.html:5
 msgid "Complaint"
-msgstr ""
+msgstr "Şikayet"
 
 #: templates/mail_after_sale_complaint.html:15
 msgid "Your complaint has been received by us. Thanks for informing."
-msgstr ""
+msgstr "Şikayetin bize ulaştı. Bilgi için teşekkürler."
 
 #: templates/mail_after_sale_complaint.html:18
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:18
 msgid "Order Num:"
-msgstr ""
+msgstr "Sipariş Numarası"
 
 #: templates/mail_after_sale_complaint.html:19
-#: templates/mail_comes_shipping.html:18
+#: templates/mail_comes_shipping.html:18 templates/mail_send_bitcoin.html:18
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:19
 #: templates/mail_sends_shipping.html:20
 msgid "Ticket:"
-msgstr ""
+msgstr "Bilet"
 
 #: templates/mail_after_sale_complaint.html:22
-#: templates/mail_comes_shipping.html:25
+#: templates/mail_comes_shipping.html:25 templates/mail_send_bitcoin.html:27
 #: templates/mail_vote_activation.html:90
 msgid "Thanks,"
-msgstr ""
+msgstr "Teşekkürler"
 
 #: templates/mail_after_sale_complaint.html:23
+#: templates/mail_send_bitcoin.html:28
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:25
 #: templates/mail_vote_activation.html:91
 msgid "Human Resources,"
-msgstr ""
+msgstr "İnsan Kaynakları"
 
 #: templates/mail_comes_shipping.html:5 templates/mail_sends_shipping.html:5
 msgid "Shipping Information"
-msgstr ""
+msgstr "Takas Bilgisi"
 
 #: templates/mail_comes_shipping.html:9 templates/mail_contact_us.html:9
-#: templates/mail_forgotten_password.html:9
+#: templates/mail_forgotten_password.html:9 templates/mail_send_bitcoin.html:9
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:9
 #: templates/mail_sends_shipping.html:9 templates/mail_user_activation.html:9
 #: templates/mail_vote_activation.html:9
 msgid "Hey"
-msgstr ""
+msgstr "Merhaba"
 
 #: templates/mail_comes_shipping.html:15 templates/mail_sends_shipping.html:15
 msgid ""
 "Thank you for doing the exchange with fazladanbilet. You can exchange "
 "information viewed below."
 msgstr ""
+"Fazladanbilet.com la takas yaptığın için teşekkür ederiz. Takas edebilirsin."
+"bilgiler aşağıda görünmektedir."
 
 #: templates/mail_comes_shipping.html:22
 msgid "Total Ticket:"
-msgstr ""
+msgstr "Toplam Bilet"
 
 #: templates/mail_comes_shipping.html:26
 msgid "Your bitcoins has reached to us."
-msgstr ""
+msgstr "Bitcoinlerin bize ulaştı."
 
 #: templates/mail_contact_us.html:5
 msgid "User's Messages"
-msgstr ""
+msgstr "Kullanıcının Mesajı"
 
 #: templates/mail_contact_us.html:15
 msgid "You have a message from fazladanbilet's users."
-msgstr ""
+msgstr "fazladanbilet in kullanıcılarından bir mesajın var."
 
 #: templates/mail_contact_us.html:18
 msgid "Name:"
-msgstr ""
+msgstr "İsim:"
 
 #: templates/mail_contact_us.html:20
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: templates/mail_contact_us.html:22
 msgid "Title:"
-msgstr ""
+msgstr "Başlık:"
 
 #: templates/mail_contact_us.html:24
 msgid "Message:"
-msgstr ""
+msgstr "Mesaj:"
 
 #: templates/mail_forgotten_password.html:15
 msgid ""
 "You may have forgotten the password. We sent you a new password. You can log "
 "in with this new password."
 msgstr ""
+"Parolanı unutmuş olabilirsin. Biz sana yeni bir parola yolladık. Bununla "
+"giriş yapabilirsin."
 
 #: templates/mail_forgotten_password.html:18
 msgid "New Password:"
-msgstr ""
+msgstr "Yeni Parola"
 
 #: templates/mail_forgotten_password.html:21
 msgid "You can log in using your new password to"
-msgstr ""
+msgstr "Yeni parolanı kullanarak giriş yapabilirsin"
+
+#: templates/mail_send_bitcoin.html:5
+#, fuzzy
+msgid "Sent Bitcoin"
+msgstr "Bitcoin"
+
+#: templates/mail_send_bitcoin.html:15
+#, fuzzy
+msgid ""
+"Your bitcoins has received to your bitcoin address. Bitcoin information can "
+"be found below."
+msgstr "Biletlerin kargoya verildi. Kargo bilgileri aşağıdadır."
+
+#: templates/mail_send_bitcoin.html:20
+#, fuzzy
+msgid "Bitcoin URL:"
+msgstr "Bitcoin"
+
+#: templates/mail_send_bitcoin.html:22
+#, fuzzy
+msgid "Amount:"
+msgstr "Miktar"
 
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:5
 msgid "Cargo Tracing"
-msgstr ""
+msgstr "Kargo Takibi"
 
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:15
 msgid ""
 "Your tickets have been delivered to the cargo. Cargo information can be "
 "found below."
-msgstr ""
+msgstr "Biletlerin kargoya verildi. Kargo bilgileri aşağıdadır."
 
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:20
 msgid "Cargo Brand:"
-msgstr ""
+msgstr "Kargo Firması"
 
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:21
 msgid "Tracing:"
-msgstr ""
+msgstr "Takip:"
 
 #: templates/mail_send_cargo_no_and_user_url_for_btc_send.html:24
 msgid "Thanks for choosing us,"
-msgstr ""
+msgstr "Bizi seçtiğiniz için teşekkürler,"
 
 #: templates/mail_sends_shipping.html:18
 msgid "Exchanger:"
-msgstr ""
+msgstr "Takasçı:"
 
 #: templates/mail_sends_shipping.html:24
 msgid "Shipping Address:"
-msgstr ""
+msgstr "Gönderilecek Kişinin Adres:"
 
 #: templates/mail_sends_shipping.html:26
 msgid "Shipping Username:"
-msgstr ""
+msgstr "Gönderilecek Kişinin Ad Soyad:"
 
 #: templates/mail_sends_shipping.html:28
 msgid "Shipping Phone:"
-msgstr ""
+msgstr "Gönderilecek Kişinin Telefonu"
 
 #: templates/mail_user_activation.html:5
 msgid "Activation"
-msgstr ""
+msgstr "Aktivasyon"
 
 #: templates/mail_user_activation.html:15
 msgid ""
 "Thanks for signing up to fazladanbilet - we’re excited to have you on board! "
 "Here are your login details for future reference."
 msgstr ""
+"fazladanbilet'e üye olduğunuz için teşekkürler - Seni aramızda görmekten "
+"dolayı mutluyuz! Senin giriş bilgilerin buradadır."
 
 #: templates/mail_user_activation.html:19
 msgid "Activation:"
-msgstr ""
+msgstr "Aktivasyon"
 
 #: templates/mail_user_activation.html:41
 msgid "Agreement"
-msgstr ""
+msgstr "Ödeme"
 
 #: templates/mail_user_activation.html:42
 msgid "Perform the exchange process with Bitcoin."
-msgstr ""
+msgstr "Bitcoin ile takas işlemleri gerçekleştir."
 
 #: templates/mail_user_activation.html:57
 msgid "Prepare"
-msgstr ""
+msgstr "Bilgilendirme"
 
 #: templates/mail_user_activation.html:58
 msgid "Your ticket as soon as you get prepared."
-msgstr ""
+msgstr "Bilet sahibine gerekli bilgiler en hızlı şekilde iletilir."
 
 #: templates/mail_user_activation.html:73
 msgid "Shipping"
-msgstr ""
+msgstr "Kargolama"
 
 #: templates/mail_user_activation.html:74
 msgid "Your tickets are shipped as soon as possible."
-msgstr ""
+msgstr "Biletlerinin mümkün olan en kısa zamanda kargoya verilmesi sağlanır."
 
 #: templates/mail_vote_activation.html:5
 msgid "Vote"
-msgstr ""
+msgstr "Oy Kullanma"
 
 #: templates/mail_vote_activation.html:15
 msgid ""
 "Welcome to our satisfaction survey. We want you exchange the voting process."
 msgstr ""
+"Memnuniyet anketimize hoşgeldiniz. Biz takas işlemini onaylamanı istiyoruz."
 
 #: templates/sorry.html:14
 msgid "Sorry"
-msgstr ""
+msgstr " Üzgünüz"
 
 #: templates/sorry.html:18
 msgid "We lived an unexpected problem !"
-msgstr ""
+msgstr "Beklenmeyen bir problem yaşadık !"

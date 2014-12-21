@@ -99,7 +99,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR + '/media'
 
 LOCALE_PATHS = (
-     os.path.join(BASE_DIR, 'locale'),
+     os.path.join(BASE_DIR, 'conf'),
 )
 
 LANGUAGES = (

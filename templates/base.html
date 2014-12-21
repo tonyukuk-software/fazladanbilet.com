@@ -215,12 +215,16 @@
                 $(document).ready(function () {
                     $('#search_link').click(function () {
                             var text = $('#search').val();
-                            window.location.href = "/search/" + text;
+                        if(text==""){window.location.href="/"}
+                        else{
+                            window.location.href = "/search/" + text;}
                     });
                     $('#search').keypress(function(e) {
                         if(e.which == 13) {
                             var text = $('#search').val();
-                            window.location.href = "/search/" + text;
+                            if(text==""){window.location.href="/"}
+                            else{
+                            window.location.href = "/search/" + text;}
                         }
                     });
                 });
