@@ -8,8 +8,8 @@ from django.shortcuts import render, render_to_response
 from django.http.response import HttpResponse, HttpResponseRedirect
 from bitcoin.coinbase_api import coinbase_api
 from member.models import Orders, On_Sales
-from decimal import *
-
+from decimal import Decimal
+from django.template import Context
 
 # def exeample(request):
 #     api = coinbase_api()
