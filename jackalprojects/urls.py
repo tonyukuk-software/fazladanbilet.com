@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     url(r'^terms/$', 'jackalprojects.views.terms'),
     url(r'^search/(.+)$', 'jackalprojects.views.search'),
     url(r'^how_it_works/$', 'jackalprojects.views.how_it_works'),
+    url(r'^category_filter/(.+)$', 'jackalprojects.views.category_filter'),
 ) + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if settings.DEBUG:

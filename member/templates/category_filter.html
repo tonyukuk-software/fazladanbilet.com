@@ -12,6 +12,7 @@
             <div class="container">
                 <ul>
                     <li><a href="/"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans 'Category Filter'%}</span></li>
                 </ul>
             </div>
         </div>
@@ -76,7 +77,7 @@
                                     <div class="b-categories-filter">
                                         <h4 class="f-primary-b b-h4-special f-h4-special c-primary">{% trans " Categories filter" %}</h4>
                                         <ul>
-                                             {% for category in categories %}
+                                            {% for category in categories %}
                                             <li>
                                                 <a class="f-categories-filter_name" href="/category_filter/{{ category }}"><i class="fa fa-plus"></i>{{ category }}</a>
                                             </li>

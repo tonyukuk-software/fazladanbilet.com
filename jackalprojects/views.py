@@ -102,3 +102,9 @@ def how_it_works(request):
 def search(request, search_keyword):
     tickets = On_Sales.objects.filter(title__icontains=search_keyword).all()
     return render_to_response('search.html', locals(), context_instance=RequestContext(request))
+
+def category_filter(request, category_keyword):
+    categories = Category.objects.all()
+    category_filter = Category.objects.filter(category_name=category_keyword)[0]
+    tickets = On_Sales.objects.filter(category=category_filter).all()
+    return render_to_response('category_filter.html', locals(), context_instance=RequestContext(request))
