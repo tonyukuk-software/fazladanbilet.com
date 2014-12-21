@@ -117,7 +117,7 @@
                                         <ul>
                                              {% for category in categories %}
                                             <li>
-                                                <a class="f-categories-filter_name" href="/category_filter/{{ category }}"><i class="fa fa-plus"></i>{{ category }}</a>
+                                                <a class="f-categories-filter_name" href="/category_filter/{{ category }}"><i class="fa fa-plus"></i>{{ category|title }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>

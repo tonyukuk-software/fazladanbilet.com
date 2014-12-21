@@ -46,7 +46,7 @@
                                                 <span class="b-product-preview__content_price f-product-preview__content_price f-primary-b">{{ i.amount_bitcoin }} <i class="fa fa-btc"></i></span>
                                             </div>
                                             <div class="b-product-preview__content_col">
-                                                <a href="/member/ticket_details/{{ i.id }}" class="f-product-preview__content_title">{{ i.title }}</a>
+                                                <a href="/member/ticket_details/{{ i.id }}" class="f-product-preview__content_title">{{ i.title|title|truncatechars:21 }}</a>
                                                 <div class="f-product-preview__content_category f-primary-b">{{ i.category.category_name }} </div>
                                             </div>
                                         </div>

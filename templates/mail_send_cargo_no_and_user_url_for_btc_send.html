@@ -17,7 +17,7 @@
     <p style="Margin-top: 0;color: #565656;font-family: Georgia,serif;font-size: 16px;line-height: 25px;Margin-bottom: 24px">
         {% blocktrans %}Order Num:{% endblocktrans %} <strong style="font-weight: bold">{{ order_id }}</strong>
         {% trans "Ticket:" %} <strong style="font-weight: bold">{{ ticket_name }}</strong>
-        {% blocktrans %}Cargo Brand:{% endblocktrans %} <strong style="font-weight: bold">{{ cargo_brand }}</strong>
+        {% blocktrans %}Cargo Brand:{% endblocktrans %} <strong style="font-weight: bold">{{ cargo_brand|title }}</strong>
         {% trans "Tracing:" %} {{ tracing_link }}
     </p>
     <p style="Margin-top:0;font-weight:normal;color:#677483;font-family:sans-serif;font-size:14px;line-height:25px;Margin-bottom:20px">
