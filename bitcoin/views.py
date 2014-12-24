@@ -1,4 +1,5 @@
 from django.template.loader import get_template
+from django.contrib.auth.decorators import login_required
 from mailgun import mailgun
 
 __author__ = 'cemkiy'
@@ -19,6 +20,7 @@ from django.template import Context
 #     return render_to_response('main.html', locals())
 
 
+@login_required
 def payment_page(request, order_id):
     try:
         order = Orders.objects.filter(id=order_id)[0]
@@ -35,6 +37,7 @@ def payment_page(request, order_id):
     return render_to_response('payment_page.html', locals())
 
 
+@login_required
 def succes_url(request, order_id):
     try:
         order = Orders.objects.filter(id=order_id)[0]
@@ -79,11 +82,13 @@ def succes_url(request, order_id):
 
             template = get_template("mail_sends_shipping.html")
             context = Context({'username': order.on_sales.member.username,
-                               'id': order.ship_to_user.id,
-                               'shipping_address': order.address,
-                               'shipping_username': order.name,
-                               'shipping_phone': order.phone,
-                               'total_ticket': order.total_ticket})
+                       'ship_to_username': order.ship_to_user.username,
+                       'id': order.ship_to_user.id,
+                       'shipping_address': order.address,
+                       'shipping_username': order.name,
+                       'shipping_phone': order.phone,
+                       'total': str(amount),
+                       'total_ticket': order.total_ticket})
             content = template.render(context)
             mailgun_operator.send_mail_with_html(order.on_sales.member.email, content)
         else:

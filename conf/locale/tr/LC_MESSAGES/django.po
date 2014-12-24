@@ -772,8 +772,8 @@ msgid ""
 "Thank you for doing the exchange with fazladanbilet. You can exchange "
 "information viewed below."
 msgstr ""
-"Fazladanbilet.com la takas yaptığın için teşekkür ederiz. Takas edebilirsin."
-"bilgiler aşağıda görünmektedir."
+"Fazladanbilet.com ile takas yaptığın için teşekkür ederiz. Takas bilgileri."
+"aşağıda görünmektedir."
 
 #: templates/mail_comes_shipping.html:22
 msgid "Total Ticket:"
@@ -873,7 +873,7 @@ msgstr "Takasçı:"
 
 #: templates/mail_sends_shipping.html:24
 msgid "Shipping Address:"
-msgstr "Gönderilecek Kişinin Adres:"
+msgstr "Gönderilecek Kişinin Adresi:"
 
 #: templates/mail_sends_shipping.html:26
 msgid "Shipping Username:"
