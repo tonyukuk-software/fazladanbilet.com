@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-21 14:03+0000\n"
+"POT-Creation-Date: 2014-12-27 15:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: bitcoin/templates/payment_page.html:23
 #: jackalprojects/templates/contact_us.html:13
-#: jackalprojects/templates/forgotten_password.html:14
+#: jackalprojects/templates/forgotten_password.html:20
 #: jackalprojects/templates/home_page.html:14
 #: jackalprojects/templates/how_it_works.html:15
 #: jackalprojects/templates/login.html:17
@@ -59,7 +59,7 @@ msgstr ""
 #: member/templates/comes_shipping.html:18
 #: member/templates/edit_member_profile.html:15
 #: member/templates/member_profile.html:13 member/templates/my_bag.html:18
-#: member/templates/new_member.html:16 member/templates/new_order.html:17
+#: member/templates/new_member.html:22 member/templates/new_order.html:17
 #: member/templates/new_swap_ticket.html:17
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:17
 #: member/templates/sends_shipping.html:18
@@ -115,7 +115,7 @@ msgid "User's Information"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:109
-#: jackalprojects/templates/login.html:39 member/templates/new_member.html:37
+#: jackalprojects/templates/login.html:39 member/templates/new_member.html:43
 #: member/templates/ticket_details.html:95
 msgid "Username"
 msgstr ""
@@ -133,32 +133,26 @@ msgid "Counter"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:130
-#: member/templates/ticket_details.html:115
 msgid "product price filter"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:144
-#: member/templates/ticket_details.html:121
 msgid "Filter"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:149
-#: member/templates/ticket_details.html:126
 msgid "Categories filter"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:153
-#: member/templates/ticket_details.html:129
 msgid "Films"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:158
-#: member/templates/ticket_details.html:133
 msgid "Theatre"
 msgstr ""
 
 #: bitcoin/templates/payment_page.html:163
-#: member/templates/ticket_details.html:137
 msgid "Concert"
 msgstr ""
 
@@ -225,24 +219,24 @@ msgstr ""
 msgid "If you will be good kid, you can find us!"
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:15
+#: jackalprojects/templates/forgotten_password.html:21
 #: templates/mail_forgotten_password.html:5
 msgid "Forgotten Password"
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:23
+#: jackalprojects/templates/forgotten_password.html:29
 msgid "Forgot Password"
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:24
+#: jackalprojects/templates/forgotten_password.html:30
 msgid "Enter your email and we'll send you new password."
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:43
+#: jackalprojects/templates/forgotten_password.html:48
 msgid "Send Me Now"
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:48
+#: jackalprojects/templates/forgotten_password.html:56
 msgid "Return to Login"
 msgstr ""
 
@@ -261,6 +255,7 @@ msgstr ""
 #: jackalprojects/templates/home_page.html:77
 #: jackalprojects/templates/ticket_pool.html:78
 #: member/templates/category_filter.html:78
+#: member/templates/ticket_details.html:116
 msgid " Categories filter"
 msgstr ""
 
@@ -288,13 +283,13 @@ msgstr ""
 #: member/templates/after_sale_complaint.html:26
 #: member/templates/edit_member_profile.html:29
 #: member/templates/edit_member_profile.html:58
-#: member/templates/new_member.html:25 member/templates/new_order.html:26
+#: member/templates/new_member.html:31 member/templates/new_order.html:26
 #: member/templates/new_swap_ticket.html:26
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:26
 msgid "Please, you must filled the form with right values and press button"
 msgstr ""
 
-#: jackalprojects/templates/login.html:46 member/templates/new_member.html:49
+#: jackalprojects/templates/login.html:46 member/templates/new_member.html:55
 msgid "Password"
 msgstr ""
 
@@ -304,13 +299,13 @@ msgstr ""
 
 #: jackalprojects/templates/login.html:62
 #: member/templates/after_sale_complaint.html:55
-#: member/templates/new_member.html:66 member/templates/new_order.html:61
+#: member/templates/new_member.html:72 member/templates/new_order.html:61
 #: member/templates/new_swap_ticket.html:91
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:52
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:59
 msgid "Submit"
 msgstr ""
 
-#: jackalprojects/templates/login.html:79 member/templates/new_member.html:80
+#: jackalprojects/templates/login.html:79 member/templates/new_member.html:86
 msgid "Welcome to fazladanbilet.com"
 msgstr ""
 
@@ -318,7 +313,7 @@ msgstr ""
 msgid "If you are want sale your tickets;login or sign up and join us."
 msgstr ""
 
-#: jackalprojects/templates/login.html:83 member/templates/new_member.html:24
+#: jackalprojects/templates/login.html:83 member/templates/new_member.html:30
 msgid "Create an account"
 msgstr ""
 
@@ -376,23 +371,27 @@ msgstr ""
 msgid "failure_shipping"
 msgstr ""
 
-#: member/models.py:85
-msgid "cargo_problem"
+#: member/models.py:67
+msgid "null"
 msgstr ""
 
 #: member/models.py:86
-msgid "wrong_ticket"
+msgid "cargo_problem"
 msgstr ""
 
 #: member/models.py:87
-msgid "fake_ticket"
+msgid "wrong_ticket"
 msgstr ""
 
 #: member/models.py:88
-msgid "bitcoin_problem"
+msgid "fake_ticket"
 msgstr ""
 
 #: member/models.py:89
+msgid "bitcoin_problem"
+msgstr ""
+
+#: member/models.py:90
 msgid "other"
 msgstr ""
 
@@ -400,7 +399,7 @@ msgstr ""
 #: member/templates/after_sale_complaint.html:25
 #: member/templates/new_swap_ticket.html:18
 #: member/templates/new_swap_ticket.html:25 templates/base.html:105
-#: templates/base.html.py:134
+#: templates/base.html.py:133
 msgid "New Ticket"
 msgstr ""
 
@@ -514,44 +513,44 @@ msgstr ""
 msgid "Your bag is seems empty yet!"
 msgstr ""
 
-#: member/templates/new_member.html:17 templates/base.html:69
+#: member/templates/new_member.html:23 templates/base.html:69
 msgid "Sign Up"
 msgstr ""
 
-#: member/templates/new_member.html:43
+#: member/templates/new_member.html:49
 msgid "E-mail"
 msgstr ""
 
-#: member/templates/new_member.html:59
+#: member/templates/new_member.html:65
 msgid "I agree to"
 msgstr ""
 
-#: member/templates/new_member.html:59
+#: member/templates/new_member.html:65
 msgid "Terms of Use"
 msgstr ""
 
-#: member/templates/new_member.html:81
+#: member/templates/new_member.html:87
 msgid ""
 "This platform provides exchange with bitcoins to on your hands more tickets."
 msgstr ""
 
-#: member/templates/new_member.html:84
+#: member/templates/new_member.html:90
 msgid "Easy exchange with bitcoins"
 msgstr ""
 
-#: member/templates/new_member.html:85
+#: member/templates/new_member.html:91
 msgid "Low commissions"
 msgstr ""
 
-#: member/templates/new_member.html:86
+#: member/templates/new_member.html:92
 msgid "Minimum data requested"
 msgstr ""
 
-#: member/templates/new_member.html:87
+#: member/templates/new_member.html:93
 msgid "We don't keep your data and removes after success shipping"
 msgstr ""
 
-#: member/templates/new_member.html:88
+#: member/templates/new_member.html:94
 msgid "Secure shopping"
 msgstr ""
 
@@ -575,13 +574,13 @@ msgstr ""
 
 #: member/templates/new_order.html:75
 #: member/templates/new_swap_ticket.html:105
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:66
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:73
 msgid "Don't Forget"
 msgstr ""
 
 #: member/templates/new_order.html:76
 #: member/templates/new_swap_ticket.html:106
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:67
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:74
 msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
@@ -589,32 +588,32 @@ msgstr ""
 
 #: member/templates/new_order.html:79
 #: member/templates/new_swap_ticket.html:109
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:70
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:77
 msgid "Your bitcoins not sends before success shipping!"
 msgstr ""
 
 #: member/templates/new_order.html:80
 #: member/templates/new_swap_ticket.html:110
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:71
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:78
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
 msgstr ""
 
 #: member/templates/new_order.html:81
 #: member/templates/new_swap_ticket.html:111
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:72
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:79
 msgid "This system takes comission 20/1 on your ticket amount!"
 msgstr ""
 
 #: member/templates/new_order.html:82
 #: member/templates/new_swap_ticket.html:112
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:73
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:80
 msgid "Bitcoin miners takes comission 0.0002 btc!"
 msgstr ""
 
 #: member/templates/new_order.html:83
 #: member/templates/new_swap_ticket.html:113
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:74
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:81
 msgid "This platform works with trusts dealers!"
 msgstr ""
 
@@ -639,10 +638,14 @@ msgid "Photo"
 msgstr ""
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
+msgid "Cargo Company"
+msgstr ""
+
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:45
 msgid "Cargo Num"
 msgstr ""
 
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:44
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:51
 msgid "User Url for BTC Send"
 msgstr ""
 
@@ -694,11 +697,11 @@ msgstr ""
 msgid "Bitcoin"
 msgstr ""
 
-#: templates/base.html:104 templates/base.html.py:132 templates/base.html:133
+#: templates/base.html:104 templates/base.html.py:132
 msgid "Shop"
 msgstr ""
 
-#: templates/base.html:106 templates/base.html.py:135
+#: templates/base.html:106 templates/base.html.py:134
 msgid "Contact Us"
 msgstr ""
 
@@ -706,7 +709,7 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: templates/base.html:141
+#: templates/base.html:140
 msgid "Language"
 msgstr ""
 

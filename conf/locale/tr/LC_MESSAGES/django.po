@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-21 14:03+0000\n"
+"POT-Creation-Date: 2014-12-27 15:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,7 @@ msgstr "bize ulaşın"
 
 #: bitcoin/templates/payment_page.html:23
 #: jackalprojects/templates/contact_us.html:13
-#: jackalprojects/templates/forgotten_password.html:14
+#: jackalprojects/templates/forgotten_password.html:20
 #: jackalprojects/templates/home_page.html:14
 #: jackalprojects/templates/how_it_works.html:15
 #: jackalprojects/templates/login.html:17
@@ -60,7 +60,7 @@ msgstr "bize ulaşın"
 #: member/templates/comes_shipping.html:18
 #: member/templates/edit_member_profile.html:15
 #: member/templates/member_profile.html:13 member/templates/my_bag.html:18
-#: member/templates/new_member.html:16 member/templates/new_order.html:17
+#: member/templates/new_member.html:22 member/templates/new_order.html:17
 #: member/templates/new_swap_ticket.html:17
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:17
 #: member/templates/sends_shipping.html:18
@@ -116,7 +116,7 @@ msgid "User's Information"
 msgstr "Kullanıcı Bilgisi"
 
 #: bitcoin/templates/payment_page.html:109
-#: jackalprojects/templates/login.html:39 member/templates/new_member.html:37
+#: jackalprojects/templates/login.html:39 member/templates/new_member.html:43
 #: member/templates/ticket_details.html:95
 msgid "Username"
 msgstr "Kullanıcı Adı"
@@ -134,32 +134,26 @@ msgid "Counter"
 msgstr "Sayacı"
 
 #: bitcoin/templates/payment_page.html:130
-#: member/templates/ticket_details.html:115
 msgid "product price filter"
 msgstr "ürün fiyat filtresi"
 
 #: bitcoin/templates/payment_page.html:144
-#: member/templates/ticket_details.html:121
 msgid "Filter"
 msgstr "Filtre"
 
 #: bitcoin/templates/payment_page.html:149
-#: member/templates/ticket_details.html:126
 msgid "Categories filter"
 msgstr "Kategori Filtresi"
 
 #: bitcoin/templates/payment_page.html:153
-#: member/templates/ticket_details.html:129
 msgid "Films"
 msgstr "Film"
 
 #: bitcoin/templates/payment_page.html:158
-#: member/templates/ticket_details.html:133
 msgid "Theatre"
 msgstr "Tiyatro"
 
 #: bitcoin/templates/payment_page.html:163
-#: member/templates/ticket_details.html:137
 msgid "Concert"
 msgstr "Konser"
 
@@ -229,24 +223,24 @@ msgstr "İletişim Bilgilerimiz"
 msgid "If you will be good kid, you can find us!"
 msgstr "Eğer uslu bir çocuk olursanız, bizi bulabilirsiniz!"
 
-#: jackalprojects/templates/forgotten_password.html:15
+#: jackalprojects/templates/forgotten_password.html:21
 #: templates/mail_forgotten_password.html:5
 msgid "Forgotten Password"
 msgstr ""
 
-#: jackalprojects/templates/forgotten_password.html:23
+#: jackalprojects/templates/forgotten_password.html:29
 msgid "Forgot Password"
 msgstr "Parolamı Unuttum"
 
-#: jackalprojects/templates/forgotten_password.html:24
+#: jackalprojects/templates/forgotten_password.html:30
 msgid "Enter your email and we'll send you new password."
 msgstr "Email adresini gir ve biz sana yeni parolanı yollayacağız."
 
-#: jackalprojects/templates/forgotten_password.html:43
+#: jackalprojects/templates/forgotten_password.html:48
 msgid "Send Me Now"
 msgstr "Şimdi Yolla"
 
-#: jackalprojects/templates/forgotten_password.html:48
+#: jackalprojects/templates/forgotten_password.html:56
 msgid "Return to Login"
 msgstr "Girişe Git"
 
@@ -265,6 +259,7 @@ msgstr "Son"
 #: jackalprojects/templates/home_page.html:77
 #: jackalprojects/templates/ticket_pool.html:78
 #: member/templates/category_filter.html:78
+#: member/templates/ticket_details.html:116
 msgid " Categories filter"
 msgstr "Kategori filtresi"
 
@@ -292,13 +287,13 @@ msgstr "Üye ol"
 #: member/templates/after_sale_complaint.html:26
 #: member/templates/edit_member_profile.html:29
 #: member/templates/edit_member_profile.html:58
-#: member/templates/new_member.html:25 member/templates/new_order.html:26
+#: member/templates/new_member.html:31 member/templates/new_order.html:26
 #: member/templates/new_swap_ticket.html:26
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:26
 msgid "Please, you must filled the form with right values and press button"
 msgstr "Lütfen bilgileri doldurun ve butona basın"
 
-#: jackalprojects/templates/login.html:46 member/templates/new_member.html:49
+#: jackalprojects/templates/login.html:46 member/templates/new_member.html:55
 msgid "Password"
 msgstr "Parola"
 
@@ -308,13 +303,13 @@ msgstr "Parolamı Unuttum"
 
 #: jackalprojects/templates/login.html:62
 #: member/templates/after_sale_complaint.html:55
-#: member/templates/new_member.html:66 member/templates/new_order.html:61
+#: member/templates/new_member.html:72 member/templates/new_order.html:61
 #: member/templates/new_swap_ticket.html:91
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:52
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:59
 msgid "Submit"
 msgstr "Gönder"
 
-#: jackalprojects/templates/login.html:79 member/templates/new_member.html:80
+#: jackalprojects/templates/login.html:79 member/templates/new_member.html:86
 msgid "Welcome to fazladanbilet.com"
 msgstr "Hoşgeldiniz fazladanbilet.com"
 
@@ -323,7 +318,7 @@ msgid "If you are want sale your tickets;login or sign up and join us."
 msgstr ""
 "Eğer biletlerini satmak istiyorsan; giriş yap yada üye olup bize katıl."
 
-#: jackalprojects/templates/login.html:83 member/templates/new_member.html:24
+#: jackalprojects/templates/login.html:83 member/templates/new_member.html:30
 msgid "Create an account"
 msgstr "Bir hesap yaratın"
 
@@ -381,23 +376,27 @@ msgstr "başarılı takas"
 msgid "failure_shipping"
 msgstr "başarısız takas"
 
-#: member/models.py:85
+#: member/models.py:67
+msgid "null"
+msgstr "bekleniyor"
+
+#: member/models.py:86
 msgid "cargo_problem"
 msgstr "kargo problemi"
 
-#: member/models.py:86
+#: member/models.py:87
 msgid "wrong_ticket"
 msgstr "hatalı bilet"
 
-#: member/models.py:87
+#: member/models.py:88
 msgid "fake_ticket"
 msgstr "sahte bilet"
 
-#: member/models.py:88
+#: member/models.py:89
 msgid "bitcoin_problem"
 msgstr "bitcoin ile ilgili problem"
 
-#: member/models.py:89
+#: member/models.py:90
 msgid "other"
 msgstr "diğer"
 
@@ -405,7 +404,7 @@ msgstr "diğer"
 #: member/templates/after_sale_complaint.html:25
 #: member/templates/new_swap_ticket.html:18
 #: member/templates/new_swap_ticket.html:25 templates/base.html:105
-#: templates/base.html.py:134
+#: templates/base.html.py:133
 msgid "New Ticket"
 msgstr "Yeni Bilet"
 
@@ -520,45 +519,45 @@ msgstr "Takas"
 msgid "Your bag is seems empty yet!"
 msgstr "Sepetin henüz boş görünüyor!"
 
-#: member/templates/new_member.html:17 templates/base.html:69
+#: member/templates/new_member.html:23 templates/base.html:69
 msgid "Sign Up"
 msgstr "Üye Ol"
 
-#: member/templates/new_member.html:43
+#: member/templates/new_member.html:49
 msgid "E-mail"
 msgstr "E-mail"
 
-#: member/templates/new_member.html:59
+#: member/templates/new_member.html:65
 msgid "I agree to"
 msgstr "Kabul ediyorum"
 
-#: member/templates/new_member.html:59
+#: member/templates/new_member.html:65
 msgid "Terms of Use"
 msgstr "Kullanım Sözleşmesi"
 
-#: member/templates/new_member.html:81
+#: member/templates/new_member.html:87
 msgid ""
 "This platform provides exchange with bitcoins to on your hands more tickets."
 msgstr ""
 "Bu platform elinizdeki biletleri bitcoin karşılığı takas etmenizi sağlar."
 
-#: member/templates/new_member.html:84
+#: member/templates/new_member.html:90
 msgid "Easy exchange with bitcoins"
 msgstr "Bitcoinlerle kolay takas"
 
-#: member/templates/new_member.html:85
+#: member/templates/new_member.html:91
 msgid "Low commissions"
 msgstr "Düşük komisyonlar"
 
-#: member/templates/new_member.html:86
+#: member/templates/new_member.html:92
 msgid "Minimum data requested"
 msgstr "minimum veri isteği"
 
-#: member/templates/new_member.html:87
+#: member/templates/new_member.html:93
 msgid "We don't keep your data and removes after success shipping"
 msgstr "Bilgilerini tutmayız ve başarılı takas sonrası sileriz"
 
-#: member/templates/new_member.html:88
+#: member/templates/new_member.html:94
 msgid "Secure shopping"
 msgstr "Güvenli alışveriş"
 
@@ -582,13 +581,13 @@ msgstr "Adres"
 
 #: member/templates/new_order.html:75
 #: member/templates/new_swap_ticket.html:105
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:66
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:73
 msgid "Don't Forget"
 msgstr "Unutma"
 
 #: member/templates/new_order.html:76
 #: member/templates/new_swap_ticket.html:106
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:67
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:74
 msgid ""
 "If you want security and succesfully exchange process, please attention down "
 "reasons."
@@ -598,13 +597,13 @@ msgstr ""
 
 #: member/templates/new_order.html:79
 #: member/templates/new_swap_ticket.html:109
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:70
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:77
 msgid "Your bitcoins not sends before success shipping!"
 msgstr "Bitcoinlerin başarılı takas işlemi olmadan önce yollanmaz!"
 
 #: member/templates/new_order.html:80
 #: member/templates/new_swap_ticket.html:110
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:71
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:78
 msgid ""
 "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!"
 msgstr ""
@@ -613,19 +612,19 @@ msgstr ""
 
 #: member/templates/new_order.html:81
 #: member/templates/new_swap_ticket.html:111
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:72
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:79
 msgid "This system takes comission 20/1 on your ticket amount!"
 msgstr "Bu sistem bilet btc miktarının 20/1 oranında komisyon alır!"
 
 #: member/templates/new_order.html:82
 #: member/templates/new_swap_ticket.html:112
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:73
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:80
 msgid "Bitcoin miners takes comission 0.0002 btc!"
 msgstr "Bitcoin madencileri 0.0002 btc komisyon alır!"
 
 #: member/templates/new_order.html:83
 #: member/templates/new_swap_ticket.html:113
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:74
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:81
 msgid "This platform works with trusts dealers!"
 msgstr "Bu platform kullanıcıların güveniyle çalışır!"
 
@@ -650,10 +649,15 @@ msgid "Photo"
 msgstr "Fotoğraf"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
+#, fuzzy
+msgid "Cargo Company"
+msgstr "Kargo Firması"
+
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:45
 msgid "Cargo Num"
 msgstr "Cargo Numarası"
 
-#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:44
+#: member/templates/send_cargo_no_and_user_url_for_btc_send.html:51
 msgid "User Url for BTC Send"
 msgstr "Bitcoin yollamak için kullanıcı adresi"
 
@@ -706,11 +710,11 @@ msgstr "Nasıl Çalışır"
 msgid "Bitcoin"
 msgstr "Bitcoin"
 
-#: templates/base.html:104 templates/base.html.py:132 templates/base.html:133
+#: templates/base.html:104 templates/base.html.py:132
 msgid "Shop"
 msgstr "Gişe"
 
-#: templates/base.html:106 templates/base.html.py:135
+#: templates/base.html:106 templates/base.html.py:134
 msgid "Contact Us"
 msgstr "Bize Ulaşın"
 
@@ -718,7 +722,7 @@ msgstr "Bize Ulaşın"
 msgid "Homepage"
 msgstr "Anasayfa"
 
-#: templates/base.html:141
+#: templates/base.html:140
 msgid "Language"
 msgstr "Dil"
 

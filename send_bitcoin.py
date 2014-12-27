@@ -23,16 +23,18 @@ def main():
         print amount
         try:
             coinbase_operator.send_bitcoin(order.user_url_for_btc_send, amount)
+            template = get_template("mail_send_bitcoin.html")
+            context = Context({'username': order.on_sales.member.username,
+                               'ticket_name': order.on_sales.title,
+                               'bitcoin_url': order.user_url_for_btc_send,
+                               'amount': amount}) #send amount
+            content = template.render(context)
+            mailgun_operator = mailgun()
+            mailgun_operator.send_mail_with_html(order.on_sales.member.email, content)
         except Exception as e:
-            print e
-        template = get_template("mail_send_bitcoin.html")
-        context = Context({'username': order.on_sales.member.username,
-                           'ticket_name': order.on_sales.title,
-                           'bitcoin_url': order.user_url_for_btc_send,
-                           'amount': amount}) #send amount
-        content = template.render(context)
-        mailgun_operator = mailgun()
-        mailgun_operator.send_mail_with_html(order.on_sales.member.email, content)
+            mailgun_operator = mailgun()
+            text = str(order.id)+' '+str(order.on_sales.member.username)+' failure payment'
+            mailgun_operator.send_mail('info@fazladanbilet.com', text)
 
 
 if __name__ == "__main__":

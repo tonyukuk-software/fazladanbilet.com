@@ -23,7 +23,7 @@ from django.template import Context
 @login_required
 def payment_page(request, order_id):
     try:
-        order = Orders.objects.filter(id=order_id)[0]
+        order = Orders.objects.filter(id=order_id, active=True)[0]
     except Exception as e:
         print e
         return False
@@ -39,19 +39,27 @@ def payment_page(request, order_id):
 
 @login_required
 def succes_url(request, order_id):
+    clean_order_id = ''
+    for letter in str(order_id):
+        if letter == '?':
+            clean_order_id = int(clean_order_id)
+            break
+        else:
+            clean_order_id += letter
+
     try:
-        order = Orders.objects.filter(id=order_id)[0]
+        order = Orders.objects.filter(id=clean_order_id, status='1')[0]
         on_sale = On_Sales.objects.filter(id=order.on_sales.id)[0]
     except Exception as e:
         print e
-        return False
+        return HttpResponseRedirect('/sorry')
 
     api = coinbase_api()
-    coinbase_order = api.get_order_by_id(order_id)
+    coinbase_order = api.get_order_by_id(clean_order_id)
 
     if coinbase_order:
         print coinbase_order[2]
-        if str(coinbase_order[2]) == 'Status.completed': #control for payment
+        if str(coinbase_order[2]) == 'Status.complete': #control for payment
             try:
                 order.status = '2'  # next step for dealing
                 order.save()
@@ -60,7 +68,7 @@ def succes_url(request, order_id):
                 return False
 
             try:
-                on_sale.total_ticket = on_sale.total_ticket - order.total_ticket  # decrease total ticket
+                on_sale.total_ticket = int(on_sale.total_ticket) - int(order.total_ticket)  # decrease total ticket
                 on_sale.save()
                 if on_sale.total_ticket == 0:
                     on_sale.active = False

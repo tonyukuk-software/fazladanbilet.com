@@ -914,3 +914,7 @@ msgstr " Üzgünüz"
 #: templates/sorry.html:18
 msgid "We lived an unexpected problem !"
 msgstr "Beklenmeyen bir problem yaşadık !"
+
+#: member/templates/comes_shipping.html:62
+msgid "Waiting.."
+msgstr ""

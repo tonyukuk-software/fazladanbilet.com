@@ -64,7 +64,7 @@ class Orders(models.Model):
     (u'0', u'yurtici'),
     (u'1', u'ups'),
     (u'2', u'aras'),
-    (u'3', u'null'),
+    (u'3', u''),
     )
 
     on_sales = models.ForeignKey(On_Sales)
