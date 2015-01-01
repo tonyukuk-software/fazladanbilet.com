@@ -64,8 +64,8 @@ class coinbase_api:
             text='Pay With Bitcoin',
             type='buy_now',
             variable_price=False,
-            success_url='http://127.0.0.1:8000/bitcoin/success_url/' + str(order_id),
-            cancel_url='http://127.0.0.1:8000/bitcoin/cancel',
+            success_url='http://www.fazladanbilet.com/bitcoin/success_url/' + str(order_id),
+            cancel_url='http://www.fazladanbilet.com/bitcoin/cancel',
         )
         button = self.account.create_button(expected_button)
         return button
