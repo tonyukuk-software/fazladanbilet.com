@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-27 15:01+0000\n"
+"POT-Creation-Date: 2015-01-10 08:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,58 +102,40 @@ msgstr ""
 msgid "Pay With Bitcoin"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:89
+#: bitcoin/templates/payment_page.html:77
+msgid ""
+"Please don't close this page for ending payment. If you are close this page "
+"and finished your payment, please click this link!"
+msgstr ""
+
+#: bitcoin/templates/payment_page.html:90
 #: member/templates/after_sale_complaint.html:47
 #: member/templates/new_swap_ticket.html:53
 #: member/templates/ticket_details.html:85
 msgid "Description"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:95
+#: bitcoin/templates/payment_page.html:96
 #: member/templates/ticket_details.html:86
 msgid "User's Information"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:109
+#: bitcoin/templates/payment_page.html:110
 #: jackalprojects/templates/login.html:39 member/templates/new_member.html:43
 #: member/templates/ticket_details.html:95
 msgid "Username"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:114
+#: bitcoin/templates/payment_page.html:115
 #: jackalprojects/templates/public_profile.html:51
 #: member/templates/member_profile.html:51
 #: member/templates/ticket_details.html:99
 msgid "Points"
 msgstr ""
 
-#: bitcoin/templates/payment_page.html:118
+#: bitcoin/templates/payment_page.html:119
 #: member/templates/ticket_details.html:103
 msgid "Counter"
-msgstr ""
-
-#: bitcoin/templates/payment_page.html:130
-msgid "product price filter"
-msgstr ""
-
-#: bitcoin/templates/payment_page.html:144
-msgid "Filter"
-msgstr ""
-
-#: bitcoin/templates/payment_page.html:149
-msgid "Categories filter"
-msgstr ""
-
-#: bitcoin/templates/payment_page.html:153
-msgid "Films"
-msgstr ""
-
-#: bitcoin/templates/payment_page.html:158
-msgid "Theatre"
-msgstr ""
-
-#: bitcoin/templates/payment_page.html:163
-msgid "Concert"
 msgstr ""
 
 #: bitcoin/templates/success_url.html:14
@@ -369,10 +351,6 @@ msgstr ""
 
 #: member/models.py:60
 msgid "failure_shipping"
-msgstr ""
-
-#: member/models.py:67
-msgid "null"
 msgstr ""
 
 #: member/models.py:86

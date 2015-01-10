@@ -4,13 +4,9 @@ from coinbase import *
 
 
 
-#API Key: FsziO6obdo5YJaZc
-
-#API Secret: BSNlZmyjEY9HB704WODeZDaS5NVSs3oL
-
 class coinbase_api:
     def __init__(self):
-        self.account = coinbase.CoinbaseAccount(oauth2_credentials=None, api_key='FsziO6obdo5YJaZc', api_secret='BSNlZmyjEY9HB704WODeZDaS5NVSs3oL',
+        self.account = coinbase.CoinbaseAccount(oauth2_credentials=None, api_key='CWyFGgC8H0Gu9xrw', api_secret='msJ384h3BYw6tjbnEYWMiCddy5qyiNlI',
                  allow_transfers=True)
 
 

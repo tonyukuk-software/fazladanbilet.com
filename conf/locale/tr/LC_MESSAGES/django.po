@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-27 15:01+0000\n"
+"POT-Creation-Date: 2015-01-10 08:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,59 +103,43 @@ msgstr "Etkinlik Tarihi"
 msgid "Pay With Bitcoin"
 msgstr "Bitcoinlerle Takas Edin"
 
-#: bitcoin/templates/payment_page.html:89
+#: bitcoin/templates/payment_page.html:77
+msgid ""
+"Please don't close this page for ending payment. If you are close this page "
+"and finished your payment, please click this link!"
+msgstr ""
+"Lütfen ödeme bitene kadar bu sayfayı kapatmayın. Eğer kapatırsanız ve "
+"ödemenizi bitirdiyseniz, lütfen bu linke gidin!"
+
+#: bitcoin/templates/payment_page.html:90
 #: member/templates/after_sale_complaint.html:47
 #: member/templates/new_swap_ticket.html:53
 #: member/templates/ticket_details.html:85
 msgid "Description"
 msgstr "Açıklama"
 
-#: bitcoin/templates/payment_page.html:95
+#: bitcoin/templates/payment_page.html:96
 #: member/templates/ticket_details.html:86
 msgid "User's Information"
 msgstr "Kullanıcı Bilgisi"
 
-#: bitcoin/templates/payment_page.html:109
+#: bitcoin/templates/payment_page.html:110
 #: jackalprojects/templates/login.html:39 member/templates/new_member.html:43
 #: member/templates/ticket_details.html:95
 msgid "Username"
 msgstr "Kullanıcı Adı"
 
-#: bitcoin/templates/payment_page.html:114
+#: bitcoin/templates/payment_page.html:115
 #: jackalprojects/templates/public_profile.html:51
 #: member/templates/member_profile.html:51
 #: member/templates/ticket_details.html:99
 msgid "Points"
 msgstr "Puanlar"
 
-#: bitcoin/templates/payment_page.html:118
+#: bitcoin/templates/payment_page.html:119
 #: member/templates/ticket_details.html:103
 msgid "Counter"
 msgstr "Sayacı"
-
-#: bitcoin/templates/payment_page.html:130
-msgid "product price filter"
-msgstr "ürün fiyat filtresi"
-
-#: bitcoin/templates/payment_page.html:144
-msgid "Filter"
-msgstr "Filtre"
-
-#: bitcoin/templates/payment_page.html:149
-msgid "Categories filter"
-msgstr "Kategori Filtresi"
-
-#: bitcoin/templates/payment_page.html:153
-msgid "Films"
-msgstr "Film"
-
-#: bitcoin/templates/payment_page.html:158
-msgid "Theatre"
-msgstr "Tiyatro"
-
-#: bitcoin/templates/payment_page.html:163
-msgid "Concert"
-msgstr "Konser"
 
 #: bitcoin/templates/success_url.html:14
 msgid "Success Payment"
@@ -375,10 +359,6 @@ msgstr "başarılı takas"
 #: member/models.py:60
 msgid "failure_shipping"
 msgstr "başarısız takas"
-
-#: member/models.py:67
-msgid "null"
-msgstr "bekleniyor"
 
 #: member/models.py:86
 msgid "cargo_problem"
@@ -944,3 +924,24 @@ msgstr " Üzgünüz"
 #: templates/sorry.html:18
 msgid "We lived an unexpected problem !"
 msgstr "Beklenmeyen bir problem yaşadık !"
+
+#~ msgid "product price filter"
+#~ msgstr "ürün fiyat filtresi"
+
+#~ msgid "Filter"
+#~ msgstr "Filtre"
+
+#~ msgid "Categories filter"
+#~ msgstr "Kategori Filtresi"
+
+#~ msgid "Films"
+#~ msgstr "Film"
+
+#~ msgid "Theatre"
+#~ msgstr "Tiyatro"
+
+#~ msgid "Concert"
+#~ msgstr "Konser"
+
+#~ msgid "null"
+#~ msgstr "bekleniyor"

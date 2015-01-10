@@ -918,3 +918,6 @@ msgstr "Beklenmeyen bir problem yaşadık !"
 #: member/templates/comes_shipping.html:62
 msgid "Waiting.."
 msgstr ""
+#: bitcoin/templates/payment_page.html:77
+msgid "Please don't close this page for ending payment. If you are close this page and finished your payment, please click this link!"
+msgstr "Lütfen ödeme bitene kadar bu sayfayı kapatmayın. Eğer kapatırsanız ve ödemenizi bitirdiyseniz, lütfen bu linke gidin!"
