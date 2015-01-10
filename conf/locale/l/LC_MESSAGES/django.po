@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-10 14:04+0000\n"
+"POT-Creation-Date: 2015-01-10 15:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgstr ""
 #: member/templates/new_swap_ticket.html:17
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:17
 #: member/templates/sends_shipping.html:18
-#: member/templates/ticket_details.html:18 templates/base.html:93
+#: member/templates/ticket_details.html:18 templates/base.html:95
 msgid "Home"
 msgstr ""
 
@@ -321,7 +321,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: jackalprojects/templates/terms.html:16 templates/base.html:101
+#: jackalprojects/templates/terms.html:16 templates/base.html:103
 msgid "Terms of Used"
 msgstr ""
 
@@ -380,8 +380,8 @@ msgstr ""
 #: member/templates/after_sale_complaint.html:18
 #: member/templates/after_sale_complaint.html:25
 #: member/templates/new_swap_ticket.html:18
-#: member/templates/new_swap_ticket.html:25 templates/base.html:106
-#: templates/base.html.py:134
+#: member/templates/new_swap_ticket.html:25 templates/base.html:108
+#: templates/base.html.py:136
 msgid "New Ticket"
 msgstr ""
 
@@ -479,7 +479,7 @@ msgstr ""
 msgid "EDIT PROFILE"
 msgstr ""
 
-#: member/templates/my_bag.html:20 templates/base.html:75
+#: member/templates/my_bag.html:20 templates/base.html:77
 msgid "Cart"
 msgstr ""
 
@@ -495,7 +495,7 @@ msgstr ""
 msgid "Your bag is seems empty yet!"
 msgstr ""
 
-#: member/templates/new_member.html:23 templates/base.html:70
+#: member/templates/new_member.html:23 templates/base.html:72
 msgid "Sign Up"
 msgstr ""
 
@@ -655,51 +655,51 @@ msgstr ""
 msgid "Ürün sepetinize eklendi."
 msgstr ""
 
-#: templates/base.html:65
+#: templates/base.html:67
 msgid "My Account"
 msgstr ""
 
-#: templates/base.html:66
+#: templates/base.html:68
 msgid "Checkout"
 msgstr ""
 
-#: templates/base.html:67
+#: templates/base.html:69
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:69
+#: templates/base.html:71
 msgid "Login"
 msgstr ""
 
-#: templates/base.html:87
+#: templates/base.html:89
 msgid "Enter your keywords"
 msgstr ""
 
-#: templates/base.html:95 templates/base.html.py:98 templates/base.html:131
+#: templates/base.html:97 templates/base.html.py:100 templates/base.html:133
 msgid "What is it?"
 msgstr ""
 
-#: templates/base.html:99 templates/base.html.py:132
+#: templates/base.html:101 templates/base.html.py:134
 msgid "How it works?"
 msgstr ""
 
-#: templates/base.html:100
+#: templates/base.html:102
 msgid "Bitcoin"
 msgstr ""
 
-#: templates/base.html:105 templates/base.html.py:133
+#: templates/base.html:107 templates/base.html.py:135
 msgid "Shop"
 msgstr ""
 
-#: templates/base.html:107 templates/base.html.py:135
+#: templates/base.html:109 templates/base.html.py:137
 msgid "Contact Us"
 msgstr ""
 
-#: templates/base.html:130
+#: templates/base.html:132
 msgid "Homepage"
 msgstr ""
 
-#: templates/base.html:141
+#: templates/base.html:143
 msgid "Language"
 msgstr ""
 

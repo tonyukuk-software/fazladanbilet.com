@@ -494,11 +494,11 @@ msgstr "Yeni Parola Tekrar "
 
 #: member/templates/member_profile.html:44
 msgid "COMES SHIPPING"
-msgstr "TAKASA GELENLER"
+msgstr "GELENLER"
 
 #: member/templates/member_profile.html:45
 msgid "SENDS SHIPPING"
-msgstr "TAKASA GİDENLER"
+msgstr "GİDENLER"
 
 #: member/templates/member_profile.html:46
 msgid "EDIT PROFILE"
