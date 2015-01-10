@@ -60,12 +60,22 @@
                                     <textarea class="form-control" rows="5"></textarea>
                                 </div>
                                 <div class="b-form-row">
-                                    <a href="#" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">{% blocktrans %}send message{% endblocktrans %}</a>
+                                    <a href="#modal2" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">{% blocktrans %}send message{% endblocktrans %}</a>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+
+            <div data-remodal-id="modal2">
+                <h1>{% trans "TEŞEKKÜR EDERİZ" %} </h1>
+                <p>
+                    {% blocktrans %}Mesajınız iletildi.{% endblocktrans %}
+                </p>
+                <br>
+                <a class="remodal-confirm" href="#">OK!</a>
+            </div>
+
                 <div class="col-sm-6 b-contact-form-box">
                     <h3 class="f-primary-b b-title-description f-title-description">
                         {% blocktrans %}contact info{% endblocktrans %}
