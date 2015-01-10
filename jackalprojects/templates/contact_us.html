@@ -34,33 +34,34 @@
                     </h3>
                     <div class="row">
                         <form action="" method="post">
+                        {% csrf_token %}
                             <div class="col-md-6">
                                 <div class="b-form-row">
                                     <label class="b-form-vertical__label" for="name">{% blocktrans %}Your name{% endblocktrans %}</label>
-                                    <div class="b-form-vertical__input">
-                                        <input type="text" id="name" class="form-control">
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.name }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
-                                    <label class="b-form-vertical__label" for="email">{% blocktrans %}You email{% endblocktrans %}</label>
+                                    <label class="b-form-vertical__label" for="email">{% blocktrans %}Your email{% endblocktrans %}</label>
                                     <div class="b-form-vertical__input">
-                                        <input type="text" id="email" class="form-control">
+                                        {{ form.email }}
                                     </div>
                                 </div>
                                 <div class="b-form-row">
                                     <label class="b-form-vertical__label" for="title">{% blocktrans %}Your title{% endblocktrans %}</label>
                                     <div class="b-form-vertical__input">
-                                        <input type="text" id="title" class="form-control">
+                                        {{ form.title }}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="b-form-row b-form--contact-size">
                                     <label class="b-form-vertical__label">{% blocktrans %}Your message{% endblocktrans %}</label>
-                                    <textarea class="form-control" rows="5"></textarea>
+                                    {{ form.message }}
                                 </div>
                                 <div class="b-form-row">
-                                    <a href="#modal2" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100">{% blocktrans %}send message{% endblocktrans %}</a>
+                                    <input type='submit' value="{% blocktrans %}send message{% endblocktrans %}" class="b-btn f-btn b-btn-md b-btn-default f-primary-b b-btn__w100"/>
                                 </div>
                             </div>
                         </form>

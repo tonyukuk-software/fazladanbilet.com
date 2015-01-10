@@ -28,6 +28,7 @@ def ticket_pool(request):
 
 
 def contact_us(request):
+    form = contact_us_form
     if request.method == 'POST':
         form = contact_us_form(request.POST)
         if form.is_valid():

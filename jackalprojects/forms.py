@@ -9,4 +9,4 @@ class contact_us_form(forms.Form):
     name = forms.CharField(max_length=250, required=False)
     email = forms.CharField(max_length=250, required=False)
     title = forms.CharField(max_length=250)
-    message = forms.CharField(max_length=1000)
+    message = forms.CharField(max_length=1000, widget=forms.Textarea)
