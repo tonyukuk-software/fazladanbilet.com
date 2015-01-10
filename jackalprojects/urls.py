@@ -36,6 +36,6 @@ urlpatterns = patterns('',
     url(r'^category_filter/(.+)$', 'jackalprojects.views.category_filter'),
 ) + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-#if settings.DEBUG:
-#    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-#        'document_root': settings.MEDIA_ROOT})
+if settings.DEBUG:
+   (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+       'document_root': settings.MEDIA_ROOT})
