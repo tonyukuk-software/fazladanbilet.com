@@ -930,3 +930,19 @@ msgstr ""
 #: member/templates/ticket_details.html:64
 msgid "Ürün sepetinize eklendi."
 msgstr ""
+#: jackalprojects/templates/home_page.html:104
+msgid "Ticket to Bitcoin, Bitcoin to Ticket"
+msgstr ""
+#: jackalprojects/templates/home_page.html:109
+msgid "Security exchange with Bitcoin's"
+msgstr ""
+#: jackalprojects/templates/home_page.html:135
+msgid "who we are?"
+msgstr ""
+#: jackalprojects/templates/home_page.html:120
+msgid "How we works for you?."
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:51
+msgid "Your email"
+msgstr "Email Adresiniz"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-10 08:44+0000\n"
+"POT-Creation-Date: 2015-01-10 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgid "You can return"
 msgstr "Devam edebilirsin"
 
 #: bitcoin/templates/cancel_url.html:20
-#: jackalprojects/templates/contact_us.html:93 templates/sorry.html:20
+#: jackalprojects/templates/contact_us.html:109 templates/sorry.html:20
 msgid "homepage"
 msgstr "anasayfa"
 
@@ -47,9 +47,9 @@ msgid "contact us"
 msgstr "bize ulaşın"
 
 #: bitcoin/templates/payment_page.html:23
-#: jackalprojects/templates/contact_us.html:13
+#: jackalprojects/templates/contact_us.html:18
 #: jackalprojects/templates/forgotten_password.html:20
-#: jackalprojects/templates/home_page.html:14
+#: jackalprojects/templates/home_page.html:15
 #: jackalprojects/templates/how_it_works.html:15
 #: jackalprojects/templates/login.html:17
 #: jackalprojects/templates/public_profile.html:13
@@ -64,7 +64,7 @@ msgstr "bize ulaşın"
 #: member/templates/new_swap_ticket.html:17
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:17
 #: member/templates/sends_shipping.html:18
-#: member/templates/ticket_details.html:18 templates/base.html:92
+#: member/templates/ticket_details.html:18 templates/base.html:93
 msgid "Home"
 msgstr "Anasayfa"
 
@@ -89,13 +89,13 @@ msgstr "Toplam Bilet"
 
 #: bitcoin/templates/payment_page.html:64
 #: jackalprojects/templates/search.html:18
-#: member/templates/ticket_details.html:64
+#: member/templates/ticket_details.html:73
 msgid "Categories"
 msgstr "Kategoriler"
 
 #: bitcoin/templates/payment_page.html:69
 #: member/templates/new_swap_ticket.html:83
-#: member/templates/ticket_details.html:69
+#: member/templates/ticket_details.html:78
 msgid "End Date"
 msgstr "Etkinlik Tarihi"
 
@@ -114,30 +114,30 @@ msgstr ""
 #: bitcoin/templates/payment_page.html:90
 #: member/templates/after_sale_complaint.html:47
 #: member/templates/new_swap_ticket.html:53
-#: member/templates/ticket_details.html:85
+#: member/templates/ticket_details.html:94
 msgid "Description"
 msgstr "Açıklama"
 
 #: bitcoin/templates/payment_page.html:96
-#: member/templates/ticket_details.html:86
+#: member/templates/ticket_details.html:95
 msgid "User's Information"
 msgstr "Kullanıcı Bilgisi"
 
 #: bitcoin/templates/payment_page.html:110
 #: jackalprojects/templates/login.html:39 member/templates/new_member.html:43
-#: member/templates/ticket_details.html:95
+#: member/templates/ticket_details.html:104
 msgid "Username"
 msgstr "Kullanıcı Adı"
 
 #: bitcoin/templates/payment_page.html:115
 #: jackalprojects/templates/public_profile.html:51
 #: member/templates/member_profile.html:51
-#: member/templates/ticket_details.html:99
+#: member/templates/ticket_details.html:108
 msgid "Points"
 msgstr "Puanlar"
 
 #: bitcoin/templates/payment_page.html:119
-#: member/templates/ticket_details.html:103
+#: member/templates/ticket_details.html:112
 msgid "Counter"
 msgstr "Sayacı"
 
@@ -153,15 +153,15 @@ msgstr "Seçimin için Teşekkür Ederiz !"
 msgid "comes shipping page"
 msgstr "gelen takaslar sayfası"
 
-#: jackalprojects/templates/contact_us.html:14
+#: jackalprojects/templates/contact_us.html:19
 msgid "Contact us"
 msgstr "Bize ulaşın"
 
-#: jackalprojects/templates/contact_us.html:23
+#: jackalprojects/templates/contact_us.html:28
 msgid "CONTACT US"
 msgstr "BİZE ULAŞIN"
 
-#: jackalprojects/templates/contact_us.html:24
+#: jackalprojects/templates/contact_us.html:29
 msgid ""
 "If you lived a problem in platform or any shipping problem, you can contact "
 "us. We will investigate your problem. Our purpose is provide the best "
@@ -171,39 +171,43 @@ msgstr ""
 "ulaşabilirsiniz.Biz probleminizi araştıracağız. Bizim amacımız size en iyi "
 "deneyimi sağlamaktır."
 
-#: jackalprojects/templates/contact_us.html:32
+#: jackalprojects/templates/contact_us.html:37
 msgid "SEND MAIL"
 msgstr "MAİL GÖNDER"
 
-#: jackalprojects/templates/contact_us.html:39
+#: jackalprojects/templates/contact_us.html:45
 msgid "Your name"
 msgstr "Adınız"
 
-#: jackalprojects/templates/contact_us.html:45
-msgid "You email"
-msgstr "Eamil Adresiniz"
-
 #: jackalprojects/templates/contact_us.html:51
+msgid "Your email"
+msgstr "Email Adresiniz"
+
+#: jackalprojects/templates/contact_us.html:57
 msgid "Your title"
 msgstr "Başlık"
 
-#: jackalprojects/templates/contact_us.html:59
+#: jackalprojects/templates/contact_us.html:65
 msgid "Your message"
 msgstr "Mesaj"
 
-#: jackalprojects/templates/contact_us.html:63
+#: jackalprojects/templates/contact_us.html:69
 msgid "send message"
 msgstr "mesajı yolla"
 
-#: jackalprojects/templates/contact_us.html:71
+#: jackalprojects/templates/contact_us.html:77
+msgid "TEŞEKKÜR EDERİZ"
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:79
+msgid "Mesajınız iletildi."
+msgstr ""
+
+#: jackalprojects/templates/contact_us.html:87
 msgid "contact info"
 msgstr "iletişim bilgisi"
 
-#: jackalprojects/templates/contact_us.html:72
-msgid "Our contact information..."
-msgstr "İletişim Bilgilerimiz"
-
-#: jackalprojects/templates/contact_us.html:84
+#: jackalprojects/templates/contact_us.html:100
 msgid "If you will be good kid, you can find us!"
 msgstr "Eğer uslu bir çocuk olursanız, bizi bulabilirsiniz!"
 
@@ -228,22 +232,22 @@ msgstr "Şimdi Yolla"
 msgid "Return to Login"
 msgstr "Girişe Git"
 
-#: jackalprojects/templates/home_page.html:59
+#: jackalprojects/templates/home_page.html:67
 #: jackalprojects/templates/ticket_pool.html:60
 #: member/templates/category_filter.html:60
 msgid "First"
 msgstr "İlk"
 
-#: jackalprojects/templates/home_page.html:65
+#: jackalprojects/templates/home_page.html:73
 #: jackalprojects/templates/ticket_pool.html:66
 #: member/templates/category_filter.html:66
 msgid "Last"
 msgstr "Son"
 
-#: jackalprojects/templates/home_page.html:77
+#: jackalprojects/templates/home_page.html:85
 #: jackalprojects/templates/ticket_pool.html:78
 #: member/templates/category_filter.html:78
-#: member/templates/ticket_details.html:116
+#: member/templates/ticket_details.html:125
 msgid " Categories filter"
 msgstr "Kategori filtresi"
 
@@ -324,7 +328,7 @@ msgstr "Puan Sayacı"
 msgid "Read more"
 msgstr "Daha fazla"
 
-#: jackalprojects/templates/terms.html:16 templates/base.html:100
+#: jackalprojects/templates/terms.html:16 templates/base.html:101
 msgid "Terms of Used"
 msgstr "Kullanım Sözleşmeleri"
 
@@ -383,8 +387,8 @@ msgstr "diğer"
 #: member/templates/after_sale_complaint.html:18
 #: member/templates/after_sale_complaint.html:25
 #: member/templates/new_swap_ticket.html:18
-#: member/templates/new_swap_ticket.html:25 templates/base.html:105
-#: templates/base.html.py:133
+#: member/templates/new_swap_ticket.html:25 templates/base.html:106
+#: templates/base.html.py:134
 msgid "New Ticket"
 msgstr "Yeni Bilet"
 
@@ -418,7 +422,7 @@ msgstr "Bilet"
 
 #: member/templates/comes_shipping.html:36
 #: member/templates/sends_shipping.html:36
-#: member/templates/ticket_details.html:74
+#: member/templates/ticket_details.html:83
 msgid "Total"
 msgstr "Toplam"
 
@@ -483,7 +487,7 @@ msgstr "TAKASA GİDENLER"
 msgid "EDIT PROFILE"
 msgstr "PROFİLİ DÜZENLE"
 
-#: member/templates/my_bag.html:20 templates/base.html:74
+#: member/templates/my_bag.html:20 templates/base.html:75
 msgid "Cart"
 msgstr "Sepet"
 
@@ -499,7 +503,7 @@ msgstr "Takas"
 msgid "Your bag is seems empty yet!"
 msgstr "Sepetin henüz boş görünüyor!"
 
-#: member/templates/new_member.html:23 templates/base.html:69
+#: member/templates/new_member.html:23 templates/base.html:70
 msgid "Sign Up"
 msgstr "Üye Ol"
 
@@ -658,51 +662,59 @@ msgstr "Bilet Detayları"
 msgid "Add to cart"
 msgstr "Sepete Ekle"
 
-#: templates/base.html:64
+#: member/templates/ticket_details.html:62
+msgid "SEPET"
+msgstr ""
+
+#: member/templates/ticket_details.html:64
+msgid "Ürün sepetinize eklendi."
+msgstr ""
+
+#: templates/base.html:65
 msgid "My Account"
 msgstr "Profilim"
 
-#: templates/base.html:65
+#: templates/base.html:66
 msgid "Checkout"
 msgstr "Sepet"
 
-#: templates/base.html:66
+#: templates/base.html:67
 msgid "Logout"
 msgstr "Çıkış"
 
-#: templates/base.html:68
+#: templates/base.html:69
 msgid "Login"
 msgstr "Giriş"
 
-#: templates/base.html:86
+#: templates/base.html:87
 msgid "Enter your keywords"
 msgstr "Aranacak kelimeyi girin"
 
-#: templates/base.html:94 templates/base.html.py:97 templates/base.html:130
+#: templates/base.html:95 templates/base.html.py:98 templates/base.html:131
 msgid "What is it?"
 msgstr "Bu nedir?"
 
-#: templates/base.html:98 templates/base.html.py:131
+#: templates/base.html:99 templates/base.html.py:132
 msgid "How it works?"
 msgstr "Nasıl Çalışır"
 
-#: templates/base.html:99
+#: templates/base.html:100
 msgid "Bitcoin"
 msgstr "Bitcoin"
 
-#: templates/base.html:104 templates/base.html.py:132
+#: templates/base.html:105 templates/base.html.py:133
 msgid "Shop"
 msgstr "Gişe"
 
-#: templates/base.html:106 templates/base.html.py:134
+#: templates/base.html:107 templates/base.html.py:135
 msgid "Contact Us"
 msgstr "Bize Ulaşın"
 
-#: templates/base.html:129
+#: templates/base.html:130
 msgid "Homepage"
 msgstr "Anasayfa"
 
-#: templates/base.html:140
+#: templates/base.html:141
 msgid "Language"
 msgstr "Dil"
 
@@ -924,6 +936,9 @@ msgstr " Üzgünüz"
 #: templates/sorry.html:18
 msgid "We lived an unexpected problem !"
 msgstr "Beklenmeyen bir problem yaşadık !"
+
+#~ msgid "Our contact information..."
+#~ msgstr "İletişim Bilgilerimiz"
 
 #~ msgid "product price filter"
 #~ msgstr "ürün fiyat filtresi"
