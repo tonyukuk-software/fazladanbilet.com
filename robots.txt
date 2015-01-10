@@ -1,0 +1,5 @@
+# robots.txt for http://www.fazladanbilet.com/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /bitcoin/
