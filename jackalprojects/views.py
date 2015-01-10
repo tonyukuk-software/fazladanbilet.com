@@ -45,7 +45,7 @@ def contact_us(request):
                 content = template.render(context)
                 mailgun_operator = mailgun()
                 mailgun_operator.send_mail_with_html('info@fazladanbilet.com', content)
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/contact_us/#modal2')
             except Exception as e:
                 print e
                 return HttpResponseRedirect('/sorry')
