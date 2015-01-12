@@ -126,7 +126,7 @@ msgstr "Kullanıcı Adı"
 #: member/templates/member_profile.html:51
 #: member/templates/ticket_details.html:99
 msgid "Points"
-msgstr "Puanlar"
+msgstr "Puan"
 
 #: bitcoin/templates/payment_page.html:118
 #: member/templates/ticket_details.html:103
@@ -502,7 +502,7 @@ msgstr "GİDENLER"
 
 #: member/templates/member_profile.html:46
 msgid "EDIT PROFILE"
-msgstr "PROFİLİ DÜZENLE"
+msgstr "DÜZENLE"
 
 #: member/templates/my_bag.html:20 templates/base.html:74
 msgid "Cart"
