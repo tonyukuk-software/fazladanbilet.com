@@ -27,21 +27,21 @@ def main():
         print comission
         amount = amount - comission # without comission
         print amount
-        try:
-            coinbase_operator.send_bitcoin(to_adress=order.user_url_for_btc_send, amount=amount, note='fazladanbilet sends your bitcoin')
-            template = get_template("mail_send_bitcoin.html")
-            context = Context({'username': order.on_sales.member.username,
-                               'ticket_name': order.on_sales.title,
-                               'bitcoin_url': order.user_url_for_btc_send,
-                               'amount': amount}) #send amount
-            content = template.render(context)
-            mailgun_operator = mailgun()
-            mailgun_operator.send_mail_with_html(order.on_sales.member.email, content)
-        except Exception as e:
-            print e
-            mailgun_operator = mailgun()
-            text = str(order.id)+' '+str(order.on_sales.member.username)+' failure payment'
-            mailgun_operator.send_mail('info@fazladanbilet.com', text)
+        # try:
+        coinbase_operator.send_bitcoin(to_adress=order.user_url_for_btc_send, amount=amount, note='fazladanbilet sends your bitcoin')
+        template = get_template("mail_send_bitcoin.html")
+        context = Context({'username': order.on_sales.member.username,
+                           'ticket_name': order.on_sales.title,
+                           'bitcoin_url': order.user_url_for_btc_send,
+                           'amount': amount}) #send amount
+        content = template.render(context)
+        mailgun_operator = mailgun()
+        mailgun_operator.send_mail_with_html(order.on_sales.member.email, content)
+        # except Exception as e:
+        #     print e
+        #     mailgun_operator = mailgun()
+        #     text = str(order.id)+' '+str(order.on_sales.member.username)+' failure payment'
+        #     mailgun_operator.send_mail('info@fazladanbilet.com', text)
 
 
 if __name__ == "__main__":
