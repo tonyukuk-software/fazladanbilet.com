@@ -1,12 +1,11 @@
-from django.template.loader import get_template
-from mailgun import mailgun
-
-__author__ = 'cemkiy'
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Unicode - Django
+__author__ = 'cemkiy'
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jackalprojects.settings")
+from django.template.loader import get_template
+from mailgun import mailgun
 from member.models import Orders, Activation
 from cargo_api import *
 from django.template import Context

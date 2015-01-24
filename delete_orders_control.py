@@ -1,7 +1,7 @@
-__author__ = 'mehmet'
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Unicode - Django
+__author__ = 'mehmet'
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jackalprojects.settings")
 from member.models import Orders

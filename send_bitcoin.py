@@ -1,12 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Unicode - Django
+__author__ = 'cemkiy'
 from django.template.loader import get_template
 import decimal
 from bitcoin.coinbase_api import coinbase_api
 from mailgun import mailgun
 from django.template import Context
-__author__ = 'cemkiy'
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Unicode - Django
+
+
 
 from decimal import Decimal
 import os
