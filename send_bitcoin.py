@@ -28,7 +28,7 @@ def main():
         amount = amount - comission # without comission
         print amount
         try:
-            coinbase_operator.send_bitcoin(order.user_url_for_btc_send, amount)
+            coinbase_operator.send_bitcoin(to_adress=order.user_url_for_btc_send, amount=amount, note='fazladanbilet sends your bitcoin')
             template = get_template("mail_send_bitcoin.html")
             context = Context({'username': order.on_sales.member.username,
                                'ticket_name': order.on_sales.title,
