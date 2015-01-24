@@ -38,6 +38,7 @@ def main():
             mailgun_operator = mailgun()
             mailgun_operator.send_mail_with_html(order.on_sales.member.email, content)
         except Exception as e:
+            print e
             mailgun_operator = mailgun()
             text = str(order.id)+' '+str(order.on_sales.member.username)+' failure payment'
             mailgun_operator.send_mail('info@fazladanbilet.com', text)
