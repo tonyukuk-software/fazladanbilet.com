@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-10 15:17+0000\n"
+"POT-Creation-Date: 2015-01-24 09:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,20 +232,8 @@ msgstr "Şimdi Yolla"
 msgid "Return to Login"
 msgstr "Girişe Git"
 
-#: jackalprojects/templates/home_page.html:67
-#: jackalprojects/templates/ticket_pool.html:60
-#: member/templates/category_filter.html:60
-msgid "First"
-msgstr "İlk"
-
 #: jackalprojects/templates/home_page.html:73
 #: jackalprojects/templates/ticket_pool.html:66
-#: member/templates/category_filter.html:66
-msgid "Last"
-msgstr "Son"
-
-#: jackalprojects/templates/home_page.html:85
-#: jackalprojects/templates/ticket_pool.html:78
 #: member/templates/category_filter.html:78
 #: member/templates/ticket_details.html:125
 msgid " Categories filter"
@@ -399,6 +387,14 @@ msgstr "Durum"
 #: member/templates/category_filter.html:15
 msgid "Category Filter"
 msgstr "Kategori Filtresi"
+
+#: member/templates/category_filter.html:60
+msgid "First"
+msgstr "İlk"
+
+#: member/templates/category_filter.html:66
+msgid "Last"
+msgstr "Son"
 
 #: member/templates/comes_shipping.html:19 member/templates/my_bag.html:19
 #: member/templates/sends_shipping.html:19
@@ -595,10 +591,9 @@ msgstr ""
 "durumunda takas işlemi iptal edilir!"
 
 #: member/templates/new_order.html:81
-#: member/templates/new_swap_ticket.html:111
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:79
-msgid "This system takes comission 20/1 on your ticket amount!"
-msgstr "Bu sistem bilet btc miktarının 20/1 oranında komisyon alır!"
+msgid "This system takes comission 1/10 on your ticket amount!"
+msgstr "Bu sistem bilet btc miktarının 1/10 oranında komisyon alır!"
 
 #: member/templates/new_order.html:82
 #: member/templates/new_swap_ticket.html:112
@@ -631,6 +626,10 @@ msgstr "Miktar"
 #: member/templates/new_swap_ticket.html:77
 msgid "Photo"
 msgstr "Fotoğraf"
+
+#: member/templates/new_swap_ticket.html:111
+msgid "This system takes comission 20/1 on your ticket amount!"
+msgstr "Bu sistem bilet btc miktarının 1/10 oranında komisyon alır!"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
 #, fuzzy

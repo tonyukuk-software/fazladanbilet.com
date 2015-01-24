@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-10 15:17+0000\n"
+"POT-Creation-Date: 2015-01-24 09:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -226,20 +226,8 @@ msgstr ""
 msgid "Return to Login"
 msgstr ""
 
-#: jackalprojects/templates/home_page.html:67
-#: jackalprojects/templates/ticket_pool.html:60
-#: member/templates/category_filter.html:60
-msgid "First"
-msgstr ""
-
 #: jackalprojects/templates/home_page.html:73
 #: jackalprojects/templates/ticket_pool.html:66
-#: member/templates/category_filter.html:66
-msgid "Last"
-msgstr ""
-
-#: jackalprojects/templates/home_page.html:85
-#: jackalprojects/templates/ticket_pool.html:78
 #: member/templates/category_filter.html:78
 #: member/templates/ticket_details.html:125
 msgid " Categories filter"
@@ -391,6 +379,14 @@ msgstr ""
 
 #: member/templates/category_filter.html:15
 msgid "Category Filter"
+msgstr ""
+
+#: member/templates/category_filter.html:60
+msgid "First"
+msgstr ""
+
+#: member/templates/category_filter.html:66
+msgid "Last"
 msgstr ""
 
 #: member/templates/comes_shipping.html:19 member/templates/my_bag.html:19
@@ -582,7 +578,6 @@ msgid ""
 msgstr ""
 
 #: member/templates/new_order.html:81
-#: member/templates/new_swap_ticket.html:111
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:79
 msgid "This system takes comission 20/1 on your ticket amount!"
 msgstr ""
@@ -618,6 +613,10 @@ msgstr ""
 #: member/templates/new_swap_ticket.html:77
 msgid "Photo"
 msgstr ""
+
+#: member/templates/new_swap_ticket.html:111
+msgid "This system takes comission 1/10 on your ticket amount!"
+msgstr "Bu sistem 1/10 oranında komisyon alır."
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
 msgid "Cargo Company"
