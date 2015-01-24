@@ -1,4 +1,5 @@
 from django.template.loader import get_template
+import decimal
 from bitcoin.coinbase_api import coinbase_api
 from mailgun import mailgun
 from django.template import Context
@@ -18,7 +19,7 @@ def main():
     orders = Orders.objects.filter(status='4', active=True).all()
     for order in orders:
         amount = Decimal(order.on_sales.amount_bitcoin) * int(order.total_ticket)
-        comission = Decimal(amount/10) + 0.0001
+        comission = Decimal(amount)/10 + 0.0001
         amount = amount - comission # without comission
         print amount
         try:

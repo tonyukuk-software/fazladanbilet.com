@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-24 09:29+0000\n"
+"POT-Creation-Date: 2015-01-24 10:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -591,6 +591,7 @@ msgstr ""
 "durumunda takas işlemi iptal edilir!"
 
 #: member/templates/new_order.html:81
+#: member/templates/new_swap_ticket.html:111
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:79
 msgid "This system takes comission 1/10 on your ticket amount!"
 msgstr "Bu sistem bilet btc miktarının 1/10 oranında komisyon alır!"
@@ -626,10 +627,6 @@ msgstr "Miktar"
 #: member/templates/new_swap_ticket.html:77
 msgid "Photo"
 msgstr "Fotoğraf"
-
-#: member/templates/new_swap_ticket.html:111
-msgid "This system takes comission 20/1 on your ticket amount!"
-msgstr "Bu sistem bilet btc miktarının 1/10 oranında komisyon alır!"
 
 #: member/templates/send_cargo_no_and_user_url_for_btc_send.html:38
 #, fuzzy
@@ -935,6 +932,9 @@ msgstr " Üzgünüz"
 #: templates/sorry.html:18
 msgid "We lived an unexpected problem !"
 msgstr "Beklenmeyen bir problem yaşadık !"
+
+#~ msgid "This system takes comission 20/1 on your ticket amount!"
+#~ msgstr "Bu sistem bilet btc miktarının 1/10 oranında komisyon alır!"
 
 #~ msgid "Our contact information..."
 #~ msgstr "İletişim Bilgilerimiz"
