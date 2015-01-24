@@ -20,7 +20,8 @@ def main():
     for order in orders:
         amount = Decimal(order.on_sales.amount_bitcoin) * int(order.total_ticket)
         print amount
-        comission = amount/10 + 0.0001
+        comission = amount/10
+        comission = comission + Decimal(0.0001)
         print comission
         amount = amount - comission # without comission
         print amount
