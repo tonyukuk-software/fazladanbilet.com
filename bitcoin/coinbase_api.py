@@ -24,10 +24,9 @@ class coinbase_api:
             print e
             return False
 
-    def send_bitcoin(self, to_adress, amount, note):
+    def send_bitcoin(self, adress, amount, note):
         try:
-            btc_amount = CoinbaseAmount(amount, 'BTC'),
-            self.account.send(to_adress, btc_amount, note)
+            self.account.send(to_address=adress, amount=CoinbaseAmount(amount, 'BTC'), notes=note)
         except Exception as e:
             print e
             return False
