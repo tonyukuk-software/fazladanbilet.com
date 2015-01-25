@@ -1,4 +1,3 @@
-from datetime import date
 from django.template.loader import get_template
 
 __author__ = 'cemkiy'
@@ -18,20 +17,12 @@ from mailgun import *
 
 def home_page(request):
     tickets = On_Sales.objects.filter(active=True).order_by('-cdate')
-    for control_ticket in tickets:
-        if control_ticket.edate == date.today():
-            control_ticket.active = False
-            control_ticket.save()
     categories = Category.objects.filter().all()
     return render_to_response('home_page.html', locals(), context_instance=RequestContext(request))
 
 
 def ticket_pool(request):
     tickets = On_Sales.objects.filter(active=True).order_by('-cdate')
-    for control_ticket in tickets:
-        if control_ticket.edate == date.today():
-            control_ticket.active = False
-            control_ticket.save()
     categories = Category.objects.filter().all()
     return render_to_response('ticket_pool.html', locals())
 
