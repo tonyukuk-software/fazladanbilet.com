@@ -76,7 +76,7 @@ class Orders(models.Model):
     address = models.CharField(max_length=256, default='', null=True)
     cargo_company = models.CharField(max_length=1, choices=CARGO_CHOICES, default='3', null=True) #options
     cargo_no = models.CharField(max_length=256, default=0, null=True)
-    user_url_for_btc_send = models.CharField(max_length=27, default='', null=True)
+    user_url_for_btc_send = models.CharField(max_length=100, default='', null=True)
     active = models.BooleanField(default=True, editable=False)
     cdate = models.DateTimeField(auto_now_add=True)
 
