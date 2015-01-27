@@ -27,6 +27,8 @@ def main():
         try:
             c_amount = CoinbaseAmount(amount, 'BTC')
             coinbase_operator.send_bitcoin(adress=order.user_url_for_btc_send, amount=c_amount, note='fazladanbilet sends your bitcoin')
+            order.status = '0'
+            order.save()
             template = get_template("mail_send_bitcoin.html")
             context = Context({'username': order.on_sales.member.username,
                                'ticket_name': order.on_sales.title,
