@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'south',
     'jackal',
     'member',
+    'bitcoin',
 )
 
 MIDDLEWARE_CLASSES = (
