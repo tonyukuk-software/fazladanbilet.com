@@ -70,7 +70,7 @@ def forgotten_password(request):
                 if member:
                     template = get_template("mail_forgotten_password.html")
                     context = Context({'username': member.username,
-                                       'password': str(hashid)})
+                                       'password': member.password})
                     content = template.render(context)
                     mailgun_operator = mailgun()
                     mailgun_operator.send_mail_with_html(member.email, content)
