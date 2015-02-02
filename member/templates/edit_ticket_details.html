@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+     <div class="l-main-container">
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><span>{% trans 'New Ticket' %}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container b-container-login-page">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="b-form-row f-primary-l f-title-big c-secondary">{% trans 'New Ticket' %}</div>
+                    <div class="b-form-row">{% trans 'Please, you must filled the form with right values and press button' %}</div>
+                    <hr class="b-hr">
+                    {% if form.errors %}
+                        {{ form.errors }}
+                        <hr class="b-hr">
+                    {% endif %}
+                    <div class="row b-form-inline b-form-horizontal">
+                        <div class="col-xs-12">
+                            <form id="new_ticket" method='POST' enctype="multipart/form-data">
+                                {% csrf_token %}
+
+                                <div class="b-form-row">
+                                        {{ form.member }}
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="category">{% trans "Category" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.category }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="title">{% trans "Title" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.title }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="description">{% trans "Description" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.description }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="total_ticket">{% trans "Total Ticket" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.total_ticket }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="from_city">{% trans "City" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.from_city }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="amount_bitcoin">{% trans "Amount" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.amount_bitcoin }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="ticket_photo">{% trans "Photo" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.ticket_photo }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <label class="b-form-horizontal__label" for="edate">{% trans "End Date" %}:</label>
+                                    <div class="b-form-horizontal__input">
+                                        {{ form.edate }}
+                                    </div>
+                                </div>
+                                <div class="b-form-row">
+                                    <div class="b-form-horizontal__label"></div>
+                                    <div class="b-form-horizontal__input">
+                                        <input type='submit' value='{% trans "Submit" %}' class="btn-submit"/>
+                                    </div>
+                                </div>
+
+                                {% if next %}
+                                    <input type="hidden" name="next" value="{{ next }}">
+                                {% else %}
+                                    <input type="hidden" name="next" value="/ticket_pool">
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="f-primary-l f-title-big c-secondary">{% trans "Don't Forget" %}</div>
+                    <p>{% trans "If you want security and succesfully exchange process, please attention down reasons." %}</p>
+                    <div class="b-shortcode-example">
+                        <ul class="b-list-markers f-list-markers">
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "Your bitcoins not sends before success shipping!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "Late cargo, wrong or fake ticket and more fraud situations cancels shipping!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "This system takes comission 1/10 on your ticket amount!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "Bitcoin miners takes comission 0.0002 btc!" %}</a></li>
+                            <li><i class="fa fa-check-circle b-list-markers__ico f-list-markers__ico"></i> <a href="#">{% trans "This platform works with trusts dealers!" %}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block head_block %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/mini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+{% endblock %}
+
+{% block menu_block %}{% endblock %}
+
+{% block container_block %}
+    <div class="l-main-container">
+
+        <div class="b-breadcrumbs f-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i>{% trans "Home" %}</a></li>
+                    <li><i class="fa fa-angle-right"></i><a href="/member/member_profile/">{% trans "Member" %}</a></li>
+                        <li><i class="fa fa-angle-right"></i><span>{% trans "Biletlerim" %}</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="b-infoblock">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="b-shortcode-example">
+                            <div class="f-primary-b b-title-b-hr f-title-b-hr b-null-top-indent">{% blocktrans %}shopping cart{% endblocktrans %}</div>
+                            <div class="b-product-cart b-default-top-indent b-table-reset j-price-count-box">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th><span class="f-primary-b">{% trans "Item" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Total" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Düzenle" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Problem?" %}</span></th>
+                                        </tr>
+                                        {% if tickets %}
+                                         {% for ticket in tickets %}
+                                                <tr>
+                                                    <td>
+                                                        <div class="b-href-with-img">
+                                                            <a class="c-primary" href="/member/ticket_details/{{ ticket.id }}">
+                                                                <img data-retina="" src="/media/{{ ticket.ticket_photo }}" alt="" width="56">
+                                                                <p>
+                                                                     <a href="/member/ticket_details/{{ ticket.id }}">
+                                                                        <span class="f-title-small ">{{ ticket.title|title }} </span>
+                                                                        <span class="f-title-smallest ">{{ ticket.get_status_display|title }}</span>
+                                                                     </a>
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="f-primary-b c-default f-title-medium"><span class="j-product-price">{{ ticket.total_ticket }}</span></span>
+                                                    </td>
+                                                        <td>
+                                                                <span class="f-center"><a href="/member/edit_ticket_details/{{ ticket.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">DÜZENLE</a></span>
+                                                        </td>
+
+                                                    <td><span class="f-center"><a href="/contact_us" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "I have a Problem" %}</a></span></td>
+                                                </tr>
+                                        {% endfor %}
+                                        {% else %}
+                                        <tr>
+                                            <td colspan="4">{% blocktrans %}Henüz bir bilet eklememişsin!{% endblocktrans %}</td>
+                                         <tr>
+                                         {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block script_block %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#id_edate').datepicker({
+                    format: "yyyy-mm-dd"
+                });
+        });
+    </script>
+{% endblock %}

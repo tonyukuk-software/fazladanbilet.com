@@ -77,6 +77,42 @@ def new_swap_ticket(request):
 
 
 @login_required
+def my_tickets(request):
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+        tickets = On_Sales.objects.filter(member=member, active=True)
+    except:
+        return HttpResponseRedirect('/accounts/logout/')
+
+    return render_to_response('my_tickets.html', locals(), context_instance=RequestContext(request))
+
+
+@login_required
+def edit_ticket_details(request, ticket_id):
+    try:
+        member = Member.objects.filter(username=request.user.username)[0]
+        ticket = On_Sales.objects.filter(id=ticket_id)[0]
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/sorry')
+
+    form = edit_ticket_details_form(instance=ticket)
+
+    if request.method == 'POST':
+        form = edit_ticket_details_form(request.POST, request.FILES, instance=ticket)
+        if form.is_valid():
+            try:
+                form.save()
+                return HttpResponseRedirect('/member/ticket_details/' + str(ticket.id))
+            except Exception as e:
+                print e
+                return HttpResponseRedirect('/sorry')
+
+    return render_to_response('edit_ticket_details.html',
+                              {'form': form, 'request': request},
+                              context_instance=RequestContext(request))
+
+
 def member_profile(request):
     try:
         member = Member.objects.filter(username=request.user.username)[0]
