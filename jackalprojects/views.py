@@ -10,7 +10,7 @@ from member.models import On_Sales, Member
 from django.http import HttpResponseRedirect, HttpResponse
 from forms import *
 from mailgun import *
-
+from hashids import Hashids
 
 # Create your views here.
 
@@ -61,10 +61,13 @@ def forgotten_password(request):
             try:
                 email = request.POST.get('email')
                 member = Member.objects.filter(email=email)[0]
+                hashids = Hashids()
+                hashid = hashids.encrypt(member.password)
+                member.set_password(str(hashid))
                 if member:
                     template = get_template("mail_forgotten_password.html")
                     context = Context({'username': member.username,
-                                       'password': member.password})
+                                       'password': str(hashid)})
                     content = template.render(context)
                     mailgun_operator = mailgun()
                     mailgun_operator.send_mail_with_html(member.email, content)
