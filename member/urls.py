@@ -23,4 +23,5 @@ urlpatterns = patterns('',
                     url(r'^after_sale_complaint/(.+)$', 'member.views.after_sale_complaint'), #added after sale complaint
                     url(r'^user_activation/(.+)$', 'member.views.user_activation'),
                     url(r'^vote_activation/(.+)/(.+)$', 'member.views.vote_activation'),
+                    url(r'^delete_ticket/(.+)$', 'member.views.delete_ticket'),
                         )

@@ -35,6 +35,7 @@
                                             <th><span class="f-primary-b">{% trans "Item" %}</span></th>
                                             <th width="150"><span class="f-primary-b">{% trans "Total" %}</span></th>
                                             <th width="150"><span class="f-primary-b">{% trans "Düzenle" %}</span></th>
+                                            <th width="150"><span class="f-primary-b">{% trans "Sil" %}</span></th>
                                             <th width="150"><span class="f-primary-b">{% trans "Problem?" %}</span></th>
                                         </tr>
                                         {% if tickets %}
@@ -60,12 +61,16 @@
                                                                 <span class="f-center"><a href="/member/edit_ticket_details/{{ ticket.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">DÜZENLE</a></span>
                                                         </td>
 
+                                                        <td>
+                                                                <span class="f-center"><a href="/member/delete_ticket/{{ ticket.id }}" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">SİL</a></span>
+                                                        </td>
+
                                                     <td><span class="f-center"><a href="/contact_us" class="b-btn f-btn b-btn-sm f-btn-sm b-btn-default f-primary-b button-gray">{% trans "I have a Problem" %}</a></span></td>
                                                 </tr>
                                         {% endfor %}
                                         {% else %}
                                         <tr>
-                                            <td colspan="4">{% blocktrans %}Henüz bir bilet eklememişsin!{% endblocktrans %}</td>
+                                            <td colspan="5">{% blocktrans %}Henüz bir bilet eklememişsin!{% endblocktrans %}</td>
                                          <tr>
                                          {% endif %}
                                     </tbody>
