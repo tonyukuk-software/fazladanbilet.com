@@ -88,6 +88,17 @@ def my_tickets(request):
 
 
 @login_required
+def delete_ticket(request, ticket_id):
+        try:
+            ticket = On_Sales.objects.filter(id=ticket_id)[0]
+            ticket.delete()
+            return render_to_response('my_tickets.html', locals())
+        except Exception as e:
+            print e
+            return HttpResponseRedirect('/sorry')
+
+
+@login_required
 def edit_ticket_details(request, ticket_id):
     try:
         member = Member.objects.filter(username=request.user.username)[0]
