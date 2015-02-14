@@ -89,13 +89,13 @@ def my_tickets(request):
 
 @login_required
 def delete_ticket(request, ticket_id):
-        try:
-            ticket = On_Sales.objects.filter(id=ticket_id)[0]
-            ticket.delete()
-            return render_to_response('my_tickets.html', locals())
-        except Exception as e:
-            print e
-            return HttpResponseRedirect('/sorry')
+    try:
+        ticket = On_Sales.objects.filter(id=ticket_id)[0]
+        ticket.delete()
+        return HttpResponseRedirect('/member/my_tickets')
+    except Exception as e:
+        print e
+        return HttpResponseRedirect('/sorry')
 
 
 @login_required
